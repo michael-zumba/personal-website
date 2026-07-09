@@ -95,6 +95,18 @@ working_papers:
   - title: "IFRS Disclosure and Firm Performance: Evidence from New Zealand's Capital Markets"
     authors: "Zhang, Y."
 
+research_briefs:
+  - title: "AI and Digital Transformation: Impact on Business Practices, Firm Performance, and Corporate Reporting (2015-2025)"
+    description: "A structured research brief synthesising evidence on AI and digital transformation across six dimensions: adoption trends by sector and firm size, productivity and financial performance effects, audit and management control transformation, country-level digital readiness, regulatory developments including the EU AI Act, and corporate AI disclosure implications. Data files and methodology documentation are available on the Data & Code page."
+    date: "July 2026"
+    type: "Research Brief"
+    link: "/reports/ai-digital-transformation/"
+  - title: "Textual Analysis and NLP in Accounting and Finance: A Twenty-Year Review (2005-2025)"
+    description: "A comprehensive research brief reviewing the development, methods, and impact of textual analysis, text mining, and NLP applications in accounting and finance research and practice. Covers the evolution of data sources, progression of NLP methods from dictionaries to large language models, core research applications, capital market outcomes, and future research directions. Data files and methodology documentation are available on the Data & Code page."
+    date: "July 2026"
+    type: "Research Brief"
+    link: "/reports/nlp-textual-analysis/nlp-textual-analysis-accounting-finance.html"
+
 grants:
   - name: "ERASMUS KA171 International Credit Mobility Project"
     detail: "with Marmara University, Turkey"
