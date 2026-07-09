@@ -23,8 +23,8 @@ export default function BlogPage() {
 
         <section className="grid gap-8">
           {posts.map((post) => (
-            <article key={post.slug} className="flex flex-col space-y-3">
-              <Link href={`/blog/${post.slug}`} className="group">
+            <article key={post.slug} className="group relative pl-6 border-l-2 border-muted hover:border-primary transition-colors flex flex-col space-y-3">
+              <Link href={`/blog/${post.slug}`} className="block">
                 <h2 className="text-2xl font-bold group-hover:text-primary transition-colors">
                   {post.title}
                 </h2>

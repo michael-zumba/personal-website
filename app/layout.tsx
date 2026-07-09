@@ -14,8 +14,22 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Yuqian Zhang | Academic & Researcher",
-  description: "Personal website of Dr. Yuqian Zhang, Senior Lecturer in Accounting at Lincoln University, New Zealand.",
+  title: {
+    default: "Dr Yuqian (Michael) Zhang | Senior Lecturer in Accounting | AUT",
+    template: "%s | Dr Yuqian Zhang",
+  },
+  description:
+    "Dr Yuqian (Michael) Zhang is a Senior Lecturer in Accounting at Auckland University of Technology. Research interests include digital technologies in accounting, textual analysis, ESG disclosure, and cross-cultural financial reporting.",
+  keywords: [
+    "accounting research",
+    "digital transformation",
+    "ESG disclosure",
+    "textual analysis",
+    "AUT",
+    "New Zealand",
+    "Yuqian Zhang",
+  ],
+  authors: [{ name: "Dr Yuqian Zhang" }],
 };
 
 export default function RootLayout({
@@ -25,11 +39,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(
+      <body
+        className={cn(
           "min-h-screen bg-background font-sans antialiased",
           inter.variable,
           merriweather.variable
-        )}>
+        )}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

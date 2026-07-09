@@ -1,11 +1,7 @@
 import { Metadata } from "next";
 import { getPostData, getSortedPostsData } from "@/lib/posts";
 import { formatDate } from "@/lib/utils";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import rehypeRaw from "rehype-raw";
-import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { MarkdownRenderer } from "@/components/shared/MarkdownRenderer";
 
 // Since we are using static export, we need generateStaticParams
 export function generateStaticParams() {
@@ -48,31 +44,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
         </header>
 
         <div className="prose dark:prose-invert max-w-none prose-headings:font-serif prose-a:text-primary hover:prose-a:text-primary/80">
-          <ReactMarkdown 
-            remarkPlugins={[remarkGfm]}
-            components={{
-              code({node, className, children, ...props}) {
-                const match = /language-(\w+)/.exec(className || '')
-                return match ? (
-                  // @ts-ignore
-                  <SyntaxHighlighter
-                    {...props}
-                    style={oneDark}
-                    language={match[1]}
-                    PreTag="div"
-                  >
-                    {String(children).replace(/\n$/, '')}
-                  </SyntaxHighlighter>
-                ) : (
-                  <code {...props} className={className}>
-                    {children}
-                  </code>
-                )
-              }
-            }}
-          >
-            {post.content}
-          </ReactMarkdown>
+          <MarkdownRenderer content={post.content} />
         </div>
       </article>
     </div>

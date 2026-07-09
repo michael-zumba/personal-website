@@ -1,0 +1,20 @@
+{
+  "root": {
+    "nodeId": "gen-project-shell",
+    "kind": "project-shell",
+    "pageIds": ["page-index", "page-research", "page-data-code", "page-insights", "page-article", "page-contact"],
+    "output": "partials/project-shell.html",
+    "sharedRegions": ["top navigation", "footer", "global background", "type scale", "CTA style"],
+    "privateRegions": [],
+    "mutableSlots": ["activeNavItem", "pageTitle", "mainContent"],
+    "status": "generated",
+    "children": [
+      { "nodeId": "gen-page-index", "kind": "page-leaf", "pageIds": ["page-index"], "output": "pages/index.html", "sharedRegions": [], "privateRegions": ["home body"], "mutableSlots": ["activeNavItem", "mainContent"], "status": "planned", "children": [] },
+      { "nodeId": "gen-page-research", "kind": "page-leaf", "pageIds": ["page-research"], "output": "pages/research.html", "sharedRegions": [], "privateRegions": ["research body"], "mutableSlots": ["activeNavItem", "mainContent"], "status": "planned", "children": [] },
+      { "nodeId": "gen-page-data-code", "kind": "page-leaf", "pageIds": ["page-data-code"], "output": "pages/data-code.html", "sharedRegions": [], "privateRegions": ["data-code body"], "mutableSlots": ["activeNavItem", "mainContent"], "status": "planned", "children": [] },
+      { "nodeId": "gen-page-insights", "kind": "page-leaf", "pageIds": ["page-insights"], "output": "pages/insights.html", "sharedRegions": [], "privateRegions": ["insights body"], "mutableSlots": ["activeNavItem", "mainContent"], "status": "planned", "children": [] },
+      { "nodeId": "gen-page-article", "kind": "page-leaf", "pageIds": ["page-article"], "output": "pages/article.html", "sharedRegions": [], "privateRegions": ["article body"], "mutableSlots": ["activeNavItem", "mainContent"], "status": "planned", "children": [] },
+      { "nodeId": "gen-page-contact", "kind": "page-leaf", "pageIds": ["page-contact"], "output": "pages/contact.html", "sharedRegions": [], "privateRegions": ["contact body"], "mutableSlots": ["activeNavItem", "mainContent"], "status": "planned", "children": [] }
+    ]
+  }
+}

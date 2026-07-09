@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Yuqian Zhang</title>
+    <style id="theme-vars">
+:root {
+  --scholar-background: #f7f4ec;
+  --scholar-foreground: #23241f;
+  --scholar-card: #fffdf8;
+  --scholar-card-foreground: #23241f;
+  --scholar-popover: #fffdf8;
+  --scholar-popover-foreground: #23241f;
+  --scholar-muted: #f1ece0;
+  --scholar-muted-foreground: #6a685e;
+  --scholar-border: #ded8ca;
+  --scholar-input: #ded8ca;
+  --scholar-ring: #1f4d3f;
+
+  --scholar-primary: #1f4d3f;
+  --scholar-primary-foreground: #f7f4ec;
+  --scholar-primary-100: #e7efeb;
+  --scholar-primary-200: #c7ddd4;
+  --scholar-primary-300: #9fc3b5;
+  --scholar-primary-400: #6a9c8b;
+  --scholar-primary-500: #3f7565;
+  --scholar-primary-600: #2b5d4d;
+  --scholar-primary-700: #1f4d3f;
+  --scholar-primary-800: #184033;
+  --scholar-primary-900: #123227;
+
+  --state-success: #3f7565;
+  --state-warning: #a8792b;
+  --state-error: #a23b32;
+  --state-info: #2f5d7a;
+
+  --scholar-radius-small: 4px;
+  --scholar-radius-medium: 8px;
+  --scholar-radius-large: 16px;
+  --scholar-radius-xlarge: 16px;
+  --scholar-radius-full: 9999px;
+
+  --scholar-shadow-card: 0 1px 2px rgba(31, 37, 32, 0.04);
+  --scholar-shadow-float: 0 14px 34px -14px rgba(18, 50, 38, 0.22);
+
+  --scholar-font-serif: 'Newsreader', 'Georgia', 'Times New Roman', serif;
+  --scholar-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --scholar-font-mono: 'IBM Plex Mono', 'SFMono-Regular', ui-monospace, 'Menlo', monospace;
+}
+
+.font-serif { font-family: var(--scholar-font-serif); }
+.font-sans { font-family: var(--scholar-font-sans); }
+.font-mono { font-family: var(--scholar-font-mono); }
+
+.scholar-display {
+  font-family: var(--scholar-font-serif);
+  font-weight: 500;
+  font-size: clamp(40px, 5.4vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.scholar-h1 {
+  font-family: var(--scholar-font-serif);
+  font-weight: 500;
+  font-size: clamp(30px, 3.8vw, 46px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+.scholar-h2 {
+  font-family: var(--scholar-font-serif);
+  font-weight: 500;
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.scholar-h3 {
+  font-family: var(--scholar-font-serif);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+}
+.scholar-eyebrow {
+  font-family: var(--scholar-font-sans);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--scholar-muted-foreground);
+}
+.scholar-body {
+  font-family: var(--scholar-font-sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.scholar-prose {
+  font-family: var(--scholar-font-serif);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--scholar-background);
+    --color-foreground: var(--scholar-foreground);
+    --color-card: var(--scholar-card);
+    --color-card-foreground: var(--scholar-card-foreground);
+    --color-popover: var(--scholar-popover);
+    --color-popover-foreground: var(--scholar-popover-foreground);
+    --color-primary: var(--scholar-primary);
+    --color-primary-foreground: var(--scholar-primary-foreground);
+    --color-muted: var(--scholar-muted);
+    --color-muted-foreground: var(--scholar-muted-foreground);
+    --color-border: var(--scholar-border);
+    --color-input: var(--scholar-input);
+    --color-ring: var(--scholar-ring);
+    --radius-sm: var(--scholar-radius-small);
+    --radius-md: var(--scholar-radius-medium);
+    --radius-lg: var(--scholar-radius-large);
+    --radius-xl: var(--scholar-radius-xlarge);
+  }
+  @layer base {
+    body { background: var(--scholar-background); color: var(--scholar-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+
+<!-- SHELL:HEADER -->
+<header class="shell-nav" role="banner">
+  <div class="shell-nav-inner">
+
+    <!-- Wordmark -->
+    <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-home-brand" class="shell-wordmark" aria-label="Yuqian Zhang — Home">
+      <div class="shell-wordmark-main">
+        <span class="shell-wordmark-name">Yuqian Zhang</span>
+        <span class="shell-wordmark-phd">PhD</span>
+      </div>
+      <span class="shell-wordmark-desc">Accounting &middot; Finance &middot; AI</span>
+    </a>
+
+    <!-- Desktop nav links -->
+    <nav class="shell-nav-links" aria-label="Main navigation">
+      <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-home" class="shell-nav-link">Home</a>
+      <a href="../pages/research.html" data-nav-key="research" data-dom-id="nav-research" class="shell-nav-link">Research</a>
+      <a href="../pages/data-code.html" data-nav-key="data-code" data-dom-id="nav-data-code" class="shell-nav-link">Data &amp; Code</a>
+      <a href="../pages/insights.html" data-nav-key="insights" data-dom-id="nav-insights" class="shell-nav-link">Insights</a>
+      <a href="../pages/contact.html" data-nav-key="contact" data-dom-id="nav-contact" data-active="true" class="shell-nav-cta">Contact</a>
+    </nav>
+
+    <!-- Mobile hamburger toggle -->
+    <button class="shell-hamburger" id="mobile-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+      <svg id="hamburger-icon" width="22" height="16" viewBox="0 0 22 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="1" y1="1" x2="21" y2="1"/>
+        <line x1="1" y1="8" x2="21" y2="8"/>
+        <line x1="1" y1="15" x2="21" y2="15"/>
+      </svg>
+      <svg id="close-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;">
+        <line x1="3" y1="3" x2="17" y2="17"/>
+        <line x1="17" y1="3" x2="3" y2="17"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile dropdown menu -->
+  <div class="shell-mobile-menu" id="mobile-menu" role="menu" aria-label="Mobile navigation">
+    <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-mobile-home" class="shell-mobile-link" role="menuitem">Home</a>
+    <a href="../pages/research.html" data-nav-key="research" data-dom-id="nav-mobile-research" class="shell-mobile-link" role="menuitem">Research</a>
+    <a href="../pages/data-code.html" data-nav-key="data-code" data-dom-id="nav-mobile-data-code" class="shell-mobile-link" role="menuitem">Data &amp; Code</a>
+    <a href="../pages/insights.html" data-nav-key="insights" data-dom-id="nav-mobile-insights" class="shell-mobile-link" role="menuitem">Insights</a>
+    <a href="../pages/contact.html" data-nav-key="contact" data-dom-id="nav-mobile-contact" data-active="true" class="shell-mobile-cta" role="menuitem">Contact</a>
+  </div>
+</header>
+
+<script>
+(function() {
+  var toggle = document.getElementById('mobile-toggle');
+  var menu = document.getElementById('mobile-menu');
+  var hamburgerIcon = document.getElementById('hamburger-icon');
+  var closeIcon = document.getElementById('close-icon');
+  if (!toggle || !menu) return;
+
+  function openMenu() {
+    menu.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    hamburgerIcon.style.display = 'none';
+    closeIcon.style.display = 'block';
+  }
+  function closeMenu() {
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    hamburgerIcon.style.display = 'block';
+    closeIcon.style.display = 'none';
+  }
+  toggle.addEventListener('click', function() {
+    if (menu.classList.contains('open')) { closeMenu(); }
+    else { openMenu(); }
+  });
+  menu.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') { closeMenu(); }
+  });
+  document.addEventListener('click', function(e) {
+    if (!toggle.contains(e.target) && !menu.contains(e.target)) { closeMenu(); }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && menu.classList.contains('open')) {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+})();
+</script>
+<!-- /SHELL:HEADER -->
+
+<main class="max-w-[1100px] mx-auto px-4 md:px-8 pt-12 md:pt-16 pb-16 md:pb-24">
+
+  <!-- Page Header -->
+  <header class="mb-10 md:mb-14">
+    <p class="scholar-eyebrow">Get in touch</p>
+    <h1 class="scholar-h1 mt-2 mb-4" style="text-wrap:balance;word-break:keep-all;overflow-wrap:break-word;">Contact</h1>
+    <p class="scholar-body text-[var(--scholar-muted-foreground)] max-w-2xl">I welcome enquiries about research collaboration, PhD supervision, reviewing, and speaking. I aim to respond within a few working days.</p>
+  </header>
+
+  <!-- Two-column layout -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14">
+
+    <!-- LEFT COLUMN: Contact info + collaboration + affiliations -->
+    <div class="lg:col-span-7 flex flex-col gap-8">
+
+      <!-- Contact Details Card -->
+      <section class="rounded-[var(--scholar-radius-medium)] border border-[var(--scholar-border)] bg-[var(--scholar-card)] p-6 md:p-8" aria-labelledby="contact-details-title">
+        <h2 id="contact-details-title" class="scholar-h3 mb-5">Contact details</h2>
+        <ul class="space-y-5">
+          <li class="flex items-start gap-3">
+            <i data-lucide="mail" class="w-5 h-5 mt-0.5 shrink-0" style="color:var(--scholar-muted-foreground)"></i>
+            <div class="min-w-0">
+              <span class="block text-xs font-sans font-semibold tracking-[0.09em] uppercase" style="color:var(--scholar-muted-foreground)">Email</span>
+              <a href="mailto:yuqian.zhang@aut.ac.nz" class="font-mono text-sm break-all transition-colors duration-150 hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--scholar-ring)]" style="color:var(--scholar-foreground)">yuqian.zhang@aut.ac.nz</a>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <i data-lucide="building-2" class="w-5 h-5 mt-0.5 shrink-0" style="color:var(--scholar-muted-foreground)"></i>
+            <div class="min-w-0">
+              <span class="block text-xs font-sans font-semibold tracking-[0.09em] uppercase" style="color:var(--scholar-muted-foreground)">Institution</span>
+              <span class="block text-sm font-sans truncate" style="color:var(--scholar-foreground)">Auckland University of Technology, New Zealand</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <i data-lucide="fingerprint" class="w-5 h-5 mt-0.5 shrink-0" style="color:var(--scholar-muted-foreground)"></i>
+            <div class="min-w-0">
+              <span class="block text-xs font-sans font-semibold tracking-[0.09em] uppercase" style="color:var(--scholar-muted-foreground)">ORCID</span>
+              <a href="https://orcid.org/0000-0001-5667-4002" target="_blank" rel="noopener noreferrer" class="font-mono text-sm break-all transition-colors duration-150 hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--scholar-ring)]" aria-label="ORCID profile: 0000-0001-5667-4002" style="color:var(--scholar-foreground)">0000-0001-5667-4002</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Collaboration Areas Card -->
+      <section class="rounded-[var(--scholar-radius-medium)] border border-[var(--scholar-border)] bg-[var(--scholar-card)] p-6 md:p-8" aria-labelledby="collaboration-title">
+        <h2 id="collaboration-title" class="scholar-h3 mb-5">Ways to collaborate</h2>
+        <ul class="space-y-5">
+          <li class="flex items-start gap-3">
+            <i data-lucide="graduation-cap" class="w-5 h-5 mt-0.5 shrink-0" style="color:var(--scholar-primary)"></i>
+            <div class="min-w-0">
+              <span class="block text-sm font-sans font-semibold truncate" style="color:var(--scholar-foreground)">PhD supervision</span>
+              <span class="block text-sm font-sans line-clamp-2" style="color:var(--scholar-muted-foreground)">Currently supervising doctoral research in textual analysis and sustainability disclosure.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <i data-lucide="users" class="w-5 h-5 mt-0.5 shrink-0" style="color:var(--scholar-primary)"></i>
+            <div class="min-w-0">
+              <span class="block text-sm font-sans font-semibold truncate" style="color:var(--scholar-foreground)">Co-authoring</span>
+              <span class="block text-sm font-sans line-clamp-2" style="color:var(--scholar-muted-foreground)">Empirical accounting, AI/text analysis, ESG.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <i data-lucide="file-check" class="w-5 h-5 mt-0.5 shrink-0" style="color:var(--scholar-primary)"></i>
+            <div class="min-w-0">
+              <span class="block text-sm font-sans font-semibold truncate" style="color:var(--scholar-foreground)">Reviewing &amp; editorial</span>
+              <span class="block text-sm font-sans line-clamp-2" style="color:var(--scholar-muted-foreground)">Editorial board member for two Q1 journals.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <i data-lucide="presentation" class="w-5 h-5 mt-0.5 shrink-0" style="color:var(--scholar-primary)"></i>
+            <div class="min-w-0">
+              <span class="block text-sm font-sans font-semibold truncate" style="color:var(--scholar-foreground)">Speaking &amp; workshops</span>
+              <span class="block text-sm font-sans line-clamp-2" style="color:var(--scholar-muted-foreground)">Research methods, digital finance, ESG.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <i data-lucide="database" class="w-5 h-5 mt-0.5 shrink-0" style="color:var(--scholar-primary)"></i>
+            <div class="min-w-0">
+              <span class="block text-sm font-sans font-semibold truncate" style="color:var(--scholar-foreground)">Data &amp; code requests</span>
+              <span class="block text-sm font-sans line-clamp-2" style="color:var(--scholar-muted-foreground)">Access to datasets and analysis code on request.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Affiliations Strip -->
+      <section aria-label="Professional affiliations" class="flex flex-wrap items-center gap-x-5 gap-y-2">
+        <span class="text-xs font-sans whitespace-nowrap" style="color:var(--scholar-muted-foreground)">CPA Australia</span>
+        <span class="text-xs font-sans whitespace-nowrap opacity-30" style="color:var(--scholar-muted-foreground)">&middot;</span>
+        <span class="text-xs font-sans whitespace-nowrap" style="color:var(--scholar-muted-foreground)">AFAANZ member</span>
+        <span class="text-xs font-sans whitespace-nowrap opacity-30" style="color:var(--scholar-muted-foreground)">&middot;</span>
+        <span class="text-xs font-sans whitespace-nowrap" style="color:var(--scholar-muted-foreground)">NZMAC steering committee</span>
+        <span class="text-xs font-sans whitespace-nowrap opacity-30" style="color:var(--scholar-muted-foreground)">&middot;</span>
+        <span class="text-xs font-sans whitespace-nowrap" style="color:var(--scholar-muted-foreground)">Editorial board: JAOC; Humanities &amp; Social Sciences Communications</span>
+      </section>
+
+    </div>
+
+    <!-- RIGHT COLUMN: Enquiry Form -->
+    <div class="lg:col-span-5">
+      <section id="enquiry-form-wrapper" class="rounded-[var(--scholar-radius-medium)] border border-[var(--scholar-border)] bg-[var(--scholar-card)] p-6 md:p-8" aria-labelledby="form-title">
+
+        <h2 id="form-title" class="scholar-h3 mb-5">Send an enquiry</h2>
+
+        <!-- Form -->
+        <form id="enquiry-form" action="#" method="post" novalidate class="space-y-5">
+
+          <!-- Full Name -->
+          <div class="flex flex-col gap-1.5">
+            <label for="field-name" class="text-sm font-sans font-medium" style="color:var(--scholar-foreground)">Full name <span aria-hidden="true" style="color:var(--state-error)">*</span></label>
+            <input type="text" id="field-name" name="name" required autocomplete="name"
+              class="w-full h-11 rounded-[8px] border px-3 text-sm font-sans transition-colors duration-150"
+              style="background:var(--scholar-card);border-color:var(--scholar-input);color:var(--scholar-foreground)"
+              aria-describedby="field-name-error"
+              onfocus="this.style.borderColor='var(--scholar-ring)';this.style.boxShadow='0 0 0 2px color-mix(in srgb, var(--scholar-ring) 25%, transparent)';"
+              onblur="this.style.borderColor='var(--scholar-input)';this.style.boxShadow='none';"
+            >
+            <span id="field-name-error" class="text-xs font-sans hidden" style="color:var(--state-error)" role="alert">Please enter your full name.</span>
+          </div>
+
+          <!-- Email -->
+          <div class="flex flex-col gap-1.5">
+            <label for="field-email" class="text-sm font-sans font-medium" style="color:var(--scholar-foreground)">Email <span aria-hidden="true" style="color:var(--state-error)">*</span></label>
+            <input type="email" id="field-email" name="email" required autocomplete="email"
+              class="w-full h-11 rounded-[8px] border px-3 text-sm font-sans transition-colors duration-150"
+              style="background:var(--scholar-card);border-color:var(--scholar-input);color:var(--scholar-foreground)"
+              aria-describedby="field-email-error"
+              onfocus="this.style.borderColor='var(--scholar-ring)';this.style.boxShadow='0 0 0 2px color-mix(in srgb, var(--scholar-ring) 25%, transparent)';"
+              onblur="this.style.borderColor='var(--scholar-input)';this.style.boxShadow='none';"
+            >
+            <span id="field-email-error" class="text-xs font-sans hidden" style="color:var(--state-error)" role="alert">Please enter a valid email address.</span>
+          </div>
+
+          <!-- Purpose -->
+          <div class="flex flex-col gap-1.5">
+            <label for="field-purpose" class="text-sm font-sans font-medium" style="color:var(--scholar-foreground)">Purpose <span aria-hidden="true" style="color:var(--state-error)">*</span></label>
+            <select id="field-purpose" name="purpose" required
+              class="w-full h-11 rounded-[8px] border px-3 text-sm font-sans transition-colors duration-150 appearance-none"
+              style="background:var(--scholar-card);border-color:var(--scholar-input);color:var(--scholar-foreground);background-image:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236a685e%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22m6 9 6 6 6-6%22/></svg>');background-repeat:no-repeat;background-position:right 10px center;padding-right:36px"
+              aria-describedby="field-purpose-error"
+              onfocus="this.style.borderColor='var(--scholar-ring)';this.style.boxShadow='0 0 0 2px color-mix(in srgb, var(--scholar-ring) 25%, transparent)';"
+              onblur="this.style.borderColor='var(--scholar-input)';this.style.boxShadow='none';"
+            >
+              <option value="" disabled selected>Select a purpose</option>
+              <option value="research">Research collaboration</option>
+              <option value="phd">PhD supervision enquiry</option>
+              <option value="review">Reviewing / editorial</option>
+              <option value="speaking">Speaking / workshop</option>
+              <option value="data">Data or code request</option>
+              <option value="other">Other</option>
+            </select>
+            <span id="field-purpose-error" class="text-xs font-sans hidden" style="color:var(--state-error)" role="alert">Please select a purpose for your enquiry.</span>
+          </div>
+
+          <!-- Message -->
+          <div class="flex flex-col gap-1.5">
+            <label for="field-message" class="text-sm font-sans font-medium" style="color:var(--scholar-foreground)">Message <span aria-hidden="true" style="color:var(--state-error)">*</span></label>
+            <textarea id="field-message" name="message" required rows="5" minlength="10"
+              class="w-full rounded-[8px] border px-3 py-2.5 text-sm font-sans resize-y transition-colors duration-150"
+              style="background:var(--scholar-card);border-color:var(--scholar-input);color:var(--scholar-foreground);min-height:120px"
+              aria-describedby="field-message-error"
+              onfocus="this.style.borderColor='var(--scholar-ring)';this.style.boxShadow='0 0 0 2px color-mix(in srgb, var(--scholar-ring) 25%, transparent)';"
+              onblur="this.style.borderColor='var(--scholar-input)';this.style.boxShadow='none';"
+            ></textarea>
+            <span id="field-message-error" class="text-xs font-sans hidden" style="color:var(--state-error)" role="alert">Please enter a message of at least 10 characters.</span>
+          </div>
+
+          <!-- Submit -->
+          <div class="flex flex-col gap-2">
+            <button type="submit"
+              class="inline-flex items-center justify-center whitespace-nowrap h-11 px-6 rounded-[8px] text-sm font-sans font-semibold cursor-pointer transition-all duration-200"
+              style="background-color:var(--scholar-primary);color:var(--scholar-primary-foreground)"
+              onmouseenter="this.style.backgroundColor='var(--scholar-primary-800)';this.style.transform='translateY(-1px)';"
+              onmouseleave="this.style.backgroundColor='var(--scholar-primary)';this.style.transform='none';"
+              onfocus="this.style.outline='2px solid var(--scholar-ring)';this.style.outlineOffset='2px';"
+              onfocusout="this.style.outline='none';"
+            >
+              Send message
+            </button>
+            <p class="text-xs font-sans" style="color:var(--scholar-muted-foreground)">Your details are used only to respond to your enquiry.</p>
+          </div>
+        </form>
+
+        <!-- Success Panel (hidden by default) -->
+        <div id="form-success" class="hidden" role="status" aria-live="polite">
+          <div class="rounded-[var(--scholar-radius-medium)] p-6" style="background-color:color-mix(in srgb, var(--state-success) 10%, transparent);border:1px solid color-mix(in srgb, var(--state-success) 25%, transparent)">
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5 mt-0.5 shrink-0" style="color:var(--state-success)"></i>
+              <div>
+                <p class="text-sm font-sans font-semibold" style="color:var(--scholar-foreground)">Thanks, your message has been noted.</p>
+                <p class="text-sm font-sans mt-1" style="color:var(--scholar-muted-foreground)">I will get back to you soon.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- SHELL:FOOTER -->
+<footer class="shell-footer" role="contentinfo">
+  <div class="shell-footer-inner">
+
+    <!-- Column 1: Brand + positioning -->
+    <div class="shell-footer-brand">
+      <span class="shell-footer-brand-name">Yuqian Zhang</span>
+      <p class="shell-footer-brand-role">Senior Lecturer in Accounting, Auckland University of Technology, New Zealand</p>
+    </div>
+
+    <!-- Column 2: Explore links -->
+    <div class="shell-footer-col">
+      <span class="shell-footer-col-title">Explore</span>
+      <a href="../pages/index.html">Home</a>
+      <a href="../pages/research.html">Research</a>
+      <a href="../pages/data-code.html">Data &amp; Code</a>
+      <a href="../pages/insights.html">Insights</a>
+      <a href="../pages/contact.html">Contact</a>
+    </div>
+
+    <!-- Column 3: Connect -->
+    <div class="shell-footer-col">
+      <span class="shell-footer-col-title">Connect</span>
+      <a href="mailto:yuqian.zhang@aut.ac.nz">
+        <i data-lucide="mail" class="w-4 h-4"></i>
+        yuqian.zhang@aut.ac.nz
+      </a>
+      <a href="https://orcid.org/0000-0001-5667-4002" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile: 0000-0001-5667-4002">
+        <i data-lucide="fingerprint" class="w-4 h-4"></i>
+        ORCID
+      </a>
+      <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=" target="_blank" rel="noopener noreferrer" aria-label="SSRN author page">
+        <i data-lucide="file-text" class="w-4 h-4"></i>
+        SSRN
+      </a>
+      <a href="https://scholar.google.com/citations?user=" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile">
+        <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+        Google Scholar
+      </a>
+    </div>
+  </div>
+
+  <div class="shell-footer-bottom">
+    <span class="shell-footer-copy">&copy; 2026 Yuqian Zhang. All rights reserved.</span>
+    <span class="shell-footer-locale">New Zealand</span>
+  </div>
+</footer>
+<!-- /SHELL:FOOTER -->
+
+<style id="shell-styles">
+  /* ---- NAVIGATION BAR ---- */
+  .shell-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: var(--scholar-background);
+    border-bottom: 1px solid var(--scholar-border);
+  }
+  @supports (backdrop-filter: blur(12px)) {
+    .shell-nav {
+      background-color: color-mix(in srgb, var(--scholar-background) 92%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  }
+  .shell-nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  @media (min-width: 768px) {
+    .shell-nav-inner {
+      padding: 0 32px;
+    }
+  }
+
+  /* Wordmark group */
+  .shell-wordmark {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    text-decoration: none;
+    color: var(--scholar-foreground);
+    flex-shrink: 0;
+    transition: opacity 180ms ease;
+  }
+  .shell-wordmark:hover {
+    opacity: 0.78;
+  }
+  .shell-wordmark-main {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+  .shell-wordmark-name {
+    font-family: 'Newsreader', 'Georgia', 'Times New Roman', serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.2;
+    color: var(--scholar-foreground);
+    letter-spacing: -0.01em;
+  }
+  .shell-wordmark-phd {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--scholar-primary);
+    background-color: color-mix(in srgb, var(--scholar-primary) 12%, transparent);
+    padding: 1px 5px;
+    border-radius: 4px;
+    vertical-align: super;
+    line-height: 1;
+  }
+  .shell-wordmark-desc {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--scholar-muted-foreground);
+    line-height: 1;
+  }
+
+  /* Desktop nav links */
+  .shell-nav-links {
+    display: none;
+    align-items: center;
+    gap: 2px;
+  }
+  @media (min-width: 768px) {
+    .shell-nav-links {
+      display: flex;
+    }
+  }
+  .shell-nav-link {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 450;
+    color: var(--scholar-muted-foreground);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: var(--scholar-radius-small);
+    position: relative;
+    transition: color 180ms ease;
+    white-space: nowrap;
+  }
+  .shell-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 12px;
+    right: 12px;
+    height: 2px;
+    background-color: var(--scholar-primary);
+    border-radius: 1px;
+    transform: scaleX(0);
+    transition: transform 200ms ease;
+    transform-origin: left center;
+  }
+  .shell-nav-link:hover {
+    color: var(--scholar-foreground);
+  }
+  .shell-nav-link:hover::after {
+    transform: scaleX(1);
+  }
+  .shell-nav-link:focus-visible {
+    outline: 2px solid var(--scholar-primary);
+    outline-offset: 2px;
+    border-radius: var(--scholar-radius-small);
+  }
+  .shell-nav-link[data-active="true"] {
+    color: var(--scholar-primary);
+    font-weight: 550;
+  }
+  .shell-nav-link[data-active="true"]::after {
+    transform: scaleX(1);
+    background-color: var(--scholar-primary);
+  }
+
+  /* Contact CTA button */
+  .shell-nav-cta {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 550;
+    color: var(--scholar-primary-foreground);
+    background-color: var(--scholar-primary);
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: var(--scholar-radius-medium);
+    margin-left: 6px;
+    white-space: nowrap;
+    transition: background-color 200ms ease, transform 200ms ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .shell-nav-cta:hover {
+    background-color: var(--scholar-primary-800);
+    transform: translateY(-1px);
+  }
+  .shell-nav-cta:active {
+    transform: translateY(0);
+  }
+  .shell-nav-cta:focus-visible {
+    outline: 2px solid var(--scholar-primary);
+    outline-offset: 2px;
+  }
+
+  /* Hamburger toggle */
+  .shell-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    border-radius: var(--scholar-radius-small);
+    color: var(--scholar-foreground);
+    transition: background-color 150ms ease;
+    flex-shrink: 0;
+  }
+  .shell-hamburger:hover {
+    background-color: color-mix(in srgb, var(--scholar-foreground) 6%, transparent);
+  }
+  .shell-hamburger:focus-visible {
+    outline: 2px solid var(--scholar-primary);
+    outline-offset: 2px;
+  }
+  .shell-hamburger svg {
+    pointer-events: none;
+  }
+  @media (min-width: 768px) {
+    .shell-hamburger {
+      display: none;
+    }
+  }
+
+  /* Mobile menu dropdown */
+  .shell-mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: var(--scholar-card);
+    border-bottom: 1px solid var(--scholar-border);
+    padding: 12px 16px 16px;
+    gap: 4px;
+    box-shadow: var(--scholar-shadow-float);
+  }
+  .shell-mobile-menu.open {
+    display: flex;
+  }
+  @media (min-width: 768px) {
+    .shell-mobile-menu,
+    .shell-mobile-menu.open {
+      display: none;
+    }
+  }
+  .shell-mobile-link {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    font-weight: 450;
+    color: var(--scholar-muted-foreground);
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: var(--scholar-radius-medium);
+    transition: color 160ms ease, background-color 160ms ease;
+    white-space: nowrap;
+  }
+  .shell-mobile-link:hover {
+    color: var(--scholar-foreground);
+    background-color: color-mix(in srgb, var(--scholar-foreground) 4%, transparent);
+  }
+  .shell-mobile-link[data-active="true"] {
+    color: var(--scholar-primary);
+    font-weight: 550;
+    background-color: color-mix(in srgb, var(--scholar-primary) 8%, transparent);
+  }
+  .shell-mobile-link:focus-visible {
+    outline: 2px solid var(--scholar-primary);
+    outline-offset: 2px;
+  }
+  .shell-mobile-cta {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    font-weight: 550;
+    color: var(--scholar-primary-foreground);
+    background-color: var(--scholar-primary);
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: var(--scholar-radius-medium);
+    text-align: center;
+    margin-top: 6px;
+    transition: background-color 200ms ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .shell-mobile-cta:hover {
+    background-color: var(--scholar-primary-800);
+  }
+
+  /* ---- FOOTER ---- */
+  .shell-footer {
+    background-color: var(--scholar-primary-900);
+    color: var(--scholar-primary-foreground);
+    padding: 56px 16px 0;
+  }
+  @media (min-width: 768px) {
+    .shell-footer {
+      padding: 64px 32px 0;
+    }
+  }
+  .shell-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  @media (min-width: 640px) {
+    .shell-footer-inner {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 1024px) {
+    .shell-footer-inner {
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+    }
+  }
+
+  .shell-footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .shell-footer-brand-name {
+    font-family: 'Newsreader', 'Georgia', 'Times New Roman', serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--scholar-primary-foreground);
+    letter-spacing: -0.01em;
+  }
+  .shell-footer-brand-role {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    line-height: 1.55;
+    color: color-mix(in srgb, var(--scholar-primary-foreground) 75%, transparent);
+    max-width: 300px;
+  }
+
+  .shell-footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .shell-footer-col-title {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--scholar-primary-foreground) 55%, transparent);
+    margin-bottom: 4px;
+  }
+  .shell-footer-col a {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    color: color-mix(in srgb, var(--scholar-primary-foreground) 75%, transparent);
+    text-decoration: none;
+    transition: color 180ms ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.5;
+  }
+  .shell-footer-col a:hover {
+    color: var(--scholar-primary-foreground);
+  }
+  .shell-footer-col a:focus-visible {
+    outline: 2px solid var(--scholar-primary-foreground);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  .shell-footer-col i {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    opacity: 0.65;
+  }
+
+  .shell-footer-bottom {
+    max-width: 1200px;
+    margin: 48px auto 0;
+    padding: 18px 0;
+    border-top: 1px solid color-mix(in srgb, var(--scholar-primary-foreground) 15%, transparent);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+  @media (min-width: 640px) {
+    .shell-footer-bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  .shell-footer-copy {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    color: color-mix(in srgb, var(--scholar-primary-foreground) 55%, transparent);
+  }
+  .shell-footer-locale {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    color: color-mix(in srgb, var(--scholar-primary-foreground) 45%, transparent);
+  }
+
+  /* ---- REDUCED MOTION ---- */
+  @media (prefers-reduced-motion: reduce) {
+    .shell-nav-link,
+    .shell-nav-link::after,
+    .shell-nav-cta,
+    .shell-mobile-link,
+    .shell-mobile-cta,
+    .shell-wordmark,
+    .shell-footer-col a {
+      transition-duration: 0.01ms !important;
+    }
+    .shell-nav-cta:hover {
+      transform: none;
+    }
+  }
+</style>
+
+<!-- Page-specific styles -->
+<style>
+  /* Form field focus ring transitions (motionIntensity 1 — basic hover/focus only) */
+  #enquiry-form input,
+  #enquiry-form select,
+  #enquiry-form textarea {
+    transition-property: border-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
+  }
+
+  /* Error state styling applied via JS */
+  #enquiry-form input.field-error,
+  #enquiry-form select.field-error,
+  #enquiry-form textarea.field-error {
+    border-color: var(--state-error) !important;
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--state-error) 20%, transparent) !important;
+  }
+
+  /* Success panel entrance */
+  #form-success {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 300ms ease, transform 300ms ease;
+  }
+  #form-success.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #enquiry-form input,
+    #enquiry-form select,
+    #enquiry-form textarea {
+      transition-duration: 0.01ms;
+    }
+    #form-success {
+      transition-duration: 0.01ms;
+    }
+  }
+</style>
+
+<script>lucide.createIcons();</script>
+
+<script>
+(function() {
+  var form = document.getElementById('enquiry-form');
+  var successPanel = document.getElementById('form-success');
+  if (!form) return;
+
+  var fields = [
+    {
+      el: document.getElementById('field-name'),
+      errorEl: document.getElementById('field-name-error'),
+      validate: function(v) { return v.trim().length > 0; }
+    },
+    {
+      el: document.getElementById('field-email'),
+      errorEl: document.getElementById('field-email-error'),
+      validate: function(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }
+    },
+    {
+      el: document.getElementById('field-purpose'),
+      errorEl: document.getElementById('field-purpose-error'),
+      validate: function(v) { return v !== ''; }
+    },
+    {
+      el: document.getElementById('field-message'),
+      errorEl: document.getElementById('field-message-error'),
+      validate: function(v) { return v.trim().length >= 10; }
+    }
+  ];
+
+  function showError(field) {
+    field.el.classList.add('field-error');
+    field.el.setAttribute('aria-invalid', 'true');
+    field.errorEl.classList.remove('hidden');
+  }
+
+  function clearError(field) {
+    field.el.classList.remove('field-error');
+    field.el.removeAttribute('aria-invalid');
+    field.errorEl.classList.add('hidden');
+  }
+
+  function clearAllErrors() {
+    fields.forEach(function(f) { clearError(f); });
+  }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    clearAllErrors();
+
+    var valid = true;
+    fields.forEach(function(f) {
+      if (!f.validate(f.el.value)) {
+        showError(f);
+        valid = false;
+      }
+    });
+
+    if (!valid) return;
+
+    form.style.display = 'none';
+    successPanel.classList.remove('hidden');
+    setTimeout(function() {
+      successPanel.classList.add('visible');
+    }, 10);
+  });
+
+  fields.forEach(function(f) {
+    f.el.addEventListener('input', function() {
+      if (f.validate(f.el.value)) {
+        clearError(f);
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,600 @@
+<!--
+================================================================================
+  PROJECT SHELL — Shared Navigation + Footer Fragment
+  File:  personal-website/partials/project-shell.html
+  Node:  gen-project-shell (generation-tree shared fragment)
+  Role:  Reusable top navigation + site footer for all leaf pages.
+================================================================================
+
+  INTEGRATION NOTES FOR LEAF PAGES
+  --------------------------------
+
+  1. COPY the entire <!-- SHELL:HEADER --> block (from the opening <header>
+     tag through the closing </header> tag, including the inline <script>
+     block immediately after it) and paste it as the first child of <body>,
+     before any <main> element.
+
+  2. COPY the entire <!-- SHELL:FOOTER --> block (from the opening <footer>
+     tag through the closing </footer> tag) and paste it as the last child
+     of <body>, after </main>.
+
+  3. COPY the <style> block from this fragment and paste it inside <body>
+     (before </body>, after </footer>) IF the leaf page does not already
+     include equivalent nav/footer styles.  The style block is prefixed
+     with id="shell-styles" for deduplication.
+
+  4. ACTIVE NAV ITEM — SETUP:
+     The navigation bar exposes stable data-nav-key attributes on every
+     link (including the wordmark).  To mark the current page, add
+     data-active="true" to exactly one <a> element whose data-nav-key
+     matches the leaf page.
+
+     Example (for the "Research" page):
+       <a href="../pages/research.html" data-nav-key="research" data-dom-id="nav-research" data-active="true">Research</a>
+
+     The CSS rule [data-active="true"] applies:
+       - var(--scholar-primary) text color
+       - A 2px solid underline indicator (var(--scholar-primary))
+       - Slightly increased font-weight
+
+     <!-- SLOT: activeNavItem -->
+     Leaf pages: set data-active="true" on the link whose data-nav-key
+     matches the current page.  Both the wordmark and the explicit "Home"
+     link carry data-nav-key="home"; add data-active="true" to the "Home"
+     text link (data-dom-id="nav-home"), NOT the wordmark, so the indicator
+     appears on the explicit nav item.
+
+  5. MOBILE NAV TOGGLE:
+     The inline <script> block after the header handles the hamburger menu.
+     It must be copied together with the header markup.  It references
+     DOM IDs "mobile-menu" and "mobile-toggle".  Do not rename these IDs.
+
+  6. RESPONSIVE BREAKPOINTS:
+     - Mobile (< 768px):  hamburger toggle replaces desktop nav links;
+       links appear in a slide-down dropdown panel.
+     - Tablet / Desktop (>= 768px): horizontal nav row with all links visible.
+
+  7. DEPENDENCIES (must exist in the page <head>):
+     - Tailwind CSS CDN (v4, via @tailwindcss/browser)
+     - Lucide icons CDN (lucide@1.7.0)
+     - lucide.createIcons() call in a <script> before </body>
+     - Brand CSS variables defined via <style id="theme-vars">
+     - The fragment's own <style id="shell-styles"> (provided below)
+================================================================================
+-->
+
+<style id="shell-styles">
+  /* ---- NAVIGATION BAR ---- */
+  .shell-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: var(--scholar-background);
+    border-bottom: 1px solid var(--scholar-border);
+  }
+  @supports (backdrop-filter: blur(12px)) {
+    .shell-nav {
+      background-color: color-mix(in srgb, var(--scholar-background) 92%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  }
+  .shell-nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  @media (min-width: 768px) {
+    .shell-nav-inner {
+      padding: 0 32px;
+    }
+  }
+
+  /* Wordmark group */
+  .shell-wordmark {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    text-decoration: none;
+    color: var(--scholar-foreground);
+    flex-shrink: 0;
+    transition: opacity 180ms ease;
+  }
+  .shell-wordmark:hover {
+    opacity: 0.78;
+  }
+  .shell-wordmark-main {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+  .shell-wordmark-name {
+    font-family: 'Newsreader', 'Georgia', 'Times New Roman', serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.2;
+    color: var(--scholar-foreground);
+    letter-spacing: -0.01em;
+  }
+  .shell-wordmark-phd {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--scholar-primary);
+    background-color: color-mix(in srgb, var(--scholar-primary) 12%, transparent);
+    padding: 1px 5px;
+    border-radius: 4px;
+    vertical-align: super;
+    line-height: 1;
+  }
+  .shell-wordmark-desc {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--scholar-muted-foreground);
+    line-height: 1;
+  }
+
+  /* Desktop nav links */
+  .shell-nav-links {
+    display: none;
+    align-items: center;
+    gap: 2px;
+  }
+  @media (min-width: 768px) {
+    .shell-nav-links {
+      display: flex;
+    }
+  }
+  .shell-nav-link {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 450;
+    color: var(--scholar-muted-foreground);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: var(--scholar-radius-small);
+    position: relative;
+    transition: color 180ms ease;
+    white-space: nowrap;
+  }
+  .shell-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 12px;
+    right: 12px;
+    height: 2px;
+    background-color: var(--scholar-primary);
+    border-radius: 1px;
+    transform: scaleX(0);
+    transition: transform 200ms ease;
+    transform-origin: left center;
+  }
+  .shell-nav-link:hover {
+    color: var(--scholar-foreground);
+  }
+  .shell-nav-link:hover::after {
+    transform: scaleX(1);
+  }
+  .shell-nav-link:focus-visible {
+    outline: 2px solid var(--scholar-primary);
+    outline-offset: 2px;
+    border-radius: var(--scholar-radius-small);
+  }
+  .shell-nav-link[data-active="true"] {
+    color: var(--scholar-primary);
+    font-weight: 550;
+  }
+  .shell-nav-link[data-active="true"]::after {
+    transform: scaleX(1);
+    background-color: var(--scholar-primary);
+  }
+
+  /* Contact CTA button */
+  .shell-nav-cta {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 550;
+    color: var(--scholar-primary-foreground);
+    background-color: var(--scholar-primary);
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: var(--scholar-radius-medium);
+    margin-left: 6px;
+    white-space: nowrap;
+    transition: background-color 200ms ease, transform 200ms ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .shell-nav-cta:hover {
+    background-color: var(--scholar-primary-800);
+    transform: translateY(-1px);
+  }
+  .shell-nav-cta:active {
+    transform: translateY(0);
+  }
+  .shell-nav-cta:focus-visible {
+    outline: 2px solid var(--scholar-primary);
+    outline-offset: 2px;
+  }
+
+  /* Hamburger toggle */
+  .shell-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    border-radius: var(--scholar-radius-small);
+    color: var(--scholar-foreground);
+    transition: background-color 150ms ease;
+    flex-shrink: 0;
+  }
+  .shell-hamburger:hover {
+    background-color: color-mix(in srgb, var(--scholar-foreground) 6%, transparent);
+  }
+  .shell-hamburger:focus-visible {
+    outline: 2px solid var(--scholar-primary);
+    outline-offset: 2px;
+  }
+  .shell-hamburger svg {
+    pointer-events: none;
+  }
+  @media (min-width: 768px) {
+    .shell-hamburger {
+      display: none;
+    }
+  }
+
+  /* Mobile menu dropdown */
+  .shell-mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: var(--scholar-card);
+    border-bottom: 1px solid var(--scholar-border);
+    padding: 12px 16px 16px;
+    gap: 4px;
+    box-shadow: var(--scholar-shadow-float);
+  }
+  .shell-mobile-menu.open {
+    display: flex;
+  }
+  @media (min-width: 768px) {
+    .shell-mobile-menu,
+    .shell-mobile-menu.open {
+      display: none;
+    }
+  }
+  .shell-mobile-link {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    font-weight: 450;
+    color: var(--scholar-muted-foreground);
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: var(--scholar-radius-medium);
+    transition: color 160ms ease, background-color 160ms ease;
+    white-space: nowrap;
+  }
+  .shell-mobile-link:hover {
+    color: var(--scholar-foreground);
+    background-color: color-mix(in srgb, var(--scholar-foreground) 4%, transparent);
+  }
+  .shell-mobile-link[data-active="true"] {
+    color: var(--scholar-primary);
+    font-weight: 550;
+    background-color: color-mix(in srgb, var(--scholar-primary) 8%, transparent);
+  }
+  .shell-mobile-link:focus-visible {
+    outline: 2px solid var(--scholar-primary);
+    outline-offset: 2px;
+  }
+  .shell-mobile-cta {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    font-weight: 550;
+    color: var(--scholar-primary-foreground);
+    background-color: var(--scholar-primary);
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: var(--scholar-radius-medium);
+    text-align: center;
+    margin-top: 6px;
+    transition: background-color 200ms ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .shell-mobile-cta:hover {
+    background-color: var(--scholar-primary-800);
+  }
+
+  /* ---- FOOTER ---- */
+  .shell-footer {
+    background-color: var(--scholar-primary-900);
+    color: var(--scholar-primary-foreground);
+    padding: 56px 16px 0;
+  }
+  @media (min-width: 768px) {
+    .shell-footer {
+      padding: 64px 32px 0;
+    }
+  }
+  .shell-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  @media (min-width: 640px) {
+    .shell-footer-inner {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 1024px) {
+    .shell-footer-inner {
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+    }
+  }
+
+  .shell-footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .shell-footer-brand-name {
+    font-family: 'Newsreader', 'Georgia', 'Times New Roman', serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--scholar-primary-foreground);
+    letter-spacing: -0.01em;
+  }
+  .shell-footer-brand-role {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    line-height: 1.55;
+    color: color-mix(in srgb, var(--scholar-primary-foreground) 75%, transparent);
+    max-width: 300px;
+  }
+
+  .shell-footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .shell-footer-col-title {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--scholar-primary-foreground) 55%, transparent);
+    margin-bottom: 4px;
+  }
+  .shell-footer-col a {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    color: color-mix(in srgb, var(--scholar-primary-foreground) 75%, transparent);
+    text-decoration: none;
+    transition: color 180ms ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.5;
+  }
+  .shell-footer-col a:hover {
+    color: var(--scholar-primary-foreground);
+  }
+  .shell-footer-col a:focus-visible {
+    outline: 2px solid var(--scholar-primary-foreground);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  .shell-footer-col i {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    opacity: 0.65;
+  }
+
+  .shell-footer-bottom {
+    max-width: 1200px;
+    margin: 48px auto 0;
+    padding: 18px 0;
+    border-top: 1px solid color-mix(in srgb, var(--scholar-primary-foreground) 15%, transparent);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+  @media (min-width: 640px) {
+    .shell-footer-bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  .shell-footer-copy {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    color: color-mix(in srgb, var(--scholar-primary-foreground) 55%, transparent);
+  }
+  .shell-footer-locale {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    color: color-mix(in srgb, var(--scholar-primary-foreground) 45%, transparent);
+  }
+
+  /* ---- REDUCED MOTION ---- */
+  @media (prefers-reduced-motion: reduce) {
+    .shell-nav-link,
+    .shell-nav-link::after,
+    .shell-nav-cta,
+    .shell-mobile-link,
+    .shell-mobile-cta,
+    .shell-wordmark,
+    .shell-footer-col a {
+      transition-duration: 0.01ms !important;
+    }
+    .shell-nav-cta:hover {
+      transform: none;
+    }
+  }
+</style>
+
+<!-- SHELL:HEADER -->
+<header class="shell-nav" role="banner">
+  <div class="shell-nav-inner">
+
+    <!-- Wordmark -->
+    <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-home-brand" class="shell-wordmark" aria-label="Yuqian Zhang — Home">
+      <div class="shell-wordmark-main">
+        <span class="shell-wordmark-name">Yuqian Zhang</span>
+        <span class="shell-wordmark-phd">PhD</span>
+      </div>
+      <span class="shell-wordmark-desc">Accounting &middot; Finance &middot; AI</span>
+    </a>
+
+    <!-- Desktop nav links -->
+    <nav class="shell-nav-links" aria-label="Main navigation">
+      <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-home" class="shell-nav-link">Home</a>
+      <a href="../pages/research.html" data-nav-key="research" data-dom-id="nav-research" class="shell-nav-link">Research</a>
+      <a href="../pages/data-code.html" data-nav-key="data-code" data-dom-id="nav-data-code" class="shell-nav-link">Data &amp; Code</a>
+      <a href="../pages/insights.html" data-nav-key="insights" data-dom-id="nav-insights" class="shell-nav-link">Insights</a>
+      <a href="../pages/contact.html" data-nav-key="contact" data-dom-id="nav-contact" class="shell-nav-cta">Contact</a>
+    </nav>
+
+    <!-- Mobile hamburger toggle -->
+    <button class="shell-hamburger" id="mobile-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+      <svg id="hamburger-icon" width="22" height="16" viewBox="0 0 22 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="1" y1="1" x2="21" y2="1"/>
+        <line x1="1" y1="8" x2="21" y2="8"/>
+        <line x1="1" y1="15" x2="21" y2="15"/>
+      </svg>
+      <svg id="close-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;">
+        <line x1="3" y1="3" x2="17" y2="17"/>
+        <line x1="17" y1="3" x2="3" y2="17"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile dropdown menu -->
+  <div class="shell-mobile-menu" id="mobile-menu" role="menu" aria-label="Mobile navigation">
+    <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-mobile-home" class="shell-mobile-link" role="menuitem">Home</a>
+    <a href="../pages/research.html" data-nav-key="research" data-dom-id="nav-mobile-research" class="shell-mobile-link" role="menuitem">Research</a>
+    <a href="../pages/data-code.html" data-nav-key="data-code" data-dom-id="nav-mobile-data-code" class="shell-mobile-link" role="menuitem">Data &amp; Code</a>
+    <a href="../pages/insights.html" data-nav-key="insights" data-dom-id="nav-mobile-insights" class="shell-mobile-link" role="menuitem">Insights</a>
+    <a href="../pages/contact.html" data-nav-key="contact" data-dom-id="nav-mobile-contact" class="shell-mobile-cta" role="menuitem">Contact</a>
+  </div>
+</header>
+
+<script>
+(function() {
+  var toggle = document.getElementById('mobile-toggle');
+  var menu = document.getElementById('mobile-menu');
+  var hamburgerIcon = document.getElementById('hamburger-icon');
+  var closeIcon = document.getElementById('close-icon');
+  if (!toggle || !menu) return;
+
+  function openMenu() {
+    menu.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    hamburgerIcon.style.display = 'none';
+    closeIcon.style.display = 'block';
+  }
+  function closeMenu() {
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    hamburgerIcon.style.display = 'block';
+    closeIcon.style.display = 'none';
+  }
+  toggle.addEventListener('click', function() {
+    if (menu.classList.contains('open')) { closeMenu(); }
+    else { openMenu(); }
+  });
+  menu.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') { closeMenu(); }
+  });
+  document.addEventListener('click', function(e) {
+    if (!toggle.contains(e.target) && !menu.contains(e.target)) { closeMenu(); }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && menu.classList.contains('open')) {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+})();
+</script>
+<!-- /SHELL:HEADER -->
+
+<!-- SLOT: mainContent -->
+<!-- Leaf pages: inject your private <main>...</main> content here. -->
+<!-- This comment marks the boundary between the shared header and the page-specific body. -->
+
+<!-- SHELL:FOOTER -->
+<footer class="shell-footer" role="contentinfo">
+  <div class="shell-footer-inner">
+
+    <!-- Column 1: Brand + positioning -->
+    <div class="shell-footer-brand">
+      <span class="shell-footer-brand-name">Yuqian Zhang</span>
+      <p class="shell-footer-brand-role">Senior Lecturer in Accounting, Auckland University of Technology, New Zealand</p>
+    </div>
+
+    <!-- Column 2: Explore links -->
+    <div class="shell-footer-col">
+      <span class="shell-footer-col-title">Explore</span>
+      <a href="../pages/index.html">Home</a>
+      <a href="../pages/research.html">Research</a>
+      <a href="../pages/data-code.html">Data &amp; Code</a>
+      <a href="../pages/insights.html">Insights</a>
+      <a href="../pages/contact.html">Contact</a>
+    </div>
+
+    <!-- Column 3: Connect -->
+    <div class="shell-footer-col">
+      <span class="shell-footer-col-title">Connect</span>
+      <a href="mailto:yuqian.zhang@aut.ac.nz">
+        <i data-lucide="mail" class="w-4 h-4"></i>
+        yuqian.zhang@aut.ac.nz
+      </a>
+      <a href="https://orcid.org/0000-0001-5667-4002" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile: 0000-0001-5667-4002">
+        <i data-lucide="fingerprint" class="w-4 h-4"></i>
+        ORCID
+      </a>
+      <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=" target="_blank" rel="noopener noreferrer" aria-label="SSRN author page">
+        <i data-lucide="file-text" class="w-4 h-4"></i>
+        SSRN
+      </a>
+      <a href="https://scholar.google.com/citations?user=" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile">
+        <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+        Google Scholar
+      </a>
+    </div>
+  </div>
+
+  <div class="shell-footer-bottom">
+    <span class="shell-footer-copy">&copy; 2026 Yuqian Zhang. All rights reserved.</span>
+    <span class="shell-footer-locale">New Zealand</span>
+  </div>
+</footer>
+<!-- /SHELL:FOOTER -->

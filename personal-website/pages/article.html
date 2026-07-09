@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html class="light" lang="en-NZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Metaverse and the Accounting Profession — Yuqian Zhang</title>
+    <style id="theme-vars">
+:root {
+  --scholar-background: #f7f4ec;
+  --scholar-foreground: #23241f;
+  --scholar-card: #fffdf8;
+  --scholar-card-foreground: #23241f;
+  --scholar-popover: #fffdf8;
+  --scholar-popover-foreground: #23241f;
+  --scholar-muted: #f1ece0;
+  --scholar-muted-foreground: #6a685e;
+  --scholar-border: #ded8ca;
+  --scholar-input: #ded8ca;
+  --scholar-ring: #1f4d3f;
+
+  --scholar-primary: #1f4d3f;
+  --scholar-primary-foreground: #f7f4ec;
+  --scholar-primary-100: #e7efeb;
+  --scholar-primary-200: #c7ddd4;
+  --scholar-primary-300: #9fc3b5;
+  --scholar-primary-400: #6a9c8b;
+  --scholar-primary-500: #3f7565;
+  --scholar-primary-600: #2b5d4d;
+  --scholar-primary-700: #1f4d3f;
+  --scholar-primary-800: #184033;
+  --scholar-primary-900: #123227;
+
+  --state-success: #3f7565;
+  --state-warning: #a8792b;
+  --state-error: #a23b32;
+  --state-info: #2f5d7a;
+
+  --scholar-radius-small: 4px;
+  --scholar-radius-medium: 8px;
+  --scholar-radius-large: 16px;
+  --scholar-radius-xlarge: 16px;
+  --scholar-radius-full: 9999px;
+
+  --scholar-shadow-card: 0 1px 2px rgba(31, 37, 32, 0.04);
+  --scholar-shadow-float: 0 14px 34px -14px rgba(18, 50, 38, 0.22);
+
+  --scholar-font-serif: 'Newsreader', 'Georgia', 'Times New Roman', serif;
+  --scholar-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --scholar-font-mono: 'IBM Plex Mono', 'SFMono-Regular', ui-monospace, 'Menlo', monospace;
+}
+
+.font-serif { font-family: var(--scholar-font-serif); }
+.font-sans { font-family: var(--scholar-font-sans); }
+.font-mono { font-family: var(--scholar-font-mono); }
+
+.scholar-display {
+  font-family: var(--scholar-font-serif);
+  font-weight: 500;
+  font-size: clamp(40px, 5.4vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.scholar-h1 {
+  font-family: var(--scholar-font-serif);
+  font-weight: 500;
+  font-size: clamp(30px, 3.8vw, 46px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+.scholar-h2 {
+  font-family: var(--scholar-font-serif);
+  font-weight: 500;
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.scholar-h3 {
+  font-family: var(--scholar-font-serif);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+}
+.scholar-eyebrow {
+  font-family: var(--scholar-font-sans);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--scholar-muted-foreground);
+}
+.scholar-body {
+  font-family: var(--scholar-font-sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.scholar-prose {
+  font-family: var(--scholar-font-serif);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--scholar-background);
+    --color-foreground: var(--scholar-foreground);
+    --color-card: var(--scholar-card);
+    --color-card-foreground: var(--scholar-card-foreground);
+    --color-popover: var(--scholar-popover);
+    --color-popover-foreground: var(--scholar-popover-foreground);
+    --color-primary: var(--scholar-primary);
+    --color-primary-foreground: var(--scholar-primary-foreground);
+    --color-muted: var(--scholar-muted);
+    --color-muted-foreground: var(--scholar-muted-foreground);
+    --color-border: var(--scholar-border);
+    --color-input: var(--scholar-input);
+    --color-ring: var(--scholar-ring);
+    --radius-sm: var(--scholar-radius-small);
+    --radius-md: var(--scholar-radius-medium);
+    --radius-lg: var(--scholar-radius-large);
+    --radius-xl: var(--scholar-radius-xlarge);
+  }
+  @layer base {
+    body { background: var(--scholar-background); color: var(--scholar-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased" style="background-color: var(--scholar-background); color: var(--scholar-foreground);">
+
+<!-- SHELL:HEADER -->
+<header class="shell-nav" role="banner">
+  <div class="shell-nav-inner">
+
+    <!-- Wordmark -->
+    <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-home-brand" class="shell-wordmark" aria-label="Yuqian Zhang — Home">
+      <div class="shell-wordmark-main">
+        <span class="shell-wordmark-name">Yuqian Zhang</span>
+        <span class="shell-wordmark-phd">PhD</span>
+      </div>
+      <span class="shell-wordmark-desc">Accounting &middot; Finance &middot; AI</span>
+    </a>
+
+    <!-- Desktop nav links -->
+    <nav class="shell-nav-links" aria-label="Main navigation">
+      <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-home" class="shell-nav-link">Home</a>
+      <a href="../pages/research.html" data-nav-key="research" data-dom-id="nav-research" class="shell-nav-link">Research</a>
+      <a href="../pages/data-code.html" data-nav-key="data-code" data-dom-id="nav-data-code" class="shell-nav-link">Data &amp; Code</a>
+      <a href="../pages/insights.html" data-nav-key="insights" data-dom-id="nav-insights" class="shell-nav-link" data-active="true">Insights</a>
+      <a href="../pages/contact.html" data-nav-key="contact" data-dom-id="nav-contact" class="shell-nav-cta">Contact</a>
+    </nav>
+
+    <!-- Mobile hamburger toggle -->
+    <button class="shell-hamburger" id="mobile-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+      <svg id="hamburger-icon" width="22" height="16" viewBox="0 0 22 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="1" y1="1" x2="21" y2="1"/>
+        <line x1="1" y1="8" x2="21" y2="8"/>
+        <line x1="1" y1="15" x2="21" y2="15"/>
+      </svg>
+      <svg id="close-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;">
+        <line x1="3" y1="3" x2="17" y2="17"/>
+        <line x1="17" y1="3" x2="3" y2="17"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile dropdown menu -->
+  <div class="shell-mobile-menu" id="mobile-menu" role="menu" aria-label="Mobile navigation">
+    <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-mobile-home" class="shell-mobile-link" role="menuitem">Home</a>
+    <a href="../pages/research.html" data-nav-key="research" data-dom-id="nav-mobile-research" class="shell-mobile-link" role="menuitem">Research</a>
+    <a href="../pages/data-code.html" data-nav-key="data-code" data-dom-id="nav-mobile-data-code" class="shell-mobile-link" role="menuitem">Data &amp; Code</a>
+    <a href="../pages/insights.html" data-nav-key="insights" data-dom-id="nav-mobile-insights" class="shell-mobile-link" role="menuitem" data-active="true">Insights</a>
+    <a href="../pages/contact.html" data-nav-key="contact" data-dom-id="nav-mobile-contact" class="shell-mobile-cta" role="menuitem">Contact</a>
+  </div>
+</header>
+
+<script>
+(function() {
+  var toggle = document.getElementById('mobile-toggle');
+  var menu = document.getElementById('mobile-menu');
+  var hamburgerIcon = document.getElementById('hamburger-icon');
+  var closeIcon = document.getElementById('close-icon');
+  if (!toggle || !menu) return;
+
+  function openMenu() {
+    menu.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    hamburgerIcon.style.display = 'none';
+    closeIcon.style.display = 'block';
+  }
+  function closeMenu() {
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    hamburgerIcon.style.display = 'block';
+    closeIcon.style.display = 'none';
+  }
+  toggle.addEventListener('click', function() {
+    if (menu.classList.contains('open')) { closeMenu(); }
+    else { openMenu(); }
+  });
+  menu.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') { closeMenu(); }
+  });
+  document.addEventListener('click', function(e) {
+    if (!toggle.contains(e.target) && !menu.contains(e.target)) { closeMenu(); }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && menu.classList.contains('open')) {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+})();
+</script>
+<!-- /SHELL:HEADER -->
+
+<!-- Reading progress bar -->
+<div id="reading-progress" aria-hidden="true" style="position: sticky; top: 68px; z-index: 49; height: 3px; width: 0%; background-color: var(--scholar-primary); transition: width 60ms linear;"></div>
+
+<main>
+  <article style="max-width: 72ch; margin: 0 auto; padding: 48px 20px 80px;">
+
+    <!-- Breadcrumb / Back -->
+    <div style="margin-bottom: 36px;">
+      <a href="../pages/insights.html" data-dom-id="back-insights" style="display: inline-flex; align-items: center; gap: 6px; font-family: var(--scholar-font-sans); font-size: 14px; font-weight: 450; color: var(--scholar-muted-foreground); text-decoration: none; transition: color 180ms ease;" onmouseover="this.style.color='var(--scholar-foreground)'" onmouseout="this.style.color='var(--scholar-muted-foreground)'">
+        <i data-lucide="arrow-left" style="width: 16px; height: 16px; flex-shrink: 0;"></i>
+        Back to Insights
+      </a>
+    </div>
+
+    <!-- Masthead -->
+    <header style="margin-bottom: 48px;">
+
+      <!-- Topic pill -->
+      <div style="margin-bottom: 16px;">
+        <span style="display: inline-flex; align-items: center; justify-content: center; height: 24px; padding: 2px 10px; font-family: var(--scholar-font-sans); font-size: 12px; font-weight: 550; letter-spacing: 0.06em; text-transform: uppercase; color: var(--scholar-primary-foreground); background-color: var(--scholar-primary-600); border-radius: var(--scholar-radius-full); whitespace: nowrap;">AI &amp; Digital</span>
+      </div>
+
+      <h1 class="scholar-h1" style="color: var(--scholar-foreground); margin-bottom: 16px;">The Metaverse and the Accounting Profession</h1>
+
+      <p style="font-family: var(--scholar-font-serif); font-size: 19px; font-weight: 400; font-style: italic; line-height: 1.55; color: var(--scholar-muted-foreground); margin-bottom: 28px; max-width: 64ch;">How immersive technologies may reshape the way transactions are recorded, audited, and governed.</p>
+
+      <!-- Byline row -->
+      <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-family: var(--scholar-font-sans); font-size: 14px; color: var(--scholar-muted-foreground); line-height: 1;">
+        <span style="font-weight: 550; color: var(--scholar-foreground);">By Yuqian Zhang</span>
+        <span aria-hidden="true" style="color: var(--scholar-border);">&middot;</span>
+        <time datetime="2026" style="font-weight: 400;">2026</time>
+        <span aria-hidden="true" style="color: var(--scholar-border);">&middot;</span>
+        <span style="font-weight: 400;">Working paper</span>
+
+        <!-- Share group -->
+        <span style="margin-left: auto; display: flex; align-items: center; gap: 10px;">
+          <button aria-label="Copy link to this article" style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: none; border: 1px solid var(--scholar-border); border-radius: var(--scholar-radius-small); color: var(--scholar-muted-foreground); cursor: pointer; padding: 0; transition: color 180ms ease, border-color 180ms ease;" onmouseover="this.style.color='var(--scholar-primary)'; this.style.borderColor='var(--scholar-primary)'" onmouseout="this.style.color='var(--scholar-muted-foreground)'; this.style.borderColor='var(--scholar-border)'">
+            <i data-lucide="link" style="width: 15px; height: 15px;"></i>
+          </button>
+          <button aria-label="Share via email" style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: none; border: 1px solid var(--scholar-border); border-radius: var(--scholar-radius-small); color: var(--scholar-muted-foreground); cursor: pointer; padding: 0; transition: color 180ms ease, border-color 180ms ease;" onmouseover="this.style.color='var(--scholar-primary)'; this.style.borderColor='var(--scholar-primary)'" onmouseout="this.style.color='var(--scholar-muted-foreground)'; this.style.borderColor='var(--scholar-border)'">
+            <i data-lucide="mail" style="width: 15px; height: 15px;"></i>
+          </button>
+        </span>
+      </div>
+    </header>
+
+    <!-- Lead image -->
+    <figure style="margin: 0 0 12px 0;">
+      <img src="../assets/article-lead.jpg" alt="An open notebook, pen, and reading lamp on a warm desk, suggesting a reflective writing and research setting" style="width: 100%; height: auto; border-radius: var(--scholar-radius-large); border: 1px solid var(--scholar-border); display: block;">
+      <figcaption style="font-family: var(--scholar-font-serif); font-size: 14px; font-style: italic; color: var(--scholar-muted-foreground); text-align: center; padding: 8px 16px 0;">Reflection and reproducibility remain central, whatever the medium.</figcaption>
+    </figure>
+
+    <!-- Abstract + SSRN link -->
+    <div style="margin-top: 48px;">
+
+      <h2 class="scholar-h2" style="color: var(--scholar-foreground); margin-bottom: 20px;">Abstract</h2>
+
+      <p class="scholar-prose" style="margin-bottom: 28px; color: var(--scholar-foreground);">This working paper examines how the metaverse and related immersive technologies may influence accounting practice in the coming decade. It considers three interconnected areas: the recognition and measurement of new digital asset classes under existing financial reporting standards; the changing nature and location of audit evidence when transactions occur within synthetic environments; and the competencies the accounting profession will need to remain effective as these technologies mature. Rather than treating the metaverse as a distant or speculative concern, the paper situates it within a broader trajectory of technological change that has already reshaped financial reporting and assurance work.</p>
+
+      <p class="scholar-prose" style="margin-bottom: 28px; color: var(--scholar-foreground);">The argument advanced is that early engagement by practitioners, educators, and standard setters is preferable to a reactive posture adopted only after the technology reaches critical mass. Existing conceptual frameworks, including the IASB's qualitative characteristics of useful financial information, provide a sound starting point, but their application to metaverse contexts requires interpretive guidance and professional development that remains uneven across the profession. The paper concludes by identifying several directions for future research, including empirical work on how digital-asset markets behave and how assurance quality can be maintained when evidence trails are platform-dependent.</p>
+
+      <!-- SSRN link -->
+      <div style="margin-top: 36px; margin-bottom: 56px;">
+        <a href="https://ssrn.com/abstract=5200976" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--scholar-font-mono); font-size: 14px; font-weight: 450; color: var(--scholar-primary); text-decoration: none; padding: 10px 18px; border: 1px solid var(--scholar-border); border-radius: var(--scholar-radius-medium); transition: border-color 180ms ease, background-color 180ms ease;" onmouseover="this.style.borderColor='var(--scholar-primary-300)'; this.style.backgroundColor='var(--scholar-primary-100)'" onmouseout="this.style.borderColor='var(--scholar-border)'; this.style.backgroundColor='transparent'">
+          <i data-lucide="external-link" style="width: 15px; height: 15px; flex-shrink: 0;"></i>
+          Read on SSRN
+        </a>
+      </div>
+
+      <!-- Author card -->
+      <section style="padding: 28px 28px 24px; background-color: var(--scholar-card); border: 1px solid var(--scholar-border); border-radius: var(--scholar-radius-medium);">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <h2 style="font-family: var(--scholar-font-sans); font-weight: 600; font-size: 13px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--scholar-muted-foreground); margin: 0;">About the author</h2>
+          <p style="font-family: var(--scholar-font-serif); font-size: 16px; line-height: 1.6; color: var(--scholar-foreground); margin: 0;">Yuqian (Michael) Zhang, PhD, CPA Australia, is a Senior Lecturer in Accounting at Auckland University of Technology. His research focuses on textual analysis, AI and digital transformation, and ESG disclosure.</p>
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <a href="../pages/insights.html" style="font-family: var(--scholar-font-sans); font-size: 14px; font-weight: 450; color: var(--scholar-primary); text-decoration: none; transition: color 160ms ease; position: relative; padding-bottom: 2px;" onmouseover="this.style.color='var(--scholar-primary-700)'" onmouseout="this.style.color='var(--scholar-primary)'">More insights</a>
+            <a href="../pages/contact.html" data-dom-id="cta-contact" style="display: inline-flex; align-items: center; justify-content: center; font-family: var(--scholar-font-sans); font-size: 14px; font-weight: 550; color: var(--scholar-primary-foreground); background-color: var(--scholar-primary); text-decoration: none; padding: 8px 18px; border-radius: var(--scholar-radius-medium); white-space: nowrap; line-height: 1; transition: background-color 200ms ease, transform 200ms ease;" onmouseover="this.style.backgroundColor='var(--scholar-primary-800)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.backgroundColor='var(--scholar-primary)'; this.style.transform='translateY(0)'">Get in touch</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related reading -->
+      <section style="margin-top: 56px;">
+        <h2 style="font-family: var(--scholar-font-sans); font-weight: 600; font-size: 13px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--scholar-muted-foreground); margin: 0 0 20px 0;">Related reading</h2>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <a href="../pages/insights.html" style="display: block; padding: 18px 20px; background-color: var(--scholar-card); border: 1px solid var(--scholar-border); border-radius: var(--scholar-radius-medium); text-decoration: none; transition: border-color 180ms ease, transform 180ms ease;" onmouseover="this.style.borderColor='var(--scholar-primary-300)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.borderColor='var(--scholar-border)'; this.style.transform='translateY(0)'">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+              <span style="display: inline-flex; align-items: center; justify-content: center; height: 22px; padding: 0 8px; font-family: var(--scholar-font-sans); font-size: 11px; font-weight: 550; letter-spacing: 0.05em; text-transform: uppercase; color: var(--scholar-primary-foreground); background-color: var(--scholar-primary-500); border-radius: var(--scholar-radius-full); white-space: nowrap;">AI &amp; Digital</span>
+              <span style="font-family: var(--scholar-font-sans); font-size: 12px; color: var(--scholar-muted-foreground);">7 min read</span>
+            </div>
+            <span style="font-family: var(--scholar-font-serif); font-size: 17px; font-weight: 450; color: var(--scholar-foreground); line-height: 1.4;">Textual analysis in accounting research: tools, practices, and pitfalls</span>
+          </a>
+          <a href="../pages/insights.html" style="display: block; padding: 18px 20px; background-color: var(--scholar-card); border: 1px solid var(--scholar-border); border-radius: var(--scholar-radius-medium); text-decoration: none; transition: border-color 180ms ease, transform 180ms ease;" onmouseover="this.style.borderColor='var(--scholar-primary-300)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.borderColor='var(--scholar-border)'; this.style.transform='translateY(0)'">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+              <span style="display: inline-flex; align-items: center; justify-content: center; height: 22px; padding: 0 8px; font-family: var(--scholar-font-sans); font-size: 11px; font-weight: 550; letter-spacing: 0.05em; text-transform: uppercase; color: var(--scholar-primary-foreground); background-color: var(--scholar-primary-500); border-radius: var(--scholar-radius-full); white-space: nowrap;">ESG</span>
+              <span style="font-family: var(--scholar-font-sans); font-size: 12px; color: var(--scholar-muted-foreground);">5 min read</span>
+            </div>
+            <span style="font-family: var(--scholar-font-serif); font-size: 17px; font-weight: 450; color: var(--scholar-foreground); line-height: 1.4;">How disclosure tone shapes stakeholder perceptions: evidence from New Zealand</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+
+  </article>
+</main>
+
+<!-- SHELL:FOOTER -->
+<footer class="shell-footer" role="contentinfo">
+  <div class="shell-footer-inner">
+
+    <!-- Column 1: Brand + positioning -->
+    <div class="shell-footer-brand">
+      <span class="shell-footer-brand-name">Yuqian Zhang</span>
+      <p class="shell-footer-brand-role">Senior Lecturer in Accounting, Auckland University of Technology, New Zealand</p>
+    </div>
+
+    <!-- Column 2: Explore links -->
+    <div class="shell-footer-col">
+      <span class="shell-footer-col-title">Explore</span>
+      <a href="../pages/index.html">Home</a>
+      <a href="../pages/research.html">Research</a>
+      <a href="../pages/data-code.html">Data &amp; Code</a>
+      <a href="../pages/insights.html">Insights</a>
+      <a href="../pages/contact.html">Contact</a>
+    </div>
+
+    <!-- Column 3: Connect -->
+    <div class="shell-footer-col">
+      <span class="shell-footer-col-title">Connect</span>
+      <a href="mailto:yuqian.zhang@aut.ac.nz">
+        <i data-lucide="mail" class="w-4 h-4"></i>
+        yuqian.zhang@aut.ac.nz
+      </a>
+      <a href="https://orcid.org/0000-0001-5667-4002" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile: 0000-0001-5667-4002">
+        <i data-lucide="fingerprint" class="w-4 h-4"></i>
+        ORCID
+      </a>
+      <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=" target="_blank" rel="noopener noreferrer" aria-label="SSRN author page">
+        <i data-lucide="file-text" class="w-4 h-4"></i>
+        SSRN
+      </a>
+      <a href="https://scholar.google.com/citations?user=" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile">
+        <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+        Google Scholar
+      </a>
+    </div>
+  </div>
+
+  <div class="shell-footer-bottom">
+    <span class="shell-footer-copy">&copy; 2026 Yuqian Zhang. All rights reserved.</span>
+    <span class="shell-footer-locale">New Zealand</span>
+  </div>
+</footer>
+<!-- /SHELL:FOOTER -->
+
+<!-- shell-styles -->
+<style id="shell-styles">
+  /* ---- NAVIGATION BAR ---- */
+  .shell-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: var(--scholar-background);
+    border-bottom: 1px solid var(--scholar-border);
+  }
+  @supports (backdrop-filter: blur(12px)) {
+    .shell-nav {
+      background-color: color-mix(in srgb, var(--scholar-background) 92%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  }
+  .shell-nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  @media (min-width: 768px) {
+    .shell-nav-inner {
+      padding: 0 32px;
+    }
+  }
+
+  /* Wordmark group */
+  .shell-wordmark {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    text-decoration: none;
+    color: var(--scholar-foreground);
+    flex-shrink: 0;
+    transition: opacity 180ms ease;
+  }
+  .shell-wordmark:hover {
+    opacity: 0.78;
+  }
+  .shell-wordmark-main {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+  .shell-wordmark-name {
+    font-family: 'Newsreader', 'Georgia', 'Times New Roman', serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.2;
+    color: var(--scholar-foreground);
+    letter-spacing: -0.01em;
+  }
+  .shell-wordmark-phd {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--scholar-primary);
+    background-color: color-mix(in srgb, var(--scholar-primary) 12%, transparent);
+    padding: 1px 5px;
+    border-radius: 4px;
+    vertical-align: super;
+    line-height: 1;
+  }
+  .shell-wordmark-desc {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--scholar-muted-foreground);
+    line-height: 1;
+  }
+
+  /* Desktop nav links */
+  .shell-nav-links {
+    display: none;
+    align-items: center;
+    gap: 2px;
+  }
+  @media (min-width: 768px) {
+    .shell-nav-links {
+      display: flex;
+    }
+  }
+  .shell-nav-link {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 450;
+    color: var(--scholar-muted-foreground);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: var(--scholar-radius-small);
+    position: relative;
+    transition: color 180ms ease;
+    white-space: nowrap;
+  }
+  .shell-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 12px;
+    right: 12px;
+    height: 2px;
+    background-color: var(--scholar-primary);
+    border-radius: 1px;
+    transform: scaleX(0);
+    transition: transform 200ms ease;
+    transform-origin: left center;
+  }
+  .shell-nav-link:hover {
+    color: var(--scholar-foreground);
+  }
+  .shell-nav-link:hover::after {
+    transform: scaleX(1);
+  }
+  .shell-nav-link:focus-visible {
+    outline: 2px solid var(--scholar-primary);
+    outline-offset: 2px;
+    border-radius: var(--scholar-radius-small);
+  }
+  .shell-nav-link[data-active="true"] {
+    color: var(--scholar-primary);
+    font-weight: 550;
+  }
+  .shell-nav-link[data-active="true"]::after {
+    transform: scaleX(1);
+    background-color: var(--scholar-primary);
+  }
+
+  /* Contact CTA button */
+  .shell-nav-cta {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 550;
+    color: var(--scholar-primary-foreground);
+    background-color: var(--scholar-primary);
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: var(--scholar-radius-medium);
+    margin-left: 6px;
+    white-space: nowrap;
+    transition: background-color 200ms ease, transform 200ms ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .shell-nav-cta:hover {
+    background-color: var(--scholar-primary-800);
+    transform: translateY(-1px);
+  }
+  .shell-nav-cta:active {
+    transform: translateY(0);
+  }
+  .shell-nav-cta:focus-visible {
+    outline: 2px solid var(--scholar-primary);
+    outline-offset: 2px;
+  }
+
+  /* Hamburger toggle */
+  .shell-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    border-radius: var(--scholar-radius-small);
+    color: var(--scholar-foreground);
+    transition: background-color 150ms ease;
+    flex-shrink: 0;
+  }
+  .shell-hamburger:hover {
+    background-color: color-mix(in srgb, var(--scholar-foreground) 6%, transparent);
+  }
+  .shell-hamburger:focus-visible {
+    outline: 2px solid var(--scholar-primary);
+    outline-offset: 2px;
+  }
+  .shell-hamburger svg {
+    pointer-events: none;
+  }
+  @media (min-width: 768px) {
+    .shell-hamburger {
+      display: none;
+    }
+  }
+
+  /* Mobile menu dropdown */
+  .shell-mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: var(--scholar-card);
+    border-bottom: 1px solid var(--scholar-border);
+    padding: 12px 16px 16px;
+    gap: 4px;
+    box-shadow: var(--scholar-shadow-float);
+  }
+  .shell-mobile-menu.open {
+    display: flex;
+  }
+  @media (min-width: 768px) {
+    .shell-mobile-menu,
+    .shell-mobile-menu.open {
+      display: none;
+    }
+  }
+  .shell-mobile-link {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    font-weight: 450;
+    color: var(--scholar-muted-foreground);
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: var(--scholar-radius-medium);
+    transition: color 160ms ease, background-color 160ms ease;
+    white-space: nowrap;
+  }
+  .shell-mobile-link:hover {
+    color: var(--scholar-foreground);
+    background-color: color-mix(in srgb, var(--scholar-foreground) 4%, transparent);
+  }
+  .shell-mobile-link[data-active="true"] {
+    color: var(--scholar-primary);
+    font-weight: 550;
+    background-color: color-mix(in srgb, var(--scholar-primary) 8%, transparent);
+  }
+  .shell-mobile-link:focus-visible {
+    outline: 2px solid var(--scholar-primary);
+    outline-offset: 2px;
+  }
+  .shell-mobile-cta {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    font-weight: 550;
+    color: var(--scholar-primary-foreground);
+    background-color: var(--scholar-primary);
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: var(--scholar-radius-medium);
+    text-align: center;
+    margin-top: 6px;
+    transition: background-color 200ms ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .shell-mobile-cta:hover {
+    background-color: var(--scholar-primary-800);
+  }
+
+  /* ---- FOOTER ---- */
+  .shell-footer {
+    background-color: var(--scholar-primary-900);
+    color: var(--scholar-primary-foreground);
+    padding: 56px 16px 0;
+  }
+  @media (min-width: 768px) {
+    .shell-footer {
+      padding: 64px 32px 0;
+    }
+  }
+  .shell-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  @media (min-width: 640px) {
+    .shell-footer-inner {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 1024px) {
+    .shell-footer-inner {
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+    }
+  }
+
+  .shell-footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .shell-footer-brand-name {
+    font-family: 'Newsreader', 'Georgia', 'Times New Roman', serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--scholar-primary-foreground);
+    letter-spacing: -0.01em;
+  }
+  .shell-footer-brand-role {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    line-height: 1.55;
+    color: color-mix(in srgb, var(--scholar-primary-foreground) 75%, transparent);
+    max-width: 300px;
+  }
+
+  .shell-footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .shell-footer-col-title {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--scholar-primary-foreground) 55%, transparent);
+    margin-bottom: 4px;
+  }
+  .shell-footer-col a {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    color: color-mix(in srgb, var(--scholar-primary-foreground) 75%, transparent);
+    text-decoration: none;
+    transition: color 180ms ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.5;
+  }
+  .shell-footer-col a:hover {
+    color: var(--scholar-primary-foreground);
+  }
+  .shell-footer-col a:focus-visible {
+    outline: 2px solid var(--scholar-primary-foreground);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  .shell-footer-col i {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    opacity: 0.65;
+  }
+
+  .shell-footer-bottom {
+    max-width: 1200px;
+    margin: 48px auto 0;
+    padding: 18px 0;
+    border-top: 1px solid color-mix(in srgb, var(--scholar-primary-foreground) 15%, transparent);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+  @media (min-width: 640px) {
+    .shell-footer-bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  .shell-footer-copy {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    color: color-mix(in srgb, var(--scholar-primary-foreground) 55%, transparent);
+  }
+  .shell-footer-locale {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    color: color-mix(in srgb, var(--scholar-primary-foreground) 45%, transparent);
+  }
+
+  /* ---- REDUCED MOTION ---- */
+  @media (prefers-reduced-motion: reduce) {
+    .shell-nav-link,
+    .shell-nav-link::after,
+    .shell-nav-cta,
+    .shell-mobile-link,
+    .shell-mobile-cta,
+    .shell-wordmark,
+    .shell-footer-col a {
+      transition-duration: 0.01ms !important;
+    }
+    .shell-nav-cta:hover {
+      transform: none;
+    }
+  }
+</style>
+
+<!-- page-specific styles -->
+<style>
+  /* Reduced motion: keep progress functional but remove smooth-scroll transitions */
+  @media (prefers-reduced-motion: reduce) {
+    #reading-progress {
+      transition: none;
+    }
+    article a,
+    article button {
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Fade-in masthead entrance */
+  @media (prefers-reduced-motion: no-preference) {
+    article > header {
+      animation: masthead-fade-in 640ms cubic-bezier(0.3, 0, 0, 1) both;
+    }
+    @keyframes masthead-fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  /* Link underline reveal for prose links */
+  article .scholar-prose a,
+  #references a {
+    text-decoration: none;
+    background-image: linear-gradient(var(--scholar-primary), var(--scholar-primary));
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 220ms ease;
+  }
+  article .scholar-prose a:hover,
+  #references a:hover {
+    background-size: 100% 1px;
+  }
+</style>
+
+<script>lucide.createIcons();</script>
+
+<!-- Reading progress bar JS -->
+<script>
+(function() {
+  var bar = document.getElementById('reading-progress');
+  if (!bar) return;
+
+  function updateProgress() {
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.width = progress + '%';
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+})();
+</script>
+
+</body>
+</html>

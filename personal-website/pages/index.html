@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuqian Zhang · Home</title>
+    <style id="theme-vars">
+:root {
+  --scholar-background: #f7f4ec;
+  --scholar-foreground: #23241f;
+  --scholar-card: #fffdf8;
+  --scholar-card-foreground: #23241f;
+  --scholar-popover: #fffdf8;
+  --scholar-popover-foreground: #23241f;
+  --scholar-muted: #f1ece0;
+  --scholar-muted-foreground: #6a685e;
+  --scholar-border: #ded8ca;
+  --scholar-input: #ded8ca;
+  --scholar-ring: #1f4d3f;
+
+  --scholar-primary: #1f4d3f;
+  --scholar-primary-foreground: #f7f4ec;
+  --scholar-primary-100: #e7efeb;
+  --scholar-primary-200: #c7ddd4;
+  --scholar-primary-300: #9fc3b5;
+  --scholar-primary-400: #6a9c8b;
+  --scholar-primary-500: #3f7565;
+  --scholar-primary-600: #2b5d4d;
+  --scholar-primary-700: #1f4d3f;
+  --scholar-primary-800: #184033;
+  --scholar-primary-900: #123227;
+
+  --state-success: #3f7565;
+  --state-warning: #a8792b;
+  --state-error: #a23b32;
+  --state-info: #2f5d7a;
+
+  --scholar-radius-small: 4px;
+  --scholar-radius-medium: 8px;
+  --scholar-radius-large: 16px;
+  --scholar-radius-xlarge: 16px;
+  --scholar-radius-full: 9999px;
+
+  --scholar-shadow-card: 0 1px 2px rgba(31, 37, 32, 0.04);
+  --scholar-shadow-float: 0 14px 34px -14px rgba(18, 50, 38, 0.22);
+
+  --scholar-font-serif: 'Newsreader', 'Georgia', 'Times New Roman', serif;
+  --scholar-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --scholar-font-mono: 'IBM Plex Mono', 'SFMono-Regular', ui-monospace, 'Menlo', monospace;
+}
+
+.font-serif { font-family: var(--scholar-font-serif); }
+.font-sans { font-family: var(--scholar-font-sans); }
+.font-mono { font-family: var(--scholar-font-mono); }
+
+.scholar-display {
+  font-family: var(--scholar-font-serif);
+  font-weight: 500;
+  font-size: clamp(40px, 5.4vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.scholar-h1 {
+  font-family: var(--scholar-font-serif);
+  font-weight: 500;
+  font-size: clamp(30px, 3.8vw, 46px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+.scholar-h2 {
+  font-family: var(--scholar-font-serif);
+  font-weight: 500;
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.scholar-h3 {
+  font-family: var(--scholar-font-serif);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+}
+.scholar-eyebrow {
+  font-family: var(--scholar-font-sans);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--scholar-muted-foreground);
+}
+.scholar-body {
+  font-family: var(--scholar-font-sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.scholar-prose {
+  font-family: var(--scholar-font-serif);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--scholar-background);
+    --color-foreground: var(--scholar-foreground);
+    --color-card: var(--scholar-card);
+    --color-card-foreground: var(--scholar-card-foreground);
+    --color-popover: var(--scholar-popover);
+    --color-popover-foreground: var(--scholar-popover-foreground);
+    --color-primary: var(--scholar-primary);
+    --color-primary-foreground: var(--scholar-primary-foreground);
+    --color-muted: var(--scholar-muted);
+    --color-muted-foreground: var(--scholar-muted-foreground);
+    --color-border: var(--scholar-border);
+    --color-input: var(--scholar-input);
+    --color-ring: var(--scholar-ring);
+    --radius-sm: var(--scholar-radius-small);
+    --radius-md: var(--scholar-radius-medium);
+    --radius-lg: var(--scholar-radius-large);
+    --radius-xl: var(--scholar-radius-xlarge);
+  }
+  @layer base {
+    body { background: var(--scholar-background); color: var(--scholar-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+
+  <!-- Font CDN (absolute URLs; body-level so fill-html-head --replace-head keeps them) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+  <!-- ============================================================= -->
+  <!-- SHELL:HEADER (verbatim from partials/project-shell.html) -->
+  <!-- ============================================================= -->
+  <header class="shell-nav" role="banner">
+    <div class="shell-nav-inner">
+
+      <!-- Wordmark -->
+      <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-home-brand" class="shell-wordmark" aria-label="Yuqian Zhang — Home">
+        <div class="shell-wordmark-main">
+          <span class="shell-wordmark-name">Yuqian Zhang</span>
+          <span class="shell-wordmark-phd">PhD</span>
+        </div>
+        <span class="shell-wordmark-desc">Accounting &middot; Finance &middot; AI</span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <nav class="shell-nav-links" aria-label="Main navigation">
+        <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-home" class="shell-nav-link" data-active="true">Home</a>
+        <a href="../pages/research.html" data-nav-key="research" data-dom-id="nav-research" class="shell-nav-link">Research</a>
+        <a href="../pages/data-code.html" data-nav-key="data-code" data-dom-id="nav-data-code" class="shell-nav-link">Data &amp; Code</a>
+        <a href="../pages/insights.html" data-nav-key="insights" data-dom-id="nav-insights" class="shell-nav-link">Insights</a>
+        <a href="../pages/contact.html" data-nav-key="contact" data-dom-id="nav-contact" class="shell-nav-cta">Contact</a>
+      </nav>
+
+      <!-- Mobile hamburger toggle -->
+      <button class="shell-hamburger" id="mobile-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+        <svg id="hamburger-icon" width="22" height="16" viewBox="0 0 22 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="1" y1="1" x2="21" y2="1"/>
+          <line x1="1" y1="8" x2="21" y2="8"/>
+          <line x1="1" y1="15" x2="21" y2="15"/>
+        </svg>
+        <svg id="close-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;">
+          <line x1="3" y1="3" x2="17" y2="17"/>
+          <line x1="17" y1="3" x2="3" y2="17"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile dropdown menu -->
+    <div class="shell-mobile-menu" id="mobile-menu" role="menu" aria-label="Mobile navigation">
+      <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-mobile-home" class="shell-mobile-link" role="menuitem" data-active="true">Home</a>
+      <a href="../pages/research.html" data-nav-key="research" data-dom-id="nav-mobile-research" class="shell-mobile-link" role="menuitem">Research</a>
+      <a href="../pages/data-code.html" data-nav-key="data-code" data-dom-id="nav-mobile-data-code" class="shell-mobile-link" role="menuitem">Data &amp; Code</a>
+      <a href="../pages/insights.html" data-nav-key="insights" data-dom-id="nav-mobile-insights" class="shell-mobile-link" role="menuitem">Insights</a>
+      <a href="../pages/contact.html" data-nav-key="contact" data-dom-id="nav-mobile-contact" class="shell-mobile-cta" role="menuitem">Contact</a>
+    </div>
+  </header>
+
+  <script>
+  (function() {
+    var toggle = document.getElementById('mobile-toggle');
+    var menu = document.getElementById('mobile-menu');
+    var hamburgerIcon = document.getElementById('hamburger-icon');
+    var closeIcon = document.getElementById('close-icon');
+    if (!toggle || !menu) return;
+
+    function openMenu() {
+      menu.classList.add('open');
+      toggle.setAttribute('aria-expanded', 'true');
+      hamburgerIcon.style.display = 'none';
+      closeIcon.style.display = 'block';
+    }
+    function closeMenu() {
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      hamburgerIcon.style.display = 'block';
+      closeIcon.style.display = 'none';
+    }
+    toggle.addEventListener('click', function() {
+      if (menu.classList.contains('open')) { closeMenu(); }
+      else { openMenu(); }
+    });
+    menu.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A') { closeMenu(); }
+    });
+    document.addEventListener('click', function(e) {
+      if (!toggle.contains(e.target) && !menu.contains(e.target)) { closeMenu(); }
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && menu.classList.contains('open')) {
+        closeMenu();
+        toggle.focus();
+      }
+    });
+  })();
+  </script>
+  <!-- /SHELL:HEADER -->
+
+  <!-- ============================================================= -->
+  <!-- PAGE BODY (private region: home body) -->
+  <!-- ============================================================= -->
+  <main>
+
+    <!-- ============ SECTION 1 — HERO (asymmetric editorial split) ============ -->
+    <section aria-labelledby="hero-heading" class="hp-hero">
+      <div class="hp-container">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+          <!-- Left: name + positioning (~58%) -->
+          <div class="lg:col-span-7">
+            <div class="flex items-center gap-3 hp-fade-up">
+              <span class="hp-eyebrow-line" aria-hidden="true"></span>
+              <span class="scholar-eyebrow">Senior Lecturer in Accounting &middot; AUT, New Zealand</span>
+            </div>
+
+            <h1 id="hero-heading" class="scholar-h1 hp-fade-up hp-d1 mt-5"
+                style="color: var(--scholar-foreground); max-width: 16ch;">
+              Research across accounting, AI and disclosure
+            </h1>
+
+            <p class="scholar-body hp-fade-up hp-d2 mt-5"
+               style="color: var(--scholar-muted-foreground); max-width: 60ch;">
+              I am a Senior Lecturer with more than eight years advancing accounting research and
+              education. My work spans textual analysis and NLP, AI and digital transformation, ESG
+              disclosure, and cross-cultural financial reporting.
+            </p>
+
+            <div class="hp-fade-up hp-d3 mt-8 flex flex-wrap items-center gap-3">
+              <a href="../pages/research.html" data-dom-id="cta-research" class="hp-btn hp-btn-primary">
+                <span>View research</span>
+                <i data-lucide="arrow-right" class="hp-arrow w-4 h-4"></i>
+              </a>
+              <a href="../pages/contact.html" class="hp-btn hp-btn-ghost">
+                <span>Get in touch</span>
+              </a>
+            </div>
+
+            <ul class="hp-fade-up hp-d4 mt-8 flex flex-wrap items-center gap-2" aria-label="Credentials">
+              <li class="hp-chip"><i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i><span>PhD, University of Wollongong</span></li>
+              <li class="hp-chip"><i data-lucide="badge-check" class="w-3.5 h-3.5"></i><span>CPA Australia</span></li>
+              <li class="hp-chip"><i data-lucide="book-open" class="w-3.5 h-3.5"></i><span>Editorial board &times;2</span></li>
+              <li class="hp-chip"><i data-lucide="users" class="w-3.5 h-3.5"></i><span>Supervising 7 PhD candidates</span></li>
+            </ul>
+          </div>
+
+          <!-- Right: portrait credential card (~42%) -->
+          <div class="lg:col-span-5 hp-fade-up hp-d2">
+            <figure class="hp-portrait-card">
+              <div class="hp-portrait-media">
+                <img src="../assets/portrait-hero.jpg"
+                     alt="Warm study desk with books, papers and soft window light"
+                     class="w-full h-full object-cover" loading="eager" decoding="async">
+              </div>
+              <figcaption class="hp-portrait-caption">
+                <span class="hp-caption-left">
+                  <i data-lucide="map-pin" class="w-4 h-4"></i>
+                  <span class="truncate">Auckland University of Technology</span>
+                </span>
+                <span class="hp-caption-right font-mono">ORCID 0000-0001-5667-4002</span>
+              </figcaption>
+            </figure>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 2 — RESEARCH FOCUS ============ -->
+    <section aria-labelledby="focus-heading" class="hp-section">
+      <div class="hp-container">
+        <div class="flex items-center gap-3">
+          <span class="hp-eyebrow-line" aria-hidden="true"></span>
+          <span class="scholar-eyebrow">Research focus</span>
+        </div>
+        <h2 id="focus-heading" class="scholar-h2 mt-4" style="color: var(--scholar-foreground);">
+          Areas of enquiry
+        </h2>
+        <p class="scholar-body mt-3" style="color: var(--scholar-muted-foreground); max-width: 60ch;">
+          Four connected strands where accounting meets data, technology and reporting practice.
+        </p>
+
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+          <article class="hp-focus-card">
+            <span class="hp-focus-icon"><i data-lucide="file-search" class="w-5 h-5"></i></span>
+            <h3 class="scholar-h3 mt-5" style="color: var(--scholar-foreground);">Textual analysis and NLP</h3>
+            <p class="scholar-body mt-2" style="color: var(--scholar-muted-foreground);">
+              Reading annual reports and disclosures at scale with language models.
+            </p>
+          </article>
+
+          <article class="hp-focus-card">
+            <span class="hp-focus-icon"><i data-lucide="cpu" class="w-5 h-5"></i></span>
+            <h3 class="scholar-h3 mt-5" style="color: var(--scholar-foreground);">AI and digital transformation</h3>
+            <p class="scholar-body mt-2" style="color: var(--scholar-muted-foreground);">
+              How firms adopt AI and what it changes for financial performance.
+            </p>
+          </article>
+
+          <article class="hp-focus-card">
+            <span class="hp-focus-icon"><i data-lucide="leaf" class="w-5 h-5"></i></span>
+            <h3 class="scholar-h3 mt-5" style="color: var(--scholar-foreground);">ESG and sustainability</h3>
+            <p class="scholar-body mt-2" style="color: var(--scholar-muted-foreground);">
+              Measuring and comparing sustainability disclosure across markets.
+            </p>
+          </article>
+
+          <article class="hp-focus-card">
+            <span class="hp-focus-icon"><i data-lucide="globe" class="w-5 h-5"></i></span>
+            <h3 class="scholar-h3 mt-5" style="color: var(--scholar-foreground);">Cross-cultural reporting</h3>
+            <p class="scholar-body mt-2" style="color: var(--scholar-muted-foreground);">
+              Financial reporting shaped by context, institutions and culture.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 3 — SELECTED PUBLICATIONS ============ -->
+    <section aria-labelledby="pubs-heading" class="hp-section hp-section-alt">
+      <div class="hp-container">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-3">
+              <span class="hp-eyebrow-line" aria-hidden="true"></span>
+              <span class="scholar-eyebrow">Recent scholarship</span>
+            </div>
+            <h2 id="pubs-heading" class="scholar-h2 mt-4" style="color: var(--scholar-foreground);">
+              Selected publications
+            </h2>
+          </div>
+          <a href="../pages/research.html" class="hp-link shrink-0">
+            <span>See all publications</span>
+            <i data-lucide="arrow-right" class="hp-arrow w-4 h-4"></i>
+          </a>
+        </div>
+
+        <ol class="mt-8 hp-pub-list">
+
+          <li class="hp-pub-row">
+            <span class="hp-pub-year font-mono">2025</span>
+            <div class="hp-pub-body">
+              <cite class="hp-pub-title">Accounting for Purpose: Traditional Chinese Philosophies and Management Control Systems in Chinese Companies</cite>
+              <p class="hp-pub-meta">Yang, Akroyd &amp; Zhang &middot; Meditari Accountancy Research</p>
+              <div class="hp-pub-tags">
+                <span class="hp-rank">ABDC-A</span>
+                <span class="hp-rank">Scopus Q1</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="hp-pub-row">
+            <span class="hp-pub-year font-mono">2024</span>
+            <div class="hp-pub-body">
+              <cite class="hp-pub-title">The Impact of Digital Transformation on Firm's Financial Performance: Evidence from China</cite>
+              <p class="hp-pub-meta">Chen &amp; Zhang &middot; Industrial Management &amp; Data Systems</p>
+              <div class="hp-pub-tags">
+                <span class="hp-rank">ABDC-A</span>
+                <span class="hp-rank">Scopus Q1</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="hp-pub-row">
+            <span class="hp-pub-year font-mono">2024</span>
+            <div class="hp-pub-body">
+              <cite class="hp-pub-title">Financial market spillovers and investor attention to the Russia-Ukraine war</cite>
+              <p class="hp-pub-meta">Li, Hu, Zhang &amp; Yang &middot; International Review of Economics &amp; Finance</p>
+              <div class="hp-pub-tags">
+                <span class="hp-rank">ABDC-A</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="hp-pub-row">
+            <span class="hp-pub-year font-mono">2023</span>
+            <div class="hp-pub-body">
+              <cite class="hp-pub-title">Using Google Trends to track the global interest in IFRS</cite>
+              <p class="hp-pub-meta">Zhang &middot; Intelligent Systems in Accounting, Finance and Management</p>
+              <div class="hp-pub-tags">
+                <span class="hp-rank">Scopus Q1</span>
+              </div>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 4 — LATEST WRITING & DATA (texture band) ============ -->
+    <section aria-labelledby="latest-heading" class="hp-band">
+      <img src="../assets/texture-manuscript.jpg" alt="" aria-hidden="true" class="hp-band-texture">
+      <div class="hp-band-veil" aria-hidden="true"></div>
+      <div class="hp-container relative">
+        <div class="flex items-center gap-3">
+          <span class="hp-eyebrow-line" aria-hidden="true"></span>
+          <span class="scholar-eyebrow">In progress</span>
+        </div>
+        <h2 id="latest-heading" class="scholar-h2 mt-4" style="color: var(--scholar-foreground);">
+          Latest writing and data
+        </h2>
+
+        <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+          <!-- From the notebook -->
+          <article class="hp-panel">
+            <div class="hp-panel-head">
+              <span class="hp-panel-icon"><i data-lucide="pen-line" class="w-5 h-5"></i></span>
+              <h3 class="scholar-h3" style="color: var(--scholar-foreground);">From the notebook</h3>
+            </div>
+
+            <ul class="hp-teaser-list">
+              <li class="hp-teaser">
+                <h4 class="hp-teaser-title">LLMs and textual analysis</h4>
+                <p class="hp-teaser-desc">Where language models help with annual report reading, and where accounting judgement still matters.</p>
+                <span class="hp-teaser-date font-mono">June 2026</span>
+              </li>
+              <li class="hp-teaser">
+                <h4 class="hp-teaser-title">Making ESG disclosure comparable</h4>
+                <p class="hp-teaser-desc">Notes on measurement, reporting boundaries and cross-country comparability.</p>
+                <span class="hp-teaser-date font-mono">April 2026</span>
+              </li>
+            </ul>
+
+            <a href="../pages/insights.html" data-dom-id="shortcut-insights" class="hp-link mt-2">
+              <span>Read the notebook</span>
+              <i data-lucide="arrow-right" class="hp-arrow w-4 h-4"></i>
+            </a>
+          </article>
+
+          <!-- Open data & code -->
+          <article class="hp-panel">
+            <div class="hp-panel-head">
+              <span class="hp-panel-icon"><i data-lucide="database" class="w-5 h-5"></i></span>
+              <h3 class="scholar-h3" style="color: var(--scholar-foreground);">Open data and code</h3>
+            </div>
+
+            <ul class="hp-teaser-list">
+              <li class="hp-teaser">
+                <div class="hp-teaser-topline">
+                  <h4 class="hp-teaser-title">Cybersecurity risk topic modelling</h4>
+                  <span class="hp-tool font-mono">Python</span>
+                </div>
+                <p class="hp-teaser-desc">Unsupervised topic models over corporate cyber risk disclosures.</p>
+              </li>
+              <li class="hp-teaser">
+                <div class="hp-teaser-topline">
+                  <h4 class="hp-teaser-title">Strategic investment simulation</h4>
+                  <span class="hp-tool font-mono">Python</span>
+                </div>
+                <p class="hp-teaser-desc">Dollar-cost averaging and reinvestment under different market paths.</p>
+              </li>
+            </ul>
+
+            <a href="../pages/data-code.html" data-dom-id="shortcut-data-code" class="hp-link mt-2">
+              <span>Browse data and code</span>
+              <i data-lucide="arrow-right" class="hp-arrow w-4 h-4"></i>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 5 — CLOSING CTA (pine green band) ============ -->
+    <section aria-labelledby="cta-heading" class="hp-cta">
+      <div class="hp-container">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          <div class="lg:max-w-[46ch]">
+            <h2 id="cta-heading" class="scholar-h2" style="color: var(--scholar-primary-foreground);">
+              Open to collaboration
+            </h2>
+            <p class="scholar-body mt-4" style="color: color-mix(in srgb, var(--scholar-primary-foreground) 82%, transparent);">
+              I welcome enquiries on PhD supervision, co-authoring, reviewing, and speaking across
+              accounting, finance and AI.
+            </p>
+          </div>
+          <a href="../pages/contact.html" class="hp-btn hp-btn-contrast shrink-0">
+            <span>Contact</span>
+            <i data-lucide="arrow-right" class="hp-arrow w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================= -->
+  <!-- SHELL:FOOTER (verbatim from partials/project-shell.html) -->
+  <!-- ============================================================= -->
+  <footer class="shell-footer" role="contentinfo">
+    <div class="shell-footer-inner">
+
+      <!-- Column 1: Brand + positioning -->
+      <div class="shell-footer-brand">
+        <span class="shell-footer-brand-name">Yuqian Zhang</span>
+        <p class="shell-footer-brand-role">Senior Lecturer in Accounting, Auckland University of Technology, New Zealand</p>
+      </div>
+
+      <!-- Column 2: Explore links -->
+      <div class="shell-footer-col">
+        <span class="shell-footer-col-title">Explore</span>
+        <a href="../pages/index.html">Home</a>
+        <a href="../pages/research.html">Research</a>
+        <a href="../pages/data-code.html">Data &amp; Code</a>
+        <a href="../pages/insights.html">Insights</a>
+        <a href="../pages/contact.html">Contact</a>
+      </div>
+
+      <!-- Column 3: Connect -->
+      <div class="shell-footer-col">
+        <span class="shell-footer-col-title">Connect</span>
+        <a href="mailto:yuqian.zhang@aut.ac.nz">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          yuqian.zhang@aut.ac.nz
+        </a>
+        <a href="https://orcid.org/0000-0001-5667-4002" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile: 0000-0001-5667-4002">
+          <i data-lucide="fingerprint" class="w-4 h-4"></i>
+          ORCID
+        </a>
+        <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=" target="_blank" rel="noopener noreferrer" aria-label="SSRN author page">
+          <i data-lucide="file-text" class="w-4 h-4"></i>
+          SSRN
+        </a>
+        <a href="https://scholar.google.com/citations?user=" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile">
+          <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+          Google Scholar
+        </a>
+      </div>
+    </div>
+
+    <div class="shell-footer-bottom">
+      <span class="shell-footer-copy">&copy; 2026 Yuqian Zhang. All rights reserved.</span>
+      <span class="shell-footer-locale">New Zealand</span>
+    </div>
+  </footer>
+  <!-- /SHELL:FOOTER -->
+
+  <!-- ============================================================= -->
+  <!-- SHELL STYLES (verbatim from partials/project-shell.html) -->
+  <!-- ============================================================= -->
+  <style id="shell-styles">
+    /* ---- NAVIGATION BAR ---- */
+    .shell-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: var(--scholar-background);
+      border-bottom: 1px solid var(--scholar-border);
+    }
+    @supports (backdrop-filter: blur(12px)) {
+      .shell-nav {
+        background-color: color-mix(in srgb, var(--scholar-background) 92%, transparent);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+    }
+    .shell-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @media (min-width: 768px) {
+      .shell-nav-inner {
+        padding: 0 32px;
+      }
+    }
+
+    /* Wordmark group */
+    .shell-wordmark {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      text-decoration: none;
+      color: var(--scholar-foreground);
+      flex-shrink: 0;
+      transition: opacity 180ms ease;
+    }
+    .shell-wordmark:hover {
+      opacity: 0.78;
+    }
+    .shell-wordmark-main {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+    .shell-wordmark-name {
+      font-family: 'Newsreader', 'Georgia', 'Times New Roman', serif;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.2;
+      color: var(--scholar-foreground);
+      letter-spacing: -0.01em;
+    }
+    .shell-wordmark-phd {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--scholar-primary);
+      background-color: color-mix(in srgb, var(--scholar-primary) 12%, transparent);
+      padding: 1px 5px;
+      border-radius: 4px;
+      vertical-align: super;
+      line-height: 1;
+    }
+    .shell-wordmark-desc {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--scholar-muted-foreground);
+      line-height: 1;
+    }
+
+    /* Desktop nav links */
+    .shell-nav-links {
+      display: none;
+      align-items: center;
+      gap: 2px;
+    }
+    @media (min-width: 768px) {
+      .shell-nav-links {
+        display: flex;
+      }
+    }
+    .shell-nav-link {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 450;
+      color: var(--scholar-muted-foreground);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: var(--scholar-radius-small);
+      position: relative;
+      transition: color 180ms ease;
+      white-space: nowrap;
+    }
+    .shell-nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 12px;
+      right: 12px;
+      height: 2px;
+      background-color: var(--scholar-primary);
+      border-radius: 1px;
+      transform: scaleX(0);
+      transition: transform 200ms ease;
+      transform-origin: left center;
+    }
+    .shell-nav-link:hover {
+      color: var(--scholar-foreground);
+    }
+    .shell-nav-link:hover::after {
+      transform: scaleX(1);
+    }
+    .shell-nav-link:focus-visible {
+      outline: 2px solid var(--scholar-primary);
+      outline-offset: 2px;
+      border-radius: var(--scholar-radius-small);
+    }
+    .shell-nav-link[data-active="true"] {
+      color: var(--scholar-primary);
+      font-weight: 550;
+    }
+    .shell-nav-link[data-active="true"]::after {
+      transform: scaleX(1);
+      background-color: var(--scholar-primary);
+    }
+
+    /* Contact CTA button */
+    .shell-nav-cta {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 550;
+      color: var(--scholar-primary-foreground);
+      background-color: var(--scholar-primary);
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: var(--scholar-radius-medium);
+      margin-left: 6px;
+      white-space: nowrap;
+      transition: background-color 200ms ease, transform 200ms ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .shell-nav-cta:hover {
+      background-color: var(--scholar-primary-800);
+      transform: translateY(-1px);
+    }
+    .shell-nav-cta:active {
+      transform: translateY(0);
+    }
+    .shell-nav-cta:focus-visible {
+      outline: 2px solid var(--scholar-primary);
+      outline-offset: 2px;
+    }
+
+    /* Hamburger toggle */
+    .shell-hamburger {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      border-radius: var(--scholar-radius-small);
+      color: var(--scholar-foreground);
+      transition: background-color 150ms ease;
+      flex-shrink: 0;
+    }
+    .shell-hamburger:hover {
+      background-color: color-mix(in srgb, var(--scholar-foreground) 6%, transparent);
+    }
+    .shell-hamburger:focus-visible {
+      outline: 2px solid var(--scholar-primary);
+      outline-offset: 2px;
+    }
+    .shell-hamburger svg {
+      pointer-events: none;
+    }
+    @media (min-width: 768px) {
+      .shell-hamburger {
+        display: none;
+      }
+    }
+
+    /* Mobile menu dropdown */
+    .shell-mobile-menu {
+      display: none;
+      flex-direction: column;
+      background-color: var(--scholar-card);
+      border-bottom: 1px solid var(--scholar-border);
+      padding: 12px 16px 16px;
+      gap: 4px;
+      box-shadow: var(--scholar-shadow-float);
+    }
+    .shell-mobile-menu.open {
+      display: flex;
+    }
+    @media (min-width: 768px) {
+      .shell-mobile-menu,
+      .shell-mobile-menu.open {
+        display: none;
+      }
+    }
+    .shell-mobile-link {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      font-weight: 450;
+      color: var(--scholar-muted-foreground);
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: var(--scholar-radius-medium);
+      transition: color 160ms ease, background-color 160ms ease;
+      white-space: nowrap;
+    }
+    .shell-mobile-link:hover {
+      color: var(--scholar-foreground);
+      background-color: color-mix(in srgb, var(--scholar-foreground) 4%, transparent);
+    }
+    .shell-mobile-link[data-active="true"] {
+      color: var(--scholar-primary);
+      font-weight: 550;
+      background-color: color-mix(in srgb, var(--scholar-primary) 8%, transparent);
+    }
+    .shell-mobile-link:focus-visible {
+      outline: 2px solid var(--scholar-primary);
+      outline-offset: 2px;
+    }
+    .shell-mobile-cta {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      font-weight: 550;
+      color: var(--scholar-primary-foreground);
+      background-color: var(--scholar-primary);
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: var(--scholar-radius-medium);
+      text-align: center;
+      margin-top: 6px;
+      transition: background-color 200ms ease;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .shell-mobile-cta:hover {
+      background-color: var(--scholar-primary-800);
+    }
+
+    /* ---- FOOTER ---- */
+    .shell-footer {
+      background-color: var(--scholar-primary-900);
+      color: var(--scholar-primary-foreground);
+      padding: 56px 16px 0;
+    }
+    @media (min-width: 768px) {
+      .shell-footer {
+        padding: 64px 32px 0;
+      }
+    }
+    .shell-footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    @media (min-width: 640px) {
+      .shell-footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (min-width: 1024px) {
+      .shell-footer-inner {
+        grid-template-columns: 1.4fr 1fr 1fr;
+        gap: 48px;
+      }
+    }
+
+    .shell-footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .shell-footer-brand-name {
+      font-family: 'Newsreader', 'Georgia', 'Times New Roman', serif;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1.2;
+      color: var(--scholar-primary-foreground);
+      letter-spacing: -0.01em;
+    }
+    .shell-footer-brand-role {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 13px;
+      line-height: 1.55;
+      color: color-mix(in srgb, var(--scholar-primary-foreground) 75%, transparent);
+      max-width: 300px;
+    }
+
+    .shell-footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .shell-footer-col-title {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: color-mix(in srgb, var(--scholar-primary-foreground) 55%, transparent);
+      margin-bottom: 4px;
+    }
+    .shell-footer-col a {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 13px;
+      color: color-mix(in srgb, var(--scholar-primary-foreground) 75%, transparent);
+      text-decoration: none;
+      transition: color 180ms ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      line-height: 1.5;
+    }
+    .shell-footer-col a:hover {
+      color: var(--scholar-primary-foreground);
+    }
+    .shell-footer-col a:focus-visible {
+      outline: 2px solid var(--scholar-primary-foreground);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+    .shell-footer-col i {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      opacity: 0.65;
+    }
+
+    .shell-footer-bottom {
+      max-width: 1200px;
+      margin: 48px auto 0;
+      padding: 18px 0;
+      border-top: 1px solid color-mix(in srgb, var(--scholar-primary-foreground) 15%, transparent);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: flex-start;
+    }
+    @media (min-width: 640px) {
+      .shell-footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    .shell-footer-copy {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 12px;
+      color: color-mix(in srgb, var(--scholar-primary-foreground) 55%, transparent);
+    }
+    .shell-footer-locale {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 12px;
+      color: color-mix(in srgb, var(--scholar-primary-foreground) 45%, transparent);
+    }
+
+    /* ---- REDUCED MOTION ---- */
+    @media (prefers-reduced-motion: reduce) {
+      .shell-nav-link,
+      .shell-nav-link::after,
+      .shell-nav-cta,
+      .shell-mobile-link,
+      .shell-mobile-cta,
+      .shell-wordmark,
+      .shell-footer-col a {
+        transition-duration: 0.01ms !important;
+      }
+      .shell-nav-cta:hover {
+        transform: none;
+      }
+    }
+  </style>
+
+  <!-- ============================================================= -->
+  <!-- PAGE-SPECIFIC STYLES (home) -->
+  <!-- ============================================================= -->
+  <style id="home-styles">
+    .hp-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    @media (min-width: 768px) {
+      .hp-container { padding-left: 32px; padding-right: 32px; }
+    }
+
+    .hp-hero { padding-top: 56px; padding-bottom: 64px; }
+    @media (min-width: 1024px) { .hp-hero { padding-top: 88px; padding-bottom: 96px; } }
+
+    .hp-section { padding-top: 56px; padding-bottom: 56px; }
+    @media (min-width: 1024px) { .hp-section { padding-top: 88px; padding-bottom: 88px; } }
+    .hp-section-alt { background-color: var(--scholar-muted); border-top: 1px solid var(--scholar-border); border-bottom: 1px solid var(--scholar-border); }
+
+    /* Eyebrow lead rule (structural section marker) */
+    .hp-eyebrow-line {
+      display: inline-block;
+      width: 28px;
+      height: 2px;
+      background-color: var(--scholar-primary);
+      border-radius: 1px;
+      flex-shrink: 0;
+    }
+
+    /* Buttons */
+    .hp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--scholar-font-sans);
+      font-size: 15px;
+      font-weight: 550;
+      white-space: nowrap;
+      text-decoration: none;
+      padding: 11px 20px;
+      border-radius: var(--scholar-radius-medium);
+      border: 1px solid transparent;
+      transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease, transform 200ms ease;
+    }
+    .hp-btn:focus-visible { outline: 2px solid var(--scholar-ring); outline-offset: 2px; }
+    .hp-btn-primary { background-color: var(--scholar-primary); color: var(--scholar-primary-foreground); }
+    .hp-btn-primary:hover { background-color: var(--scholar-primary-800); transform: translateY(-1px); }
+    .hp-btn-primary:active { transform: translateY(0); }
+    .hp-btn-ghost { background-color: transparent; color: var(--scholar-foreground); border-color: var(--scholar-border); }
+    .hp-btn-ghost:hover { border-color: var(--scholar-primary); color: var(--scholar-primary); background-color: color-mix(in srgb, var(--scholar-primary) 6%, transparent); }
+    .hp-btn-contrast { background-color: var(--scholar-primary-foreground); color: var(--scholar-primary); }
+    .hp-btn-contrast:hover { background-color: var(--scholar-primary-100); transform: translateY(-1px); }
+    .hp-btn-contrast:active { transform: translateY(0); }
+    .hp-btn-contrast:focus-visible { outline-color: var(--scholar-primary-foreground); }
+
+    .hp-arrow { transition: transform 200ms ease; }
+    .hp-btn:hover .hp-arrow, .hp-link:hover .hp-arrow { transform: translateX(3px); }
+
+    /* Text link with underline reveal */
+    .hp-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--scholar-font-sans);
+      font-size: 14px;
+      font-weight: 550;
+      color: var(--scholar-primary);
+      text-decoration: none;
+      position: relative;
+      white-space: nowrap;
+      padding-bottom: 2px;
+    }
+    .hp-link::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 18px; bottom: 0;
+      height: 1.5px;
+      background-color: var(--scholar-primary);
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 220ms ease;
+    }
+    .hp-link:hover::after { transform: scaleX(1); }
+    .hp-link:focus-visible { outline: 2px solid var(--scholar-ring); outline-offset: 3px; border-radius: 3px; }
+
+    /* Credential chips */
+    .hp-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--scholar-font-sans);
+      font-size: 13px;
+      font-weight: 450;
+      color: var(--scholar-muted-foreground);
+      background-color: var(--scholar-card);
+      border: 1px solid var(--scholar-border);
+      border-radius: var(--scholar-radius-full);
+      padding: 5px 12px;
+      white-space: nowrap;
+    }
+    .hp-chip i { color: var(--scholar-primary); }
+
+    /* Portrait card */
+    .hp-portrait-card {
+      margin: 0;
+      background-color: var(--scholar-card);
+      border: 1px solid var(--scholar-border);
+      border-radius: var(--scholar-radius-large);
+      overflow: hidden;
+      box-shadow: var(--scholar-shadow-card);
+    }
+    .hp-portrait-media { aspect-ratio: 4 / 5; overflow: hidden; }
+    @media (min-width: 1024px) { .hp-portrait-media { aspect-ratio: 5 / 6; } }
+    .hp-portrait-caption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      border-top: 1px solid var(--scholar-border);
+      font-family: var(--scholar-font-sans);
+      font-size: 12px;
+    }
+    .hp-caption-left { display: inline-flex; align-items: center; gap: 6px; min-width: 0; color: var(--scholar-foreground); font-weight: 500; }
+    .hp-caption-left i { color: var(--scholar-primary); flex-shrink: 0; }
+    .hp-caption-right { color: var(--scholar-muted-foreground); font-size: 11px; white-space: nowrap; flex-shrink: 0; }
+
+    /* Focus cards */
+    .hp-focus-card {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--scholar-card);
+      border: 1px solid var(--scholar-border);
+      border-radius: var(--scholar-radius-large);
+      padding: 24px;
+      box-shadow: var(--scholar-shadow-card);
+      transition: transform 200ms ease, border-color 200ms ease;
+    }
+    .hp-focus-card:hover { transform: translateY(-2px); border-color: var(--scholar-primary-300); }
+    .hp-focus-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--scholar-radius-medium);
+      background-color: var(--scholar-primary-100);
+      color: var(--scholar-primary);
+    }
+
+    /* Publications list */
+    .hp-pub-list { list-style: none; margin: 0; padding: 0; }
+    .hp-pub-row {
+      display: flex;
+      gap: 16px;
+      padding: 22px 0;
+      border-top: 1px solid var(--scholar-border);
+    }
+    @media (min-width: 640px) { .hp-pub-row { gap: 28px; } }
+    .hp-pub-row:last-child { border-bottom: 1px solid var(--scholar-border); }
+    .hp-pub-year {
+      flex-shrink: 0;
+      width: 52px;
+      font-size: 14px;
+      color: var(--scholar-primary);
+      padding-top: 2px;
+    }
+    .hp-pub-body { flex: 1; min-width: 0; }
+    .hp-pub-title {
+      display: block;
+      font-family: var(--scholar-font-serif);
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.4;
+      color: var(--scholar-foreground);
+    }
+    .hp-pub-meta {
+      margin-top: 6px;
+      font-family: var(--scholar-font-sans);
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--scholar-muted-foreground);
+    }
+    .hp-pub-tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .hp-rank {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--scholar-font-sans);
+      font-size: 12px;
+      font-weight: 550;
+      letter-spacing: 0.02em;
+      color: var(--scholar-primary);
+      background-color: var(--scholar-primary-100);
+      border: 1px solid var(--scholar-primary-200);
+      border-radius: var(--scholar-radius-full);
+      padding: 3px 10px;
+      white-space: nowrap;
+    }
+
+    /* Texture band */
+    .hp-band { position: relative; overflow: hidden; padding-top: 56px; padding-bottom: 56px; background-color: var(--scholar-primary-100); }
+    @media (min-width: 1024px) { .hp-band { padding-top: 88px; padding-bottom: 88px; } }
+    .hp-band-texture { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.12; }
+    .hp-band-veil { position: absolute; inset: 0; background: color-mix(in srgb, var(--scholar-primary-100) 55%, transparent); }
+
+    /* Panels inside band */
+    .hp-panel {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--scholar-card);
+      border: 1px solid var(--scholar-border);
+      border-radius: var(--scholar-radius-large);
+      padding: 26px;
+      box-shadow: var(--scholar-shadow-card);
+    }
+    .hp-panel-head { display: flex; align-items: center; gap: 12px; padding-bottom: 18px; margin-bottom: 4px; border-bottom: 1px solid var(--scholar-border); }
+    .hp-panel-icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; flex-shrink: 0;
+      border-radius: var(--scholar-radius-medium);
+      background-color: var(--scholar-primary-100);
+      color: var(--scholar-primary);
+    }
+    .hp-teaser-list { list-style: none; margin: 0; padding: 0; flex: 1; }
+    .hp-teaser { padding: 18px 0; border-bottom: 1px solid var(--scholar-border); }
+    .hp-teaser-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .hp-teaser-title { font-family: var(--scholar-font-serif); font-weight: 500; font-size: 17px; line-height: 1.35; color: var(--scholar-foreground); }
+    .hp-teaser-desc { margin-top: 6px; font-family: var(--scholar-font-sans); font-size: 14px; line-height: 1.55; color: var(--scholar-muted-foreground); }
+    .hp-teaser-date { display: inline-block; margin-top: 8px; font-size: 12px; color: var(--scholar-muted-foreground); }
+    .hp-tool {
+      flex-shrink: 0;
+      font-size: 11px; font-weight: 500;
+      color: var(--scholar-primary);
+      background-color: var(--scholar-primary-100);
+      border: 1px solid var(--scholar-primary-200);
+      border-radius: var(--scholar-radius-small);
+      padding: 2px 8px;
+      white-space: nowrap;
+    }
+    .hp-panel .hp-link { margin-top: 18px; }
+
+    /* Closing CTA band */
+    .hp-cta { background-color: var(--scholar-primary); padding-top: 56px; padding-bottom: 56px; }
+    @media (min-width: 1024px) { .hp-cta { padding-top: 76px; padding-bottom: 76px; } }
+
+    /* Entrance animation (hero only) */
+    @keyframes hp-fade-up {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: none; }
+    }
+    .hp-fade-up { animation: hp-fade-up 0.6s cubic-bezier(0.3, 0, 0, 1) both; }
+    .hp-d1 { animation-delay: 0.07s; }
+    .hp-d2 { animation-delay: 0.14s; }
+    .hp-d3 { animation-delay: 0.21s; }
+    .hp-d4 { animation-delay: 0.28s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hp-fade-up { animation: none; }
+      .hp-btn, .hp-btn:hover,
+      .hp-arrow, .hp-link::after,
+      .hp-focus-card, .hp-focus-card:hover { transition-duration: 0.01ms !important; transform: none !important; }
+    }
+  </style>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>

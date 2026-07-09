@@ -1,0 +1,541 @@
+{
+  "data": [
+    {
+      "id": "page-index",
+      "title": "Home",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1783556400000,
+      "canvasData": {
+        "x": 0,
+        "y": 0,
+        "group": 0
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/index.html",
+        "interactions": [
+          {
+            "domId": "cta-research",
+            "targetPageId": "page-research",
+            "transitionLabel": "View research"
+          },
+          {
+            "domId": "nav-research",
+            "targetPageId": "page-research",
+            "hideEdge": true,
+            "transitionLabel": "Go to Research"
+          },
+          {
+            "domId": "nav-data-code",
+            "targetPageId": "page-data-code",
+            "hideEdge": true,
+            "transitionLabel": "Go to Data & Code"
+          },
+          {
+            "domId": "nav-insights",
+            "targetPageId": "page-insights",
+            "hideEdge": true,
+            "transitionLabel": "Go to Insights"
+          },
+          {
+            "domId": "nav-contact",
+            "targetPageId": "page-contact",
+            "hideEdge": true,
+            "transitionLabel": "Go to Contact"
+          },
+          {
+            "domId": "nav-mobile-research",
+            "targetPageId": "page-research",
+            "hideEdge": true,
+            "transitionLabel": "Go to Research"
+          },
+          {
+            "domId": "nav-mobile-data-code",
+            "targetPageId": "page-data-code",
+            "hideEdge": true,
+            "transitionLabel": "Go to Data & Code"
+          },
+          {
+            "domId": "nav-mobile-insights",
+            "targetPageId": "page-insights",
+            "hideEdge": true,
+            "transitionLabel": "Go to Insights"
+          },
+          {
+            "domId": "nav-mobile-contact",
+            "targetPageId": "page-contact",
+            "hideEdge": true,
+            "transitionLabel": "Go to Contact"
+          },
+          {
+            "domId": "shortcut-data-code",
+            "targetPageId": "page-data-code",
+            "hideEdge": true,
+            "transitionLabel": "Open data & code"
+          },
+          {
+            "domId": "shortcut-insights",
+            "targetPageId": "page-insights",
+            "hideEdge": true,
+            "transitionLabel": "From the notebook"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-research",
+      "title": "Research & Publications",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1783556400000,
+      "canvasData": {
+        "x": 620,
+        "y": 0,
+        "group": 0
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/research.html",
+        "interactions": [
+          {
+            "domId": "cta-data-code",
+            "targetPageId": "page-data-code",
+            "transitionLabel": "View data & code"
+          },
+          {
+            "domId": "nav-home",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "Home"
+          },
+          {
+            "domId": "nav-home-brand",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "Home"
+          },
+          {
+            "domId": "nav-data-code",
+            "targetPageId": "page-data-code",
+            "hideEdge": true,
+            "transitionLabel": "Go to Data & Code"
+          },
+          {
+            "domId": "nav-insights",
+            "targetPageId": "page-insights",
+            "hideEdge": true,
+            "transitionLabel": "Go to Insights"
+          },
+          {
+            "domId": "nav-contact",
+            "targetPageId": "page-contact",
+            "hideEdge": true,
+            "transitionLabel": "Go to Contact"
+          },
+          {
+            "domId": "nav-mobile-home",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "Home"
+          },
+          {
+            "domId": "nav-mobile-data-code",
+            "targetPageId": "page-data-code",
+            "hideEdge": true,
+            "transitionLabel": "Go to Data & Code"
+          },
+          {
+            "domId": "nav-mobile-insights",
+            "targetPageId": "page-insights",
+            "hideEdge": true,
+            "transitionLabel": "Go to Insights"
+          },
+          {
+            "domId": "nav-mobile-contact",
+            "targetPageId": "page-contact",
+            "hideEdge": true,
+            "transitionLabel": "Go to Contact"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-data-code",
+      "title": "Data & Code",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1783556400000,
+      "canvasData": {
+        "x": 1240,
+        "y": 0,
+        "group": 0
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/data-code.html",
+        "interactions": [
+          {
+            "domId": "cta-insights",
+            "targetPageId": "page-insights",
+            "transitionLabel": "Read insights"
+          },
+          {
+            "domId": "nav-home",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "Home"
+          },
+          {
+            "domId": "nav-home-brand",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "Home"
+          },
+          {
+            "domId": "nav-research",
+            "targetPageId": "page-research",
+            "hideEdge": true,
+            "transitionLabel": "Go to Research"
+          },
+          {
+            "domId": "nav-insights",
+            "targetPageId": "page-insights",
+            "hideEdge": true,
+            "transitionLabel": "Go to Insights"
+          },
+          {
+            "domId": "nav-contact",
+            "targetPageId": "page-contact",
+            "hideEdge": true,
+            "transitionLabel": "Go to Contact"
+          },
+          {
+            "domId": "nav-mobile-home",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "Home"
+          },
+          {
+            "domId": "nav-mobile-research",
+            "targetPageId": "page-research",
+            "hideEdge": true,
+            "transitionLabel": "Go to Research"
+          },
+          {
+            "domId": "nav-mobile-insights",
+            "targetPageId": "page-insights",
+            "hideEdge": true,
+            "transitionLabel": "Go to Insights"
+          },
+          {
+            "domId": "nav-mobile-contact",
+            "targetPageId": "page-contact",
+            "hideEdge": true,
+            "transitionLabel": "Go to Contact"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-insights",
+      "title": "Insights",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1783556400000,
+      "canvasData": {
+        "x": 1860,
+        "y": 0,
+        "group": 0
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/insights.html",
+        "interactions": [
+          {
+            "domId": "cta-article",
+            "targetPageId": "page-article",
+            "transitionLabel": "Read article"
+          },
+          {
+            "domId": "nav-home",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "Home"
+          },
+          {
+            "domId": "nav-home-brand",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "Home"
+          },
+          {
+            "domId": "nav-research",
+            "targetPageId": "page-research",
+            "hideEdge": true,
+            "transitionLabel": "Go to Research"
+          },
+          {
+            "domId": "nav-data-code",
+            "targetPageId": "page-data-code",
+            "hideEdge": true,
+            "transitionLabel": "Go to Data & Code"
+          },
+          {
+            "domId": "nav-contact",
+            "targetPageId": "page-contact",
+            "hideEdge": true,
+            "transitionLabel": "Go to Contact"
+          },
+          {
+            "domId": "nav-mobile-home",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "Home"
+          },
+          {
+            "domId": "nav-mobile-research",
+            "targetPageId": "page-research",
+            "hideEdge": true,
+            "transitionLabel": "Go to Research"
+          },
+          {
+            "domId": "nav-mobile-data-code",
+            "targetPageId": "page-data-code",
+            "hideEdge": true,
+            "transitionLabel": "Go to Data & Code"
+          },
+          {
+            "domId": "nav-mobile-contact",
+            "targetPageId": "page-contact",
+            "hideEdge": true,
+            "transitionLabel": "Go to Contact"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-article",
+      "title": "Article",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1783556400000,
+      "canvasData": {
+        "x": 2480,
+        "y": 0,
+        "group": 0
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/article.html",
+        "interactions": [
+          {
+            "domId": "cta-contact",
+            "targetPageId": "page-contact",
+            "transitionLabel": "Get in touch"
+          },
+          {
+            "domId": "back-insights",
+            "targetPageId": "page-insights",
+            "hideEdge": true,
+            "transitionLabel": "Back to Insights"
+          },
+          {
+            "domId": "nav-home",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "Home"
+          },
+          {
+            "domId": "nav-home-brand",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "Home"
+          },
+          {
+            "domId": "nav-research",
+            "targetPageId": "page-research",
+            "hideEdge": true,
+            "transitionLabel": "Go to Research"
+          },
+          {
+            "domId": "nav-data-code",
+            "targetPageId": "page-data-code",
+            "hideEdge": true,
+            "transitionLabel": "Go to Data & Code"
+          },
+          {
+            "domId": "nav-insights",
+            "targetPageId": "page-insights",
+            "hideEdge": true,
+            "transitionLabel": "Go to Insights"
+          },
+          {
+            "domId": "nav-contact",
+            "targetPageId": "page-contact",
+            "hideEdge": true,
+            "transitionLabel": "Go to Contact"
+          },
+          {
+            "domId": "nav-mobile-home",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "Home"
+          },
+          {
+            "domId": "nav-mobile-research",
+            "targetPageId": "page-research",
+            "hideEdge": true,
+            "transitionLabel": "Go to Research"
+          },
+          {
+            "domId": "nav-mobile-data-code",
+            "targetPageId": "page-data-code",
+            "hideEdge": true,
+            "transitionLabel": "Go to Data & Code"
+          },
+          {
+            "domId": "nav-mobile-insights",
+            "targetPageId": "page-insights",
+            "hideEdge": true,
+            "transitionLabel": "Go to Insights"
+          },
+          {
+            "domId": "nav-mobile-contact",
+            "targetPageId": "page-contact",
+            "hideEdge": true,
+            "transitionLabel": "Go to Contact"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-contact",
+      "title": "Contact",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1783556400000,
+      "canvasData": {
+        "x": 3100,
+        "y": 0,
+        "group": 0
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/contact.html",
+        "interactions": [
+          {
+            "domId": "nav-home",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "Home"
+          },
+          {
+            "domId": "nav-home-brand",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "Home"
+          },
+          {
+            "domId": "nav-research",
+            "targetPageId": "page-research",
+            "hideEdge": true,
+            "transitionLabel": "Go to Research"
+          },
+          {
+            "domId": "nav-data-code",
+            "targetPageId": "page-data-code",
+            "hideEdge": true,
+            "transitionLabel": "Go to Data & Code"
+          },
+          {
+            "domId": "nav-insights",
+            "targetPageId": "page-insights",
+            "hideEdge": true,
+            "transitionLabel": "Go to Insights"
+          },
+          {
+            "domId": "nav-mobile-home",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "Home"
+          },
+          {
+            "domId": "nav-mobile-research",
+            "targetPageId": "page-research",
+            "hideEdge": true,
+            "transitionLabel": "Go to Research"
+          },
+          {
+            "domId": "nav-mobile-data-code",
+            "targetPageId": "page-data-code",
+            "hideEdge": true,
+            "transitionLabel": "Go to Data & Code"
+          },
+          {
+            "domId": "nav-mobile-insights",
+            "targetPageId": "page-insights",
+            "hideEdge": true,
+            "transitionLabel": "Go to Insights"
+          }
+        ]
+      }
+    },
+    {
+      "id": "image-001",
+      "title": "Study desk hero portrait",
+      "type": "image",
+      "version": 1,
+      "createdAt": 1783556400000,
+      "canvasData": {
+        "x": 0,
+        "y": 1525
+      },
+      "devMetadata": {
+        "imageSrc": "assets/portrait-hero.jpg"
+      }
+    },
+    {
+      "id": "image-002",
+      "title": "Manuscript texture",
+      "type": "image",
+      "version": 1,
+      "createdAt": 1783556400000,
+      "canvasData": {
+        "x": 620,
+        "y": 1525
+      },
+      "devMetadata": {
+        "imageSrc": "assets/texture-manuscript.jpg"
+      }
+    },
+    {
+      "id": "image-003",
+      "title": "AI and accounting insight visual",
+      "type": "image",
+      "version": 1,
+      "createdAt": 1783556400000,
+      "canvasData": {
+        "x": 1240,
+        "y": 1525
+      },
+      "devMetadata": {
+        "imageSrc": "assets/insight-featured.jpg"
+      }
+    },
+    {
+      "id": "image-004",
+      "title": "Essay lead image",
+      "type": "image",
+      "version": 1,
+      "createdAt": 1783556400000,
+      "canvasData": {
+        "x": 1860,
+        "y": 1525
+      },
+      "devMetadata": {
+        "imageSrc": "assets/article-lead.jpg"
+      }
+    }
+  ],
+  "config": {
+    "autoLayout": true,
+    "deviceType": "desktop",
+    "projectName": "Dr Yuqian Zhang — Academic Website",
+    "designLibrary": null
+  }
+}
