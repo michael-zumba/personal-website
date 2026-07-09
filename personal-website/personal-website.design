@@ -530,6 +530,20 @@
       "devMetadata": {
         "imageSrc": "assets/article-lead.jpg"
       }
+    },
+    {
+      "id": "image-005",
+      "title": "Profile portrait of Yuqian Zhang",
+      "type": "image",
+      "version": 1,
+      "createdAt": 1783556400000,
+      "canvasData": {
+        "x": 2480,
+        "y": 1525
+      },
+      "devMetadata": {
+        "imageSrc": "assets/profile-yuqian-zhang.png"
+      }
     }
   ],
   "config": {

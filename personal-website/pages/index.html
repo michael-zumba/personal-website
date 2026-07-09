@@ -298,9 +298,9 @@
           <div class="lg:col-span-5 hp-fade-up hp-d2">
             <figure class="hp-portrait-card">
               <div class="hp-portrait-media">
-                <img src="../assets/portrait-hero.jpg"
-                     alt="Warm study desk with books, papers and soft window light"
-                     class="w-full h-full object-cover" loading="eager" decoding="async">
+                <img src="../assets/profile-yuqian-zhang.png"
+                     alt="Portrait of Dr Yuqian Zhang"
+                     class="hp-portrait-img" loading="eager" decoding="async">
               </div>
               <figcaption class="hp-portrait-caption">
                 <span class="hp-caption-left">
@@ -570,13 +570,17 @@
           <i data-lucide="fingerprint" class="w-4 h-4"></i>
           ORCID
         </a>
-        <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=" target="_blank" rel="noopener noreferrer" aria-label="SSRN author page">
+        <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=5308459" target="_blank" rel="noopener noreferrer" aria-label="SSRN author page">
           <i data-lucide="file-text" class="w-4 h-4"></i>
           SSRN
         </a>
-        <a href="https://scholar.google.com/citations?user=" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile">
+        <a href="https://scholar.google.com/citations?user=9pnGWz0AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile">
           <i data-lucide="graduation-cap" class="w-4 h-4"></i>
           Google Scholar
+        </a>
+        <a href="https://www.linkedin.com/in/yuqian-michael-zhang-744530142/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+          <i data-lucide="linkedin" class="w-4 h-4"></i>
+          LinkedIn
         </a>
       </div>
     </div>
@@ -1102,8 +1106,21 @@
       overflow: hidden;
       box-shadow: var(--scholar-shadow-card);
     }
-    .hp-portrait-media { aspect-ratio: 4 / 5; overflow: hidden; }
+    .hp-portrait-media {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--scholar-primary-100) 0%, var(--scholar-card) 70%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
     @media (min-width: 1024px) { .hp-portrait-media { aspect-ratio: 5 / 6; } }
+    .hp-portrait-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: bottom center;
+    }
     .hp-portrait-caption {
       display: flex;
       align-items: center;
