@@ -34,10 +34,14 @@ jobs:
           cp -r public/reports/nlp-textual-analysis site/
           mv site/nlp-textual-analysis/nlp-textual-analysis-accounting-finance.html site/nlp-textual-analysis/index.html
 
+          # Copy AI digital transformation research brief.
+          cp -r public/reports/ai-digital-transformation site/
+          mv site/ai-digital-transformation/index.html site/ai-digital-transformation/index.html 2>/dev/null || true
+
           # Copy downloadable data files.
           mkdir -p site/data
           cp public/data/*.csv site/data/ 2>/dev/null || true
-          cp public/data/README_methodology.txt site/data/ 2>/dev/null || true
+          cp public/data/*.txt site/data/ 2>/dev/null || true
 
           # Rewrite relative links into clean absolute URLs.
           # ../pages/<name>.html  -> /<name>/   (index.html -> /)
