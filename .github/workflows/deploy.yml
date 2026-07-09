@@ -19,13 +19,65 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run build
+
+      - name: Assemble static site from personal-website design
+        run: |
+          set -e
+          rm -rf site
+          mkdir -p site
+          cp -r personal-website/pages site/pages
+          cp -r personal-website/assets site/assets
+
+          # Root entry: redirect the domain root to the home page.
+          cat > site/index.html <<'HTML'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="refresh" content="0; url=./pages/index.html">
+            <link rel="canonical" href="./pages/index.html">
+            <title>Yuqian Zhang</title>
+          </head>
+          <body>
+            <p>Redirecting to <a href="./pages/index.html">the home page</a>.</p>
+            <script>window.location.replace('./pages/index.html');</script>
+          </body>
+          </html>
+          HTML
+
+          # Simple 404 that returns to the home page.
+          cat > site/404.html <<'HTML'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="refresh" content="0; url=/pages/index.html">
+            <title>Not found</title>
+          </head>
+          <body>
+            <p>Page not found. <a href="/pages/index.html">Return home</a>.</p>
+          </body>
+          </html>
+          HTML
+
+          # Preserve the custom domain.
+          if [ -f public/CNAME ]; then
+            cp public/CNAME site/CNAME
+          fi
+
+          # Prevent Jekyll from touching the static files.
+          touch site/.nojekyll
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
-      - uses: actions/deploy-pages@v4
+          path: ./site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
