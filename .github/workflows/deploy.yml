@@ -32,7 +32,7 @@ jobs:
 
           # Copy NLP research brief report with all dependencies.
           cp -r public/reports/nlp-textual-analysis site/
-          mv site/nlp-textual-analysis/nlp-textual-analysis-accounting-finance.html site/nlp-textual-analysis.html
+          mv site/nlp-textual-analysis/nlp-textual-analysis-accounting-finance.html site/nlp-textual-analysis/index.html
 
           # Copy downloadable data files.
           mkdir -p site/data
