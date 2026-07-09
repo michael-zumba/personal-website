@@ -20,42 +20,51 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Assemble static site from personal-website design
+      - name: Assemble static site with clean URLs
         run: |
           set -e
+          SRC=personal-website
           rm -rf site
           mkdir -p site
-          cp -r personal-website/pages site/pages
-          cp -r personal-website/assets site/assets
 
-          # Root entry: redirect the domain root to the home page.
-          cat > site/index.html <<'HTML'
-          <!DOCTYPE html>
-          <html lang="en">
-          <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="refresh" content="0; url=./pages/index.html">
-            <link rel="canonical" href="./pages/index.html">
-            <title>Yuqian Zhang</title>
-          </head>
-          <body>
-            <p>Redirecting to <a href="./pages/index.html">the home page</a>.</p>
-            <script>window.location.replace('./pages/index.html');</script>
-          </body>
-          </html>
-          HTML
+          # Shared assets at the root.
+          cp -r "$SRC/assets" site/assets
 
-          # Simple 404 that returns to the home page.
+          # Rewrite relative links into clean absolute URLs.
+          # ../pages/<name>.html  -> /<name>/   (index.html -> /)
+          # ../assets/            -> /assets/
+          rewrite() {
+            sed \
+              -e 's|\.\./pages/index\.html|/|g' \
+              -e 's|\.\./pages/research\.html|/research/|g' \
+              -e 's|\.\./pages/data-code\.html|/data-code/|g' \
+              -e 's|\.\./pages/insights\.html|/insights/|g' \
+              -e 's|\.\./pages/article\.html|/article/|g' \
+              -e 's|\.\./pages/contact\.html|/contact/|g' \
+              -e 's|\.\./assets/|/assets/|g' \
+              "$1"
+          }
+
+          # Home page at the root.
+          rewrite "$SRC/pages/index.html" > site/index.html
+
+          # Section pages as /<name>/index.html for clean URLs.
+          for name in research data-code insights article contact; do
+            mkdir -p "site/$name"
+            rewrite "$SRC/pages/$name.html" > "site/$name/index.html"
+          done
+
+          # 404 falls back to the home page.
           cat > site/404.html <<'HTML'
           <!DOCTYPE html>
           <html lang="en">
           <head>
             <meta charset="UTF-8">
-            <meta http-equiv="refresh" content="0; url=/pages/index.html">
+            <meta http-equiv="refresh" content="0; url=/">
             <title>Not found</title>
           </head>
           <body>
-            <p>Page not found. <a href="/pages/index.html">Return home</a>.</p>
+            <p>Page not found. <a href="/">Return home</a>.</p>
           </body>
           </html>
           HTML
@@ -65,8 +74,11 @@ jobs:
             cp public/CNAME site/CNAME
           fi
 
-          # Prevent Jekyll from touching the static files.
+          # Serve files as-is (no Jekyll processing).
           touch site/.nojekyll
+
+          echo "Assembled site:"
+          find site -maxdepth 2 -type f | sort
 
       - uses: actions/upload-pages-artifact@v3
         with:
