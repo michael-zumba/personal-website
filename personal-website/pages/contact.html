@@ -1062,13 +1062,18 @@
       headers: { 'Accept': 'application/json' }
     })
     .then(function(response) {
-      if (!response.ok) { throw new Error('Request failed'); }
-      return response.json();
+      return response.json().catch(function() { return {}; });
     })
-    .then(function() {
-      form.style.display = 'none';
-      if (errorPanel) errorPanel.classList.add('hidden');
-      revealPanel(successPanel);
+    .then(function(data) {
+      var ok = data && (data.success === true || data.success === 'true');
+      if (ok) {
+        form.style.display = 'none';
+        if (errorPanel) errorPanel.classList.add('hidden');
+        revealPanel(successPanel);
+      } else {
+        setSending(false);
+        if (errorPanel) revealPanel(errorPanel);
+      }
     })
     .catch(function() {
       setSending(false);
