@@ -363,7 +363,14 @@
         <h2 id="form-title" class="scholar-h3 mb-5">Send an enquiry</h2>
 
         <!-- Form -->
-        <form id="enquiry-form" action="#" method="post" novalidate class="space-y-5">
+        <form id="enquiry-form" action="https://formsubmit.co/ajax/yuqian.zhang@aut.ac.nz" method="POST" novalidate class="space-y-5">
+
+          <!-- FormSubmit configuration (delivery settings, not shown to visitors) -->
+          <input type="hidden" name="_subject" value="New enquiry from your website">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <!-- Honeypot: hidden from people, bots tend to fill it -->
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
 
           <!-- Full Name -->
           <div class="flex flex-col gap-1.5">
@@ -447,8 +454,21 @@
             <div class="flex items-start gap-3">
               <i data-lucide="check-circle" class="w-5 h-5 mt-0.5 shrink-0" style="color:var(--state-success)"></i>
               <div>
-                <p class="text-sm font-sans font-semibold" style="color:var(--scholar-foreground)">Thanks, your message has been noted.</p>
+                <p class="text-sm font-sans font-semibold" style="color:var(--scholar-foreground)">Thanks, your message has been sent.</p>
                 <p class="text-sm font-sans mt-1" style="color:var(--scholar-muted-foreground)">I will get back to you soon.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Error Panel (hidden by default) -->
+        <div id="form-error" class="hidden" role="alert" aria-live="assertive">
+          <div class="rounded-[var(--scholar-radius-medium)] p-6" style="background-color:color-mix(in srgb, var(--state-error) 10%, transparent);border:1px solid color-mix(in srgb, var(--state-error) 25%, transparent)">
+            <div class="flex items-start gap-3">
+              <i data-lucide="alert-circle" class="w-5 h-5 mt-0.5 shrink-0" style="color:var(--state-error)"></i>
+              <div>
+                <p class="text-sm font-sans font-semibold" style="color:var(--scholar-foreground)">Sorry, the message could not be sent.</p>
+                <p class="text-sm font-sans mt-1" style="color:var(--scholar-muted-foreground)">Please email me directly at <a href="mailto:yuqian.zhang@aut.ac.nz" class="font-mono underline" style="color:var(--scholar-primary)">yuqian.zhang@aut.ac.nz</a>.</p>
               </div>
             </div>
           </div>
@@ -931,12 +951,14 @@
   }
 
   /* Success panel entrance */
-  #form-success {
+  #form-success,
+  #form-error {
     opacity: 0;
     transform: translateY(8px);
     transition: opacity 300ms ease, transform 300ms ease;
   }
-  #form-success.visible {
+  #form-success.visible,
+  #form-error.visible {
     opacity: 1;
     transform: translateY(0);
   }
@@ -947,7 +969,8 @@
     #enquiry-form textarea {
       transition-duration: 0.01ms;
     }
-    #form-success {
+    #form-success,
+    #form-error {
       transition-duration: 0.01ms;
     }
   }
@@ -959,7 +982,11 @@
 (function() {
   var form = document.getElementById('enquiry-form');
   var successPanel = document.getElementById('form-success');
+  var errorPanel = document.getElementById('form-error');
   if (!form) return;
+
+  var submitBtn = form.querySelector('button[type="submit"]');
+  var submitDefaultText = submitBtn ? submitBtn.textContent.trim() : 'Send message';
 
   var fields = [
     {
@@ -1000,6 +1027,19 @@
     fields.forEach(function(f) { clearError(f); });
   }
 
+  function setSending(sending) {
+    if (!submitBtn) return;
+    submitBtn.disabled = sending;
+    submitBtn.style.opacity = sending ? '0.7' : '';
+    submitBtn.style.cursor = sending ? 'wait' : 'pointer';
+    submitBtn.textContent = sending ? 'Sending...' : submitDefaultText;
+  }
+
+  function revealPanel(panel) {
+    panel.classList.remove('hidden');
+    setTimeout(function() { panel.classList.add('visible'); }, 10);
+  }
+
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     clearAllErrors();
@@ -1014,11 +1054,26 @@
 
     if (!valid) return;
 
-    form.style.display = 'none';
-    successPanel.classList.remove('hidden');
-    setTimeout(function() {
-      successPanel.classList.add('visible');
-    }, 10);
+    setSending(true);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(response) {
+      if (!response.ok) { throw new Error('Request failed'); }
+      return response.json();
+    })
+    .then(function() {
+      form.style.display = 'none';
+      if (errorPanel) errorPanel.classList.add('hidden');
+      revealPanel(successPanel);
+    })
+    .catch(function() {
+      setSending(false);
+      if (errorPanel) revealPanel(errorPanel);
+    });
   });
 
   fields.forEach(function(f) {
