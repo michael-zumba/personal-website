@@ -3,6 +3,17 @@ title: Insights
 description: Research briefs, data-driven analyses, and evidence syntheses from Dr Yuqian Zhang.
 
 research_briefs:
+  - title: "Cybersecurity Risk Disclosure by Publicly Listed Firms: State, Drivers, and Consequences"
+    description: "A structured research brief on the post-mandate landscape of cybersecurity risk disclosure. Covers SEC Form 8-K Item 1.05 and Regulation S-K Item 106, EU NIS2 and DORA, disclosure practices, cross-industry and cross-country variation, capital market consequences, ransomware, and cyber insurance. Features 13 interactive ECharts visualisations and downloadable data files."
+    date: "July 2026"
+    link: "/reports/cybersecurity-risk-disclosure/"
+    topics:
+      - Cybersecurity disclosure
+      - SEC regulation
+      - Corporate governance
+      - Capital markets
+      - Ransomware
+      - Cyber insurance
   - title: "AI and Digital Transformation: Impact on Business Practices, Firm Performance, and Corporate Reporting (2015-2025)"
     description: "A structured research brief synthesising evidence on AI and digital technology adoption across industries, effects on firm productivity and financial performance, transformation of auditing and management control systems, country-level digital readiness, and regulatory developments including the EU AI Act. Features nine interactive ECharts visualisations and downloadable data files."
     date: "July 2026"

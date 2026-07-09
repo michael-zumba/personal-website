@@ -96,6 +96,11 @@ working_papers:
     authors: "Zhang, Y."
 
 research_briefs:
+  - title: "Cybersecurity Risk Disclosure by Publicly Listed Firms: State, Drivers, and Consequences"
+    description: "A structured research brief synthesising evidence on cybersecurity risk disclosure since the SEC mandated incident reporting and annual cyber governance disclosures in 2023. Covers regulatory frameworks (SEC Item 1.05 and Item 106, EU NIS2 and DORA), what firms actually disclose, cross-industry and cross-country variation, firm-level determinants of disclosure, capital market and firm consequences, and global systemic issues including ransomware. Features 13 interactive ECharts visualisations and downloadable data files."
+    date: "July 2026"
+    type: "Research Brief"
+    link: "/reports/cybersecurity-risk-disclosure/"
   - title: "AI and Digital Transformation: Impact on Business Practices, Firm Performance, and Corporate Reporting (2015-2025)"
     description: "A structured research brief synthesising evidence on AI and digital transformation across six dimensions: adoption trends by sector and firm size, productivity and financial performance effects, audit and management control transformation, country-level digital readiness, regulatory developments including the EU AI Act, and corporate AI disclosure implications. Data files and methodology documentation are available on the Data & Code page."
     date: "July 2026"

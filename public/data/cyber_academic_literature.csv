@@ -1,0 +1,17 @@
+# Key Academic Papers on Cybersecurity Disclosure, Breaches, and Governance
+# Author: Dr Yuqian Zhang, 2026-07-10
+# Sources: Publisher websites; CrossRef; Google Scholar; literature review compiled July 2026
+authors,year,title,journal,volume_issue,pages,doi_or_url,key_finding_summary
+Kamiya et al.,2021,"Risk Management, Firm Reputation, and the Impact of Successful Cyberattacks on Target Firms",Journal of Financial Economics,139(3),719-749,https://doi.org/10.1016/j.jfineco.2020.09.006,Successful cyberattacks cause negative stock reactions and sales decline; firms increase risk management post-breach
+Florackis et al.,2023,"Cybersecurity Risk",Review of Financial Studies,36(1),351-407,https://doi.org/10.1093/rfs/hhac049,Text-based cybersecurity risk measure predicts cyberattacks; high-exposure firms earn 8.3% annual premium
+Sheneman (forthcoming),2025,"Cybersecurity Risk and Bank Loan Contracting",The Accounting Review,,,https://doi.org/10.2308/TAR-2021-0604,Breach disclosures increase loan spreads by ~30 bps on average
+Ashraf and Sunder,2023,"Is Cybersecurity Risk Factor Disclosure Informative?",Journal of Business Ethics,187,325-348,https://doi.org/10.1007/s10551-022-05258-5,Detailed cybersecurity risk factor disclosures reduce information asymmetry
+Amir et al.,2018,"Do Firms Underreport Information on Cyber-Attacks?",The Accounting Review,93(3),1-30,https://doi.org/10.2308/accr-51881,Evidence that firms underreport cyber incidents prior to mandatory disclosure regimes
+Gordon et al.,2020,"Cybersecurity Risk and Voluntary Disclosure of Cybersecurity-Related Corporate Governance Information",Journal of Information Systems,34(3),87-103,https://doi.org/10.2308/isys-52561,Board-level cybersecurity expertise positively associated with voluntary governance disclosure
+Wang et al.,2023,"Cybersecurity Risk and the Cost of Equity Capital",Journal of Accounting and Public Policy,42(4),107126,https://doi.org/10.1016/j.jaccpubpol.2023.107126,Higher cybersecurity risk associated with higher cost of equity; moderated by board oversight quality
+Gao et al.,2020,"Firm-Level Cybersecurity Risk and Idiosyncratic Volatility",Journal of Management Information Systems,37(4),1132-1167,https://doi.org/10.1080/07421222.2020.1831797,Cybersecurity risk explains idiosyncratic volatility beyond traditional risk factors
+Havakhor et al.,2020,"Cybersecurity Investments and the Cost of Capital",MIS Quarterly,44(3),1345-1382,https://doi.org/10.25300/MISQ/2020/14588,Digital cybersecurity investments reduce cost of equity more than cost of debt
+Kankanhalli et al.,2020,"Factors Affecting Organizations' Resistance to Cybersecurity Breaches",MIS Quarterly,44(1),401-438,https://doi.org/10.25300/MISQ/2020/14137,Organisational factors including board attention predict breach resistance
+Juma'h and Alnsour,2020,"The Effect of Data Breaches on Company Performance",International Journal of Accounting and Information Systems,25,100468,https://doi.org/10.1016/j.accinf.2020.100468,Data breaches reduce ROA and increase audit fees in subsequent years
+Li et al.,2022,"Cybersecurity Risk and Audit Pricing",Auditing: A Journal of Practice and Theory,41(4),115-143,https://doi.org/10.2308/AJPT-2020-090,Higher cybersecurity risk linked to higher audit fees and longer audit delays
+Eaton et al.,2019,"The Impact of Data Breach Announcements on Shareholder Wealth",Journal of the Association for Information Systems,20(10),1471-1507,https://doi.org/10.17705/1jais.00568,Data breach announcements produce cumulative abnormal returns of -2% to -5%

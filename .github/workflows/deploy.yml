@@ -38,6 +38,10 @@ jobs:
           cp -r public/reports/ai-digital-transformation site/
           mv site/ai-digital-transformation/index.html site/ai-digital-transformation/index.html 2>/dev/null || true
 
+          # Copy cybersecurity risk disclosure research brief.
+          cp -r public/reports/cybersecurity-risk-disclosure site/
+          mv site/cybersecurity-risk-disclosure/index.html site/cybersecurity-risk-disclosure/index.html 2>/dev/null || true
+
           # Copy downloadable data files.
           mkdir -p site/data
           cp public/data/*.csv site/data/ 2>/dev/null || true
