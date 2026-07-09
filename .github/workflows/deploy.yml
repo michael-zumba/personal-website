@@ -30,6 +30,15 @@ jobs:
           # Shared assets at the root.
           cp -r "$SRC/assets" site/assets
 
+          # Copy NLP research brief report with all dependencies.
+          cp -r public/reports/nlp-textual-analysis site/
+          mv site/nlp-textual-analysis/nlp-textual-analysis-accounting-finance.html site/nlp-textual-analysis.html
+
+          # Copy downloadable data files.
+          mkdir -p site/data
+          cp public/data/*.csv site/data/ 2>/dev/null || true
+          cp public/data/README_methodology.txt site/data/ 2>/dev/null || true
+
           # Rewrite relative links into clean absolute URLs.
           # ../pages/<name>.html  -> /<name>/   (index.html -> /)
           # ../assets/            -> /assets/
