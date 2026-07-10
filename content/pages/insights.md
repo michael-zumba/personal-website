@@ -14,6 +14,17 @@ research_briefs:
       - Capital markets
       - Ransomware
       - Cyber insurance
+  - title: "Big Data and AI in Business Operations: Google Trends Nowcasting of New Zealand Tourism Demand and AI Adoption in the Sector"
+    description: "A research brief examining search-data nowcasting of NZ tourism demand using Google Trends against Stats NZ visitor arrivals, paired with a review of AI modelling and AI agent adoption across the NZ tourism and hospitality sector. Includes verified Google Trends data, correlation analysis, and documented case studies."
+    date: "July 2026"
+    link: "/reports/nz-tourism-nowcasting/"
+    topics:
+      - Google Trends
+      - Tourism nowcasting
+      - New Zealand
+      - AI adoption
+      - AI agents
+      - Hospitality
   - title: "AI and Digital Transformation: Impact on Business Practices, Firm Performance, and Corporate Reporting (2015-2025)"
     description: "A structured research brief synthesising evidence on AI and digital technology adoption across industries, effects on firm productivity and financial performance, transformation of auditing and management control systems, country-level digital readiness, and regulatory developments including the EU AI Act. Features nine interactive ECharts visualisations and downloadable data files."
     date: "July 2026"
