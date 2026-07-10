@@ -89,7 +89,7 @@
       "version": 1,
       "createdAt": 1783556400000,
       "canvasData": {
-        "x": 620,
+        "x": 433,
         "y": 0,
         "group": 0
       },
@@ -165,7 +165,7 @@
       "version": 1,
       "createdAt": 1783556400000,
       "canvasData": {
-        "x": 1240,
+        "x": 866,
         "y": 0,
         "group": 0
       },
@@ -241,7 +241,7 @@
       "version": 1,
       "createdAt": 1783556400000,
       "canvasData": {
-        "x": 1860,
+        "x": 1299,
         "y": 0,
         "group": 0
       },
@@ -317,7 +317,7 @@
       "version": 1,
       "createdAt": 1783556400000,
       "canvasData": {
-        "x": 2480,
+        "x": 1732,
         "y": 0,
         "group": 0
       },
@@ -411,7 +411,7 @@
       "version": 1,
       "createdAt": 1783556400000,
       "canvasData": {
-        "x": 3100,
+        "x": 2165,
         "y": 0,
         "group": 0
       },
@@ -483,7 +483,7 @@
       "createdAt": 1783556400000,
       "canvasData": {
         "x": 0,
-        "y": 1525
+        "y": 1567
       },
       "devMetadata": {
         "imageSrc": "assets/portrait-hero.jpg"
@@ -497,7 +497,7 @@
       "createdAt": 1783556400000,
       "canvasData": {
         "x": 620,
-        "y": 1525
+        "y": 1567
       },
       "devMetadata": {
         "imageSrc": "assets/texture-manuscript.jpg"
@@ -511,7 +511,7 @@
       "createdAt": 1783556400000,
       "canvasData": {
         "x": 1240,
-        "y": 1525
+        "y": 1567
       },
       "devMetadata": {
         "imageSrc": "assets/insight-featured.jpg"
@@ -525,7 +525,7 @@
       "createdAt": 1783556400000,
       "canvasData": {
         "x": 1860,
-        "y": 1525
+        "y": 1567
       },
       "devMetadata": {
         "imageSrc": "assets/article-lead.jpg"
@@ -539,7 +539,7 @@
       "createdAt": 1783556400000,
       "canvasData": {
         "x": 2480,
-        "y": 1525
+        "y": 1567
       },
       "devMetadata": {
         "imageSrc": "assets/profile-yuqian-zhang.png"
@@ -548,8 +548,12 @@
   ],
   "config": {
     "autoLayout": true,
-    "deviceType": "desktop",
+    "deviceType": "freeSize",
     "projectName": "Dr Yuqian Zhang — Academic Website",
-    "designLibrary": null
+    "designLibrary": null,
+    "windowSize": {
+      "width": 800,
+      "height": 600
+    }
   }
 }
