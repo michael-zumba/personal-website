@@ -641,9 +641,9 @@
     if (!c) return;
     c.setOption({
       tooltip: { trigger: 'axis' },
-      grid: { left: 55, containLabel: true, right: 20, top: 20, bottom: 30 },
+      grid: { left: 70, containLabel: true, right: 20, top: 20, bottom: 30 },
       xAxis: { type: 'category', data: ['2023','2025'] },
-      yAxis: { type: 'value', name: '% of S&P 500', max: 80 },
+      yAxis: { type: 'value', name: '% of S&P 500', nameGap: 12, max: 80 },
       series: [{
         type: 'bar',
         data: [12.0,72.0],
@@ -659,9 +659,9 @@
     if (!c) return;
     c.setOption({
       tooltip: { trigger: 'axis' },
-      grid: { left: 55, containLabel: true, right: 20, top: 20, bottom: 30 },
+      grid: { left: 70, containLabel: true, right: 20, top: 20, bottom: 30 },
       xAxis: { type: 'category', data: ['2023','2024','2025*'] },
-      yAxis: { type: 'value', name: 'Cases filed', max: 18 },
+      yAxis: { type: 'value', name: 'Cases filed', nameGap: 12, max: 18 },
       series: [{
         type: 'bar',
         data: [7,14,12],
