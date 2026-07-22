@@ -54,6 +54,7 @@ jobs:
           mkdir -p site/data
           cp public/data/*.csv site/data/ 2>/dev/null || true
           cp public/data/*.txt site/data/ 2>/dev/null || true
+          cp public/data/*.py  site/data/ 2>/dev/null || true
 
           # Rewrite relative links into clean absolute URLs.
           # ../pages/<name>.html  -> /<name>/   (index.html -> /)
