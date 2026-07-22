@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Lightbulb, ExternalLink, ArrowRight } from "lucide-react";
+import { Lightbulb, ExternalLink, ArrowRight, FileText } from "lucide-react";
 import { getPageData } from "@/lib/content";
 import { MarkdownRenderer } from "@/components/shared/MarkdownRenderer";
 
@@ -82,15 +82,29 @@ export default function InsightsPage() {
                         )}
                       </div>
                     </div>
-                    <Link
-                      href={brief.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="shrink-0 text-muted-foreground hover:text-primary transition-colors"
-                      aria-label="View research brief"
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                    </Link>
+                    <div className="shrink-0 flex items-center gap-3">
+                      {brief.summary_link && (
+                        <Link
+                          href={brief.summary_link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-md border border-muted-foreground/20 text-muted-foreground hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-colors"
+                          aria-label="Read one-page summary"
+                        >
+                          <FileText className="h-3.5 w-3.5" />
+                          Read Summary
+                        </Link>
+                      )}
+                      <Link
+                        href={brief.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="shrink-0 text-muted-foreground hover:text-primary transition-colors"
+                        aria-label="View research brief"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               ))}
