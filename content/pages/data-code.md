@@ -88,7 +88,7 @@ datasets:
         url: "/data/regulatory_timeline.csv"
     report_url: "/reports/ai-digital-transformation/"
   - project: "Textual Analysis and NLP in Accounting and Finance Research Brief (2026)"
-    description: "Compiled dataset of publication counts, method usage patterns, citation records, and application area trends underpinning the twenty-year review of textual analysis and NLP in accounting and finance research."
+    description: "Compiled dataset of publication counts, method usage patterns, citation records, and application area trends supporting the twenty-year review of textual analysis and NLP in accounting and finance research."
     files:
       - name: "README_methodology.txt"
         description: "Complete methodology documentation covering data sources, file descriptions, methodological notes, limitations, and reproducibility instructions."
@@ -113,6 +113,6 @@ datasets:
         url: "/data/nlp_data_source_trends.csv"
     report_url: "/reports/nlp-textual-analysis/nlp-textual-analysis-accounting-finance.html"
 ---
-Data and code from my research projects are made available here to support reproducibility and further scholarship. Each dataset includes a detailed README documenting sources, variable definitions, and methodological notes.
+Data and code from my research projects are made available here to support reproducibility and further research. Each dataset includes a detailed README documenting sources, variable definitions, and methodological notes.
 
 All files are provided as plain-text CSV with commented headers or as text documentation. They may be used for academic research with appropriate citation. If you use these data in your work, please cite the corresponding research brief or publication.

@@ -1,0 +1,609 @@
+{
+  "title": "Textual Analysis and Natural Language Processing in Accounting and Finance Research",
+  "subtitle": "A Twenty-Year Review of Data Sources, Methods, and Applications (2005-2025)",
+  "author": "Dr Yuqian Zhang",
+  "date": "10 July 2026",
+  "abstract": "Textual analysis has become one of the most active empirical programmes in accounting and finance. Over two decades the field has moved from a handful of exploratory studies to a mature literature that publishes dozens of papers each year in the leading journals. This brief reviews that trajectory. It traces the widening set of textual data sources, from machine readable regulatory filings to earnings call transcripts, analyst reports, financial news, and social media, and it documents the methodological progression from general purpose dictionaries to domain specific word lists, machine learning classifiers, word embeddings, transformer models, and most recently large language models. Drawing on a compiled dataset of publication counts, method usage, and citation records, the brief synthesises the principal findings of the field: textual signals carry information incremental to numerical financial data, disclosure tone predicts returns and future performance, readability shapes how markets process information, and machine learning methods substantially outperform dictionary approaches on classification accuracy. It closes with an assessment of validation concerns and a set of directions for future work, including the treatment of generative models as both research tools and objects of study.",
+  "sections": [
+    {
+      "heading": "Executive Summary",
+      "level": 1,
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "The textual analysis literature in accounting and finance has grown from a small set of pioneering papers in the mid 2000s to a substantial research programme that now contributes more than eighty papers a year across the top journals.[12] Early work established that the words managers, journalists, and analysts choose carry economically meaningful information. What began as a niche interest, dependent on manual coding or crude word counts, matured into a core empirical method as machine readable disclosures accumulated and computational tools became widely accessible. The growth curve is steep and sustained, with the fastest acceleration occurring after 2017 as machine learning methods entered the mainstream.[17]"
+        },
+        {
+          "type": "paragraph",
+          "text": "The methodological history of the field can be read as a sequence of transitions. It began with general purpose sentiment lists borrowed from psychology and content analysis, then moved to domain specific dictionaries after Loughran and McDonald[4] showed that ordinary word lists systematically misclassify financial language. From there the field adopted machine learning classifiers such as naive Bayes, support vector machines, and latent Dirichlet allocation, then word embeddings that capture semantic relationships, then transformer architectures such as FinBERT that model bidirectional context,[16] and most recently large language models such as GPT that can perform classification and reasoning tasks with little task specific training.[18] Each transition widened the range of questions researchers could ask and raised the bar for measurement quality."
+        },
+        {
+          "type": "paragraph",
+          "text": "The substantive findings are consistent across a large body of work. Textual signals provide information incremental to the numbers reported in financial statements. Disclosure tone predicts future returns and operating performance, and negative tone tends to have stronger and more persistent effects than positive tone.[1][15] Report readability affects the speed and accuracy with which markets process information, with less readable filings associated with lower earnings persistence.[2] Across classification tasks, machine learning and transformer methods substantially outperform dictionary approaches, with FinBERT reaching sentiment accuracy near ninety per cent against roughly sixty per cent for dictionary baselines.[16] These results, taken together, establish textual analysis as a durable and productive method rather than a passing trend."
+        }
+      ]
+    },
+    {
+      "heading": "Introduction",
+      "level": 1,
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Textual analysis can be defined as the application of natural language processing (NLP) to textual data for automated information extraction or measurement.[17] The definition is deliberately broad. It covers simple word counts and dictionary scoring at one end and complex neural language models at the other, and it applies wherever the object of study is language rather than numbers. What unites this work is a common premise: that natural language is a primary form of business communication in capital markets, and that systematic measurement of that language reveals information which numerical data alone does not capture."
+        },
+        {
+          "type": "paragraph",
+          "text": "Managers describe strategy and risk in narrative disclosure, analysts interpret firm prospects in prose, journalists frame events for investors, and executives answer unscripted questions on earnings calls. Each of these settings produces text that market participants read and act upon. For most of the history of accounting and finance research this text was inaccessible to large scale empirical study, because it existed only on paper or in fragmented archives. The situation changed with the digitisation of corporate disclosures. The launch of the SEC EDGAR system in the 1990s made electronic filings available at scale, and the later accumulation of earnings call transcripts and machine readable financial news created the data infrastructure on which this research programme depends.[23]"
+        },
+        {
+          "type": "paragraph",
+          "text": "The scope of this brief spans the period from 2005 to 2025 and covers both accounting and finance journals. The starting point reflects the emergence of the first influential empirical studies, and the endpoint captures the arrival of large language models as research tools. The remainder of the brief is organised as follows. Section 3 reviews the evolution of textual data sources. Section 4 describes the progression of NLP methods across six phases. Sections 5 and 6 survey the core research applications and the capital market and firm outcomes they explain. Section 7 addresses methodological developments and validation concerns. Section 8 presents publication and citation trends drawn from the compiled dataset. Section 9 considers emerging themes and future directions, and Section 10 concludes."
+        },
+        {
+          "type": "paragraph",
+          "text": "[Figure] Diagram 1. The methodological progression of textual analysis in accounting and finance, from general purpose dictionaries to large language models. Each stage widened the range of tractable research questions."
+        }
+      ]
+    },
+    {
+      "heading": "Evolution of Textual Data Sources",
+      "level": 1,
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "The empirical reach of textual analysis is bounded by the text available for study. Over two decades the set of usable sources has widened steadily, both as new disclosure channels emerged and as computational capacity made larger and messier corpora tractable. The sources below are presented in roughly the order in which they became central to the literature."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "SEC filings (10-K, 10-Q)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Regulatory filings are the workhorse of textual analysis. Electronic filing through EDGAR became comprehensive across 1993 to 1996, creating a deep and consistent archive.[23] The 10-K annual report is especially rich, containing the Management Discussion and Analysis, the risk factor section (Item 1A, mandated from 2005), the financial statements and footnotes, and the business description. This structure makes the 10-K attractive for measurement because sections can be isolated and compared across firms and years. It underpins a large share of the field, including Li,[2][3] Loughran and McDonald,[4] and Hoberg and Phillips.[10][11]"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "The MD&A section"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Management Discussion and Analysis is the most studied single section because it contains managerial narrative rather than templated boilerplate. It is where management explains results and outlook in its own words, which makes it a natural site for measuring tone and forward looking content. Brown and Tucker examine year over year modifications to the MD&A and show that the extent of revision is informative about changes in firm circumstances.[5] Li studies forward looking statements within corporate filings and shows they carry information about future earnings.[3]"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Earnings conference calls"
+        },
+        {
+          "type": "paragraph",
+          "text": "Conference call transcripts provide real time managerial communication, including a scripted presentation and an unscripted analyst question and answer session. The Q&A is particularly valuable because it is less rehearsed. Price and co-authors show that the textual tone of calls is informative for stock returns beyond the numbers released.[7] Larcker and Zakolyukina use call transcripts to detect deception,[6] and Jiang and co-authors aggregate managerial language into a market level sentiment measure.[15]"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Analyst reports"
+        },
+        {
+          "type": "paragraph",
+          "text": "Analyst research represents the output of professional information intermediaries who interpret firm disclosures for investors. Their reports blend quantitative forecasts with qualitative narrative, and the narrative component has become an object of study in its own right. This line of work informs measures of analyst opinion and the information content of professional commentary.[16]"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Financial news and media"
+        },
+        {
+          "type": "paragraph",
+          "text": "Financial media were the setting for one of the founding studies of the field. Tetlock used the content of a Wall Street Journal column to construct a measure of media pessimism and showed that it predicts downward pressure on prices followed by reversal.[1] The study established that media tone affects market prices and helped legitimise textual measurement as a source of return predictability."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Social media"
+        },
+        {
+          "type": "paragraph",
+          "text": "Social media are a more recent addition to the source set. Internet stock message boards and short form platforms such as Twitter generate large volumes of investor commentary at high frequency. These sources are noisier than regulated disclosure but offer breadth and timeliness, and they extend textual analysis to retail sentiment that formal filings do not capture."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Patents"
+        },
+        {
+          "type": "paragraph",
+          "text": "Patent text supports text based measures of innovation. By analysing the language of patent documents, researchers construct measures of technological content and novelty that complement simple patent counts and citation measures."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Central bank and regulatory communications"
+        },
+        {
+          "type": "paragraph",
+          "text": "Official communications, including FOMC minutes and SEC comment letters, provide a further source of policy relevant and firm relevant text. Comment letters in particular link regulator scrutiny to subsequent changes in firm disclosure, which makes them useful for studying the disclosure response to oversight."
+        },
+        {
+          "type": "callout",
+          "text": "Trajectory The overall trend is toward richer and more diverse textual sources as computational capacity and NLP methods advance. Regulatory filings anchored the early literature, and successive waves of transcripts, news, social media, and specialised corpora broadened the questions the field could address."
+        },
+        {
+          "type": "paragraph",
+          "text": "[Figure] Figure 6. Usage of textual data sources across six periods from 2005 to 2025. Regulatory filings dominate throughout, while transcripts, news, and social media rise as new channels mature. Source: nlp_data_source_trends.csv."
+        }
+      ]
+    },
+    {
+      "heading": "Progression of NLP Methods",
+      "level": 1,
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "The methods used to convert text into measurement have evolved through six overlapping phases. Each phase did not fully replace the one before it, and dictionaries remain in wide use, but the frontier has moved steadily toward models that learn from data rather than relying on fixed word lists."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "1. Dictionary and bag-of-words (2005-2011)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Early work scored text by counting words from predefined lists, treating a document as an unordered bag of words. The lists were general purpose instruments drawn from psychology and content analysis, including the Harvard IV-4 dictionary, Diction, and LIWC. Tetlock used the Harvard dictionary to measure media pessimism.[1] The key breakthrough came from Loughran and McDonald, who demonstrated that general dictionaries systematically misclassify common financial terms. Words such as liability, tax, and cost are coded as negative in general lists but are neutral in a financial context.[4] They created the LM Master Dictionary with six word lists: negative, positive, uncertainty, litigious, strong modal, and weak modal.[24]"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "2. Readability and complexity measures (2008-2014)"
+        },
+        {
+          "type": "paragraph",
+          "text": "A parallel line of work measured how hard a document is to read rather than what sentiment it conveys. Li introduced the Fog Index to 10-K analysis and showed that less readable reports are associated with lower and less persistent earnings.[2] Loughran and McDonald later critiqued the Fog Index for financial text, arguing that its components behave poorly on filings, and proposed 10-K file size as a simpler and better measure of document complexity.[8]"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "3. Topic modeling and LDA (2014-2020)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Topic models infer latent themes from a corpus without predefined categories. Dyer, Lang, and Stice-Lawrence applied latent Dirichlet allocation to 10-Ks to track the evolution of disclosure content, finding that new FASB and SEC requirements drive much of the increase in report length.[13] Bao and Datta used LDA to discover and quantify risk types from textual risk disclosures.[22] Seeded variants of LDA improve topic coherence for financial text by incorporating prior knowledge."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "4. Word embeddings (2017-2021)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Word embeddings such as Word2Vec and GloVe represent words as dense vectors, so that words with similar meanings have similar vector representations. This enables measuring textual similarity between documents and tracking semantic shifts over time. Hoberg and Phillips use cosine similarity between firm product descriptions to build text based network industry classifications, which capture competitive relationships that standard industry codes miss.[10][11][25]"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "5. Transformers, BERT and FinBERT (2020-2024)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Transformer models read text bidirectionally, so the meaning of a word is conditioned on its full context rather than on a fixed list. Huang, Wang, and Yang developed FinBERT, pre-trained on financial reports, analyst reports, and earnings call transcripts, and showed that it reaches sentiment accuracy of 88.2 per cent against 62.1 per cent for dictionaries.[16] Siano and Wysocki demonstrate that BERT style transfer learning allows small accounting datasets to benefit from models pre-trained on large corpora.[19]"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "6. Large language models (2023-present)"
+        },
+        {
+          "type": "paragraph",
+          "text": "The most recent phase applies generative large language models such as GPT-4 and ChatGPT to textual analysis. de Kok shows that generative models achieve 96 per cent accuracy on non-answer detection in earnings calls and provides guidance on how to use these tools in accounting research.[18] Kim, Muhn, and Nikolaev show that GPT can analyse financial statements and predict earnings from standardised numerical inputs, at times outperforming analysts.[21] These capabilities come with distinctive concerns, including prompt engineering, construct validity, look-ahead bias, monetary cost, and reproducibility."
+        },
+        {
+          "type": "callout",
+          "text": "Accuracy gap The move from dictionaries to transformers is not only conceptual but empirical. On sentiment classification the accuracy gap between a dictionary baseline near sixty per cent and a domain trained transformer near ninety per cent is large enough to change the conclusions of applied studies."
+        },
+        {
+          "type": "paragraph",
+          "text": "[Figure] Figure 2. Approximate share of published papers using each NLP method across six periods. Dictionary methods dominate early and decline as machine learning, transformers, and large language models rise. Source: nlp_method_evolution.csv."
+        },
+        {
+          "type": "paragraph",
+          "text": "[Figure] Figure 8. Reported sentiment classification accuracy by method, from dictionary baselines through neural classifiers to domain trained transformers. Values are indicative benchmarks drawn from the survey literature.[16]"
+        }
+      ]
+    },
+    {
+      "heading": "Core Research Applications",
+      "level": 1,
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "The methods above have been applied to a fairly stable set of research questions. Six application areas account for most of the literature, and their relative importance has shifted only gradually over time."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tone and sentiment"
+        },
+        {
+          "type": "paragraph",
+          "text": "Tone and sentiment form the largest application area, representing roughly thirty seven per cent of papers.[17] Managerial tone in the MD&A predicts future performance,[3][20] conference call tone drives market reactions,[7] and aggregate manager sentiment predicts market returns.[15] A recurring result is that negative tone has stronger effects than positive tone, consistent with the greater credibility of unfavourable news in disclosure."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Readability and disclosure complexity"
+        },
+        {
+          "type": "paragraph",
+          "text": "Less readable 10-Ks are associated with lower earnings persistence, which suggests that complexity impedes the market's ability to price fundamentals.[2] The length of the 10-K has increased dramatically over the sample period, driven in part by regulatory requirements.[13] Complex language may reflect deliberate obfuscation or genuine business complexity, and distinguishing the two remains an active question."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Textual similarity and novelty"
+        },
+        {
+          "type": "paragraph",
+          "text": "Similarity measures compare documents to a benchmark, whether the same firm in a prior year or a set of peers. Brown and Tucker measure year over year changes in the MD&A,[5] while Hoberg and Phillips identify product market peers from the similarity of business descriptions.[11] Textual similarity to competitors reveals competitive positioning that standard classifications miss."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Forward-looking and risk disclosure"
+        },
+        {
+          "type": "paragraph",
+          "text": "Forward looking statements in filings predict future earnings,[3] and mandatory risk factor disclosures inform risk assessments and the cost of capital.[9] Risk disclosure tone responds to actual risk exposures, which supports the view that these sections carry information rather than boilerplate alone."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Deception and fraud detection"
+        },
+        {
+          "type": "paragraph",
+          "text": "Larcker and Zakolyukina identify linguistic markers of deception in conference calls, including more references to general knowledge, fewer self references, and more extreme positive emotion.[6] NLP models are increasingly used for fraud prediction, extending this work from detection after the fact toward earlier warning."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Disclosure quality and quantity"
+        },
+        {
+          "type": "paragraph",
+          "text": "A further strand measures the volume of disclosure through word count and file size, along with its specificity and comparability. Regulatory oversight is one driver of disclosure change, and SEC comment letters have been shown to affect subsequent disclosure content.[17]"
+        },
+        {
+          "type": "paragraph",
+          "text": "[Figure] Figure 5. Research applications of textual analysis by theme across six periods. Tone and sentiment lead throughout, with forward looking and risk disclosure and similarity work growing strongly. Source: nlp_application_area_trends.csv."
+        }
+      ]
+    },
+    {
+      "heading": "Capital Market and Firm Outcomes",
+      "level": 1,
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "The value of textual measurement rests on whether it explains outcomes that matter. The literature links textual signals to a wide range of market and firm level consequences."
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "9.75% -- Monthly R-squared of manager sentiment predicting aggregate returns[15]",
+            "88.2% -- FinBERT sentiment accuracy versus 62.1% for dictionaries[16]",
+            "96% -- Generative LLM accuracy on non-answer detection in earnings calls[18]"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Stock returns"
+        },
+        {
+          "type": "paragraph",
+          "text": "Tetlock shows that media pessimism predicts downward pressure on prices, followed by reversal, a pattern consistent with temporary sentiment driven mispricing.[1] Jiang and co-authors find that manager sentiment negatively predicts aggregate returns, with a monthly R-squared of 9.75 per cent, which is large for a return prediction exercise.[15]"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Volatility and liquidity"
+        },
+        {
+          "type": "paragraph",
+          "text": "Tone and readability affect information asymmetry and trading behaviour. Harder to read and more negative disclosures are associated with wider spreads and higher volatility around release, consistent with slower and noisier price discovery."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Cost of capital"
+        },
+        {
+          "type": "paragraph",
+          "text": "Campbell and co-authors show that mandatory risk factor disclosures affect the cost of equity, which indicates that the market prices the risk information conveyed in narrative sections.[9]"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Analyst forecasts, audit, credit, and governance"
+        },
+        {
+          "type": "paragraph",
+          "text": "Textual complexity increases analyst disagreement, as harder to process disclosure widens the dispersion of forecasts. Textual measures also predict going concern opinions and audit fees, help forecast default probability through sentiment, and reflect governance quality through disclosure style. Together these results show that textual signals reach well beyond returns into the full set of stakeholders who read corporate language."
+        },
+        {
+          "type": "table",
+          "caption": "Table 1. Selected outcome links documented in the textual analysis literature",
+          "note": "",
+          "headers": [
+            "Outcome",
+            "Textual signal",
+            "Representative evidence"
+          ],
+          "rows": [
+            [
+              "Stock returns",
+              "Media and manager tone",
+              "Pessimism predicts pressure then reversal; sentiment predicts aggregate returns[1][15]"
+            ],
+            [
+              "Earnings persistence",
+              "Readability",
+              "Less readable filings, lower persistence[2]"
+            ],
+            [
+              "Cost of equity",
+              "Risk factor disclosure",
+              "Mandatory risk disclosures priced by the market[9]"
+            ],
+            [
+              "Fraud and deception",
+              "Linguistic markers",
+              "Deceptive calls show distinctive language patterns[6]"
+            ],
+            [
+              "Future earnings",
+              "Forward-looking statements",
+              "Forward looking text predicts future earnings[3]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Methodological Developments and Validation Concerns",
+      "level": 1,
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "As the field has grown, attention has shifted from demonstrating that text matters to ensuring that textual measures are valid and that predictive claims survive scrutiny. Several concerns recur."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Measurement validity"
+        },
+        {
+          "type": "paragraph",
+          "text": "Dictionary based measures are noisy, because word lists cannot capture context, negation, or sarcasm. Machine learning approaches can be more accurate but require proper validation, since a model that fits its training data may not generalise. The core question is whether a measure captures the construct it claims to capture, a matter of construct validity that no amount of statistical fit can settle on its own."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Out-of-sample testing"
+        },
+        {
+          "type": "paragraph",
+          "text": "Predictive claims should be evaluated out of sample. The distinction between explanation and prediction is central here: a model can explain variation in a sample without predicting new observations, and only out of sample testing separates the two.[14] This point, long emphasised in the statistics literature, has become more salient as machine learning methods with many parameters entered the field."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Reproducibility"
+        },
+        {
+          "type": "paragraph",
+          "text": "Code and data sharing remains inconsistent across the literature. Reproducibility is harder for textual work than for numerical work, because corpora are large, licensing restricts redistribution, and preprocessing choices are numerous and often undocumented. Clearer reporting of these choices is needed for results to be verifiable."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Human coding benchmarks and look-ahead bias"
+        },
+        {
+          "type": "paragraph",
+          "text": "Human coding provides a valuable benchmark for automated measures, although it is expensive and does not scale. A further concern, sharpened by large language models, is look-ahead bias. Models pre-trained on web data may have seen information from the future relative to the sample period, which can inflate apparent predictive performance in ways that are difficult to detect.[18]"
+        },
+        {
+          "type": "callout",
+          "text": "Implementation framework Bochkay and co-authors provide a framework for NLP implementation decisions in accounting, covering the choice of source, method, validation strategy, and reporting standards. Their guidance is a useful reference point as the field moves toward more complex models.[17]"
+        }
+      ]
+    },
+    {
+      "heading": "Publication and Citation Trends",
+      "level": 1,
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "The compiled dataset behind this brief allows the growth of the field to be quantified. Publication counts rose from about two papers in 2005 to roughly ninety in 2023, a near exponential increase over less than two decades. The most rapid growth occurred between 2017 and 2022, as machine learning methods became accessible to applied researchers and as pre-trained models lowered the technical barrier to entry."
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "~90 -- Papers in top journals in 2023, up from 2 in 2005",
+            "61% -- Share published in accounting journals; 31% in finance journals",
+            "~5,700 -- Citations to Loughran and McDonald (2011), the most cited paper[4]"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The split across disciplines is uneven. Accounting journals such as TAR, JAR, JAE, CAR, and RAST publish about 61 per cent of textual analysis papers, while finance journals such as JF, JFE, RFS, and MS account for about 31 per cent, with the remaining share in general interest journals such as JPE and other outlets. This reflects the disclosure oriented questions that dominate the field, which sit naturally within accounting research. In terms of influence, Loughran and McDonald is the most cited paper with roughly 5,700 citations, a reflection of how widely the LM dictionary is used as infrastructure by later work.[4]"
+        },
+        {
+          "type": "paragraph",
+          "text": "[Figure] Figure 1. Publication trends of textual analysis papers in top accounting and finance journals from 2005 to 2025, split into the top five accounting journals and the top four finance journals. Data for 2025 are partial. Source: nlp_publication_trends.csv."
+        },
+        {
+          "type": "paragraph",
+          "text": "[Figure] Figure 7. Average annual publications by research phase. The Early phase (2005-2010) gives way to Growth (2011-2016), ML-Adoption (2017-2021), and Deep-Learning (2022-2025), each with a higher average output. Source: nlp_publication_trends.csv."
+        },
+        {
+          "type": "paragraph",
+          "text": "[Figure] Figure 3. Cumulative distribution of textual analysis publications by journal through 2025. Accounting titles occupy the top of the distribution. Source: nlp_journal_distribution.csv."
+        },
+        {
+          "type": "paragraph",
+          "text": "[Figure] Figure 4. The ten most cited textual analysis papers in accounting and finance by Google Scholar citations as of mid 2025. Source: nlp_citation_analysis.csv."
+        }
+      ]
+    },
+    {
+      "heading": "Emerging Themes and Future Directions",
+      "level": 1,
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "The field is entering a new phase in which generative models are reshaping both what researchers can measure and what they choose to study. Eight themes are likely to define the next several years."
+        },
+        {
+          "type": "numbered_list",
+          "items": [
+            "From measurement to prediction. Deep learning shifts the emphasis from measuring constructs toward predicting outcomes, which raises the importance of out of sample discipline and honest reporting of predictive performance.",
+            "Generative LLMs as tools and objects of study. Large language models are both instruments for analysis and phenomena worth studying in their own right, including how markets respond to machine generated disclosure.[18]",
+            "Multimodal analysis. Combining text with audio, such as vocal tone in earnings calls, and with images and video promises richer measures of managerial communication than text alone.",
+            "Cross-lingual and international disclosure. Extending textual analysis beyond English language filings will open comparative work across regulatory regimes and languages.",
+            "Real-time textual analysis. Streaming analysis of disclosure and news supports market surveillance and faster detection of emerging risks.",
+            "Causal identification with textual instruments. Text can supply variation for causal designs, provided the exclusion restrictions are defensible.",
+            "ESG and sustainability disclosure. The growth of sustainability reporting creates a large and rapidly evolving corpus for textual measurement.",
+            "Doctoral training. Accounting PhD programmes need NLP coursework so that the next generation can use these methods with the required rigour."
+          ]
+        },
+        {
+          "type": "callout",
+          "text": "A note of caution The accessibility of generative models lowers the barrier to entry but also lowers the barrier to error. Prompt sensitivity, hidden look-ahead bias, and cost make careful design and transparent reporting more important, not less, as the tools become easier to use."
+        }
+      ]
+    },
+    {
+      "heading": "Conclusion",
+      "level": 1,
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Textual analysis in accounting and finance has matured from an exploratory idea into a central empirical method. Over twenty years the field established a consistent set of findings: the language of managers, analysts, and the media carries information incremental to reported numbers; tone predicts returns and future performance; readability shapes how markets process disclosure; and machine learning methods substantially outperform the dictionary approaches that launched the field. These results are robust across sources, methods, and outcomes, which is why the method has become part of the standard empirical toolkit rather than a specialist niche."
+        },
+        {
+          "type": "paragraph",
+          "text": "The maturation of the field is visible in its methods and in its self scrutiny. The progression from general dictionaries to domain specific lists, machine learning, embeddings, transformers, and large language models has widened the range of tractable questions while raising the standard for measurement quality. In parallel, the literature has become more attentive to validity, out of sample testing, reproducibility, and look-ahead bias. This combination of methodological ambition and methodological caution is the mark of a field that takes its own measurement seriously."
+        },
+        {
+          "type": "paragraph",
+          "text": "For future research, three priorities stand out. First, predictive claims should be held to out of sample standards, and code and data should be shared so that results are verifiable. Second, generative models should be treated with the same care as any other instrument, with attention to prompt design, cost, and the risk of information leakage from pre-training. Third, the field should invest in training, so that doctoral students acquire the NLP skills that the next phase of research will demand. If these priorities are met, textual analysis will continue to deliver on its central promise, which is to make the language of capital markets measurable, comparable, and useful."
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Tetlock, P.C. (2007). \"Giving Content to Investor Sentiment: The Role of Media in the Stock Market.\" Journal of Finance, 62(3), 1139-1168. https://doi.org/10.1111/j.1540-6261.2007.01232.x",
+      "url": "https://doi.org/10.1111/j.1540-6261.2007.01232.x"
+    },
+    {
+      "text": "Li, F. (2008). \"Annual Report Readability, Current Earnings, and Earnings Persistence.\" Journal of Accounting and Economics, 45(2-3), 221-247. https://doi.org/10.1016/j.jacceco.2008.02.003",
+      "url": "https://doi.org/10.1016/j.jacceco.2008.02.003"
+    },
+    {
+      "text": "Li, F. (2010). \"The Information Content of Forward-Looking Statements in Corporate Filings: A Naive Bayesian Machine Learning Approach.\" Journal of Accounting Research, 48(5), 1049-1102. https://doi.org/10.1111/j.1475-679X.2010.00382.x",
+      "url": "https://doi.org/10.1111/j.1475-679X.2010.00382.x"
+    },
+    {
+      "text": "Loughran, T. and McDonald, B. (2011). \"When Is a Liability Not a Liability? Textual Analysis, Dictionaries, and 10-Ks.\" Journal of Finance, 66(1), 35-65. https://doi.org/10.1111/j.1540-6261.2010.01625.x",
+      "url": "https://doi.org/10.1111/j.1540-6261.2010.01625.x"
+    },
+    {
+      "text": "Brown, S.V. and Tucker, J.W. (2011). \"Large-Sample Evidence on Firms' Year-over-Year MD&A Modifications.\" Journal of Accounting Research, 49(2), 309-346. https://doi.org/10.1111/j.1475-679X.2010.00396.x",
+      "url": "https://doi.org/10.1111/j.1475-679X.2010.00396.x"
+    },
+    {
+      "text": "Larcker, D.F. and Zakolyukina, A.A. (2012). \"Detecting Deceptive Discussions in Conference Calls.\" Journal of Accounting Research, 50(2), 495-540. https://doi.org/10.1111/j.1475-679X.2012.00450.x",
+      "url": "https://doi.org/10.1111/j.1475-679X.2012.00450.x"
+    },
+    {
+      "text": "Price, S.M., Doran, J.S., Peterson, D.R. and Bliss, B.A. (2012). \"Earnings Conference Calls and Stock Returns: The Incremental Informativeness of Textual Tone.\" Journal of Banking and Finance, 36(4), 992-1011. https://doi.org/10.1016/j.jbankfin.2011.11.013",
+      "url": "https://doi.org/10.1016/j.jbankfin.2011.11.013"
+    },
+    {
+      "text": "Loughran, T. and McDonald, B. (2014). \"Measuring Readability in Financial Disclosures.\" Journal of Finance, 69(4), 1643-1671. https://doi.org/10.1111/jofi.12162",
+      "url": "https://doi.org/10.1111/jofi.12162"
+    },
+    {
+      "text": "Campbell, J.L., Chen, H., Dhaliwal, D.S., Lu, H. and Steele, L.B. (2014). \"The Information Content of Mandatory Risk Factor Disclosures in Corporate Filings.\" Review of Accounting Studies, 19(1), 396-455. https://doi.org/10.1007/s11142-013-9258-3",
+      "url": "https://doi.org/10.1007/s11142-013-9258-3"
+    },
+    {
+      "text": "Hoberg, G. and Phillips, G. (2010). \"Product Market Synergies and Competition in Mergers and Acquisitions: A Text-Based Analysis.\" Review of Financial Studies, 23(10), 3773-3811. https://doi.org/10.1093/rfs/hhq053",
+      "url": "https://doi.org/10.1093/rfs/hhq053"
+    },
+    {
+      "text": "Hoberg, G. and Phillips, G. (2016). \"Text-Based Network Industries and Endogenous Product Differentiation.\" Journal of Political Economy, 124(5), 1423-1465. https://doi.org/10.1086/688176",
+      "url": "https://doi.org/10.1086/688176"
+    },
+    {
+      "text": "Loughran, T. and McDonald, B. (2016). \"Textual Analysis in Accounting and Finance: A Survey.\" Journal of Accounting Research, 54(4), 1187-1230. https://doi.org/10.1111/1475-679X.12123",
+      "url": "https://doi.org/10.1111/1475-679X.12123"
+    },
+    {
+      "text": "Dyer, T., Lang, M. and Stice-Lawrence, L. (2017). \"The Evolution of 10-K Textual Disclosure: Evidence from Latent Dirichlet Allocation.\" Journal of Accounting and Economics, 64(2-3), 221-245. https://doi.org/10.1016/j.jacceco.2017.07.002",
+      "url": "https://doi.org/10.1016/j.jacceco.2017.07.002"
+    },
+    {
+      "text": "Gentzkow, M., Kelly, B. and Taddy, M. (2019). \"Text as Data.\" Journal of Economic Literature, 57(3), 535-574. https://doi.org/10.1257/jel.20181020",
+      "url": "https://doi.org/10.1257/jel.20181020"
+    },
+    {
+      "text": "Jiang, F., Lee, J., Martin, X. and Zhou, G. (2019). \"Manager Sentiment and Stock Returns.\" Journal of Financial Economics, 132(1), 126-149. https://doi.org/10.1016/j.jfineco.2018.10.001",
+      "url": "https://doi.org/10.1016/j.jfineco.2018.10.001"
+    },
+    {
+      "text": "Huang, A.H., Wang, H. and Yang, Y. (2023). \"FinBERT: A Large Language Model for Extracting Information from Financial Text.\" Contemporary Accounting Research, 40(2), 806-841. https://doi.org/10.1111/1911-3846.12832",
+      "url": "https://doi.org/10.1111/1911-3846.12832"
+    },
+    {
+      "text": "Bochkay, K., Brown, S.V., Leone, A.J. and Tucker, J.W. (2023). \"Textual Analysis in Accounting: What's Next?\" Contemporary Accounting Research, 40(2), 765-805. https://doi.org/10.1111/1911-3846.12825",
+      "url": "https://doi.org/10.1111/1911-3846.12825"
+    },
+    {
+      "text": "de Kok, T. (2025). \"ChatGPT for Textual Analysis? How to Use Generative LLMs in Accounting Research.\" Management Science, 71(9), 7888-7906. https://doi.org/10.1287/mnsc.2023.03253",
+      "url": "https://doi.org/10.1287/mnsc.2023.03253"
+    },
+    {
+      "text": "Siano, F. and Wysocki, P. (2021). \"Transfer Learning and Textual Analysis of Accounting Disclosures: Applying Big Data Methods to Small(er) Datasets.\" Accounting Horizons, 35(3), 217-244. https://doi.org/10.2308/HORIZONS-19-161",
+      "url": "https://doi.org/10.2308/HORIZONS-19-161"
+    },
+    {
+      "text": "Feldman, R., Govindaraj, S., Livnat, J. and Segal, B. (2010). \"Management's Tone Change, Post Earnings Announcement Drift and Accruals.\" Review of Accounting Studies, 15(4), 915-953. https://doi.org/10.1007/s11142-009-9111-x",
+      "url": "https://doi.org/10.1007/s11142-009-9111-x"
+    },
+    {
+      "text": "Kim, A., Muhn, M. and Nikolaev, V. (2024). \"Financial Statement Analysis with Large Language Models.\" Working paper, University of Chicago Booth School of Business. https://doi.org/10.48550/arXiv.2407.17866",
+      "url": "https://doi.org/10.48550/arXiv.2407.17866"
+    },
+    {
+      "text": "Bao, Y. and Datta, A. (2014). \"Simultaneously Discovering and Quantifying Risk Types from Textual Risk Disclosures.\" Management Science, 60(6), 1371-1391. https://doi.org/10.1287/mnsc.2014.1930",
+      "url": "https://doi.org/10.1287/mnsc.2014.1930"
+    },
+    {
+      "text": "SEC EDGAR Full-Text Search. U.S. Securities and Exchange Commission. https://www.sec.gov/search-filings",
+      "url": "https://www.sec.gov/search-filings"
+    },
+    {
+      "text": "Loughran-McDonald Master Dictionary. Software Repository for Accounting and Finance, University of Notre Dame. https://sraf.nd.edu/loughranmcdonald-master-dictionary/",
+      "url": "https://sraf.nd.edu/loughranmcdonald-master-dictionary/"
+    },
+    {
+      "text": "Hoberg-Phillips Data Library. Tuck School of Business, Dartmouth College. https://hobergphillips.tuck.dartmouth.edu/",
+      "url": "https://hobergphillips.tuck.dartmouth.edu/"
+    }
+  ]
+}

@@ -16,6 +16,7 @@ const navItems = [
   { name: "Teaching", href: "/teaching" },
   { name: "Data & Code", href: "/data-code" },
   { name: "Blog", href: "/blog" },
+  { name: "Book a Meeting", href: "/book", highlight: true },
 ];
 
 export function Navbar() {
@@ -31,20 +32,32 @@ export function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
-                pathname === item.href
-                  ? "text-foreground"
-                  : "text-muted-foreground"
-              )}
-            >
-              {item.name}
-            </Link>
-          ))}
+          {navItems.map((item) =>
+            item.highlight ? (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "inline-flex h-9 items-center rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
+                )}
+              >
+                {item.name}
+              </Link>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-primary",
+                  pathname === item.href
+                    ? "text-foreground"
+                    : "text-muted-foreground"
+                )}
+              >
+                {item.name}
+              </Link>
+            )
+          )}
           <ModeToggle />
         </nav>
 
@@ -76,10 +89,14 @@ export function Navbar() {
                   href={item.href}
                   onClick={() => setIsOpen(false)}
                   className={cn(
-                    "text-sm font-medium transition-colors hover:text-primary py-2",
-                    pathname === item.href
-                      ? "text-foreground"
-                      : "text-muted-foreground"
+                    item.highlight
+                      ? "inline-flex h-10 items-center justify-center rounded-lg bg-primary text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90"
+                      : cn(
+                          "text-sm font-medium transition-colors hover:text-primary py-2",
+                          pathname === item.href
+                            ? "text-foreground"
+                            : "text-muted-foreground"
+                        )
                   )}
                 >
                   {item.name}

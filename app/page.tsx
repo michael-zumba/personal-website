@@ -236,14 +236,22 @@ export default function Home() {
           <p className="text-muted-foreground leading-relaxed">
             I am always open to research collaborations, PhD supervision
             inquiries, and discussions about accounting and technology. Feel
-            free to reach out.
+            free to book a meeting or send me an email.
           </p>
-          <Link
-            href="mailto:yuqian.zhang@aut.ac.nz"
-            className="inline-flex h-11 items-center justify-center rounded-lg bg-primary px-8 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
-          >
-            Email Me
-          </Link>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link
+              href="/book"
+              className="inline-flex h-11 items-center justify-center rounded-lg bg-primary px-8 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
+            >
+              Book a Meeting
+            </Link>
+            <Link
+              href="mailto:yuqian.zhang@aut.ac.nz"
+              className="inline-flex h-11 items-center justify-center rounded-lg border border-input bg-background px-8 text-sm font-medium shadow-sm transition-all hover:bg-muted hover:shadow-md"
+            >
+              Email Me
+            </Link>
+          </div>
         </div>
       </section>
     </div>

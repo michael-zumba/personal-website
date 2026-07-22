@@ -483,7 +483,7 @@
       "createdAt": 1783556400000,
       "canvasData": {
         "x": 0,
-        "y": 1567
+        "y": 1859
       },
       "devMetadata": {
         "imageSrc": "assets/portrait-hero.jpg"
@@ -497,7 +497,7 @@
       "createdAt": 1783556400000,
       "canvasData": {
         "x": 620,
-        "y": 1567
+        "y": 1859
       },
       "devMetadata": {
         "imageSrc": "assets/texture-manuscript.jpg"
@@ -511,7 +511,7 @@
       "createdAt": 1783556400000,
       "canvasData": {
         "x": 1240,
-        "y": 1567
+        "y": 1859
       },
       "devMetadata": {
         "imageSrc": "assets/insight-featured.jpg"
@@ -525,7 +525,7 @@
       "createdAt": 1783556400000,
       "canvasData": {
         "x": 1860,
-        "y": 1567
+        "y": 1859
       },
       "devMetadata": {
         "imageSrc": "assets/article-lead.jpg"
@@ -539,7 +539,7 @@
       "createdAt": 1783556400000,
       "canvasData": {
         "x": 2480,
-        "y": 1567
+        "y": 1859
       },
       "devMetadata": {
         "imageSrc": "assets/profile-yuqian-zhang.png"

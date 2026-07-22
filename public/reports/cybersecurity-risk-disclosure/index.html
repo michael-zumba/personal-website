@@ -155,10 +155,13 @@
     color: var(--text-secondary);
     margin-bottom: 12px;
     font-style: italic;
+    overflow: visible;
+    word-wrap: break-word;
   }
   .chart-box {
     width: 100%;
     height: 420px;
+    overflow: hidden;
   }
   .chart-box.tall {
     height: 520px;
@@ -238,7 +241,7 @@
 <body>
 <div class="container">
 
-<a href="../../index.html" class="back-link">&larr; Back to website</a>
+<a href="/" class="back-link">&larr; Back to website</a>
 
 <header>
   <h1>Cybersecurity Risk Disclosure by Publicly Listed Firms: State, Drivers, and Consequences</h1>
@@ -277,11 +280,11 @@
 <section id="intro">
   <h2>1. Introduction</h2>
 
-  <p>On 26 July 2023, the SEC adopted final rules requiring publicly listed companies to disclose material cybersecurity incidents within four business days and to describe their cyber risk management, strategy, and governance processes in annual reports. These rules, codified under Form 8-K Item 1.05 and Regulation S-K Item 106, represent the most significant expansion of mandatory non-financial risk disclosure requirements since the adoption of Sarbanes-Oxley in 2002. For the accounting and finance research community, the advent of mandatory cyber risk disclosure opens a rich domain of inquiry at the intersection of information economics, voluntary and mandatory disclosure theory, and the materiality judgment framework that has long been central to securities regulation (Healy and Palepu, 2001; Beyer et al., 2010).</p>
+  <p>On 26 July 2023, the SEC adopted final rules requiring publicly listed companies to disclose material cybersecurity incidents within four business days and to describe their cyber risk management, strategy, and governance processes in annual reports. These rules, codified under Form 8-K Item 1.05 and Regulation S-K Item 106, represent the most significant expansion of mandatory non-financial risk disclosure requirements since the adoption of Sarbanes-Oxley in 2002. For the accounting and finance research community, the introduction of mandatory cyber risk disclosure opens a broad area of research at the intersection of information economics, voluntary and mandatory disclosure theory, and the materiality judgment framework that has long been central to securities regulation (Healy and Palepu, 2001; Beyer et al., 2010).</p>
 
   <p>Cybersecurity has evolved from a narrow technical concern into a material business risk with implications for firm valuation, cost of capital, audit risk, and corporate governance. Cyber incidents impose direct costs: the average data breach cost reached USD 4.88 million in 2024, the highest on record (IBM/Ponemon, 2024). They also impose indirect costs through reputational damage, customer churn, regulatory penalties, and shareholder litigation. Kamiya et al. (2021), writing in the <em>Journal of Financial Economics</em>, document that successful cyberattacks decrease shareholder wealth by approximately 1.09 percent over a three-day window (an average value loss of USD 495 million per attack), harm firm reputation, reduce sales growth, and generate intra-industry contagion effects on non-breached peer firms. Following an attack, firms increase their risk management and IT spending and reduce management risk-taking incentives. Florackis et al. (2023), in the <em>Review of Financial Studies</em>, construct a text-based measure of cybersecurity risk from 10-K filings and show that portfolios of high-cybersecurity-risk firms earn an annual risk premium of up to 8.3 percent, and that their measure predicts future cyberattacks, suggesting that narrative disclosures contain economically meaningful signals even in the pre-mandate era.</p>
 
-  <p>The SEC rulemaking did not emerge in isolation. Globally, several major jurisdictions have enacted or revised cyber incident reporting requirements in the 2023-2025 window. The European Union adopted NIS2 (effective October 2024), expanding the scope of its cybersecurity directive to 18 critical sectors and introducing management accountability provisions. DORA (the Digital Operational Resilience Act), effective January 2025, imposes the world's most demanding incident reporting timeline (4 hours) on 21 categories of financial entities. The Australian Securities and Investments Commission (ASIC) has signalled heightened expectations for cyber governance disclosure. This regulatory convergence, combined with meaningful variation in institutional design across jurisdictions, creates a natural laboratory for comparative disclosure research.</p>
+  <p>The SEC rules were not introduced in isolation. Globally, several major jurisdictions have enacted or revised cyber incident reporting requirements in the 2023-2025 window. The European Union adopted NIS2 (effective October 2024), expanding the scope of its cybersecurity directive to 18 critical sectors and introducing management accountability provisions. DORA (the Digital Operational Resilience Act), effective January 2025, imposes the world's most demanding incident reporting timeline (4 hours) on 21 categories of financial entities. The Australian Securities and Investments Commission (ASIC) has signalled heightened expectations for cyber governance disclosure. This regulatory convergence, combined with meaningful variation in institutional design across jurisdictions, creates a natural laboratory for comparative disclosure research.</p>
 
   <p>The academic motivation is twofold. First, mandatory disclosure regimes provide exogenous variation that allows researchers to move beyond the endogeneity concerns that have long constrained the voluntary disclosure literature. The SEC rules create a clear pre-post treatment structure, and the staggered adoption of NIS2 across EU member states provides additional identification opportunities. Second, cybersecurity disclosures raise fundamental questions about materiality. Whether an incident is material, and therefore reportable, involves complex judgments about financial magnitude, operational disruption, and reputational harm that are inherently forward-looking and uncertain. These judgments offer a window into how firms and their managers interpret and apply the materiality standard in practice, with implications that extend well beyond cybersecurity to climate risk, AI governance, and other emerging disclosure domains.</p>
 
@@ -537,7 +540,7 @@
 
   <h3>5.1 Firm Size and Industry</h3>
 
-  <p>Firm size is consistently the most robust predictor of cybersecurity disclosure quantity and quality in the pre-mandate literature. Larger firms face greater public scrutiny, have more substantial resources to invest in cybersecurity programmes, and are more likely targets of attacks, all of which create incentives for more extensive disclosure. Gao et al. (2020) find that disclosure length increases linearly over time, and that larger firms, on average, provide more extensive cybersecurity risk disclosures, consistent with a political cost explanation.</p>
+  <p>Firm size is consistently the strongest predictor of cybersecurity disclosure quantity and quality in the pre-mandate literature. Larger firms face greater public scrutiny, have more substantial resources to invest in cybersecurity programmes, and are more likely targets of attacks, all of which create incentives for more extensive disclosure. Gao et al. (2020) find that disclosure length increases linearly over time, and that larger firms, on average, provide more extensive cybersecurity risk disclosures, consistent with a political cost explanation.</p>
 
   <p>Industry membership is also a significant determinant, but the direction of the effect varies by study. IT-intensive industries (technology, finance, telecommunications) naturally have more cybersecurity risk to disclose. However, prior to the mandate, some firms in these industries may have strategically limited disclosure to avoid revealing vulnerabilities. The literature on the relationship between industry competition and disclosure is mixed: some studies find that firms in more competitive industries disclose less to protect proprietary information, while others find that competitive pressure increases transparency as a differentiation mechanism.</p>
 
@@ -563,7 +566,7 @@
 
   <p>Cybersecurity breaches produce negative and statistically significant stock price reactions. Kamiya et al. (2021, JFE) document that successful cyberattacks lead to negative stock price reactions and significant loss of sales growth for target firms, with average cumulative abnormal returns (CARs) in the range of negative 1 to 3 percent over short event windows. The effect extends beyond the target firm: there is evidence of intra-industry contagion, with non-breached firms in the same industry experiencing negative abnormal returns around major breach announcements.</p>
 
-  <p>A 2025 study in the <em>Journal of Banking Regulation</em> examining 53 global cyberattacks finds negative and statistically significant stock price reactions for breached firms around disclosure dates, with stronger reactions for small firms, high-leverage firms, high-growth-opportunity firms, and incidents involving financial information loss. This heterogeneity is important: it suggests that cybersecurity risk interacts with other firm-level risk factors to determine market impact, and that the nature of the compromised information matters alongside the fact of the breach itself.</p>
+  <p>A 2025 study in the <em>Journal of Banking Regulation</em> examining 53 global cyberattacks finds negative and statistically significant stock price reactions for breached firms around disclosure dates, with stronger reactions for small firms, high-leverage firms, high-growth-opportunity firms, and incidents involving financial information loss. This variation is important: it suggests that cybersecurity risk interacts with other firm-level risk factors to determine market impact, and that the nature of the compromised information matters alongside the fact of the breach itself.</p>
 
   <p>On the disclosure side, the relationship between disclosure and stock price crash risk is nuanced. A 2024 study in the <em>International Review of Economics and Finance</em> finds that data breach disclosures (mandated by state-level Data Breach Notification laws) are associated with <em>increased</em> stock price crash risk, consistent with the argument that disclosure of bad news can itself trigger panic selling. However, research in the <em>Journal of Corporate Accounting and Finance</em> (Vol. 36, Issue 3) finds that higher <em>frequency</em> of cybersecurity disclosures (presumably reflecting ongoing risk management communication rather than incident-driven disclosure) is associated with <em>reduced</em> stock price crash risk. The distinction between incident-triggered disclosure and routine risk management disclosure appears critical to understanding disclosure effects.</p>
 
@@ -688,7 +691,7 @@
 <section>
   <h2>9. Conclusion</h2>
 
-  <p>The adoption of mandatory cybersecurity disclosure rules by the SEC in July 2023 represents a watershed moment in the governance of corporate cybersecurity risk. In the approximately two and a half years since the rules took effect, a rich picture has emerged: 55 incidents reported under Item 1.05 in the first year, substantial variation in materiality judgments and disclosure specificity, early enforcement actions signalling the SEC's intent to pursue misleading disclosures, and the parallel development of disclosure frameworks in the European Union, Asia-Pacific, and beyond.</p>
+  <p>The adoption of mandatory cybersecurity disclosure rules by the SEC in July 2023 represents a turning point in the governance of corporate cybersecurity risk. In the approximately two and a half years since the rules took effect, a rich picture has emerged: 55 incidents reported under Item 1.05 in the first year, substantial variation in materiality judgments and disclosure specificity, early enforcement actions signalling the SEC's intent to pursue misleading disclosures, and the parallel development of disclosure frameworks in the European Union, Asia-Pacific, and beyond.</p>
 
   <p>Several themes emerge from this review. First, materiality determination is the central challenge of the new disclosure regime: the prevalence of "undetermined" characterisations in initial filings and the dramatic shift from Item 1.05 to Item 8.01 following the SEC's May 2024 guidance both reflect the practical difficulty of applying a forward-looking materiality standard to cybersecurity incidents. Second, the disclosure mandate generates new information: textual analysis of Item 1C disclosures shows that the governance and process focus of the new requirements produces content that is fundamentally distinct from what firms previously disclosed voluntarily. Third, the global regulatory landscape is fragmenting: the SEC, NIS2, and DORA frameworks reflect different regulatory philosophies and impose different reporting requirements on multinational firms, creating a complex compliance environment and rich opportunities for comparative research.</p>
 
@@ -759,7 +762,7 @@
 <section>
   <h2>Data Availability</h2>
 
-  <p>The data files underpinning this research brief are available for download. Each file is provided as plain-text CSV with commented headers documenting variable definitions and sources. A complete methodology document describes data sources, file structures, methodological notes, limitations, and reproducibility instructions.</p>
+  <p>The data files supporting this research brief are available for download. Each file is provided as plain-text CSV with commented headers documenting variable definitions and sources. A complete methodology document describes data sources, file structures, methodological notes, limitations, and reproducibility instructions.</p>
 
   <table>
     <thead>
@@ -793,7 +796,7 @@
   var c1 = echarts.init(document.getElementById('chart-timeline'));
   c1.setOption({
     tooltip: { trigger: 'item', formatter: '{b}<br/>{c}' },
-    grid: { left: 160, right: 40, top: 20, bottom: 20 },
+    grid: { left: 160, containLabel: true, right: 40, top: 20, bottom: 20 },
     xAxis: { type: 'time', axisLabel: { fontSize: 11 } },
     yAxis: { type: 'category', data: ['GDPR','SEC Guidance','CCPA','SEC Proposes Rules','CIRCIA','NIS2 & DORA Published','SEC Adopts Rules','SEC Rules Effective','8-K Item 1.05 Active','Reg S-K Item 106 Active','Gerding Clarification','SEC C&DIs Issued','NIS2 Transposition','SEC SolarWinds Enforcement','DORA Application'], axisLabel: { fontSize: 10 } },
     series: [{
@@ -855,7 +858,7 @@
   var c4 = echarts.init(document.getElementById('chart-disclosure-elements'));
   c4.setOption({
     tooltip: { trigger: 'axis', formatter: '{b}: {c}%' },
-    grid: { left: 220, right: 40, top: 10, bottom: 20 },
+    grid: { left: 200, containLabel: true, right: 40, top: 10, bottom: 20 },
     xAxis: { type: 'value', max: 100, axisLabel: { formatter: '{value}%', fontSize: 10 } },
     yAxis: { type: 'category', axisLabel: { fontSize: 11, width: 200, overflow: 'truncate' },
       data: ['Engage assessors/consultants/auditors','List management positions responsible','Describe audits/drills/tabletop exercises','Evaluate vendor cybersecurity','Integrate into overall risk management','Disclose experience/qualifications','Disclose incident response plan','Employee training programmes','CISO identified by name/title','Require vendor adherence to processes','Reference NIST CSF framework'] },
@@ -892,7 +895,7 @@
   var c6 = echarts.init(document.getElementById('chart-industry-filings'));
   c6.setOption({
     tooltip: { trigger: 'axis', formatter: '{b}: {c}%' },
-    grid: { left: 140, right: 40, top: 10, bottom: 20 },
+    grid: { left: 140, containLabel: true, right: 40, top: 10, bottom: 20 },
     xAxis: { type: 'value', axisLabel: { formatter: '{value}%', fontSize: 10 } },
     yAxis: { type: 'category', axisLabel: { fontSize: 10 },
       data: ['Real Estate/Construction','Energy/Transportation','Manufacturing','Industrial','Technology','Finance','Trade/Services'] },
@@ -911,7 +914,7 @@
   c7.setOption({
     tooltip: { trigger: 'axis' },
     legend: { data: ['Breach Count','Avg Cost per Breach (USD M)'], bottom: 0, textStyle: { fontSize: 10 } },
-    grid: { left: 50, right: 50, top: 20, bottom: 35 },
+    grid: { left: 50, containLabel: true, right: 50, top: 20, bottom: 35 },
     xAxis: { type: 'category', data: ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'], axisLabel: { fontSize: 10 } },
     yAxis: [
       { type: 'value', name: 'Count', axisLabel: { fontSize: 9 } },
@@ -930,7 +933,7 @@
   var c8 = echarts.init(document.getElementById('chart-reporting-timelines'));
   c8.setOption({
     tooltip: { trigger: 'axis', formatter: '{b}: {c} hours' },
-    grid: { left: 100, right: 40, top: 10, bottom: 20 },
+    grid: { left: 100, containLabel: true, right: 40, top: 10, bottom: 20 },
     xAxis: { type: 'value', name: 'Hours (log scale)', axisLabel: { fontSize: 10 } },
     yAxis: { type: 'category', axisLabel: { fontSize: 11 },
       data: ['SEC Item 1.05\n(4 business days = ~32h)','GDPR\n(72 hours)','NIS2\n(24 hours)','NIS2\n(Early warning)','DORA\n(4 hours)'] },
@@ -949,7 +952,7 @@
   var c9 = echarts.init(document.getElementById('chart-car'));
   c9.setOption({
     tooltip: { trigger: 'axis', formatter: '{b}: {c}%' },
-    grid: { left: 60, right: 30, top: 20, bottom: 30 },
+    grid: { left: 60, containLabel: true, right: 30, top: 20, bottom: 30 },
     xAxis: { type: 'category', data: ['Day (-1,0)','Day (-1,+1)','Day (-3,+3)','Day (-5,+5)'], axisLabel: { fontSize: 10, rotate: 25 } },
     yAxis: { type: 'value', axisLabel: { formatter: '{value}%', fontSize: 10 } },
     series: [{
@@ -968,7 +971,7 @@
   c10.setOption({
     tooltip: { trigger: 'axis' },
     legend: { data: ['Attacks Reported','Total Payments (USD M)'], bottom: 0, textStyle: { fontSize: 10 } },
-    grid: { left: 60, right: 60, top: 20, bottom: 35 },
+    grid: { left: 60, containLabel: true, right: 60, top: 20, bottom: 35 },
     xAxis: { type: 'category', data: ['2019','2020','2021','2022','2023','2024','2025'], axisLabel: { fontSize: 10 } },
     yAxis: [
       { type: 'value', name: 'Attacks', axisLabel: { fontSize: 9 } },
@@ -988,7 +991,7 @@
   c11.setOption({
     tooltip: { trigger: 'axis', formatter: function(p) { var r=''; p.forEach(function(i){ r+=i.seriesName+': $'+i.value+'B<br/>'; }); return r; } },
     legend: { data: ['North America','Europe','Rest of World'], bottom: 0, textStyle: { fontSize: 10 } },
-    grid: { left: 50, right: 30, top: 20, bottom: 35 },
+    grid: { left: 50, containLabel: true, right: 30, top: 20, bottom: 35 },
     xAxis: { type: 'category', data: ['2019','2020','2021','2022','2023','2024','2025'], axisLabel: { fontSize: 10 } },
     yAxis: { type: 'value', axisLabel: { formatter: '${value}B', fontSize: 10 } },
     series: [
@@ -1005,7 +1008,7 @@
   var c12 = echarts.init(document.getElementById('chart-research-opportunities'));
   c12.setOption({
     tooltip: { trigger: 'item', formatter: '{b}' },
-    grid: { left: 100, right: 40, top: 20, bottom: 40 },
+    grid: { left: 100, containLabel: true, right: 40, top: 20, bottom: 40 },
     xAxis: { type: 'value', name: 'Data Availability', axisLabel: { fontSize: 9 }, min: 0, max: 10 },
     yAxis: { type: 'value', name: 'Theoretical Significance', axisLabel: { fontSize: 9 }, min: 0, max: 10 },
     series: [{

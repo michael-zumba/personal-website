@@ -57,6 +57,6 @@ Dr Yuqian (Michael) Zhang is a Senior Lecturer (Above the Bar) in Accounting at 
 
 Michael's research has been published in leading Q1 journals including *Meditari Accountancy Research* (ABDC-A), *Industrial Management & Data Systems* (ABDC-A), and *Journal of Applied Accounting Research*. He serves on the editorial boards of *Journal of Accounting & Organisational Change* and *Humanities & Social Sciences Communications*.
 
-An active PhD supervisor, Michael currently supervises seven doctoral candidates across topics ranging from digital asset valuation to sustainability disclosures. He is committed to innovative pedagogy that bridges accounting theory with data analytics and emerging technologies.
+An active PhD supervisor, Michael currently supervises seven doctoral candidates across topics ranging from digital asset valuation to sustainability disclosures. He is committed to innovative teaching that bridges accounting theory with data analytics and emerging technologies.
 
 Contact: yuqian.zhang@aut.ac.nz
