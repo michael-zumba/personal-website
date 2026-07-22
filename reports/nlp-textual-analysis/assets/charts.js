@@ -220,7 +220,7 @@
       title: titleOpt("Figure 1: Publication Trends of Textual Analysis Papers in Top Accounting and Finance Journals (2005-2025)"),
       tooltip: baseTooltip("axis"),
       legend: baseLegend(46, { data: ["Accounting Top 5", "Finance Top 4"] }),
-      grid: baseGrid({ top: 74 }),
+      grid: baseGrid({ top: 82 }),
       xAxis: {
         type: "category",
         data: pubYears,
@@ -279,7 +279,7 @@
       title: titleOpt("Figure 2: Evolution of NLP Methods in Accounting and Finance Research"),
       tooltip: baseTooltip("axis"),
       legend: baseLegend(30),
-      grid: baseGrid({ top: 88 }),
+      grid: baseGrid({ top: 96 }),
       xAxis: {
         type: "category",
         data: methodPeriods,
@@ -348,7 +348,7 @@
     mount("chart-citations", {
       title: titleOpt("Figure 4: Most-Cited Textual Analysis Papers in Accounting and Finance"),
       tooltip: baseTooltip("axis"),
-      grid: baseGrid({ top: 56, left: 8, right: 60 }),
+      grid: baseGrid({ top: 56, left: 30, right: 60 }),
       xAxis: {
         type: "value",
         name: "Google Scholar citations",
@@ -364,7 +364,7 @@
           color: MUTED,
           fontFamily: FONT_BODY,
           fontSize: 10,
-          width: 210,
+          width: 260,
           overflow: "break"
         },
         axisLine: axisLine(),
@@ -409,7 +409,7 @@
       title: titleOpt("Figure 5: Research Applications of Textual Analysis by Theme"),
       tooltip: baseTooltip("axis"),
       legend: baseLegend(30),
-      grid: baseGrid({ top: 88 }),
+      grid: baseGrid({ top: 96 }),
       xAxis: {
         type: "category",
         data: appPeriods,
@@ -450,7 +450,7 @@
       title: titleOpt("Figure 6: Textual Data Sources Used in Accounting and Finance Research"),
       tooltip: baseTooltip("axis"),
       legend: baseLegend(30),
-      grid: baseGrid({ top: 88 }),
+      grid: baseGrid({ top: 96 }),
       xAxis: {
         type: "category",
         data: srcPeriods,

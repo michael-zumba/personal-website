@@ -858,9 +858,9 @@
   var c4 = echarts.init(document.getElementById('chart-disclosure-elements'));
   c4.setOption({
     tooltip: { trigger: 'axis', formatter: '{b}: {c}%' },
-    grid: { left: 200, containLabel: true, right: 40, top: 10, bottom: 20 },
+    grid: { left: 260, containLabel: true, right: 40, top: 20, bottom: 20 },
     xAxis: { type: 'value', max: 100, axisLabel: { formatter: '{value}%', fontSize: 10 } },
-    yAxis: { type: 'category', axisLabel: { fontSize: 11, width: 200, overflow: 'truncate' },
+    yAxis: { type: 'category', axisLabel: { fontSize: 11 },
       data: ['Engage assessors/consultants/auditors','List management positions responsible','Describe audits/drills/tabletop exercises','Evaluate vendor cybersecurity','Integrate into overall risk management','Disclose experience/qualifications','Disclose incident response plan','Employee training programmes','CISO identified by name/title','Require vendor adherence to processes','Reference NIST CSF framework'] },
     series: [{
       type: 'bar', data: [98,99,96,90,90,88,87,84,78,42,53],
@@ -933,7 +933,7 @@
   var c8 = echarts.init(document.getElementById('chart-reporting-timelines'));
   c8.setOption({
     tooltip: { trigger: 'axis', formatter: '{b}: {c} hours' },
-    grid: { left: 100, containLabel: true, right: 40, top: 10, bottom: 20 },
+    grid: { left: 170, containLabel: true, right: 40, top: 20, bottom: 20 },
     xAxis: { type: 'value', name: 'Hours (log scale)', axisLabel: { fontSize: 10 } },
     yAxis: { type: 'category', axisLabel: { fontSize: 11 },
       data: ['SEC Item 1.05\n(4 business days = ~32h)','GDPR\n(72 hours)','NIS2\n(24 hours)','NIS2\n(Early warning)','DORA\n(4 hours)'] },
