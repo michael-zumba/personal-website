@@ -199,6 +199,15 @@ Dr Yuqian Zhang, 10 July 2026
 - The COVID-19 pandemic creates a structural break in the search-arrivals
   relationship. Models fitted on pre-COVID data may not transfer to
   post-COVID conditions without adjustment.
+- RECOVERY CHART NOTE: The January 2023 recovery percentage in Figure 5
+  uses 67.2% from the Stats NZ published "proportion of 2019" table. The
+  computed value from the revised January 2023 arrival figure (266,432)
+  would be 66.7%. Stats NZ revised the January 2023 arrival data in the
+  April 2026 release to correct a cruise ship passenger list error, but
+  the published percentage-of-2019 table was not updated after the revision.
+  We use the official published table figure (67.2%) to remain consistent
+  with the source document. Both values round to 67% when reported to the
+  nearest whole percent.
 
 ================================================================================
 5. CITATION
