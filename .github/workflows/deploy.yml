@@ -50,6 +50,9 @@ jobs:
           cp -r public/reports/nz-tourism-nowcasting site/
           mv site/nz-tourism-nowcasting/index.html site/nz-tourism-nowcasting/index.html 2>/dev/null || true
 
+          # Copy AI tokens future asset research brief.
+          cp -r public/reports/ai-tokens-future-asset site/
+
           # Copy downloadable data files.
           mkdir -p site/data
           cp public/data/*.csv site/data/ 2>/dev/null || true
