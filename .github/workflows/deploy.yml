@@ -30,27 +30,12 @@ jobs:
           # Shared assets at the root.
           cp -r "$SRC/assets" site/assets
 
-          # Copy NLP research brief report with all dependencies.
+          # Copy research brief reports with all dependencies.
           cp -r public/reports/nlp-textual-analysis site/
-          mv site/nlp-textual-analysis/nlp-textual-analysis-accounting-finance.html site/nlp-textual-analysis/index.html
-
-          # Copy AI digital transformation research brief.
           cp -r public/reports/ai-digital-transformation site/
-          mv site/ai-digital-transformation/index.html site/ai-digital-transformation/index.html 2>/dev/null || true
-
-          # Copy blockchain and cryptocurrency research brief.
           cp -r public/reports/blockchain-crypto site/
-          mv site/blockchain-crypto/index.html site/blockchain-crypto/index.html 2>/dev/null || true
-
-          # Copy cybersecurity risk disclosure research brief.
           cp -r public/reports/cybersecurity-risk-disclosure site/
-          mv site/cybersecurity-risk-disclosure/index.html site/cybersecurity-risk-disclosure/index.html 2>/dev/null || true
-
-          # Copy NZ tourism nowcasting research brief.
           cp -r public/reports/nz-tourism-nowcasting site/
-          mv site/nz-tourism-nowcasting/index.html site/nz-tourism-nowcasting/index.html 2>/dev/null || true
-
-          # Copy AI tokens future asset research brief.
           cp -r public/reports/ai-tokens-future-asset site/
 
           # Copy downloadable data files.
