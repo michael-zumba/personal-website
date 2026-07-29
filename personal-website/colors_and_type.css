@@ -1,0 +1,100 @@
+:root {
+  --scholar-background: #f7f4ec;
+  --scholar-foreground: #23241f;
+  --scholar-card: #fffdf8;
+  --scholar-card-foreground: #23241f;
+  --scholar-popover: #fffdf8;
+  --scholar-popover-foreground: #23241f;
+  --scholar-muted: #f1ece0;
+  --scholar-muted-foreground: #6a685e;
+  --scholar-border: #ded8ca;
+  --scholar-input: #ded8ca;
+  --scholar-ring: #1f4d3f;
+
+  --scholar-primary: #1f4d3f;
+  --scholar-primary-foreground: #f7f4ec;
+  --scholar-primary-100: #e7efeb;
+  --scholar-primary-200: #c7ddd4;
+  --scholar-primary-300: #9fc3b5;
+  --scholar-primary-400: #6a9c8b;
+  --scholar-primary-500: #3f7565;
+  --scholar-primary-600: #2b5d4d;
+  --scholar-primary-700: #1f4d3f;
+  --scholar-primary-800: #184033;
+  --scholar-primary-900: #123227;
+
+  --state-success: #3f7565;
+  --state-warning: #a8792b;
+  --state-error: #a23b32;
+  --state-info: #2f5d7a;
+
+  --scholar-radius-small: 4px;
+  --scholar-radius-medium: 8px;
+  --scholar-radius-large: 16px;
+  --scholar-radius-xlarge: 16px;
+  --scholar-radius-full: 9999px;
+
+  --scholar-shadow-card: 0 1px 2px rgba(31, 37, 32, 0.04);
+  --scholar-shadow-float: 0 14px 34px -14px rgba(18, 50, 38, 0.22);
+
+  --scholar-font-serif: 'Newsreader', 'Georgia', 'Times New Roman', serif;
+  --scholar-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --scholar-font-mono: 'IBM Plex Mono', 'SFMono-Regular', ui-monospace, 'Menlo', monospace;
+}
+
+.font-serif { font-family: var(--scholar-font-serif); }
+.font-sans { font-family: var(--scholar-font-sans); }
+.font-mono { font-family: var(--scholar-font-mono); }
+
+.scholar-display {
+  font-family: var(--scholar-font-serif);
+  font-weight: 500;
+  font-size: clamp(40px, 5.4vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.scholar-h1 {
+  font-family: var(--scholar-font-serif);
+  font-weight: 500;
+  font-size: clamp(30px, 3.8vw, 46px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+.scholar-h2 {
+  font-family: var(--scholar-font-serif);
+  font-weight: 500;
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.scholar-h3 {
+  font-family: var(--scholar-font-serif);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+}
+.scholar-eyebrow {
+  font-family: var(--scholar-font-sans);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--scholar-muted-foreground);
+}
+.scholar-body {
+  font-family: var(--scholar-font-sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.scholar-prose {
+  font-family: var(--scholar-font-serif);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.7;
+}
