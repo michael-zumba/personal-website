@@ -550,20 +550,25 @@
 
   <section class="data-section">
     <h2>Data Availability</h2>
-    <p>The following datasets and scripts are available for download. All data were compiled from public sources and cross-checked where possible. See <code>data/README_methodology.txt</code> for full documentation of sources, compilation methods, and known limitations for each dataset.</p>
+
+    <p>The data files supporting this research brief are available for download. Each file is provided as plain-text CSV with commented headers documenting variable definitions and sources. A complete methodology document describes data sources, file structures, methodological notes, limitations, and reproducibility instructions.</p>
+
+    <p>A <strong>replication script</strong> (<a href="scripts/replicate.py" download>scripts/replicate.py</a>) reproduces every chart, table, and statistic in this report from the source data. The script is written in Python and requires only matplotlib, numpy, and pandas. It is organised into clearly labelled sections matching the report structure, uses pinned dependency versions, and sets an explicit random seed (42). Generated charts are saved to a <code>charts/</code> output directory.</p>
+
     <table>
       <tr><th>File</th><th>Description</th><th>Format</th></tr>
-      <tr><td><a href="data/llm_parameter_timeline.csv">llm_parameter_timeline.csv</a></td><td>Parameter counts, training compute, and release dates for major LLMs (2017-2026). Confirmed values sourced from original papers; estimated values marked.</td><td>CSV</td></tr>
-      <tr><td><a href="data/llm_arena_scores.csv">llm_arena_scores.csv</a></td><td>LMArena (LMSYS Chatbot Arena) Elo scores, approximate quarterly snapshots (2023 Q2 to 2026 Q2)</td><td>CSV</td></tr>
-      <tr><td><a href="data/llm_hallucination_rates.csv">llm_hallucination_rates.csv</a></td><td>Hallucination rates on document summarisation, Vectara HHEM leaderboard (2024-2026). Post-Q3 2025 values estimated.</td><td>CSV</td></tr>
-      <tr><td><a href="data/accounting_ai_adoption.csv">accounting_ai_adoption.csv</a></td><td>AI adoption rates from Wolters Kluwer (2024, 2025) and Thomson Reuters (2025) surveys</td><td>CSV</td></tr>
-      <tr><td><a href="data/publisher_ai_policies.csv">publisher_ai_policies.csv</a></td><td>First AI policy adoption dates for major academic publishers (2023-2024)</td><td>CSV</td></tr>
-      <tr><td><a href="data/ai_regulation_timeline.csv">ai_regulation_timeline.csv</a></td><td>Major global AI regulatory milestones (2021-2026)</td><td>CSV</td></tr>
-      <tr><td><a href="data/ai_accounting_publications.csv">ai_accounting_publications.csv</a></td><td>AI-related publications in top accounting journals (2017-2026). 2025 partial; 2026 projected.</td><td>CSV</td></tr>
-      <tr><td><a href="data/big4_ai_investments.csv">big4_ai_investments.csv</a></td><td>Big Four announced AI investment commitments and platform details</td><td>CSV</td></tr>
-      <tr><td><a href="data/README_methodology.txt">README_methodology.txt</a></td><td>Full documentation: sources, compilation methods, and limitations for all datasets</td><td>TXT</td></tr>
-      <tr><td><a href="scripts/replicate.py">scripts/replicate.py</a></td><td>Python replication script regenerating all charts and statistics from source data</td><td>PY</td></tr>
+      <tr><td><code>llm_parameter_timeline.csv</code></td><td>Parameter counts, training compute, and release dates for major LLMs, 2017-2026</td><td><a href="data/llm_parameter_timeline.csv" download>CSV</a></td></tr>
+      <tr><td><code>llm_arena_scores.csv</code></td><td>LMArena (Chatbot Arena) Elo scores, quarterly snapshots, Q2 2023 to Q2 2026</td><td><a href="data/llm_arena_scores.csv" download>CSV</a></td></tr>
+      <tr><td><code>llm_hallucination_rates.csv</code></td><td>Hallucination rates on document summarisation, Vectara HHEM leaderboard, 2024-2026</td><td><a href="data/llm_hallucination_rates.csv" download>CSV</a></td></tr>
+      <tr><td><code>accounting_ai_adoption.csv</code></td><td>AI adoption rates in accounting firms, Wolters Kluwer and Thomson Reuters surveys, 2024-2025</td><td><a href="data/accounting_ai_adoption.csv" download>CSV</a></td></tr>
+      <tr><td><code>publisher_ai_policies.csv</code></td><td>First AI policy adoption dates for major academic publishers, 2023-2024</td><td><a href="data/publisher_ai_policies.csv" download>CSV</a></td></tr>
+      <tr><td><code>ai_regulation_timeline.csv</code></td><td>Major global AI regulatory milestones, 2021-2026</td><td><a href="data/ai_regulation_timeline.csv" download>CSV</a></td></tr>
+      <tr><td><code>ai_accounting_publications.csv</code></td><td>AI-related publications in top accounting journals, 2017-2026</td><td><a href="data/ai_accounting_publications.csv" download>CSV</a></td></tr>
+      <tr><td><code>big4_ai_investments.csv</code></td><td>Big Four announced AI investment commitments and platform details</td><td><a href="data/big4_ai_investments.csv" download>CSV</a></td></tr>
+      <tr><td><code>README_methodology.txt</code></td><td>Complete methodology documentation, variable definitions, and data sources</td><td><a href="data/README_methodology.txt" download>TXT</a></td></tr>
     </table>
+
+    <p><small>Dr Yuqian Zhang, Auckland University of Technology. This research brief and all underlying data are freely available for download. Last updated: 29 July 2026.</small></p>
   </section>
 
   <div class="footer-nav">
