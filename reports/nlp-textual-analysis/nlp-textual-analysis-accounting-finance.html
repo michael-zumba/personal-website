@@ -43,7 +43,29 @@
       font-style: normal;
       font-display: swap;
     }
-  </style>
+  
+.chart-download-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #57534e;
+  background: #fafaf9;
+  border: 1px solid #d6d3d1;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.chart-download-btn:hover {
+  color: #1c1917;
+  background: #f0efed;
+  border-color: #a8a29e;
+}
+.chart-download-btn:active {
+  background: #e7e5e4;
+}
+</style>
 
   <style>
     /* === Theme CSS variables === */
@@ -292,7 +314,7 @@
     .chart-box {
       width: 100%;
       height: 420px;
-      overflow: hidden;
+      overflow: visible;
     }
     figure.chart-figure figcaption {
       font-size: 0.85rem;
@@ -410,6 +432,7 @@
       .metric .metric-num { font-size: 1.7rem; }
     }
   </style>
+<link rel="stylesheet" href="../chart-download.css">
 </head>
 <body>
   <article class="page">
@@ -788,5 +811,6 @@ flowchart LR
   <script src="./_shared/js/echarts.min.js"></script>
   <script src="./_shared/js/mermaid.min.js"></script>
   <script src="assets/charts.js"></script>
+<script src="../chart-download.js"></script>
 </body>
 </html>

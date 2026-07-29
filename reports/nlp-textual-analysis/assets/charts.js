@@ -6,6 +6,7 @@
 (function () {
   "use strict";
 
+  window._echartsReady = true;
   if (typeof echarts === "undefined") {
     return;
   }

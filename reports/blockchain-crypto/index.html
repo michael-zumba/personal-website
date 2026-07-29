@@ -153,7 +153,7 @@
   .chart-container .chart-note {
     font-size: 0.8rem;
     color: var(--text-secondary);
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     font-style: italic;
     overflow: visible;
     word-wrap: break-word;
@@ -161,7 +161,7 @@
   .chart-box {
     width: 100%;
     height: 420px;
-    overflow: hidden;
+    overflow: visible;
   }
   .chart-box.tall {
     height: 520px;
@@ -236,7 +236,30 @@
     .toc ol { columns: 1; }
     header h1 { font-size: 1.5rem; }
   }
+
+.chart-download-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #57534e;
+  background: #fafaf9;
+  border: 1px solid #d6d3d1;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.chart-download-btn:hover {
+  color: #1c1917;
+  background: #f0efed;
+  border-color: #a8a29e;
+}
+.chart-download-btn:active {
+  background: #e7e5e4;
+}
 </style>
+<link rel="stylesheet" href="../chart-download.css">
 </head>
 <body>
 <div class="container">
@@ -762,7 +785,7 @@
   c.setOption({
     tooltip: { trigger: 'axis' },
     legend: { data: ['Total Market Cap (USD B)','BTC Dominance (%)'], bottom: 0, textStyle: { fontSize: 10 } },
-    grid: { left: 70, containLabel: true, right: 70, top: 20, bottom: 35 },
+    grid: { left: 70, containLabel: true, right: 70, top: 40, bottom: 35 },
     xAxis: { type: 'category', data: ['2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'], axisLabel: { fontSize: 10 } },
     yAxis: [
       { type: 'value', name: 'USD B', axisLabel: { fontSize: 9, formatter: function(v){ return v > 999 ? (v/1000).toFixed(1)+'T' : '$'+v+'B'; } } },
@@ -780,7 +803,7 @@
   var c = echarts.init(document.getElementById('chart-failures'));
   c.setOption({
     tooltip: { trigger: 'axis', formatter: '{b}: ${c}B' },
-    grid: { left: 130, containLabel: true, right: 40, top: 10, bottom: 20 },
+    grid: { left: 130, containLabel: true, right: 40, top: 30, bottom: 30 },
     xAxis: { type: 'value', axisLabel: { formatter: '${value}B', fontSize: 10 } },
     yAxis: { type: 'category', axisLabel: { fontSize: 10 },
       data: ['Genesis (Jan 2023)','BlockFi (Nov 2022)','FTX (Nov 2022)','Voyager (Jul 2022)','Celsius (Jul 2022)','3AC (Jun 2022)','Terra/LUNA (May 2022)','Mt. Gox (Feb 2014)'] },
@@ -799,7 +822,7 @@
   c.setOption({
     tooltip: { trigger: 'axis', formatter: function(p){ return p[0].name + '<br/>Year-end: $' + p[0].data + '<br/>High: $' + p[1].data[1] + '<br/>Low: $' + p[1].data[2]; } },
     legend: { data: ['Year-End Close','High-Low Range'], bottom: 0, textStyle: { fontSize: 10 } },
-    grid: { left: 70, containLabel: true, right: 30, top: 20, bottom: 35 },
+    grid: { left: 70, containLabel: true, right: 30, top: 40, bottom: 35 },
     xAxis: { type: 'category', data: ['2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'], axisLabel: { fontSize: 10 } },
     yAxis: { type: 'value', axisLabel: { formatter: '${value}', fontSize: 9 }, scale: true },
     series: [
@@ -824,7 +847,7 @@
   var c = echarts.init(document.getElementById('chart-etf-flows'));
   c.setOption({
     tooltip: { trigger: 'axis', formatter: '{b}: ${c}B' },
-    grid: { left: 180, containLabel: true, right: 40, top: 10, bottom: 20 },
+    grid: { left: 180, containLabel: true, right: 40, top: 30, bottom: 30 },
     xAxis: { type: 'value', axisLabel: { formatter: '${value}B', fontSize: 10 } },
     yAxis: { type: 'category', axisLabel: { fontSize: 10 },
       data: ['GBTC (Grayscale)','Other Bitcoin ETFs','VanEck HODL','ARK 21Shares','Bitwise BITB','Grayscale BTC Mini','Fidelity FBTC','iShares IBIT'] },
@@ -843,7 +866,7 @@
   var c = echarts.init(document.getElementById('chart-corporate-treasury'));
   c.setOption({
     tooltip: { trigger: 'axis', formatter: '{b}: {c} BTC' },
-    grid: { left: 140, containLabel: true, right: 80, top: 10, bottom: 20 },
+    grid: { left: 140, containLabel: true, right: 80, top: 30, bottom: 30 },
     xAxis: { type: 'value', name: 'BTC', axisLabel: { fontSize: 10 } },
     yAxis: { type: 'category', axisLabel: { fontSize: 10 },
       data: ['Hut 8','Block Inc','Tesla','CleanSpark','Riot Platforms','Coinbase','Galaxy Digital','Marathon Digital','Strategy (MSTR)'] },
@@ -862,7 +885,7 @@
   var c = echarts.init(document.getElementById('chart-regulatory'));
   c.setOption({
     tooltip: { trigger: 'item', formatter: '{b}<br/>{c}' },
-    grid: { left: 160, containLabel: true, right: 40, top: 10, bottom: 20 },
+    grid: { left: 160, containLabel: true, right: 40, top: 30, bottom: 30 },
     xAxis: { type: 'time', axisLabel: { fontSize: 10 }, min: '2013-01-01', max: '2026-07-01' },
     yAxis: { type: 'category', axisLabel: { fontSize: 9 },
       data: ['China ban','FATF Travel Rule','MiCA Full','UK Crypto Regs','AUS Digital Assets','GENIUS Act','SEC spot ETH ETFs','SEC spot BTC ETFs','FASB ASU 2023-08','MiCA adopted','El Salvador BTC','China ICO ban','Japan recognises BTC','BitLicense','PBOC notice'] },
@@ -893,7 +916,7 @@
   c.setOption({
     tooltip: { trigger: 'axis' },
     legend: { data: ['Exploring','In Pilot','Launched'], bottom: 0, textStyle: { fontSize: 10 } },
-    grid: { left: 50, containLabel: true, right: 30, top: 20, bottom: 35 },
+    grid: { left: 50, containLabel: true, right: 30, top: 40, bottom: 35 },
     xAxis: { type: 'category', data: ['2018','2019','2020','2021','2022','2023','2024','2025','2026'], axisLabel: { fontSize: 10 } },
     yAxis: { type: 'value', name: 'Countries', axisLabel: { fontSize: 9 } },
     series: [
@@ -911,7 +934,7 @@
   c.setOption({
     tooltip: { trigger: 'axis' },
     legend: { data: ['DeFi TVL','Stablecoin Mcap'], bottom: 0, textStyle: { fontSize: 10 } },
-    grid: { left: 50, containLabel: true, right: 50, top: 20, bottom: 35 },
+    grid: { left: 50, containLabel: true, right: 50, top: 40, bottom: 35 },
     xAxis: { type: 'category', data: ['2019','2020','2021','2022','2023','2024','2025'], axisLabel: { fontSize: 10 } },
     yAxis: { type: 'value', name: 'USD B', axisLabel: { formatter: '${value}B', fontSize: 9 } },
     series: [
@@ -928,7 +951,7 @@
   c.setOption({
     tooltip: { trigger: 'axis' },
     legend: { data: ['Papers by Journal','Papers by Theme'], bottom: 0, textStyle: { fontSize: 10 } },
-    grid: { left: 120, containLabel: true, right: 50, top: 10, bottom: 35 },
+    grid: { left: 120, containLabel: true, right: 50, top: 30, bottom: 35 },
     xAxis: { type: 'value', axisLabel: { fontSize: 9 } },
     yAxis: { type: 'category', axisLabel: { fontSize: 10 },
       data: ['JAR','JF','JFE','RFS','MS','RAST','Bitcoin/Markets','ICO/Token','Tokenomics','DeFi/Smart Contracts','Stablecoins','CBDC','Accounting/Auditing','Illegal Activity'] },
@@ -948,7 +971,7 @@
   c.setOption({
     tooltip: { trigger: 'axis' },
     legend: { data: ['USDT','USDC','Other'], bottom: 0, textStyle: { fontSize: 10 } },
-    grid: { left: 50, containLabel: true, right: 30, top: 20, bottom: 35 },
+    grid: { left: 50, containLabel: true, right: 30, top: 40, bottom: 35 },
     xAxis: { type: 'category', data: ['2020','2021','2022','2023','2024','2025','Mid 2026'], axisLabel: { fontSize: 10 } },
     yAxis: { type: 'value', name: 'USD B', axisLabel: { formatter: '${value}B', fontSize: 9 } },
     series: [
@@ -965,7 +988,7 @@
   var c = echarts.init(document.getElementById('chart-research-opps'));
   c.setOption({
     tooltip: { trigger: 'item', formatter: '{b}' },
-    grid: { left: 90, containLabel: true, right: 40, top: 20, bottom: 40 },
+    grid: { left: 90, containLabel: true, right: 40, top: 40, bottom: 40 },
     xAxis: { type: 'value', name: 'Data Availability', axisLabel: { fontSize: 9 }, min: 0, max: 10 },
     yAxis: { type: 'value', name: 'Theoretical Significance', axisLabel: { fontSize: 9 }, min: 0, max: 10 },
     series: [{
@@ -983,5 +1006,6 @@
   window.addEventListener('resize', function() { c.resize(); });
 })();
 </script>
+<script src="../chart-download.js"></script>
 </body>
 </html>

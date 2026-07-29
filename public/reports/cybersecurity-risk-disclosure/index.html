@@ -35,14 +35,14 @@
   header {
     text-align: center;
     padding: 60px 0 40px;
-    border-bottom: 30px solid var(--border);
+    border-bottom: 2px solid var(--border);
     margin-bottom: 48px;
   }
   header h1 {
     font-size: 2.2rem;
     font-weight: 700;
     letter-spacing: -0.01em;
-    margin-bottom: 30px;
+    margin-bottom: 12px;
     line-height: 1.3;
   }
   header .subtitle {
@@ -57,7 +57,7 @@
   }
   .back-link {
     display: inline-block;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     color: var(--accent);
     text-decoration: none;
     font-size: 0.9rem;
@@ -73,7 +73,7 @@
   .exec-summary h2 {
     font-size: 1.4rem;
     color: var(--accent);
-    margin-bottom: 30px;
+    margin-bottom: 16px;
   }
   .key-findings {
     list-style: none;
@@ -100,7 +100,7 @@
   .toc h2 {
     font-size: 1.4rem;
     color: var(--accent);
-    margin-bottom: 30px;
+    margin-bottom: 16px;
   }
   .toc ol {
     padding-left: 24px;
@@ -109,7 +109,7 @@
     list-style-position: inside;
   }
   .toc ol li {
-    margin-bottom: 30px;
+    margin-bottom: 8px;
     font-size: 0.9rem;
     break-inside: avoid;
   }
@@ -124,9 +124,9 @@
   section h2 {
     font-size: 1.5rem;
     color: var(--text);
-    border-bottom: 30px solid var(--border);
-    padding-bottom: 30px;
-    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 24px;
   }
   section h3 {
     font-size: 1.15rem;
@@ -134,7 +134,7 @@
     margin: 28px 0 12px;
   }
   p {
-    margin-bottom: 30px;
+    margin-bottom: 14px;
     color: var(--text-secondary);
   }
   .chart-container {
@@ -147,13 +147,13 @@
   .chart-container h4 {
     font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 30px;
+    margin-bottom: 4px;
     color: var(--text);
   }
   .chart-container .chart-note {
     font-size: 0.8rem;
     color: var(--text-secondary);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-style: italic;
     overflow: visible;
     word-wrap: break-word;
@@ -187,7 +187,7 @@
   th, td {
     text-align: left;
     padding: 10px 12px;
-    border-bottom: 30px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
   th {
     background: var(--light-accent);
@@ -202,7 +202,7 @@
   }
   .ref-section h2 { margin-top: 0; }
   .ref-item {
-    margin-bottom: 30px;
+    margin-bottom: 12px;
     font-size: 0.9rem;
     padding-left: 24px;
     text-indent: -24px;
@@ -821,7 +821,7 @@
   var c1 = echarts.init(document.getElementById('chart-timeline'));
   c1.setOption({
     tooltip: { trigger: 'item', formatter: '{b}<br/>{c}' },
-    grid: { left: 160, containLabel: true, right: 40, top: 20, bottom: 30 },
+    grid: { left: 160, containLabel: true, right: 40, top: 40, bottom: 30 },
     xAxis: { type: 'time', axisLabel: { fontSize: 11 } },
     yAxis: { type: 'category', data: ['GDPR','SEC Guidance','CCPA','SEC Proposes Rules','CIRCIA','NIS2 & DORA Published','SEC Adopts Rules','SEC Rules Effective','8-K Item 1.05 Active','Reg S-K Item 106 Active','Gerding Clarification','SEC C&DIs Issued','NIS2 Transposition','SEC SolarWinds Enforcement','DORA Application'], axisLabel: { fontSize: 10 } },
     series: [{
@@ -883,7 +883,7 @@
   var c4 = echarts.init(document.getElementById('chart-disclosure-elements'));
   c4.setOption({
     tooltip: { trigger: 'axis', formatter: '{b}: {c}%' },
-    grid: { left: 260, containLabel: true, right: 40, top: 20, bottom: 30 },
+    grid: { left: 260, containLabel: true, right: 40, top: 40, bottom: 30 },
     xAxis: { type: 'value', max: 100, axisLabel: { formatter: '{value}%', fontSize: 10 } },
     yAxis: { type: 'category', axisLabel: { fontSize: 11 },
       data: ['Engage assessors/consultants/auditors','List management positions responsible','Describe audits/drills/tabletop exercises','Evaluate vendor cybersecurity','Integrate into overall risk management','Disclose experience/qualifications','Disclose incident response plan','Employee training programmes','CISO identified by name/title','Require vendor adherence to processes','Reference NIST CSF framework'] },
@@ -920,7 +920,7 @@
   var c6 = echarts.init(document.getElementById('chart-industry-filings'));
   c6.setOption({
     tooltip: { trigger: 'axis', formatter: '{b}: {c}%' },
-    grid: { left: 140, containLabel: true, right: 40, top: 10, bottom: 30 },
+    grid: { left: 140, containLabel: true, right: 40, top: 30, bottom: 30 },
     xAxis: { type: 'value', axisLabel: { formatter: '{value}%', fontSize: 10 } },
     yAxis: { type: 'category', axisLabel: { fontSize: 10 },
       data: ['Real Estate/Construction','Energy/Transportation','Manufacturing','Industrial','Technology','Finance','Trade/Services'] },
@@ -938,8 +938,8 @@
   var c7 = echarts.init(document.getElementById('chart-breach-trends'));
   c7.setOption({
     tooltip: { trigger: 'axis' },
-    legend: { data: ['Breach Count','Avg Cost per Breach (USD M)'], bottom: 30, textStyle: { fontSize: 10 } },
-    grid: { left: 50, containLabel: true, right: 50, top: 20, bottom: 35 },
+    legend: { data: ['Breach Count','Avg Cost per Breach (USD M)'], bottom: 0, textStyle: { fontSize: 10 } },
+    grid: { left: 50, containLabel: true, right: 50, top: 40, bottom: 35 },
     xAxis: { type: 'category', data: ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'], axisLabel: { fontSize: 10 } },
     yAxis: [
       { type: 'value', name: 'Count', axisLabel: { fontSize: 9 } },
@@ -958,7 +958,7 @@
   var c8 = echarts.init(document.getElementById('chart-reporting-timelines'));
   c8.setOption({
     tooltip: { trigger: 'axis', formatter: '{b}: {c} hours' },
-    grid: { left: 170, containLabel: true, right: 40, top: 20, bottom: 30 },
+    grid: { left: 170, containLabel: true, right: 40, top: 40, bottom: 30 },
     xAxis: { type: 'value', name: 'Hours (log scale)', axisLabel: { fontSize: 10 } },
     yAxis: { type: 'category', axisLabel: { fontSize: 11 },
       data: ['SEC Item 1.05\n(4 business days = ~32h)','GDPR\n(72 hours)','NIS2\n(24 hours)','NIS2\n(Early warning)','DORA\n(4 hours)'] },
@@ -977,7 +977,7 @@
   var c9 = echarts.init(document.getElementById('chart-car'));
   c9.setOption({
     tooltip: { trigger: 'axis', formatter: '{b}: {c}%' },
-    grid: { left: 60, containLabel: true, right: 30, top: 20, bottom: 30 },
+    grid: { left: 60, containLabel: true, right: 30, top: 40, bottom: 30 },
     xAxis: { type: 'category', data: ['Day (-1,0)','Day (-1,+1)','Day (-3,+3)','Day (-5,+5)'], axisLabel: { fontSize: 10, rotate: 25 } },
     yAxis: { type: 'value', axisLabel: { formatter: '{value}%', fontSize: 10 } },
     series: [{
@@ -995,8 +995,8 @@
   var c10 = echarts.init(document.getElementById('chart-ransomware'));
   c10.setOption({
     tooltip: { trigger: 'axis' },
-    legend: { data: ['Attacks Reported','Total Payments (USD M)'], bottom: 30, textStyle: { fontSize: 10 } },
-    grid: { left: 60, containLabel: true, right: 60, top: 20, bottom: 35 },
+    legend: { data: ['Attacks Reported','Total Payments (USD M)'], bottom: 0, textStyle: { fontSize: 10 } },
+    grid: { left: 60, containLabel: true, right: 60, top: 40, bottom: 35 },
     xAxis: { type: 'category', data: ['2019','2020','2021','2022','2023','2024','2025'], axisLabel: { fontSize: 10 } },
     yAxis: [
       { type: 'value', name: 'Attacks', axisLabel: { fontSize: 9 } },
@@ -1015,8 +1015,8 @@
   var c11 = echarts.init(document.getElementById('chart-insurance'));
   c11.setOption({
     tooltip: { trigger: 'axis', formatter: function(p) { var r=''; p.forEach(function(i){ r+=i.seriesName+': $'+i.value+'B<br/>'; }); return r; } },
-    legend: { data: ['North America','Europe','Rest of World'], bottom: 30, textStyle: { fontSize: 10 } },
-    grid: { left: 50, containLabel: true, right: 30, top: 20, bottom: 35 },
+    legend: { data: ['North America','Europe','Rest of World'], bottom: 0, textStyle: { fontSize: 10 } },
+    grid: { left: 50, containLabel: true, right: 30, top: 40, bottom: 35 },
     xAxis: { type: 'category', data: ['2019','2020','2021','2022','2023','2024','2025'], axisLabel: { fontSize: 10 } },
     yAxis: { type: 'value', axisLabel: { formatter: '${value}B', fontSize: 10 } },
     series: [
@@ -1033,7 +1033,7 @@
   var c12 = echarts.init(document.getElementById('chart-research-opportunities'));
   c12.setOption({
     tooltip: { trigger: 'item', formatter: '{b}' },
-    grid: { left: 100, containLabel: true, right: 40, top: 20, bottom: 40 },
+    grid: { left: 100, containLabel: true, right: 40, top: 40, bottom: 40 },
     xAxis: { type: 'value', name: 'Data Availability', axisLabel: { fontSize: 9 }, min: 0, max: 10 },
     yAxis: { type: 'value', name: 'Theoretical Significance', axisLabel: { fontSize: 9 }, min: 0, max: 10 },
     series: [{

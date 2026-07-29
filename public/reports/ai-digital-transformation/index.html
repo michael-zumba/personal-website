@@ -35,14 +35,14 @@
   header {
     text-align: center;
     padding: 60px 0 40px;
-    border-bottom: 30px solid var(--border);
+    border-bottom: 2px solid var(--border);
     margin-bottom: 48px;
   }
   header h1 {
     font-size: 2.2rem;
     font-weight: 700;
     letter-spacing: -0.01em;
-    margin-bottom: 30px;
+    margin-bottom: 12px;
     line-height: 1.3;
   }
   header .subtitle {
@@ -65,7 +65,7 @@
   .exec-summary h2 {
     font-size: 1.4rem;
     color: var(--accent);
-    margin-bottom: 30px;
+    margin-bottom: 16px;
   }
   .key-findings {
     list-style: none;
@@ -88,9 +88,9 @@
   section h2 {
     font-size: 1.5rem;
     color: var(--text);
-    border-bottom: 30px solid var(--border);
-    padding-bottom: 30px;
-    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 24px;
   }
   section h3 {
     font-size: 1.15rem;
@@ -98,7 +98,7 @@
     margin: 28px 0 12px;
   }
   p {
-    margin-bottom: 30px;
+    margin-bottom: 14px;
     color: var(--text-secondary);
   }
   .chart-container {
@@ -111,13 +111,13 @@
   .chart-container h4 {
     font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 30px;
+    margin-bottom: 4px;
     color: var(--text);
   }
   .chart-container .chart-note {
     font-size: 0.8rem;
     color: var(--text-secondary);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-style: italic;
     overflow: visible;
     word-wrap: break-word;
@@ -151,7 +151,7 @@
   th, td {
     text-align: left;
     padding: 10px 12px;
-    border-bottom: 30px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
   th {
     background: var(--light-accent);
@@ -166,7 +166,7 @@
   }
   .ref-section h2 { margin-top: 0; }
   .ref-item {
-    margin-bottom: 30px;
+    margin-bottom: 12px;
     font-size: 0.9rem;
     padding-left: 24px;
     text-indent: -24px;
@@ -617,7 +617,7 @@
     if (!c) return;
     c.setOption({
       tooltip: { trigger: 'axis', formatter: function(p) { return p[0].name + ': score ' + p[0].value; } },
-      grid: { left: 120, containLabel: true, right: 60, top: 20, bottom: 30 },
+      grid: { left: 120, containLabel: true, right: 60, top: 40, bottom: 30 },
       xAxis: { type: 'value', name: 'IMD WDC Score (0-100)', max: 105 },
       yAxis: {
         type: 'category',
@@ -639,7 +639,7 @@
     if (!c) return;
     c.setOption({
       tooltip: { trigger: 'axis', formatter: '{b}: {c}% of S&P 500 firms' },
-      grid: { left: 180, containLabel: true, right: 60, top: 20, bottom: 30 },
+      grid: { left: 180, containLabel: true, right: 60, top: 40, bottom: 30 },
       xAxis: { type: 'value', name: '% of S&P 500', max: 50 },
       yAxis: {
         type: 'category',
@@ -665,7 +665,7 @@
     if (!c) return;
     c.setOption({
       tooltip: { trigger: 'axis' },
-      grid: { left: 70, containLabel: true, right: 20, top: 20, bottom: 30 },
+      grid: { left: 70, containLabel: true, right: 20, top: 40, bottom: 30 },
       xAxis: { type: 'category', data: ['2023','2025'] },
       yAxis: { type: 'value', name: '% of S&P 500', nameGap: 12, max: 80 },
       series: [{
@@ -683,7 +683,7 @@
     if (!c) return;
     c.setOption({
       tooltip: { trigger: 'axis' },
-      grid: { left: 70, containLabel: true, right: 20, top: 20, bottom: 30 },
+      grid: { left: 70, containLabel: true, right: 20, top: 40, bottom: 30 },
       xAxis: { type: 'category', data: ['2023','2024','2025*'] },
       yAxis: { type: 'value', name: 'Cases filed', nameGap: 12, max: 18 },
       series: [{

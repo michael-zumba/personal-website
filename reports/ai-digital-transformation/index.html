@@ -117,7 +117,7 @@
   .chart-container .chart-note {
     font-size: 0.8rem;
     color: var(--text-secondary);
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     font-style: italic;
     overflow: visible;
     word-wrap: break-word;
@@ -125,7 +125,7 @@
   .chart-box {
     width: 100%;
     height: 420px;
-    overflow: hidden;
+    overflow: visible;
   }
   .chart-box.tall {
     height: 520px;
@@ -199,7 +199,30 @@
     .key-findings { grid-template-columns: 1fr; }
     header h1 { font-size: 1.5rem; }
   }
+
+.chart-download-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #57534e;
+  background: #fafaf9;
+  border: 1px solid #d6d3d1;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.chart-download-btn:hover {
+  color: #1c1917;
+  background: #f0efed;
+  border-color: #a8a29e;
+}
+.chart-download-btn:active {
+  background: #e7e5e4;
+}
 </style>
+<link rel="stylesheet" href="../chart-download.css">
 </head>
 <body>
 <div class="container">
@@ -593,7 +616,7 @@
     if (!c) return;
     c.setOption({
       tooltip: { trigger: 'axis', formatter: function(p) { return p[0].name + ': score ' + p[0].value; } },
-      grid: { left: 120, containLabel: true, right: 60, top: 20, bottom: 20 },
+      grid: { left: 120, containLabel: true, right: 60, top: 40, bottom: 30 },
       xAxis: { type: 'value', name: 'IMD WDC Score (0-100)', max: 105 },
       yAxis: {
         type: 'category',
@@ -615,7 +638,7 @@
     if (!c) return;
     c.setOption({
       tooltip: { trigger: 'axis', formatter: '{b}: {c}% of S&P 500 firms' },
-      grid: { left: 180, containLabel: true, right: 60, top: 20, bottom: 30 },
+      grid: { left: 180, containLabel: true, right: 60, top: 40, bottom: 30 },
       xAxis: { type: 'value', name: '% of S&P 500', max: 50 },
       yAxis: {
         type: 'category',
@@ -641,7 +664,7 @@
     if (!c) return;
     c.setOption({
       tooltip: { trigger: 'axis' },
-      grid: { left: 70, containLabel: true, right: 20, top: 20, bottom: 30 },
+      grid: { left: 70, containLabel: true, right: 20, top: 40, bottom: 30 },
       xAxis: { type: 'category', data: ['2023','2025'] },
       yAxis: { type: 'value', name: '% of S&P 500', nameGap: 12, max: 80 },
       series: [{
@@ -659,7 +682,7 @@
     if (!c) return;
     c.setOption({
       tooltip: { trigger: 'axis' },
-      grid: { left: 70, containLabel: true, right: 20, top: 20, bottom: 30 },
+      grid: { left: 70, containLabel: true, right: 20, top: 40, bottom: 30 },
       xAxis: { type: 'category', data: ['2023','2024','2025*'] },
       yAxis: { type: 'value', name: 'Cases filed', nameGap: 12, max: 18 },
       series: [{
@@ -673,5 +696,6 @@
 
 })();
 </script>
+<script src="../chart-download.js"></script>
 </body>
 </html>
