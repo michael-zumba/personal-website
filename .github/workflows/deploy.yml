@@ -30,6 +30,10 @@ jobs:
           # Shared assets at the root.
           cp -r "$SRC/assets" site/assets
 
+          # Copy shared report assets (served from site root).
+          cp public/reports/chart-download.js site/
+          cp public/reports/chart-download.css site/
+
           # Copy research brief reports with all dependencies.
           cp -r public/reports/nlp-textual-analysis site/
           cp -r public/reports/ai-digital-transformation site/
