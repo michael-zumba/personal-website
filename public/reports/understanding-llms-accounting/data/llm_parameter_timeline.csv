@@ -17,7 +17,7 @@
 #   - GPT-4 (2023): OpenAI did not disclose parameter count. 1.8T is an
 #     industry estimate based on inference from API pricing, latency, and
 #     reported training compute budget. Multiple independent analysts
-#     (including SemiAnalysis, March 2023) converged around 1.8T using
+#     (including SemiAnalysis, July 2023) converged around 1.8T using
 #     a mixture-of-experts architecture.
 #   - Claude 3.5 (2024): Anthropic did not disclose parameter count. ~2T
 #     is an industry estimate based on compute budget and benchmark scaling.
@@ -38,7 +38,7 @@ Gopher,2021,12,280,6.3e23,DeepMind,"From Rae et al. 2021; 280B params"
 Chinchilla,2022,3,70,5.8e23,DeepMind,"From Hoffmann et al. 2022; 70B, compute-optimal scaling"
 PaLM,2022,4,540,2.5e24,Google,"From Chowdhery et al. 2022; 540B params"
 Llama 2 70B,2023,7,70,1e24,Meta,"From Touvron et al. 2023; 70B, open weights"
-GPT-4,2023,3,1800,2e25,OpenAI,"ESTIMATED: OpenAI did not confirm; ~1.8T per SemiAnalysis (Mar 2023)"
+GPT-4,2023,3,1800,2e25,OpenAI,"ESTIMATED: OpenAI did not confirm; ~1.8T per SemiAnalysis (Jul 2023)"
 Llama 3 405B,2024,4,405,3.9e24,Meta,"From Meta AI (2024); 405B, open weights"
 Claude 3.5,2024,6,2000,1e26,Anthropic,"ESTIMATED: Anthropic did not confirm; industry estimate ~2T"
 Gemini Ultra,2024,2,1500,5e25,Google,"ESTIMATED: Google did not confirm; industry estimate ~1.5T"
