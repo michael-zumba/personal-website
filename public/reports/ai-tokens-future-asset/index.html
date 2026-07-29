@@ -35,14 +35,14 @@
   header {
     text-align: center;
     padding: 60px 0 40px;
-    border-bottom: 2px solid var(--border);
+    border-bottom: 30px solid var(--border);
     margin-bottom: 48px;
   }
   header h1 {
     font-size: 2.2rem;
     font-weight: 700;
     letter-spacing: -0.01em;
-    margin-bottom: 12px;
+    margin-bottom: 30px;
     line-height: 1.3;
   }
   header .subtitle {
@@ -57,7 +57,7 @@
   }
   .back-link {
     display: inline-block;
-    margin-bottom: 24px;
+    margin-bottom: 30px;
     color: var(--accent);
     text-decoration: none;
     font-size: 0.9rem;
@@ -73,7 +73,7 @@
   .exec-summary h2 {
     font-size: 1.4rem;
     color: var(--accent);
-    margin-bottom: 16px;
+    margin-bottom: 30px;
   }
   .key-findings {
     list-style: none;
@@ -100,7 +100,7 @@
   .toc h2 {
     font-size: 1.4rem;
     color: var(--accent);
-    margin-bottom: 16px;
+    margin-bottom: 30px;
   }
   .toc ol {
     padding-left: 24px;
@@ -109,7 +109,7 @@
     list-style-position: inside;
   }
   .toc ol li {
-    margin-bottom: 8px;
+    margin-bottom: 30px;
     font-size: 0.9rem;
     break-inside: avoid;
   }
@@ -124,9 +124,9 @@
   section h2 {
     font-size: 1.5rem;
     color: var(--text);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 10px;
-    margin-bottom: 24px;
+    border-bottom: 30px solid var(--border);
+    padding-bottom: 30px;
+    margin-bottom: 30px;
   }
   section h3 {
     font-size: 1.15rem;
@@ -134,7 +134,7 @@
     margin: 28px 0 12px;
   }
   p {
-    margin-bottom: 14px;
+    margin-bottom: 30px;
     color: var(--text-secondary);
   }
   .chart-container {
@@ -147,13 +147,13 @@
   .chart-container h4 {
     font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 4px;
+    margin-bottom: 30px;
     color: var(--text);
   }
   .chart-container .chart-note {
     font-size: 0.8rem;
     color: var(--text-secondary);
-    margin-bottom: 12px;
+    margin-bottom: 30px;
     font-style: italic;
     overflow: visible;
     word-wrap: break-word;
@@ -161,7 +161,7 @@
   .chart-box {
     width: 100%;
     height: 420px;
-    overflow: hidden;
+    overflow: visible;
   }
   .chart-box.tall {
     height: 520px;
@@ -187,7 +187,7 @@
   th, td {
     text-align: left;
     padding: 10px 12px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 30px solid var(--border);
   }
   th {
     background: var(--light-accent);
@@ -202,7 +202,7 @@
   }
   .ref-section h2 { margin-top: 0; }
   .ref-item {
-    margin-bottom: 12px;
+    margin-bottom: 30px;
     font-size: 0.9rem;
     padding-left: 24px;
     text-indent: -24px;
@@ -237,7 +237,30 @@
     .toc ol { columns: 1; }
     header h1 { font-size: 1.5rem; }
   }
+
+.chart-download-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #57534e;
+  background: #fafaf9;
+  border: 1px solid #d6d3d1;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.chart-download-btn:hover {
+  color: #1c1917;
+  background: #f0efed;
+  border-color: #a8a29e;
+}
+.chart-download-btn:active {
+  background: #e7e5e4;
+}
 </style>
+<link rel="stylesheet" href="../chart-download.css">
 </head>
 <body>
 <div class="container">
@@ -689,7 +712,7 @@
   c2.setOption({
     tooltip: { trigger: 'axis' },
     grid: { left: 60, right: 70, top: 20, bottom: 40 },
-    legend: { data: ['AI Dominance %','BTC Market Cap $B'], bottom: 0, textStyle: { fontSize: 11 } },
+    legend: { data: ['AI Dominance %','BTC Market Cap $B'], bottom: 30, textStyle: { fontSize: 11 } },
     xAxis: { type: 'category', data: quarters, axisLabel: { rotate: 45, fontSize: 10 }, boundaryGap: false },
     yAxis: [
       { type: 'value', name: 'Dominance %', axisLabel: { formatter: '{value}%' } },
@@ -716,7 +739,7 @@
   var c3 = echarts.init(document.getElementById('chart3'));
   c3.setOption({
     tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, formatter: function(p){ return p[0].name + ': $' + p[0].value + 'B'; } },
-    grid: { left: 120, right: 40, top: 10, bottom: 20 },
+    grid: { left: 120, right: 40, top: 10, bottom: 30 },
     xAxis: { type: 'value', name: 'USD Billions', axisLabel: { formatter: '${value}B' } },
     yAxis: { type: 'category', data: ['AKT','IO','FET','GRT','RNDR','TAO','ICP','NEAR'], axisLabel: { fontSize: 11 }, inverse: true },
     series: [{
@@ -747,7 +770,7 @@
   c4.setOption({
     tooltip: { trigger: 'axis' },
     grid: { left: 60, right: 30, top: 20, bottom: 40 },
-    legend: { data: ['TAO','RNDR','FET','AKT','NEAR'], bottom: 0, textStyle: { fontSize: 11 } },
+    legend: { data: ['TAO','RNDR','FET','AKT','NEAR'], bottom: 30, textStyle: { fontSize: 11 } },
     xAxis: { type: 'category', data: q, axisLabel: { rotate: 30, fontSize: 10 }, boundaryGap: false },
     yAxis: { type: 'value', name: 'Index (Q1 2023 = 100)' },
     series: [
@@ -768,7 +791,7 @@
   c5.setOption({
     tooltip: { trigger: 'axis' },
     grid: { left: 60, right: 60, top: 20, bottom: 40 },
-    legend: { data: ['Funding $B','Deal Count'], bottom: 0, textStyle: { fontSize: 11 } },
+    legend: { data: ['Funding $B','Deal Count'], bottom: 30, textStyle: { fontSize: 11 } },
     xAxis: { type: 'category', data: vcQ, axisLabel: { rotate: 45, fontSize: 10 } },
     yAxis: [
       { type: 'value', name: 'USD Billions', axisLabel: { formatter: '${value}B' } },
@@ -807,7 +830,7 @@
   var c7 = echarts.init(document.getElementById('chart7'));
   c7.setOption({
     tooltip: { trigger: 'item', formatter: '{b}<br/>{c}' },
-    grid: { left: 200, containLabel: true, right: 40, top: 20, bottom: 20 },
+    grid: { left: 200, containLabel: true, right: 40, top: 20, bottom: 30 },
     xAxis: { type: 'time', axisLabel: { fontSize: 11 } },
     yAxis: { type: 'category', data: ['EU AI Act full application','FASB digital assets project','EU AI Act GPAI obligations','Grayscale Decentralized AI Fund','BIS expands chip controls','EU AI Act enters into force','SEC approves spot Ether ETFs','SEC approves spot Bitcoin ETFs','FASB ASU 2023-08','EU MiCA enters into force','US BIS chip export controls','SEC SAB 121'], axisLabel: { fontSize: 10 } },
     series: [{
@@ -827,7 +850,7 @@
   var c8 = echarts.init(document.getElementById('chart8'));
   c8.setOption({
     tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, formatter: function(p){ return p[0].name + ': ' + p[0].value + '% ann.'; } },
-    grid: { left: 140, right: 40, top: 10, bottom: 20 },
+    grid: { left: 140, right: 40, top: 10, bottom: 30 },
     xAxis: { type: 'value', name: 'Annualised Volatility %', axisLabel: { formatter: '{value}%' } },
     yAxis: { type: 'category', data: ['US Treasuries','Gold','S&P 500','Bitcoin','RNDR','TAO','FET'], axisLabel: { fontSize: 11 }, inverse: true },
     series: [{
@@ -852,7 +875,7 @@
   c9.setOption({
     tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
     grid: { left: 50, right: 30, top: 20, bottom: 50 },
-    legend: { data: ['2023','2024'], bottom: 0, textStyle: { fontSize: 11 } },
+    legend: { data: ['2023','2024'], bottom: 30, textStyle: { fontSize: 11 } },
     xAxis: { type: 'category', data: ['AI Mentions','Digital Assets','EU CSRD','Calif. Climate','Net Zero'], axisLabel: { rotate: 25, fontSize: 10 } },
     yAxis: { type: 'value', name: '% of S&P 500', axisLabel: { formatter: '{value}%' } },
     series: [
@@ -870,7 +893,7 @@
   c10.setOption({
     tooltip: { trigger: 'axis' },
     grid: { left: 50, right: 30, top: 20, bottom: 40 },
-    legend: { data: ['Crypto/Blockchain','AI-Specific Tokens'], bottom: 0, textStyle: { fontSize: 11 } },
+    legend: { data: ['Crypto/Blockchain','AI-Specific Tokens'], bottom: 30, textStyle: { fontSize: 11 } },
     xAxis: { type: 'category', data: years, axisLabel: { fontSize: 11 }, boundaryGap: false },
     yAxis: { type: 'value', name: 'Publications', minInterval: 1 },
     series: [
@@ -882,5 +905,6 @@
 
 })();
 </script>
+<script src="../chart-download.js"></script>
 </body>
 </html>
