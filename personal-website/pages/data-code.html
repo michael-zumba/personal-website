@@ -290,6 +290,97 @@
     <section class="pb-10 md:pb-14">
       <h2 class="scholar-h2 font-serif pb-5 mb-6" style="color:var(--scholar-foreground);border-bottom:1px solid var(--scholar-border);">Available Projects</h2>
 
+      <!-- Project: Generative AI and Everyday Life Research Brief -->
+      <div class="p-5 md:p-6 mb-6 rounded-lg border" style="border-color:var(--scholar-border);background-color:var(--scholar-card);">
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-5">
+          <div>
+            <h3 class="scholar-h3 font-serif" style="color:var(--scholar-foreground);">Generative AI and Everyday Life (2015-2026)</h3>
+            <p class="font-sans text-sm mt-2 max-w-[680px]" style="color:var(--scholar-muted-foreground);line-height:1.6;">
+              Compiled dataset of generative AI milestones, World Happiness Report life evaluation series, Gallup positive and negative experience indices, perceived freedom and stress series, perceived job security and AI attitude surveys from Gallup, Microsoft and Pew, AI exposure estimates from ILO, IMF and OECD, ChatGPT and organisational adoption series, distributional data by age, gender and geography, and experimental productivity and learning evidence used in the research brief comparing daily life before and after ChatGPT.
+            </p>
+          </div>
+          <a href="/ai-era-daily-life/" class="inline-flex items-center gap-1.5 rounded-md px-4 py-2.5 text-sm font-semibold whitespace-nowrap shrink-0" style="background-color:var(--scholar-primary);color:var(--scholar-primary-foreground);text-decoration:none;transition:background-color 200ms ease;" onmouseover="this.style.backgroundColor='var(--scholar-primary-800)'" onmouseout="this.style.backgroundColor='var(--scholar-primary)'">
+            <i data-lucide="file-text" style="width:14px;height:14px;"></i>
+            View report
+          </a>
+        </div>
+        <p class="font-sans text-xs font-semibold uppercase tracking-wider mb-3" style="color:var(--scholar-muted-foreground);">Downloadable files</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-2">
+          <a href="/ai-era-daily-life/data/README_methodology.txt" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">README_methodology.txt</span>
+          </a>
+          <a href="/ai-era-daily-life/scripts/replicate.py" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-primary);background-color:var(--scholar-primary-100);color:var(--scholar-primary);" onmouseover="this.style.borderColor='var(--scholar-primary-800)';this.style.backgroundColor='var(--scholar-primary-200)';" onmouseout="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';">
+            <i data-lucide="code-2" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">replicate.py (replication script)</span>
+          </a>
+          <a href="/ai-era-daily-life/data/ai_era_milestones.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">ai_era_milestones.csv</span>
+          </a>
+          <a href="/ai-era-daily-life/data/ai_era_life_satisfaction.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">ai_era_life_satisfaction.csv</span>
+          </a>
+          <a href="/ai-era-daily-life/data/ai_era_affect_indices.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">ai_era_affect_indices.csv</span>
+          </a>
+          <a href="/ai-era-daily-life/data/ai_era_freedom_satisfaction.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">ai_era_freedom_satisfaction.csv</span>
+          </a>
+          <a href="/ai-era-daily-life/data/ai_era_stress.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">ai_era_stress.csv</span>
+          </a>
+          <a href="/ai-era-daily-life/data/ai_era_job_security_perceived.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">ai_era_job_security_perceived.csv</span>
+          </a>
+          <a href="/ai-era-daily-life/data/ai_era_ai_exposure.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">ai_era_ai_exposure.csv</span>
+          </a>
+          <a href="/ai-era-daily-life/data/ai_era_ai_adoption_chatgpt.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">ai_era_ai_adoption_chatgpt.csv</span>
+          </a>
+          <a href="/ai-era-daily-life/data/ai_era_ai_adoption_pew.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">ai_era_ai_adoption_pew.csv</span>
+          </a>
+          <a href="/ai-era-daily-life/data/ai_era_ai_adoption_orgs.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">ai_era_ai_adoption_orgs.csv</span>
+          </a>
+          <a href="/ai-era-daily-life/data/ai_era_distribution.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">ai_era_distribution.csv</span>
+          </a>
+          <a href="/ai-era-daily-life/data/ai_era_productivity_evidence.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">ai_era_productivity_evidence.csv</span>
+          </a>
+          <a href="/ai-era-daily-life/data/ai_era_job_transformation.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">ai_era_job_transformation.csv</span>
+          </a>
+          <a href="/ai-era-daily-life/data/ai_era_learning_evidence.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">ai_era_learning_evidence.csv</span>
+          </a>
+          <a href="/ai-era-daily-life/data/ai_era_research_opportunities.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">ai_era_research_opportunities.csv</span>
+          </a>
+          <a href="/ai-era-daily-life/" class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-primary);background-color:var(--scholar-primary-100);color:var(--scholar-primary);" onmouseover="this.style.borderColor='var(--scholar-primary-800)';this.style.backgroundColor='var(--scholar-primary-200)';" onmouseout="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';">
+            <i data-lucide="file-text" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">Full research brief (HTML)</span>
+          </a>
+        </div>
+      </div>
+
       <!-- Project: Understanding LLMs Research Brief (newest) -->
       <div class="p-5 md:p-6 mb-6 rounded-lg border" style="border-color:var(--scholar-border);background-color:var(--scholar-card);">
         <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-5">

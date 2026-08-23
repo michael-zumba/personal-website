@@ -42,6 +42,7 @@ jobs:
           cp -r public/reports/nz-tourism-nowcasting site/
           cp -r public/reports/ai-tokens-future-asset site/
           cp -r public/reports/understanding-llms-accounting site/
+          cp -r public/reports/ai-era-daily-life site/
 
           # Copy downloadable data files.
           mkdir -p site/data

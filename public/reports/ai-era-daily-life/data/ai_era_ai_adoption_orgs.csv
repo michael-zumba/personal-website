@@ -1,0 +1,9 @@
+# Organisational adoption of AI, 2023-2025.
+# Variables: year, ai_use_pct (share of organisations using AI in at least one
+# business function), genai_use_pct (share regularly using generative AI),
+# note. Source: McKinsey State of AI surveys, as compiled in McKinsey (2025)
+# and the Stanford AI Index Report (2025).
+year,ai_use_pct,genai_use_pct,note
+2023,55,33,McKinsey State of AI 2023
+2024,78,71,McKinsey State of AI 2024
+2025,88,79,McKinsey State of AI 2025
