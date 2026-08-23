@@ -322,7 +322,7 @@ for _, row in weekly.iterrows():
     ax.annotate(str(int(row["value"])) + "M", (row["date"], row["value"]),
                 textcoords="offset points", xytext=(0, 8), fontsize=9,
                 ha="center", color=C_NAVY)
-ax.set_title("ChatGPT Weekly Active Users (millions)")
+ax.set_title("Figure 12a: ChatGPT Weekly Active Users (millions)")
 ax.set_ylabel("Weekly active users (millions)")
 ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %Y"))
 ax.grid(alpha=0.3)
@@ -338,7 +338,7 @@ bars = ax.bar(pew_all["year"].astype(str), pew_all["share_pct"], color=C_BLUE, w
 for b, v in zip(bars, pew_all["share_pct"]):
     ax.text(b.get_x() + b.get_width() / 2, v + 1, str(int(v)) + "%",
             ha="center", fontsize=9)
-ax.set_title("US Adults Who Have Ever Used ChatGPT (Pew Research Center)")
+ax.set_title("Figure 12b: US Adults Who Have Ever Used ChatGPT (Pew Research Center)")
 ax.set_ylabel("Share of US adults (%)")
 ax.set_ylim(0, 55)
 ax.grid(axis="y", alpha=0.3)
@@ -364,7 +364,7 @@ for bars, vals in [(b1, df_org["ai_use_pct"]), (b2, df_org["genai_use_pct"])]:
                 ha="center", fontsize=9)
 ax.set_xticks(x)
 ax.set_xticklabels(df_org["year"])
-ax.set_title("Figure 7: Organisational AI Adoption (McKinsey State of AI)")
+ax.set_title("Figure 13: Organisational AI Adoption (McKinsey State of AI)")
 ax.set_ylabel("Share of surveyed organisations (%)")
 ax.set_ylim(0, 100)
 ax.legend(fontsize=9)
@@ -390,7 +390,7 @@ bars = ax.barh(df_exp["label"], df_exp["value_pct"], color=cols)
 for b, v in zip(bars, df_exp["value_pct"]):
     ax.text(v + 0.8, b.get_y() + b.get_height() / 2, str(v) + "%",
             va="center", fontsize=8)
-ax.set_title("Figure 8: Estimates of AI Exposure Across Studies and Definitions")
+ax.set_title("Figure 7: Estimates of AI Exposure Across Studies and Definitions")
 ax.set_xlabel("Share of employment or tasks (%)")
 ax.set_xlim(0, 80)
 ax.grid(axis="x", alpha=0.3)
@@ -420,7 +420,7 @@ bars = ax.bar(labels, vals, color=[C_GREY, C_BLUE, C_AMBER, C_RED])
 for b, v in zip(bars, vals):
     ax.text(b.get_x() + b.get_width() / 2, v + 1, str(int(v)) + "%",
             ha="center", fontsize=9)
-ax.set_title("Workers Who Worry About AI and Their Jobs")
+ax.set_title("Figure 6a: Workers Who Worry About AI and Their Jobs")
 ax.set_ylabel("Share of workers (%)")
 ax.set_ylim(0, 65)
 ax.grid(axis="y", alpha=0.3)
@@ -442,7 +442,7 @@ bars = ax.bar(labels2, sentiments["value_pct"], color=colors2)
 for b, v in zip(bars, sentiments["value_pct"]):
     ax.text(b.get_x() + b.get_width() / 2, v + 1, str(int(v)) + "%",
             ha="center", fontsize=9)
-ax.set_title("How US Workers Feel About AI in the Workplace (Pew, Feb 2025)")
+ax.set_title("Figure 6b: How US Workers Feel About AI in the Workplace (Pew, Feb 2025)")
 ax.set_ylabel("Share of US workers (%)")
 ax.set_ylim(0, 65)
 ax.grid(axis="y", alpha=0.3)
@@ -465,7 +465,7 @@ bars = ax.bar(age_usage["group"], age_usage["value_pct"], color=C_NAVY)
 for b, v in zip(bars, age_usage["value_pct"]):
     ax.text(b.get_x() + b.get_width() / 2, v + 1, str(int(v)) + "%",
             ha="center", fontsize=9)
-ax.set_title("US Adults Who Have Used ChatGPT by Age (Pew, 2025)")
+ax.set_title("Figure 9a: US Adults Who Have Used ChatGPT by Age (Pew, 2025)")
 ax.set_ylabel("Share of age group (%)")
 ax.set_ylim(0, 70)
 ax.grid(axis="y", alpha=0.3)
@@ -473,7 +473,7 @@ fig.tight_layout()
 save_fig(fig, "fig10a_age_usage.png")
 
 exposure_groups = df_dist[df_dist["measure"].str.contains("exposed|automatable")]
-fig, ax = plt.subplots(figsize=(8.5, 4.8))
+fig, ax = plt.subplots(figsize=(9.5, 6))
 exp2 = exposure_groups.sort_values("value_pct")
 colors3 = []
 for _, r in exp2.iterrows():
@@ -491,7 +491,7 @@ bars = ax.barh(exp2["group"], exp2["value_pct"], color=colors3)
 for b, v in zip(bars, exp2["value_pct"]):
     ax.text(v + 0.5, b.get_y() + b.get_height() / 2, str(v) + "%",
             va="center", fontsize=8)
-ax.set_title("AI Exposure by Group (ILO, IMF, OECD)")
+ax.set_title("Figure 9b: AI Exposure by Group (ILO, IMF, OECD)")
 ax.set_xlabel("Share of employment or occupations (%)")
 ax.set_xlim(0, 70)
 ax.grid(axis="x", alpha=0.3)
@@ -520,7 +520,7 @@ for b, v in zip(bars, df_prod["effect_pct"]):
             ("+" if v > 0 else "") + str(v) + "%",
             va="center", ha="left" if v >= 0 else "right", fontsize=8)
 ax.axvline(0, color="#44403c", linewidth=1)
-ax.set_title("Figure 11: Experimental Evidence on Generative AI and Productivity")
+ax.set_title("Figure 10: Experimental Evidence on Generative AI and Productivity")
 ax.set_xlabel("Effect size (%)")
 ax.grid(axis="x", alpha=0.3)
 fig.tight_layout()
@@ -553,7 +553,7 @@ for bars, vals in [(b1, practice), (b2, exam)]:
 ax.set_xticks(x)
 ax.set_xticklabels([l.replace(" (", "\n(") for l in labels3], fontsize=8.5)
 ax.axhline(0, color="#44403c", linewidth=0.8)
-ax.set_title("Figure 12: Generative AI Can Raise Practice Performance but Reduce Learning (Bastani et al.)")
+ax.set_title("Figure 11: Generative AI Can Raise Practice Performance but Reduce Learning (Bastani et al.)")
 ax.set_ylabel("Change relative to control (%)")
 ax.legend(fontsize=9)
 ax.grid(axis="y", alpha=0.3)
@@ -584,7 +584,7 @@ for bars, vals in [(b1, df_jobs["jobs_created_millions"]),
 ax.set_xticks(x)
 ax.set_xticklabels(["WEF 2023\n(2023-2027)", "WEF 2025\n(2025-2030)"])
 ax.axhline(0, color="#44403c", linewidth=0.8)
-ax.set_title("Figure 13: Projected Job Creation and Displacement (WEF Future of Jobs)")
+ax.set_title("Figure 8: Projected Job Creation and Displacement (WEF Future of Jobs)")
 ax.set_ylabel("Millions of jobs")
 ax.legend(fontsize=9)
 ax.grid(axis="y", alpha=0.3)
@@ -606,8 +606,8 @@ for i, (_, row) in enumerate(df_research.iterrows()):
     dy = 9 if i % 2 == 0 else -18
     ax.annotate(row["topic"], (row["data_availability"], row["theoretical_significance"]),
                 textcoords="offset points", xytext=(6, dy), fontsize=8.5)
-ax.set_xlim(0, 10)
-ax.set_ylim(0, 10.5)
+ax.set_xlim(3, 9)
+ax.set_ylim(6, 11)
 ax.set_title("Figure 14: Research Opportunities by Data Availability and Theoretical Significance")
 ax.set_xlabel("Data availability (author assessment, 0-10)")
 ax.set_ylabel("Theoretical significance (author assessment, 0-10)")
