@@ -427,10 +427,16 @@ ax.grid(axis="y", alpha=0.3)
 fig.tight_layout()
 save_fig(fig, "fig09a_job_worries.png")
 
-sentiments = df_job[df_job["survey"] == "Pew Research Center"].sort_values("value_pct")
+sentiments = df_job[df_job["survey"] == "Pew Research Center"]
+sentiments = sentiments[sentiments["indicator"].str.contains(
+    "worried|hopeful|overwhelmed|excited", case=False)]
+sentiments = sentiments.sort_values("value_pct", ascending=False)
 fig, ax = plt.subplots(figsize=(8.5, 4.8))
 cols_map = {"worried": C_RED, "overwhelmed": C_AMBER, "hopeful": C_GREEN, "excited": C_BLUE}
-labels2 = [s.split()[0].capitalize() for s in sentiments["indicator"]]
+label_map = {"worried": "Worried", "overwhelmed": "Overwhelmed",
+             "hopeful": "Hopeful", "excited": "Excited"}
+labels2 = [label_map.get(s.split()[1].strip(",").lower(), "Other")
+           for s in sentiments["indicator"]]
 colors2 = [cols_map.get(l.lower(), C_GREY) for l in labels2]
 bars = ax.bar(labels2, sentiments["value_pct"], color=colors2)
 for b, v in zip(bars, sentiments["value_pct"]):
@@ -596,9 +602,10 @@ check_columns(df_research, "ai_era_research_opportunities.csv",
 fig, ax = plt.subplots(figsize=(10, 6))
 sc = ax.scatter(df_research["data_availability"], df_research["theoretical_significance"],
                 s=220, color=C_NAVY, alpha=0.75, edgecolor="white")
-for _, row in df_research.iterrows():
+for i, (_, row) in enumerate(df_research.iterrows()):
+    dy = 9 if i % 2 == 0 else -18
     ax.annotate(row["topic"], (row["data_availability"], row["theoretical_significance"]),
-                textcoords="offset points", xytext=(6, 4), fontsize=8.5)
+                textcoords="offset points", xytext=(6, dy), fontsize=8.5)
 ax.set_xlim(0, 10)
 ax.set_ylim(0, 10.5)
 ax.set_title("Figure 14: Research Opportunities by Data Availability and Theoretical Significance")
