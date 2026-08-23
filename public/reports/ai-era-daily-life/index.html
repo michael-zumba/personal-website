@@ -456,12 +456,12 @@
     </div>
     <div class="chart-container">
       <h4>Figure 10b: AI Exposure by Group (ILO, IMF, OECD)</h4>
-      <p class="chart-note">Exposure measures by gender (ILO 2023, share of employment potentially automatable), country income group (IMF 2024, share of employment exposed), and urban versus rural OECD regions (OECD 2024, workers currently exposed).</p>
+      <p class="chart-note">Exposure measures by gender (ILO 2023, share of employment potentially automatable; ILO 2026, share of occupations potentially exposed), country income group (IMF 2024, share of employment exposed), and urban versus rural OECD regions (OECD 2024, workers currently exposed).</p>
       <div class="chart-box short" id="chart-exposure-groups"></div>
     </div>
   </div>
 
-  <p>The exposure gap runs the other way from the usage gap. The ILO finds that women's employment is more than twice as exposed to generative AI automation as men's: 3.7 percent of female employment worldwide versus 1.4 percent of male employment, driven by the concentration of women in clerical work, and the gap is larger in high-income countries. The IMF finds exposure rising with development: about 60 percent of jobs in advanced economies are exposed versus 26 percent in low-income countries, because richer economies have more cognitive, white-collar work. The OECD finds a spatial version of the same pattern: 32 percent of workers in urban regions are currently exposed versus 21 percent in rural regions, and the OECD warns that generative AI could widen regional divides rather than narrow them. Education lines up with all of these: highly exposed occupations are disproportionately held by degree holders, and Gallup's 2023 finding that job obsolescence worry rose fastest among college-educated US workers is consistent with that.</p>
+  <p>The exposure gap runs the other way from the usage gap. The ILO finds that women's employment is more than twice as exposed to generative AI automation as men's: 3.7 percent of female employment worldwide versus 1.4 percent of male employment, driven by the concentration of women in clerical work, and the gap is larger in high-income countries. An ILO analysis published in 2026 finds the same pattern at the occupation level: about 29 percent of female-dominated occupations are exposed to generative AI, versus 16 percent of male-dominated occupations. The IMF finds exposure rising with development: about 60 percent of jobs in advanced economies are exposed versus 26 percent in low-income countries, because richer economies have more cognitive, white-collar work. The OECD finds a spatial version of the same pattern: 32 percent of workers in urban regions are currently exposed versus 21 percent in rural regions, and the OECD warns that generative AI could widen regional divides rather than narrow them. Education lines up with all of these: highly exposed occupations are disproportionately held by degree holders, and Gallup's 2023 finding that job obsolescence worry rose fastest among college-educated US workers is consistent with that.</p>
 
   <p>Pulling the three gaps together produces a clear but uncomfortable picture. The people best placed to benefit, young and highly educated workers in rich countries, are also the most exposed, because exposure mostly means augmentation, and augmentation is where the productivity gains are. The people most at risk of displacement are those in clerical and administrative roles, disproportionately women, where tasks are more substitutable. And the people least exposed, such as workers in low-income countries and in physical, in-person occupations, are also the least likely to capture productivity gains, because they lack the complementary digital infrastructure and skills. Generative AI thus has the profile of a technology that could either compress or widen global inequality, depending on how its gains are distributed through training, wages, and social protection. The evidence so far is not sufficient to say which outcome dominates.</p>
 </section>
@@ -569,6 +569,7 @@
   <div class="ref-section">
     <h3>Institutional Reports, Surveys, and Data Sources</h3>
     <ol class="ref-list" start="18">
+      <li>Gallup (2018). Freedom rings in places you might not expect. <a href="https://news.gallup.com/opinion/gallup/235973/freedom-rings-places-not-expect.aspx">https://news.gallup.com/opinion/gallup/235973/freedom-rings-places-not-expect.aspx</a></li>
       <li>Gallup (2024). Global Emotions 2024: Negative emotions fell globally for the first time since 2014. Gallup World Poll. <a href="https://www.gallup.com/file/analytics/646205/Global%20Emotions%202024%20Report_Global%20Press%20Release.pdf">https://www.gallup.com/file/analytics/646205/Global%20Emotions%202024%20Report_Global%20Press%20Release.pdf</a></li>
       <li>Gallup (2025). Tracking the world's emotional health. <a href="https://news.gallup.com/poll/695963/tracking-world-emotional-health.aspx">https://news.gallup.com/poll/695963/tracking-world-emotional-health.aspx</a></li>
       <li>Gallup (2025). Land of the free? Fewer Americans agree. <a href="https://news.gallup.com/poll/660440/land-free-fewer-americans-agree.aspx">https://news.gallup.com/poll/660440/land-free-fewer-americans-agree.aspx</a></li>
@@ -898,19 +899,19 @@ window._echartsReady = true;
 
 (function() {
   // Figure 10b: Exposure by group
-  var rows = ['Men worldwide (ILO 2023)','Women worldwide (ILO 2023)','Rural OECD regions (OECD 2024)','Low-income countries (IMF 2024)','Emerging markets (IMF 2024)','Urban OECD regions (OECD 2024)','World (IMF 2024)','Advanced economies (IMF 2024)'];
-  var vals = [1.4,3.7,21,26,40,32,40,60];
+  var rows = ['Men worldwide (ILO 2023)','Women worldwide (ILO 2023)','Male-dominated occupations (ILO 2026)','Female-dominated occupations (ILO 2026)','Rural OECD regions (OECD 2024)','Low-income countries (IMF 2024)','Emerging markets (IMF 2024)','Urban OECD regions (OECD 2024)','World (IMF 2024)','Advanced economies (IMF 2024)'];
+  var vals = [1.4,3.7,16,29,21,26,40,32,40,60];
   var c10b = echarts.init(document.getElementById('chart-exposure-groups'));
   c10b.setOption({
     tooltip: { trigger: 'axis', formatter: '{b}: {c}%' },
-    grid: { left: 210, containLabel: true, right: 40, top: 40, bottom: 30 },
+    grid: { left: 240, containLabel: true, right: 40, top: 40, bottom: 30 },
     xAxis: { type: 'value', max: 70, axisLabel: { formatter: '{value}%', fontSize: 10 } },
     yAxis: { type: 'category', data: rows, axisLabel: { fontSize: 9.5 } },
     series: [{
       type: 'bar', data: vals.map(function(v, i) {
         var color = '#7f8c8d';
-        if (rows[i].indexOf('Women') === 0) color = '#c0392b';
-        if (rows[i].indexOf('Men') === 0) color = '#f39c12';
+        if (rows[i].indexOf('Women') === 0 || rows[i].indexOf('Female') === 0) color = '#c0392b';
+        if (rows[i].indexOf('Men') === 0 || rows[i].indexOf('Male') === 0) color = '#f39c12';
         if (rows[i].indexOf('Advanced') === 0) color = '#1e3a5f';
         if (rows[i].indexOf('Emerging') === 0 || rows[i].indexOf('Low-income') === 0) color = '#3b6e9e';
         if (rows[i].indexOf('Urban') === 0) color = '#27ae60';

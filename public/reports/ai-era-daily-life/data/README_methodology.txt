@@ -152,7 +152,7 @@ DATASET DESCRIPTIONS
 
 11. ai_era_distribution.csv
     Description: Distribution of AI use and exposure across age groups,
-    gender, and country income groups.
+    gender, country income groups, and urban versus rural regions.
     Sources: Pew Research Center (2025); ILO (2023 and 2026); IMF (2024);
     OECD (2024).
     Limitations: Measures differ by row (usage versus exposure) and are
