@@ -145,8 +145,9 @@ DATASET DESCRIPTIONS
 10. ai_era_ai_adoption_orgs.csv
     Description: Share of organisations using AI in at least one business
     function and the share regularly using generative AI, 2023 to 2025.
-    Sources: McKinsey State of AI surveys, as reported by McKinsey (2025) and
-    the Stanford AI Index Report (2025).
+    Sources: McKinsey State of AI surveys (2023; early 2024; 2025). The
+    Stanford AI Index Report (2025) re-states a later 2024 reading of
+    78 percent for ai_use_pct; the primary early-2024 survey figure is 72.
     Limitations: Survey-based; samples are weighted toward larger firms.
 
 11. ai_era_distribution.csv
