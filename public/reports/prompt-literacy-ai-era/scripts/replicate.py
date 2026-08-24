@@ -369,7 +369,7 @@ for _, row in gain_rows.iterrows():
 
 for study_label, participants in [
     ("Noy and Zhang 2023", 453),
-    ("Brynjolfsson Li and Raymond 2025", 5179),
+    ("Brynjolfsson Li and Raymond 2025", 5172),
     ("Dell'Acqua et al. 2026", 758),
     ("Peng et al. 2023", 95),
 ]:
@@ -630,7 +630,7 @@ print_stat("Occupations with AI in at least 25 percent of tasks, January 2026",
 print_stat("Writing task time reduction with ChatGPT",
            "40 percent", "Noy and Zhang (2023), Science")
 print_stat("Average productivity gain, customer support",
-           "14 percent", "Brynjolfsson, Li, and Raymond (2025), QJE")
+           "15 percent", "Brynjolfsson, Li, and Raymond (2025), QJE")
 print_stat("Consultants tasks completed with AI inside the frontier",
            "12.2 percent more", "Dell'Acqua et al. (2026), Organization Science")
 print_stat("Developers faster with GitHub Copilot",
