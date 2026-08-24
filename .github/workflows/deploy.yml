@@ -43,6 +43,7 @@ jobs:
           cp -r public/reports/ai-tokens-future-asset site/
           cp -r public/reports/understanding-llms-accounting site/
           cp -r public/reports/ai-era-daily-life site/
+          cp -r public/reports/prompt-literacy-ai-era site/
 
           # Copy downloadable data files.
           mkdir -p site/data
