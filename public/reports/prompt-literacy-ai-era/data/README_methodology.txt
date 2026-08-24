@@ -1,4 +1,4 @@
-Prompt Literacy and the New Language of the AI Era
+Prompt Literacy in the AI Era: Value, Measurement, and the Accounting Question
 Data and Methodology Notes
 Author: Dr Yuqian Zhang
 Date: 24 August 2026
@@ -6,10 +6,9 @@ Date: 24 August 2026
 Overview
 --------
 This folder contains the compiled datasets behind every statistic quoted in
-the research brief "Prompt Literacy and the New Language of the AI Era:
-Economic, Business, and Accounting Implications of Effective Human-AI
-Conversation" (public/reports/prompt-literacy-ai-era/index.html) and its
-one-page summary (summary.html).
+the research brief "Prompt Literacy in the AI Era: Value, Measurement, and
+the Accounting Question" (public/reports/prompt-literacy-ai-era/index.html)
+and its one-page summary (summary.html).
 
 Files
 -----
@@ -28,7 +27,7 @@ Files
   augmentation versus automation shares, February 2025 and January 2026.
 - productivity_experiments.csv: Controlled experiments on generative AI
   productivity effects (Noy and Zhang 2023; Brynjolfsson, Li, and Raymond
-  2025; Dell'Acqua et al. 2023; Peng et al. 2023).
+  2025; Dell'Acqua et al. 2026; Peng et al. 2023).
 - prompting_benchmarks.csv: Chain-of-thought and zero-shot reasoning
   benchmark results (Wei et al. 2022; Kojima et al. 2022) and PromptRobust
   adversarial-prompt statistics (Zhu et al. 2023).

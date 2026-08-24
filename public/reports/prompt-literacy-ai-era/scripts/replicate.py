@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Prompt Literacy and the New Language of the AI Era: Economic, Business, and
-Accounting Implications of Effective Human-AI Conversation
+Prompt Literacy in the AI Era: Value, Measurement, and the Accounting
+Question
 Replication Script
 
 Author: Dr Yuqian Zhang
@@ -19,7 +19,7 @@ Data sources:
   LinkedIn, Lightcast and Stanford AI Index, Anthropic Economic Index,
   World Economic Forum, XBRL International, IAASB, IFAC and IESBA) and
   peer-reviewed studies (Noy and Zhang 2023; Brynjolfsson, Li, and Raymond
-  2025; Dell'Acqua et al. 2023; Peng et al. 2023; Wei et al. 2022; Kojima
+  2025; Dell'Acqua et al. 2026; Peng et al. 2023; Wei et al. 2022; Kojima
   et al. 2022; Zhu et al. 2023). Most of these sources publish headline
   statistics in PDF reports, press releases, and article pages without
   stable machine-readable CSV endpoints, and several academic papers are
@@ -370,7 +370,7 @@ for _, row in gain_rows.iterrows():
 for study_label, participants in [
     ("Noy and Zhang 2023", 453),
     ("Brynjolfsson Li and Raymond 2025", 5179),
-    ("Dell'Acqua et al. 2023", 758),
+    ("Dell'Acqua et al. 2026", 758),
     ("Peng et al. 2023", 95),
 ]:
     print_stat(f"Participants, {study_label}", f"{participants:,}",
@@ -387,8 +387,8 @@ bar6 = ax6.barh(["AI users, outside the capability frontier"], [outside_val],
                 color=COLOR_RED, height=0.45)
 ax6.annotate(f"{outside_val:.0f} percentage points",
              (outside_val, bar6[0].get_y() + bar6[0].get_height() / 2),
-             textcoords="offset points", xytext=(6, 0), va="center",
-             fontsize=9, color=COLOR_RED)
+             textcoords="offset points", xytext=(-6, 0), va="center",
+             ha="right", fontsize=9, color=COLOR_RED)
 ax6.set_xlim(outside_val - 30, 2)
 ax6.set_xlabel("Change in likelihood of correct solutions (percentage points)")
 ax6.set_title("Figure 6: Quality Risk Outside the AI Capability Frontier (Dell'Acqua et al.)")
@@ -632,7 +632,7 @@ print_stat("Writing task time reduction with ChatGPT",
 print_stat("Average productivity gain, customer support",
            "14 percent", "Brynjolfsson, Li, and Raymond (2025), QJE")
 print_stat("Consultants tasks completed with AI inside the frontier",
-           "12.2 percent more", "Dell'Acqua et al. (2023), Organization Science")
+           "12.2 percent more", "Dell'Acqua et al. (2026), Organization Science")
 print_stat("Developers faster with GitHub Copilot",
            "55.8 percent", "Peng et al. (2023)")
 print_stat("Chain-of-thought GSM8K improvement",
