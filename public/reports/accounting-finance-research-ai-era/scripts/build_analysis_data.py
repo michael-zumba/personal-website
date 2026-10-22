@@ -12,7 +12,6 @@ import csv
 from collections import defaultdict
 from pathlib import Path
 
-
 PROJECT = Path(__file__).resolve().parents[1]
 DATA = PROJECT / "data"
 
@@ -35,7 +34,7 @@ def build() -> None:
     journal_year: dict[tuple[str, int], int] = defaultdict(int)
     for row in crossref:
         year = int(row["year"])
-        count = int(row["crossref_journal_articles"])
+        count = int(row["crossref_research_articles"])
         field_year[(row["field"], year)] += count
         journal_year[(row["journal"], year)] += count
     _write(
@@ -44,7 +43,7 @@ def build() -> None:
             {
                 "field": field,
                 "year": year,
-                "crossref_journal_articles": count,
+                "crossref_research_articles": count,
             }
             for (field, year), count in sorted(field_year.items())
         ],
@@ -153,13 +152,13 @@ def build() -> None:
         {
             "statistic_id": "articles_2015",
             "value": field_2015,
-            "unit": "Crossref journal articles",
+            "unit": "Crossref research articles",
             "definition": "Sum across 11 selected journals",
         },
         {
             "statistic_id": "articles_2025",
             "value": field_2025,
-            "unit": "Crossref journal articles",
+            "unit": "Crossref research articles",
             "definition": "Sum across 11 selected journals",
         },
         {

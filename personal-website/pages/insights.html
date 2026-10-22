@@ -1069,7 +1069,7 @@
 <script>
 (function() {
   var filterButtons = document.querySelectorAll('.filter-btn');
-  var articleCards = document.querySelectorAll('.article-card[data-topic]');
+  var articleCards = document.querySelectorAll('.insight-card[data-topic], .article-card[data-topic]');
 
   function activateFilter(btn, topic) {
     filterButtons.forEach(function(b) {
@@ -1084,7 +1084,10 @@
     btn.style.borderColor = 'var(--scholar-primary)';
 
     articleCards.forEach(function(card) {
-      if (topic === 'all' || card.getAttribute('data-topic') === topic) {
+      var topics = (card.getAttribute('data-topic') || '').split(',').map(function (value) {
+        return value.trim();
+      });
+      if (topic === 'all' || topics.indexOf(topic) !== -1) {
         card.style.display = '';
       } else {
         card.style.display = 'none';

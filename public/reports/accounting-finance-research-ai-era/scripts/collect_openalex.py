@@ -10,18 +10,27 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 import statistics
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
-import urllib.error
-from datetime import date
 from pathlib import Path
-
 
 PROJECT = Path(__file__).resolve().parents[1]
 DATA = PROJECT / "data"
-ACCESS_DATE = date.today().isoformat()
+ACCESS_DATE = "2026-10-22"
+NONRESEARCH_TITLE = re.compile(
+    r"^(?:introduction(?:\s*:|\s*$)|editor['’]s note\b|"
+    r"annual editor report\b|annual report of the society\b|"
+    r"annual report and editorial commentary\b|report of the editor\b|"
+    r"(?:retraction|retracted)(?:\s*:|\s*$)|"
+    r"erratum(?:\s*:|\s+to\b|\s*$)|"
+    r"correction(?:\s*:|\s+to\b|\s*$)|book review\b|"
+    r"commentary(?:\s*:|\s+on\b))",
+    re.IGNORECASE,
+)
 USER_AGENT = (
     "accounting-finance-research-ai-era/1.0 "
     "(mailto:research@zhangyuqian.com)"
@@ -88,11 +97,9 @@ def collect() -> None:
 
     article_rows: list[dict[str, object]] = []
     coverage_rows: list[dict[str, object]] = []
-    openalex_counts: dict[tuple[str, int], int] = {}
     for journal, field, source_id in JOURNALS:
         print(f"Collecting {journal}", flush=True)
         journal_rows: list[dict[str, object]] = []
-        incomplete_years: list[int] = []
         for year in YEARS:
             print(f"  {year}", flush=True)
             page = 1
@@ -121,6 +128,8 @@ def collect() -> None:
                     doi = _doi(item.get("doi"))
                     if item_year not in YEARS or not doi:
                         continue
+                    if NONRESEARCH_TITLE.search(item.get("title") or ""):
+                        continue
                     first_three = sum(
                         int(c["cited_by_count"])
                         for c in item.get("counts_by_year", [])
@@ -148,9 +157,6 @@ def collect() -> None:
                             "accessed_at": ACCESS_DATE,
                         }
                     )
-                    openalex_counts[(journal, year)] = (
-                        openalex_counts.get((journal, year), 0) + 1
-                    )
                 if not payload["results"]:
                     break
                 page += 1
@@ -158,15 +164,7 @@ def collect() -> None:
 
         deduped = {str(row["doi"]): row for row in journal_rows}
         article_rows.extend(deduped.values())
-        crossref_dois = {
-            doi
-            for doi in crossref_by_journal.get(journal, set())
-            if any(
-                row["doi"] == doi
-                and int(row["publication_year"]) in YEARS
-                for row in crossref
-            )
-        }
+        crossref_dois = crossref_by_journal.get(journal, set())
         matched_dois = crossref_dois & set(deduped)
         coverage_rows.append(
             {
@@ -180,12 +178,7 @@ def collect() -> None:
                     if crossref_dois
                     else ""
                 ),
-                "assessment": (
-                    "Incomplete: OpenAlex returned more than one page for "
-                    f"year(s) {', '.join(map(str, incomplete_years))}."
-                    if incomplete_years
-                    else "Included in attention analysis."
-                ),
+                "assessment": "Included in attention analysis.",
                 "accessed_at": ACCESS_DATE,
             }
         )

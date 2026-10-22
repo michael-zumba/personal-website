@@ -18,7 +18,6 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
-
 PROJECT = Path(__file__).resolve().parents[1]
 SOURCES = PROJECT / "evidence" / "sources.csv"
 OUTPUT = PROJECT / "evidence" / "reference-check.json"

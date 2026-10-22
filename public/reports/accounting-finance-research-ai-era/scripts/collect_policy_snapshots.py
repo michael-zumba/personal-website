@@ -16,16 +16,14 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import date, datetime
 from pathlib import Path
 
 from bs4 import BeautifulSoup
 
-
 PROJECT = Path(__file__).resolve().parents[1]
 DATA = PROJECT / "data"
 SNAPSHOTS = PROJECT / "evidence" / "snapshots" / "policies"
-ACCESS_DATE = date.today().isoformat()
+ACCESS_DATE = "2026-10-22"
 USER_AGENT = (
     "accounting-finance-research-ai-era/1.0 "
     "(mailto:research@zhangyuqian.com)"
@@ -186,14 +184,20 @@ def _classify(html: str) -> tuple[dict[str, object], str]:
         status = "AI mentioned only"
     else:
         status = "No visible AI guidance"
-    context = text[max(0, ai_index - 250) : ai_index + 1200] if generic_ai else ""
+    context = ""
+    if generic_ai:
+        start = max(0, ai_index - 60)
+        excerpt = " ".join(text[start : ai_index + 180].split())
+        if len(excerpt) > 240:
+            excerpt = excerpt[:237].rsplit(" ", 1)[0].rstrip(",;:") + "..."
+        context = excerpt
     record = {
         "generic_ai_visible": int(generic_ai),
         "generative_ai_visible": int(generative_ai),
         "section_heading_ai": int(section_heading),
         "policy_term_hits": policy_hits,
         "policy_status": status,
-        "context": context,
+        "context_excerpt": context,
     }
     return record, text
 
@@ -218,7 +222,7 @@ def collect() -> None:
             else:
                 try:
                     timestamp = _timestamp_for_period(url, start, end)
-                except Exception as error:
+                except Exception as error:  # noqa: BLE001
                     print(f"  {period}: CDX skipped: {error}", flush=True)
                     time.sleep(2)
                     continue
@@ -232,7 +236,7 @@ def collect() -> None:
             else:
                 try:
                     html = _get(archive_url)
-                except Exception as error:
+                except Exception as error:  # noqa: BLE001
                     print(f"    skipped: {error}", flush=True)
                     time.sleep(2)
                     continue

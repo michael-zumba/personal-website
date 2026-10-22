@@ -13,7 +13,6 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
-
 PROJECT = Path(__file__).resolve().parents[1]
 DATA = PROJECT / "data"
 
@@ -35,10 +34,13 @@ CODEBOOK = {
     ),
     "Decision relevance": (
         "practitioner",
-        "practice",
         "policymaker",
-        "regulation",
+        "regulator",
         "decision-making",
+        "real-world",
+        "policy implication",
+        "practical implication",
+        "practically relevant",
     ),
     "Integrity and accountability": (
         "research integrity",

@@ -9,14 +9,14 @@ Purpose: Read the saved CSVs and regenerate all charts and key statistics.
 from __future__ import annotations
 
 import random
+import re
 from pathlib import Path
 
 import matplotlib
 import pandas as pd
 
 matplotlib.use("Agg")
-import matplotlib.pyplot as plt  # noqa: E402
-
+import matplotlib.pyplot as plt
 
 random.seed(42)
 
@@ -32,10 +32,93 @@ OCHRE = "#a86b2d"
 SLATE = "#60758a"
 GRID = "#ded8ca"
 BG = "#fffdf8"
+NONRESEARCH_TITLE = re.compile(
+    r"^(?:introduction(?:\s*:|\s*$)|editor['’]s note\b|"
+    r"annual editor report\b|annual report of the society\b|"
+    r"annual report and editorial commentary\b|report of the editor\b|"
+    r"(?:retraction|retracted)(?:\s*:|\s*$)|"
+    r"erratum(?:\s*:|\s+to\b|\s*$)|"
+    r"correction(?:\s*:|\s+to\b|\s*$)|book review\b|"
+    r"commentary(?:\s*:|\s+on\b))",
+    re.IGNORECASE,
+)
 
 
 def read(name: str) -> pd.DataFrame:
     return pd.read_csv(DATA / name)
+
+
+def validate_inputs() -> None:
+    articles = read("crossref_articles.csv")
+    counts = read("crossref_article_counts.csv")
+    attention = read("openalex_attention_articles.csv")
+    cohorts = read("attention_cohorts.csv")
+    attention_summary = read("attention_journal_summary.csv")
+    submissions = read("submissions_outputs.csv")
+    policy = read("ai_policy_latest.csv")
+    priorities = read("editorial_priorities.csv")
+
+    if not articles["doi"].is_unique:
+        raise ValueError("Crossref article DOIs are not unique.")
+    if articles["title"].str.contains(NONRESEARCH_TITLE, na=False).any():
+        raise ValueError("Nonresearch Crossref titles remain in the article data.")
+    grouped = (
+        articles.groupby(["journal", "field", "publication_year"])
+        .size()
+        .rename("observed")
+        .reset_index()
+    )
+    merged = counts.merge(
+        grouped,
+        left_on=["journal", "field", "year"],
+        right_on=["journal", "field", "publication_year"],
+        how="outer",
+        indicator=True,
+    )
+    if not merged["_merge"].eq("both").all():
+        raise ValueError("Crossref article counts do not match article records.")
+    if not merged["crossref_research_articles"].eq(merged["observed"]).all():
+        raise ValueError("Crossref journal-year totals are inconsistent.")
+
+    if not attention["doi"].is_unique:
+        raise ValueError("OpenAlex DOIs are not unique.")
+    if attention["title"].str.contains(NONRESEARCH_TITLE, na=False).any():
+        raise ValueError("Nonresearch OpenAlex titles remain in the attention data.")
+    if not attention["zero_citations_first_3y"].isin([0, 1]).all():
+        raise ValueError("Attention flag must be binary.")
+    cohort_totals = (
+        cohorts.groupby(["journal", "field"])[["zero_citations_articles", "articles"]]
+        .sum()
+        .reset_index()
+    )
+    comparison = attention_summary.merge(
+        cohort_totals,
+        on=["journal", "field"],
+        suffixes=("_summary", "_cohort"),
+        how="outer",
+        indicator=True,
+    )
+    if not comparison["_merge"].eq("both").all():
+        raise ValueError("Attention summary does not match article cohorts.")
+    if not comparison["zero_citations_articles_summary"].eq(
+        comparison["zero_citations_articles_cohort"]
+    ).all():
+        raise ValueError("Zero-citation totals are inconsistent.")
+    if not comparison["articles_summary"].eq(comparison["articles_cohort"]).all():
+        raise ValueError("Attention denominators are inconsistent.")
+
+    if (submissions["total_submissions"] <= 0).any():
+        raise ValueError("Submission totals must be positive.")
+    if policy["journal"].duplicated().any():
+        raise ValueError("Latest policy table must contain one row per journal.")
+    allowed_status = {
+        "Explicit AI guidance",
+        "No visible AI guidance",
+    }
+    if not set(policy["policy_status"]).issubset(allowed_status):
+        raise ValueError("Unknown policy status.")
+    if not priorities["present"].isin([0, 1]).all():
+        raise ValueError("Editorial-priority values must be binary.")
 
 
 def style_axis(axis: plt.Axes) -> None:
@@ -102,7 +185,7 @@ def figure_one() -> None:
         )
     axis.axhline(100, color=MUTED, linewidth=0.8, linestyle="--", alpha=0.7)
     axis.set_title(
-        "Submissions rose unevenly in the two journals that disclose them",
+        "Submission trends differ at the two journals with public data",
         loc="left",
         fontsize=14,
         color=INK,
@@ -123,6 +206,9 @@ def figure_one() -> None:
 
 def figure_two() -> None:
     data = read("field_article_counts.csv")
+    count_2015 = int(data.loc[data["year"] == 2015, "crossref_research_articles"].sum())
+    count_2025 = int(data.loc[data["year"] == 2025, "crossref_research_articles"].sum())
+    change = (count_2025 / count_2015 - 1) * 100
     fig, axis = plt.subplots(figsize=(10, 5.8), facecolor=BG)
     style_axis(axis)
     for field, group in data.groupby("field"):
@@ -130,7 +216,7 @@ def figure_two() -> None:
         color = PINE if field == "Accounting" else SLATE
         axis.plot(
             group["year"],
-            group["crossref_journal_articles"],
+            group["crossref_research_articles"],
             marker="o",
             linewidth=2.2,
             markersize=4.5,
@@ -139,8 +225,8 @@ def figure_two() -> None:
         )
         last = group.iloc[-1]
         axis.annotate(
-            f"{field} {int(last['crossref_journal_articles'])}",
-            (last["year"], last["crossref_journal_articles"]),
+            f"{field} {int(last['crossref_research_articles'])}",
+            (last["year"], last["crossref_research_articles"]),
             xytext=(7, 5),
             textcoords="offset points",
             fontsize=8,
@@ -148,20 +234,20 @@ def figure_two() -> None:
             weight="bold",
         )
     axis.set_title(
-        "Published article output grew modestly and unevenly",
+        f"Crossref research article counts rose {change:.1f}% from 2015 to 2025",
         loc="left",
         fontsize=14,
         color=INK,
         pad=14,
     )
-    axis.set_ylabel("Crossref-indexed journal articles", color=MUTED)
+    axis.set_ylabel("Crossref research articles", color=MUTED)
     axis.set_xlabel("Publication year", color=MUTED)
     axis.legend(frameon=False, loc="upper left", fontsize=8)
     fig.tight_layout(rect=(0, 0.04, 1, 1))
     add_source(
         fig,
-        "Source: Crossref journal-works queries for 11 selected journals. "
-        "Crossref typing differs from journal-specific definitions.",
+        "Source: Crossref research article queries for 11 selected journals. "
+        "Editor reports and other nonresearch titles are excluded.",
     )
     fig.savefig(CHARTS / "fig2_article_output.png", dpi=190, facecolor=BG)
     plt.close(fig)
@@ -192,7 +278,7 @@ def figure_three() -> None:
         )
     axis.set_xlim(0, max(values) * 1.28)
     axis.set_title(
-        "Citation attention after three years varies sharply across journals",
+        "The share of uncited articles varies widely by journal",
         loc="left",
         fontsize=14,
         color=INK,
@@ -215,46 +301,58 @@ def figure_three() -> None:
 def figure_four() -> None:
     data = read("review_workload.csv")
     data["end_year"] = pd.to_datetime(data["reporting_period_end"]).dt.year
-    fig, axes = plt.subplots(2, 1, figsize=(10, 7.4), facecolor=BG)
-    panels = (
-        ("The Journal of Finance", "The Journal of Finance", PINE),
-        ("The Review of Financial Studies", "The Review of Financial Studies", OCHRE),
-    )
-    for axis, (journal, title, color) in zip(axes, panels):
-        style_axis(axis)
+    all_years = pd.Series(range(2015, 2027))
+    fig, axis = plt.subplots(figsize=(10, 5.8), facecolor=BG)
+    style_axis(axis)
+    colors = {
+        "The Journal of Finance": PINE,
+        "The Review of Financial Studies": OCHRE,
+    }
+    for journal, color in colors.items():
         group = data[
             (data["journal"] == journal) & data["median_turnaround_days"].notna()
         ].sort_values("end_year")
+        values = (
+            group.set_index("end_year")["median_turnaround_days"]
+            .reindex(all_years)
+            .tolist()
+        )
         axis.plot(
-            group["end_year"],
-            group["median_turnaround_days"],
+            all_years,
+            values,
             marker="o",
             linewidth=2.2,
             markersize=5,
             color=color,
+            label=journal,
         )
-        axis.set_xticks(sorted(group["end_year"].unique()))
-        for _, row in group.iterrows():
-            axis.annotate(
-                f"{row['median_turnaround_days']:.1f}",
-                (row["end_year"], row["median_turnaround_days"]),
-                xytext=(0, 8),
-                textcoords="offset points",
-                ha="center",
-                fontsize=7.5,
-                color=color,
-            )
-        axis.set_title(title, loc="left", fontsize=10, color=INK)
-        axis.set_ylabel("Median days", color=MUTED)
-    axes[-1].set_xlabel("Reporting period ending year", color=MUTED)
-    fig.suptitle(
-        "Editorial decisions still take weeks",
-        x=0.08,
-        ha="left",
+        last = group.iloc[-1]
+        axis.annotate(
+            short_journal(journal),
+            (last["end_year"], last["median_turnaround_days"]),
+            xytext=(7, 5),
+            textcoords="offset points",
+            fontsize=8,
+            weight="bold",
+            color=color,
+        )
+    axis.set_title(
+        (
+            "Median time to an editorial decision ranged from "
+            f"{int(data['median_turnaround_days'].min())} to "
+            f"{int(data['median_turnaround_days'].max())} days"
+        ),
+        loc="left",
         fontsize=14,
         color=INK,
+        pad=14,
     )
-    fig.tight_layout(rect=(0, 0.04, 1, 0.95))
+    axis.set_ylabel("Median days", color=MUTED)
+    axis.set_xlabel("Reporting period ending year", color=MUTED)
+    axis.set_xticks(range(2015, 2026, 2))
+    axis.set_ylim(20, 60)
+    axis.legend(frameon=False, loc="upper left", fontsize=8)
+    fig.tight_layout(rect=(0, 0.04, 1, 1))
     add_source(
         fig,
         "Sources: Journal of Finance editor reports; Review of Financial Studies statistics. "
@@ -266,6 +364,8 @@ def figure_four() -> None:
 
 def figure_five() -> None:
     data = read("ai_policy_latest.csv").sort_values("journal", ascending=True)
+    explicit = int((data["policy_status"] == "Explicit AI guidance").sum())
+    total = len(data)
     labels = [short_journal(value) for value in data["journal"]]
     colors = [
         PINE if value == "Explicit AI guidance" else "#c7b9a7"
@@ -290,7 +390,7 @@ def figure_five() -> None:
     axis.set_xticks([])
     axis.grid(False)
     axis.set_title(
-        "AI guidance is visible on only four of eleven latest author pages",
+        f"Only {explicit} of {total} journal pages showed visible AI guidance",
         loc="left",
         fontsize=14,
         color=INK,
@@ -334,7 +434,7 @@ def figure_six() -> None:
         )
     axis.set_xlim(0, 10)
     axis.set_title(
-        "Author guidance uses different definitions of valuable research",
+        "Author pages name different research criteria",
         loc="left",
         fontsize=14,
         color=INK,
@@ -354,32 +454,102 @@ def figure_six() -> None:
 def print_statistics() -> None:
     stats = read("analysis_statistics.csv").set_index("statistic_id")["value"]
     fields = read("field_article_counts.csv")
+    crossref = read("crossref_articles.csv")
+    crossref_counts = read("crossref_article_counts.csv")
+    submissions = read("submissions_outputs.csv")
+    submission_index = read("submission_index.csv")
+    review = read("review_workload.csv")
+    corrections = read("corrections_retractions.csv")
     article_2015 = int(
-        fields[fields["year"] == 2015]["crossref_journal_articles"].sum()
+        fields[fields["year"] == 2015]["crossref_research_articles"].sum()
     )
     article_2025 = int(
-        fields[fields["year"] == 2025]["crossref_journal_articles"].sum()
+        fields[fields["year"] == 2025]["crossref_research_articles"].sum()
     )
     attention = read("attention_journal_summary.csv")
     zeros = int(attention["zero_citations_articles"].sum())
     articles = int(attention["articles"].sum())
     policy = read("ai_policy_latest.csv")
     priorities = read("editorial_priority_summary.csv").set_index("category")
-    print(f"Published articles, 2015: {article_2015}")
-    print(f"Published articles, 2025: {article_2025}")
+    print(f"Crossref records: {len(crossref)}")
+    for year, count in (
+        crossref_counts.groupby("year")["crossref_research_articles"].sum().items()
+    ):
+        print(f"Crossref article total, {int(year)}: {int(count)}")
+    print(f"Crossref research articles, 2015: {article_2015}")
+    print(f"Crossref research articles, 2025: {article_2025}")
     print(f"Article-count change, 2015-2025: {article_2025 / article_2015 - 1:.6f}")
-    print(f"Attention articles, 2020-2022: {articles}")
+    pivot = crossref_counts.pivot(
+        index="journal",
+        columns="year",
+        values="crossref_research_articles",
+    )
+    print(
+        "Journals with fewer Crossref articles in 2025 than 2015: "
+        f"{int((pivot[2025] < pivot[2015]).sum())}"
+    )
+    for _, row in submissions.iterrows():
+        print(
+            "Submissions: "
+            f"{row['journal']}, {row['reporting_period_start']} to "
+            f"{row['reporting_period_end']}: {int(row['total_submissions'])}"
+        )
+    for _, row in submission_index.iterrows():
+        print(
+            "Submission index: "
+            f"{row['journal']}, {row['reporting_period_end']}: "
+            f"{float(row['submission_index']):.6f}"
+        )
+    print(f"OpenAlex research articles, 2020-2022: {articles}")
     print(f"Zero-citation articles, first three years: {zeros}")
     print(f"Pooled zero-citation share: {zeros / articles:.6f}")
+    for _, row in attention.sort_values("journal").iterrows():
+        print(
+            "Zero-citation share: "
+            f"{row['journal']}: "
+            f"{int(row['zero_citations_articles'])} of {int(row['articles'])}, "
+            f"{float(row['zero_citation_share']):.6f}"
+        )
+    for _, row in review.iterrows():
+        print(
+            "Review metrics: "
+            f"{row['journal']}, {row['reporting_period_start']} to "
+            f"{row['reporting_period_end']}: "
+            f"median={row['median_turnaround_days']}, "
+            f"acceptance={row['acceptance_rate']}, "
+            f"desk_rejection={row['desk_rejection_rate']}, "
+            f"decisions={row['decisions']}"
+        )
     print(
         "Latest author pages with explicit AI guidance: "
         f"{sum(policy['policy_status'] == 'Explicit AI guidance')} of {len(policy)}"
     )
+    print(
+        "Latest author pages without visible AI guidance: "
+        f"{sum(policy['policy_status'] == 'No visible AI guidance')} of {len(policy)}"
+    )
+    for _, row in policy.sort_values("journal").iterrows():
+        print(
+            f"AI guidance: {row['journal']}, {row['snapshot_date']}: "
+            f"{row['policy_status']}"
+        )
     for category, row in priorities.iterrows():
         print(
             f"{category}: {int(row['journals_with_explicit_mention'])} "
             f"of {int(row['journals_observed'])}"
         )
+    print(
+        "Crossref retraction-update records: "
+        f"{int(corrections['retraction_update_records'].sum())}"
+    )
+    print(
+        "Crossref erratum-update records: "
+        f"{int(corrections['erratum_update_records'].sum())}"
+    )
+    print(
+        "Crossref correction-update records: "
+        f"{int(corrections['correction_update_records'].sum())}"
+    )
     for key in (
         "jf_submissions_2015",
         "jf_submissions_2024",
@@ -391,6 +561,8 @@ def print_statistics() -> None:
 
 def main() -> None:
     CHARTS.mkdir(parents=True, exist_ok=True)
+    validate_inputs()
+    print("Input validation: pass")
     figure_one()
     figure_two()
     figure_three()

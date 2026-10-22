@@ -22,7 +22,7 @@ The frozen candidate sample contains 11 English-language accounting and finance 
 
 The Accounting Review; Journal of Accounting Research; Journal of Accounting and Economics; Contemporary Accounting Research; Review of Accounting Studies; Accounting, Organizations and Society; The Journal of Finance; Journal of Financial Economics; The Review of Financial Studies; Journal of Financial and Quantitative Analysis; and Review of Finance.
 
-The sample is purposive and concentrates on influential general-interest journals. It is not a census of accounting and finance research. Journal-level inclusion and exclusion decisions are recorded in journal_scope.csv.
+The sample is purposeful and contains influential accounting and finance journals. It is not a census of accounting and finance research. Journal-level inclusion and exclusion decisions are recorded in journal_scope.csv.
 
 Crossref article counts
 
@@ -33,7 +33,7 @@ The Crossref REST API was queried separately for each journal ISSN. The work fil
 - issue or publication year retained only for 2015 through 2025;
 - DOI de-duplication within the collected sample.
 
-The issue-year hierarchy was published-print, then published-online, then issued. The resulting 10,477 unique Crossref records are stored in crossref_articles.csv. Journal-year counts are stored in crossref_article_counts.csv, and field totals are in field_article_counts.csv.
+The issue-year hierarchy was published-print, then published-online, then issued. One fixed title rule excluded nonresearch records labelled as annual editor reports, editor notes, retractions, errata, corrections, book reviews, issue introductions and commentary. The resulting 10,377 unique Crossref research article records are stored in crossref_articles.csv. Journal-year counts are stored in crossref_article_counts.csv, and field totals are in field_article_counts.csv.
 
 Crossref article typing is not the same as a journal's internal definition of a research paper. Records can include editorials, corrections, introductions or other content indexed as journal articles. The counts therefore describe Crossref-indexed journal articles, not all research activity.
 
@@ -51,11 +51,11 @@ No missing submission count was inferred from article output, acceptance rates o
 
 Citation attention
 
-OpenAlex was queried by source ID for article records published in 2020, 2021 and 2022. Filters required type article and a DOI.
+OpenAlex was queried by source ID for article records published in 2020, 2021 and 2022. Filters required type article and a DOI. The same fixed title rule removed editor reports, editor notes, retractions, errata, corrections, book reviews, issue introductions and commentary.
 
 Citations in the first three calendar years were calculated by summing OpenAlex counts_by_year from the publication year through the publication year plus two. An article with no positive count in those years is classified as having zero citations in the window.
 
-Review of Finance was excluded from the attention comparison because its OpenAlex source record had only 74 works in total, which was too sparse for this measure. Coverage for the other journals is documented in openalex_coverage.csv. OpenAlex coverage is incomplete even where records were available.
+Review of Finance was excluded from the attention comparison because its OpenAlex source record was too sparse for this measure. Coverage for the other journals is documented in openalex_coverage.csv. OpenAlex coverage is incomplete even where records were available.
 
 A citation is not a reader. A zero count can reflect a paper with no readers, a paper that is read but not cited, a paper that is cited but not indexed, or a paper that is cited outside the OpenAlex record. The measure is citation attention, not human attention.
 
@@ -85,6 +85,8 @@ An observation is coded as "Explicit AI guidance" when at least one AI term and 
 
 This is a measure of guidance visible on the author page. A journal or publisher may have a linked policy elsewhere. The report does not describe page visibility as policy effectiveness, compliance or research quality.
 
+The public policy CSV contains only short evidence excerpts. Full archived HTML pages are retained in the private project evidence store for audit and are not redistributed.
+
 Editorial priorities
 
 The latest usable author-guidance snapshot for each journal was coded against a short codebook:
@@ -93,7 +95,7 @@ Contribution: contribution, novelty, significance or importance.
 Research design: research design, identification, rigorous or rigor.
 Data transparency: data availability, data sharing, data access, data policy or research data.
 Reproducibility: replicate, replication, reproducible, reproducibility, code sharing or code and data.
-Decision relevance: practitioner, practice, policymaker, regulation or decision-making.
+Decision relevance: practitioner, policymaker, regulator, decision-making, real-world, policy implication, practical implication or practically relevant.
 Integrity and accountability: research integrity, plagiarism, misconduct, accountability or accountable.
 
 The first pass was generated mechanically from visible main-page text. All matches were inspected in context, and the full sample was recoded in a second deterministic pass. Ambiguities were resolved conservatively. A term is recorded as present only when it appears in visible guidance text.

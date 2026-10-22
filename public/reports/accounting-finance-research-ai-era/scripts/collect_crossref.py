@@ -10,16 +10,25 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 import time
 import urllib.parse
 import urllib.request
-from datetime import date
 from pathlib import Path
-
 
 PROJECT = Path(__file__).resolve().parents[1]
 DATA = PROJECT / "data"
-ACCESS_DATE = date.today().isoformat()
+ACCESS_DATE = "2026-10-22"
+NONRESEARCH_TITLE = re.compile(
+    r"^(?:introduction(?:\s*:|\s*$)|editor['’]s note\b|"
+    r"annual editor report\b|annual report of the society\b|"
+    r"annual report and editorial commentary\b|report of the editor\b|"
+    r"(?:retraction|retracted)(?:\s*:|\s*$)|"
+    r"erratum(?:\s*:|\s+to\b|\s*$)|"
+    r"correction(?:\s*:|\s+to\b|\s*$)|book review\b|"
+    r"commentary(?:\s*:|\s+on\b))",
+    re.IGNORECASE,
+)
 USER_AGENT = (
     "accounting-finance-research-ai-era/1.0 "
     "(mailto:research@zhangyuqian.com)"
@@ -91,6 +100,8 @@ def collect() -> None:
                 if year is None or not 2015 <= year <= 2025:
                     continue
                 title = item.get("title") or [""]
+                if NONRESEARCH_TITLE.search(title[0] if title else ""):
+                    continue
                 rows.append(
                     {
                         "journal": journal,
@@ -131,7 +142,7 @@ def collect() -> None:
             "journal": journal,
             "field": field,
             "year": year,
-            "crossref_journal_articles": count,
+            "crossref_research_articles": count,
             "source": "Crossref REST API",
             "accessed_at": ACCESS_DATE,
         }
