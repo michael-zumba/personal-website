@@ -1,0 +1,19 @@
+tax_year,from_date,to_date,income_from_nzd,income_to_nzd,marginal_rate_pct,source_id,notes
+2024-25,2024-04-01,2025-03-31,0,14000,10.5,S_CASH_006,"IRD schedule for 1 Apr 2024-31 Mar 2025 (transitional year; thresholds changed on 31 July 2024, so IRD publishes composite annualised rates)."
+2024-25,2024-04-01,2025-03-31,14001,15600,12.82,S_CASH_006,Composite annualised rate for the transitional 2024-25 year.
+2024-25,2024-04-01,2025-03-31,15601,48000,17.5,S_CASH_006,
+2024-25,2024-04-01,2025-03-31,48001,53500,21.64,S_CASH_006,Composite annualised rate for the transitional 2024-25 year.
+2024-25,2024-04-01,2025-03-31,53501,70000,30,S_CASH_006,
+2024-25,2024-04-01,2025-03-31,70001,78100,30.99,S_CASH_006,Composite annualised rate for the transitional 2024-25 year.
+2024-25,2024-04-01,2025-03-31,78101,180000,33,S_CASH_006,
+2024-25,2024-04-01,2025-03-31,180001,,39,S_CASH_006,
+2025-26,2025-04-01,2026-03-31,0,15600,10.5,S_CASH_006,Rates applying from 1 April 2025.
+2025-26,2025-04-01,2026-03-31,15601,53500,17.5,S_CASH_006,
+2025-26,2025-04-01,2026-03-31,53501,78100,30,S_CASH_006,
+2025-26,2025-04-01,2026-03-31,78101,180000,33,S_CASH_006,
+2025-26,2025-04-01,2026-03-31,180001,,39,S_CASH_006,
+2026-27,2026-04-01,2027-03-31,0,15600,10.5,S_CASH_006,"IRD page as accessed 2026-10-22 lists the 1 April 2025 schedule as current; no later schedule change is published, so the same brackets are recorded for 2026-27."
+2026-27,2026-04-01,2027-03-31,15601,53500,17.5,S_CASH_006,
+2026-27,2026-04-01,2027-03-31,53501,78100,30,S_CASH_006,
+2026-27,2026-04-01,2027-03-31,78101,180000,33,S_CASH_006,
+2026-27,2026-04-01,2027-03-31,180001,,39,S_CASH_006,

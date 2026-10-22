@@ -1,0 +1,15 @@
+date,indicator,value,unit,value_type,source_id,locator,note
+2026-04,Projected AI-related capital expenditure through 2029,3400,USD billion,projected level,S_AI_IMF_GFSR,"IMF GFSR April 2026, PDF p.41 and p.43",IMF staff projection; $3.4 trillion over 2025-2029
+2026-04,Projected data-centre securitization by 2028,150,USD billion,projected level,S_AI_IMF_GFSR,"IMF GFSR April 2026, PDF p.56",forecaster expectation cited by the IMF
+2026-04,"Estimated AI and digital infrastructure sectoral inflows, 2025",270,USD billion,level,S_AI_IMF_GFSR,"IMF GFSR April 2026, PDF p.56",IMF citing UNCTAD (2026)
+2026-07,"Five AI hyperscalers' share of outstanding US IG debt, end-2025",3,percent,share,S_AI_BOE_FSR,"BoE FSR July 2026, PDF p.28 (printed p.27)",stock outstanding at end-2025
+2026-05,"Five AI hyperscalers' share of US IG debt issuance, early May 2026",15,percent,share (at least),S_AI_BOE_FSR,"BoE FSR July 2026, PDF p.28 (printed p.27)",year-to-date issuance; source reports 'over 15%'
+2026-07,"AI issuers' share of non-refinance US high-yield issuance, 2026 to date",41,percent,share,S_AI_BOE_FSR,"BoE FSR July 2026, PDF p.29 (printed p.28)",compared with 1% of the JPM HY index at end-2025
+2026-07,"AI issuers' share of JPM US high-yield bond index, end-2025",1,percent,share,S_AI_BOE_FSR,"BoE FSR July 2026, PDF p.29 (printed p.28)",
+2026-07,Barclays estimate: AI hyperscaler 2026 investment financed by IG issuance,240,USD billion,estimate,S_AI_BOE_FSR,"BoE FSR July 2026, PDF p.28 (printed p.27)",bank estimate cited by the BoE
+2026-07,JP Morgan estimate: aggregate funding needed for AI chips over five years,2000,USD billion,estimate (at least),S_AI_BOE_FSR,"BoE FSR July 2026, PDF p.30 (printed p.29)",bank estimate cited by the BoE
+2026-07,"OECD estimate: private credit share of AI investment, 2024",9,percent,share,S_AI_BOE_FSR,"BoE FSR July 2026, PDF p.29 (printed p.28)",estimate cited by the BoE
+2026-07,"OECD estimate: private credit share of AI investment, 2025",34,percent,share,S_AI_BOE_FSR,"BoE FSR July 2026, PDF p.29 (printed p.28)",estimate cited by the BoE
+2026-05,ECB: share of AI data-centre buildout potentially funded by private credit,30,percent,share (up to),S_AI_ECB_FSR,"ECB Financial Stability Review May 2026, PDF p.141, footnote 181",market intelligence cited by the ECB
+2026-05,Expected AI data-centre buildout funding need,3000,USD billion,projected level,S_AI_ECB_FSR,"ECB Financial Stability Review May 2026, PDF p.141, footnote 181",
+2025-12,Bloomberg consensus: AI hyperscaler capital expenditure in 2028,600,USD billion,consensus estimate (less than),S_AI_BOE_FSR,"BoE FSR July 2026, PDF p.37",consensus at the time of the December 2025 FSR

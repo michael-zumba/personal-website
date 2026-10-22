@@ -1,0 +1,236 @@
+period_start,period_end,period_type,fiscal_year,fiscal_period,ticker,company,metric,value_usd,source_id,filing_form,accession,note
+2014-06-01,2015-05-31,annual,2015,FY,ORCL,Oracle Corporation,cash capex (purchases of PP&E),1391000000,S_AI_SEC_ORCL,10-K,0001193125-17-214833,as-filed 10-K annual value
+2014-07-01,2015-06-30,annual,2015,FY,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),5944000000,S_AI_SEC_MSFT,10-K,0001564590-17-014900,as-filed 10-K annual value
+2015-01-01,2015-12-31,annual,2015,FY,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),4589000000,S_AI_SEC_AMZN,10-K,0001018724-17-000011,as-filed 10-K annual value (older XBRL tag PaymentsToAcquirePropertyPlantAndEquipment)
+2015-01-01,2015-12-31,annual,2015,FY,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),9950000000,S_AI_SEC_GOOGL,10-K,0001652044-18-000007,as-filed 10-K annual value
+2015-01-01,2015-12-31,annual,2015,FY,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),2523000000,S_AI_SEC_META,10-K,0001326801-18-000009,as-filed 10-K annual value
+2015-06-01,2016-05-31,annual,2016,FY,ORCL,Oracle Corporation,cash capex (purchases of PP&E),1189000000,S_AI_SEC_ORCL,10-K,0001193125-18-201034,as-filed 10-K annual value
+2015-07-01,2016-06-30,annual,2016,FY,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),8343000000,S_AI_SEC_MSFT,10-K,0001564590-18-019062,as-filed 10-K annual value
+2016-01-01,2016-12-31,annual,2016,FY,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),7804000000,S_AI_SEC_AMZN,10-K,0001018724-19-000004,as-filed 10-K annual value
+2016-01-01,2016-12-31,annual,2016,FY,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),10212000000,S_AI_SEC_GOOGL,10-K,0001652044-19-000004,as-filed 10-K annual value
+2016-01-01,2016-12-31,annual,2016,FY,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),4491000000,S_AI_SEC_META,10-K,0001326801-19-000009,as-filed 10-K annual value
+2016-06-01,2017-05-31,annual,2017,FY,ORCL,Oracle Corporation,cash capex (purchases of PP&E),2021000000,S_AI_SEC_ORCL,10-K,0001564590-19-023119,as-filed 10-K annual value
+2016-07-01,2017-06-30,annual,2017,FY,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),8129000000,S_AI_SEC_MSFT,10-K,0001564590-19-027952,as-filed 10-K annual value
+2017-01-01,2017-12-31,annual,2017,FY,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),11955000000,S_AI_SEC_AMZN,10-K,0001018724-20-000004,as-filed 10-K annual value
+2017-01-01,2017-12-31,annual,2017,FY,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),13184000000,S_AI_SEC_GOOGL,10-K,0001652044-20-000008,as-filed 10-K annual value
+2017-01-01,2017-12-31,annual,2017,FY,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),6733000000,S_AI_SEC_META,10-K,0001326801-20-000013,as-filed 10-K annual value
+2017-06-01,2018-05-31,annual,2018,FY,ORCL,Oracle Corporation,cash capex (purchases of PP&E),1736000000,S_AI_SEC_ORCL,10-K,0001564590-20-030125,as-filed 10-K annual value
+2017-07-01,2018-06-30,annual,2018,FY,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),11632000000,S_AI_SEC_MSFT,10-K,0001564590-20-034944,as-filed 10-K annual value
+2018-01-01,2018-12-31,annual,2018,FY,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),13427000000,S_AI_SEC_AMZN,10-K,0001018724-21-000004,as-filed 10-K annual value
+2018-01-01,2018-12-31,annual,2018,FY,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),25139000000,S_AI_SEC_GOOGL,10-K,0001652044-21-000010,as-filed 10-K annual value
+2018-01-01,2018-12-31,annual,2018,FY,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),13915000000,S_AI_SEC_META,10-K,0001326801-21-000014,as-filed 10-K annual value
+2018-06-01,2019-02-28,quarterly,2019,Q3,ORCL,Oracle Corporation,cash capex (purchases of PP&E),443000000,S_AI_SEC_ORCL,10-Q,0001564590-20-010833,derived: 9M YTD minus H1 YTD
+2019-01-01,2019-03-31,quarterly,2019,Q1,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),3290000000,S_AI_SEC_AMZN,10-Q,0001018724-20-000010,as-filed 3-month Q1 value
+2019-01-01,2019-03-31,quarterly,2019,Q1,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),4638000000,S_AI_SEC_GOOGL,10-Q,0001652044-20-000021,as-filed 3-month Q1 value
+2019-01-01,2019-03-31,quarterly,2019,Q1,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),3837000000,S_AI_SEC_META,10-Q,0001326801-20-000048,as-filed 3-month Q1 value
+2019-01-01,2019-03-31,quarterly,2019,Q3,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),2565000000,S_AI_SEC_MSFT,10-Q,0001564590-20-019706,as-filed 3-month Q3 value
+2018-06-01,2019-05-31,annual,2019,FY,ORCL,Oracle Corporation,cash capex (purchases of PP&E),1660000000,S_AI_SEC_ORCL,10-K,0001564590-21-033616,as-filed 10-K annual value
+2018-06-01,2019-05-31,quarterly,2019,Q4,ORCL,Oracle Corporation,cash capex (purchases of PP&E),413000000,S_AI_SEC_ORCL,10-K,0001564590-21-033616,derived: FY annual minus sum of Q1-Q3 3-month values
+2019-04-01,2019-06-30,quarterly,2019,Q2,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),3562000000,S_AI_SEC_AMZN,10-Q,0001018724-20-000021,as-filed 3-month Q2 value
+2019-04-01,2019-06-30,quarterly,2019,Q2,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),6126000000,S_AI_SEC_GOOGL,10-Q,0001652044-20-000032,as-filed 3-month Q2 value
+2019-01-01,2019-06-30,quarterly,2019,Q2,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),3633000000,S_AI_SEC_META,10-Q,0001326801-20-000076,derived: H1 YTD minus Q1 3-month
+2018-07-01,2019-06-30,annual,2019,FY,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),13925000000,S_AI_SEC_MSFT,10-K,0001564590-21-039151,as-filed 10-K annual value
+2018-07-01,2019-06-30,quarterly,2019,Q4,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),4051000000,S_AI_SEC_MSFT,10-K,0001564590-21-039151,derived: FY annual minus sum of Q1-Q3 3-month values
+2019-06-01,2019-08-31,quarterly,2020,Q1,ORCL,Oracle Corporation,cash capex (purchases of PP&E),386000000,S_AI_SEC_ORCL,10-Q,0001564590-20-043448,as-filed 3-month Q1 value
+2019-07-01,2019-09-30,quarterly,2019,Q3,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),4697000000,S_AI_SEC_AMZN,10-Q,0001018724-20-000030,as-filed 3-month Q3 value
+2019-07-01,2019-09-30,quarterly,2019,Q3,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),6732000000,S_AI_SEC_GOOGL,10-Q,0001652044-20-000050,as-filed 3-month Q3 value
+2019-01-01,2019-09-30,quarterly,2019,Q3,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),3532000000,S_AI_SEC_META,10-Q,0001326801-20-000084,derived: 9M YTD minus H1 YTD
+2019-07-01,2019-09-30,quarterly,2020,Q1,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),3385000000,S_AI_SEC_MSFT,10-Q,0001564590-20-047996,as-filed 3-month Q1 value
+2019-06-01,2019-11-30,quarterly,2020,Q2,ORCL,Oracle Corporation,cash capex (purchases of PP&E),349000000,S_AI_SEC_ORCL,10-Q,0001564590-20-056896,derived: H1 YTD minus Q1 3-month
+2019-01-01,2019-12-31,annual,2019,FY,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),16861000000,S_AI_SEC_AMZN,10-K,0001018724-22-000005,as-filed 10-K annual value
+2019-01-01,2019-12-31,quarterly,2019,Q4,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),5312000000,S_AI_SEC_AMZN,10-K,0001018724-22-000005,derived: FY annual minus sum of Q1-Q3 3-month values
+2019-01-01,2019-12-31,annual,2019,FY,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),23548000000,S_AI_SEC_GOOGL,10-K,0001652044-22-000019,as-filed 10-K annual value
+2019-01-01,2019-12-31,quarterly,2019,Q4,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),6052000000,S_AI_SEC_GOOGL,10-K,0001652044-22-000019,derived: FY annual minus sum of Q1-Q3 3-month values
+2019-01-01,2019-12-31,annual,2019,FY,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),15102000000,S_AI_SEC_META,10-K,0001326801-22-000018,as-filed 10-K annual value
+2019-01-01,2019-12-31,quarterly,2019,Q4,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),4100000000,S_AI_SEC_META,10-K,0001326801-22-000018,derived: FY annual minus sum of Q1-Q3 3-month values
+2019-10-01,2019-12-31,quarterly,2020,Q2,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),3545000000,S_AI_SEC_MSFT,10-Q,0001564590-21-002316,as-filed 3-month Q2 value
+2019-06-01,2020-02-29,quarterly,2020,Q3,ORCL,Oracle Corporation,cash capex (purchases of PP&E),396000000,S_AI_SEC_ORCL,10-Q,0001564590-21-012539,derived: 9M YTD minus H1 YTD
+2020-01-01,2020-03-31,quarterly,2020,Q1,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),6795000000,S_AI_SEC_AMZN,10-Q,0001018724-21-000010,as-filed 3-month Q1 value
+2020-01-01,2020-03-31,quarterly,2020,Q1,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),6005000000,S_AI_SEC_GOOGL,10-Q,0001652044-21-000020,as-filed 3-month Q1 value
+2020-01-01,2020-03-31,quarterly,2020,Q1,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),3558000000,S_AI_SEC_META,10-Q,0001326801-21-000033,as-filed 3-month Q1 value
+2020-01-01,2020-03-31,quarterly,2020,Q3,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),3767000000,S_AI_SEC_MSFT,10-Q,0001564590-21-020891,as-filed 3-month Q3 value
+2020-01-27,2020-04-26,quarterly,2021,Q1,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),155000000,S_AI_SEC_NVDA,10-Q,0001045810-21-000064,as-filed 3-month Q1 value
+2019-06-01,2020-05-31,annual,2020,FY,ORCL,Oracle Corporation,cash capex (purchases of PP&E),1564000000,S_AI_SEC_ORCL,10-K,0001564590-22-023675,as-filed 10-K annual value
+2019-06-01,2020-05-31,quarterly,2020,Q4,ORCL,Oracle Corporation,cash capex (purchases of PP&E),433000000,S_AI_SEC_ORCL,10-K,0001564590-22-023675,derived: FY annual minus sum of Q1-Q3 3-month values
+2020-04-01,2020-06-30,quarterly,2020,Q2,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),7459000000,S_AI_SEC_AMZN,10-Q,0001018724-21-000020,as-filed 3-month Q2 value
+2020-04-01,2020-06-30,quarterly,2020,Q2,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),5391000000,S_AI_SEC_GOOGL,10-Q,0001652044-20-000032,as-filed 3-month Q2 value
+2020-01-01,2020-06-30,quarterly,2020,Q2,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),3255000000,S_AI_SEC_META,10-Q,0001326801-21-000049,derived: H1 YTD minus Q1 3-month
+2019-07-01,2020-06-30,annual,2020,FY,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),15441000000,S_AI_SEC_MSFT,10-K,0001564590-22-026876,as-filed 10-K annual value
+2019-07-01,2020-06-30,quarterly,2020,Q4,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),4744000000,S_AI_SEC_MSFT,10-K,0001564590-22-026876,derived: FY annual minus sum of Q1-Q3 3-month values
+2020-01-27,2020-07-26,quarterly,2021,Q2,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),217000000,S_AI_SEC_NVDA,10-Q,0001045810-21-000131,derived: H1 YTD minus Q1 3-month
+2020-06-01,2020-08-31,quarterly,2021,Q1,ORCL,Oracle Corporation,cash capex (purchases of PP&E),436000000,S_AI_SEC_ORCL,10-Q,0001564590-21-047772,as-filed 3-month Q1 value
+2020-07-01,2020-09-30,quarterly,2020,Q3,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),11063000000,S_AI_SEC_AMZN,10-Q,0001018724-21-000028,as-filed 3-month Q3 value
+2020-07-01,2020-09-30,quarterly,2020,Q3,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),5406000000,S_AI_SEC_GOOGL,10-Q,0001652044-20-000050,as-filed 3-month Q3 value
+2020-01-01,2020-09-30,quarterly,2020,Q3,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),3689000000,S_AI_SEC_META,10-Q,0001326801-21-000065,derived: 9M YTD minus H1 YTD
+2020-07-01,2020-09-30,quarterly,2021,Q1,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),4907000000,S_AI_SEC_MSFT,10-Q,0001564590-21-051992,as-filed 3-month Q1 value
+2020-01-27,2020-10-25,quarterly,2021,Q3,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),473000000,S_AI_SEC_NVDA,10-Q,0001045810-21-000163,derived: 9M YTD minus H1 YTD
+2020-06-01,2020-11-30,quarterly,2021,Q2,ORCL,Oracle Corporation,cash capex (purchases of PP&E),568000000,S_AI_SEC_ORCL,10-Q,0001564590-21-060022,derived: H1 YTD minus Q1 3-month
+2020-01-01,2020-12-31,annual,2020,FY,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),40140000000,S_AI_SEC_AMZN,10-K,0001018724-23-000004,as-filed 10-K annual value
+2020-01-01,2020-12-31,quarterly,2020,Q4,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),14823000000,S_AI_SEC_AMZN,10-K,0001018724-23-000004,derived: FY annual minus sum of Q1-Q3 3-month values
+2020-01-01,2020-12-31,annual,2020,FY,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),22281000000,S_AI_SEC_GOOGL,10-K,0001652044-23-000016,as-filed 10-K annual value
+2020-01-01,2020-12-31,quarterly,2020,Q4,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),5479000000,S_AI_SEC_GOOGL,10-K,0001652044-23-000016,derived: FY annual minus sum of Q1-Q3 3-month values
+2020-01-01,2020-12-31,annual,2020,FY,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),15163000000,S_AI_SEC_META,10-K,0001326801-23-000013,as-filed 10-K annual value
+2020-01-01,2020-12-31,quarterly,2020,Q4,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),4661000000,S_AI_SEC_META,10-K,0001326801-23-000013,derived: FY annual minus sum of Q1-Q3 3-month values
+2020-10-01,2020-12-31,quarterly,2021,Q2,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),4174000000,S_AI_SEC_MSFT,10-Q,0001564590-22-002324,as-filed 3-month Q2 value
+2020-06-01,2021-02-28,quarterly,2021,Q3,ORCL,Oracle Corporation,cash capex (purchases of PP&E),414000000,S_AI_SEC_ORCL,10-Q,0001564590-22-009859,derived: 9M YTD minus H1 YTD
+2021-01-01,2021-03-31,quarterly,2021,Q1,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),12082000000,S_AI_SEC_AMZN,10-Q,0001018724-22-000013,as-filed 3-month Q1 value
+2021-01-01,2021-03-31,quarterly,2021,Q1,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),5942000000,S_AI_SEC_GOOGL,10-Q,0001652044-22-000029,as-filed 3-month Q1 value
+2021-01-01,2021-03-31,quarterly,2021,Q1,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),4303000000,S_AI_SEC_META,10-Q,0001326801-22-000057,as-filed 3-month Q1 value
+2021-01-01,2021-03-31,quarterly,2021,Q3,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),5089000000,S_AI_SEC_MSFT,10-Q,0001564590-22-015675,as-filed 3-month Q3 value
+2021-02-01,2021-05-02,quarterly,2022,Q1,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),298000000,S_AI_SEC_NVDA,10-Q,0001045810-21-000064,as-filed 3-month Q1 value
+2020-06-01,2021-05-31,annual,2021,FY,ORCL,Oracle Corporation,cash capex (purchases of PP&E),2135000000,S_AI_SEC_ORCL,10-K,0000950170-23-028914,as-filed 10-K annual value
+2020-06-01,2021-05-31,quarterly,2021,Q4,ORCL,Oracle Corporation,cash capex (purchases of PP&E),717000000,S_AI_SEC_ORCL,10-K,0000950170-23-028914,derived: FY annual minus sum of Q1-Q3 3-month values
+2021-04-01,2021-06-30,quarterly,2021,Q2,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),14288000000,S_AI_SEC_AMZN,10-Q,0001018724-22-000019,as-filed 3-month Q2 value
+2021-01-01,2021-06-30,quarterly,2021,Q2,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),5496000000,S_AI_SEC_GOOGL,10-Q,0001652044-22-000071,derived: H1 YTD minus Q1 3-month
+2021-01-01,2021-06-30,quarterly,2021,Q2,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),4641000000,S_AI_SEC_META,10-Q,0001326801-22-000082,derived: H1 YTD minus Q1 3-month
+2020-07-01,2021-06-30,annual,2021,FY,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),20622000000,S_AI_SEC_MSFT,10-K,0000950170-23-035122,as-filed 10-K annual value
+2020-07-01,2021-06-30,quarterly,2021,Q4,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),6452000000,S_AI_SEC_MSFT,10-K,0000950170-23-035122,derived: FY annual minus sum of Q1-Q3 3-month values
+2021-02-01,2021-08-01,quarterly,2022,Q2,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),183000000,S_AI_SEC_NVDA,10-Q,0001045810-21-000131,derived: H1 YTD minus Q1 3-month
+2021-06-01,2021-08-31,quarterly,2022,Q1,ORCL,Oracle Corporation,cash capex (purchases of PP&E),1062000000,S_AI_SEC_ORCL,10-Q,0001564590-22-031545,as-filed 3-month Q1 value
+2021-07-01,2021-09-30,quarterly,2021,Q3,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),15748000000,S_AI_SEC_AMZN,10-Q,0001018724-22-000023,as-filed 3-month Q3 value
+2021-01-01,2021-09-30,quarterly,2021,Q3,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),6819000000,S_AI_SEC_GOOGL,10-Q,0001652044-22-000090,derived: 9M YTD minus H1 YTD
+2021-01-01,2021-09-30,quarterly,2021,Q3,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),4346000000,S_AI_SEC_META,10-Q,0001326801-22-000108,derived: 9M YTD minus H1 YTD
+2021-07-01,2021-09-30,quarterly,2022,Q1,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),5810000000,S_AI_SEC_MSFT,10-Q,0001564590-22-035087,as-filed 3-month Q1 value
+2021-02-01,2021-10-31,quarterly,2022,Q3,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),222000000,S_AI_SEC_NVDA,10-Q,0001045810-21-000163,derived: 9M YTD minus H1 YTD
+2021-06-01,2021-11-30,quarterly,2022,Q2,ORCL,Oracle Corporation,cash capex (purchases of PP&E),925000000,S_AI_SEC_ORCL,10-Q,0001564590-22-039278,derived: H1 YTD minus Q1 3-month
+2021-01-01,2021-12-31,annual,2021,FY,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),61053000000,S_AI_SEC_AMZN,10-K,0001018724-24-000008,as-filed 10-K annual value
+2021-01-01,2021-12-31,quarterly,2021,Q4,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),18935000000,S_AI_SEC_AMZN,10-K,0001018724-24-000008,derived: FY annual minus sum of Q1-Q3 3-month values
+2021-01-01,2021-12-31,annual,2021,FY,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),24640000000,S_AI_SEC_GOOGL,10-K,0001652044-24-000022,as-filed 10-K annual value
+2021-01-01,2021-12-31,quarterly,2021,Q4,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),6383000000,S_AI_SEC_GOOGL,10-K,0001652044-24-000022,derived: FY annual minus sum of Q1-Q3 3-month values
+2021-01-01,2021-12-31,annual,2021,FY,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),18690000000,S_AI_SEC_META,10-K,0001326801-24-000012,as-filed 10-K annual value
+2021-01-01,2021-12-31,quarterly,2021,Q4,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),5400000000,S_AI_SEC_META,10-K,0001326801-24-000012,derived: FY annual minus sum of Q1-Q3 3-month values
+2021-10-01,2021-12-31,quarterly,2022,Q2,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),5865000000,S_AI_SEC_MSFT,10-Q,0001564590-23-000733,as-filed 3-month Q2 value
+2021-02-01,2022-01-30,annual,2022,FY,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),976000000,S_AI_SEC_NVDA,10-K,0001045810-24-000029,as-filed 10-K annual value
+2021-02-01,2022-01-30,quarterly,2022,Q4,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),273000000,S_AI_SEC_NVDA,10-K,0001045810-24-000029,derived: FY annual minus sum of Q1-Q3 3-month values
+2021-06-01,2022-02-28,quarterly,2022,Q3,ORCL,Oracle Corporation,cash capex (purchases of PP&E),1101000000,S_AI_SEC_ORCL,10-Q,0001564590-23-003413,derived: 9M YTD minus H1 YTD
+2022-01-01,2022-03-31,quarterly,2022,Q1,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),14951000000,S_AI_SEC_AMZN,10-Q,0001018724-23-000008,as-filed 3-month Q1 value
+2022-01-01,2022-03-31,quarterly,2022,Q1,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),9786000000,S_AI_SEC_GOOGL,10-Q,0001652044-23-000045,as-filed 3-month Q1 value
+2022-01-01,2022-03-31,quarterly,2022,Q1,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),5441000000,S_AI_SEC_META,10-Q,0001326801-23-000067,as-filed 3-month Q1 value
+2022-01-01,2022-03-31,quarterly,2022,Q3,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),5340000000,S_AI_SEC_MSFT,10-Q,0000950170-23-014423,as-filed 3-month Q3 value
+2021-06-01,2022-05-31,annual,2022,FY,ORCL,Oracle Corporation,cash capex (purchases of PP&E),4511000000,S_AI_SEC_ORCL,10-K,0000950170-24-075605,as-filed 10-K annual value
+2021-06-01,2022-05-31,quarterly,2022,Q4,ORCL,Oracle Corporation,cash capex (purchases of PP&E),1423000000,S_AI_SEC_ORCL,10-K,0000950170-24-075605,derived: FY annual minus sum of Q1-Q3 3-month values
+2022-04-01,2022-06-30,quarterly,2022,Q2,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),15724000000,S_AI_SEC_AMZN,10-Q,0001018724-23-000012,as-filed 3-month Q2 value
+2022-01-01,2022-06-30,quarterly,2022,Q2,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),6828000000,S_AI_SEC_GOOGL,10-Q,0001652044-23-000070,derived: H1 YTD minus Q1 3-month
+2022-01-01,2022-06-30,quarterly,2022,Q2,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),7572000000,S_AI_SEC_META,10-Q,0001326801-23-000093,derived: H1 YTD minus Q1 3-month
+2021-07-01,2022-06-30,annual,2022,FY,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),23886000000,S_AI_SEC_MSFT,10-K,0000950170-24-087843,as-filed 10-K annual value
+2021-07-01,2022-06-30,quarterly,2022,Q4,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),6871000000,S_AI_SEC_MSFT,10-K,0000950170-24-087843,derived: FY annual minus sum of Q1-Q3 3-month values
+2022-06-01,2022-08-31,quarterly,2023,Q1,ORCL,Oracle Corporation,cash capex (purchases of PP&E),1719000000,S_AI_SEC_ORCL,10-Q,0000950170-23-047713,as-filed 3-month Q1 value
+2022-07-01,2022-09-30,quarterly,2022,Q3,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),16378000000,S_AI_SEC_AMZN,10-Q,0001018724-23-000018,as-filed 3-month Q3 value
+2022-01-01,2022-09-30,quarterly,2022,Q3,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),7276000000,S_AI_SEC_GOOGL,10-Q,0001652044-23-000094,derived: 9M YTD minus H1 YTD
+2022-01-01,2022-09-30,quarterly,2022,Q3,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),9375000000,S_AI_SEC_META,10-Q,0001326801-23-000103,derived: 9M YTD minus H1 YTD
+2022-07-01,2022-09-30,quarterly,2023,Q1,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),6283000000,S_AI_SEC_MSFT,10-Q,0000950170-23-054855,as-filed 3-month Q1 value
+2022-06-01,2022-11-30,quarterly,2023,Q2,ORCL,Oracle Corporation,cash capex (purchases of PP&E),2435000000,S_AI_SEC_ORCL,10-Q,0000950170-23-069682,derived: H1 YTD minus Q1 3-month
+2022-01-01,2022-12-31,annual,2022,FY,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),63645000000,S_AI_SEC_AMZN,10-K,0001018724-25-000004,as-filed 10-K annual value
+2022-01-01,2022-12-31,quarterly,2022,Q4,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),16592000000,S_AI_SEC_AMZN,10-K,0001018724-25-000004,derived: FY annual minus sum of Q1-Q3 3-month values
+2022-01-01,2022-12-31,annual,2022,FY,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),31485000000,S_AI_SEC_GOOGL,10-K,0001652044-25-000014,as-filed 10-K annual value
+2022-01-01,2022-12-31,quarterly,2022,Q4,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),7595000000,S_AI_SEC_GOOGL,10-K,0001652044-25-000014,derived: FY annual minus sum of Q1-Q3 3-month values
+2022-01-01,2022-12-31,annual,2022,FY,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),31186000000,S_AI_SEC_META,10-K,0001326801-25-000017,as-filed 10-K annual value
+2022-01-01,2022-12-31,quarterly,2022,Q4,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),8798000000,S_AI_SEC_META,10-K,0001326801-25-000017,derived: FY annual minus sum of Q1-Q3 3-month values
+2022-10-01,2022-12-31,quarterly,2023,Q2,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),6274000000,S_AI_SEC_MSFT,10-Q,0000950170-24-008814,as-filed 3-month Q2 value
+2022-01-31,2023-01-29,annual,2023,FY,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),1833000000,S_AI_SEC_NVDA,10-K,0001045810-25-000023,as-filed 10-K annual value
+2022-01-31,2023-01-29,quarterly,2023,Q4,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),509000000,S_AI_SEC_NVDA,10-K,0001045810-25-000023,derived: FY annual minus 9M YTD
+2022-06-01,2023-02-28,quarterly,2023,Q3,ORCL,Oracle Corporation,cash capex (purchases of PP&E),2628000000,S_AI_SEC_ORCL,10-Q,0000950170-24-029904,derived: 9M YTD minus H1 YTD
+2023-01-01,2023-03-31,quarterly,2023,Q1,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),14207000000,S_AI_SEC_AMZN,10-Q,0001018724-24-000083,as-filed 3-month Q1 value
+2023-01-01,2023-03-31,quarterly,2023,Q1,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),6289000000,S_AI_SEC_GOOGL,10-Q,0001652044-24-000053,as-filed 3-month Q1 value
+2023-01-01,2023-03-31,quarterly,2023,Q1,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),6823000000,S_AI_SEC_META,10-Q,0001326801-24-000049,as-filed 3-month Q1 value
+2023-01-01,2023-03-31,quarterly,2023,Q3,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),6607000000,S_AI_SEC_MSFT,10-Q,0000950170-24-048288,as-filed 3-month Q3 value
+2023-01-30,2023-04-30,quarterly,2024,Q1,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),248000000,S_AI_SEC_NVDA,10-Q,0001045810-24-000124,as-filed 3-month Q1 value
+2022-06-01,2023-05-31,annual,2023,FY,ORCL,Oracle Corporation,cash capex (purchases of PP&E),8695000000,S_AI_SEC_ORCL,10-K,0000950170-25-087926,as-filed 10-K annual value
+2022-06-01,2023-05-31,quarterly,2023,Q4,ORCL,Oracle Corporation,cash capex (purchases of PP&E),1913000000,S_AI_SEC_ORCL,10-K,0000950170-25-087926,derived: FY annual minus sum of Q1-Q3 3-month values
+2023-04-01,2023-06-30,quarterly,2023,Q2,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),11455000000,S_AI_SEC_AMZN,10-Q,0001018724-24-000130,as-filed 3-month Q2 value
+2023-01-01,2023-06-30,quarterly,2023,Q2,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),6888000000,S_AI_SEC_GOOGL,10-Q,0001652044-24-000079,derived: H1 YTD minus Q1 3-month
+2023-01-01,2023-06-30,quarterly,2023,Q2,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),6134000000,S_AI_SEC_META,10-Q,0001326801-24-000069,derived: H1 YTD minus Q1 3-month
+2022-07-01,2023-06-30,annual,2023,FY,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),28107000000,S_AI_SEC_MSFT,10-K,0000950170-25-100235,as-filed 10-K annual value
+2022-07-01,2023-06-30,quarterly,2023,Q4,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),8943000000,S_AI_SEC_MSFT,10-K,0000950170-25-100235,derived: FY annual minus sum of Q1-Q3 3-month values
+2023-01-30,2023-07-30,quarterly,2024,Q2,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),289000000,S_AI_SEC_NVDA,10-Q,0001045810-24-000264,derived: H1 YTD minus Q1 3-month
+2023-06-01,2023-08-31,quarterly,2024,Q1,ORCL,Oracle Corporation,cash capex (purchases of PP&E),1314000000,S_AI_SEC_ORCL,10-Q,0000950170-24-104905,as-filed 3-month Q1 value
+2023-07-01,2023-09-30,quarterly,2023,Q3,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),12479000000,S_AI_SEC_AMZN,10-Q,0001018724-24-000161,as-filed 3-month Q3 value
+2023-01-01,2023-09-30,quarterly,2023,Q3,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),8055000000,S_AI_SEC_GOOGL,10-Q,0001652044-24-000118,derived: 9M YTD minus H1 YTD
+2023-01-01,2023-09-30,quarterly,2023,Q3,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),6496000000,S_AI_SEC_META,10-Q,0001326801-24-000081,derived: 9M YTD minus H1 YTD
+2023-07-01,2023-09-30,quarterly,2024,Q1,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),9917000000,S_AI_SEC_MSFT,10-Q,0000950170-24-118967,as-filed 3-month Q1 value
+2023-01-30,2023-10-29,quarterly,2024,Q3,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),278000000,S_AI_SEC_NVDA,10-Q,0001045810-24-000316,derived: 9M YTD minus H1 YTD
+2023-06-01,2023-11-30,quarterly,2024,Q2,ORCL,Oracle Corporation,cash capex (purchases of PP&E),1080000000,S_AI_SEC_ORCL,10-Q,0000950170-24-134973,derived: H1 YTD minus Q1 3-month
+2023-01-01,2023-12-31,annual,2023,FY,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),52729000000,S_AI_SEC_AMZN,10-K,0001018724-26-000004,as-filed 10-K annual value
+2023-01-01,2023-12-31,quarterly,2023,Q4,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),14588000000,S_AI_SEC_AMZN,10-K,0001018724-26-000004,derived: FY annual minus sum of Q1-Q3 3-month values
+2023-01-01,2023-12-31,annual,2023,FY,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),32251000000,S_AI_SEC_GOOGL,10-K,0001652044-26-000018,as-filed 10-K annual value
+2023-01-01,2023-12-31,quarterly,2023,Q4,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),11019000000,S_AI_SEC_GOOGL,10-K,0001652044-26-000018,derived: FY annual minus sum of Q1-Q3 3-month values
+2023-01-01,2023-12-31,annual,2023,FY,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),27045000000,S_AI_SEC_META,10-K,0001628280-26-003942,as-filed 10-K annual value
+2023-01-01,2023-12-31,quarterly,2023,Q4,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),7592000000,S_AI_SEC_META,10-K,0001628280-26-003942,derived: FY annual minus sum of Q1-Q3 3-month values
+2023-10-01,2023-12-31,quarterly,2024,Q2,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),9735000000,S_AI_SEC_MSFT,10-Q,0000950170-25-010491,as-filed 3-month Q2 value
+2023-01-30,2024-01-28,annual,2024,FY,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),1069000000,S_AI_SEC_NVDA,10-K,0001045810-26-000021,as-filed 10-K annual value
+2023-01-30,2024-01-28,quarterly,2024,Q4,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),254000000,S_AI_SEC_NVDA,10-K,0001045810-26-000021,derived: FY annual minus sum of Q1-Q3 3-month values
+2023-06-01,2024-02-29,quarterly,2024,Q3,ORCL,Oracle Corporation,cash capex (purchases of PP&E),1674000000,S_AI_SEC_ORCL,10-Q,0000950170-25-037143,derived: 9M YTD minus H1 YTD
+2024-01-01,2024-03-31,quarterly,2024,Q1,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),14925000000,S_AI_SEC_AMZN,10-Q,0001018724-25-000036,as-filed 3-month Q1 value
+2024-01-01,2024-03-31,quarterly,2024,Q1,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),12012000000,S_AI_SEC_GOOGL,10-Q,0001652044-25-000043,as-filed 3-month Q1 value
+2024-01-01,2024-03-31,quarterly,2024,Q1,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),6400000000,S_AI_SEC_META,10-Q,0001326801-25-000054,as-filed 3-month Q1 value
+2024-01-01,2024-03-31,quarterly,2024,Q3,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),10952000000,S_AI_SEC_MSFT,10-Q,0000950170-25-061046,as-filed 3-month Q3 value
+2024-01-29,2024-04-28,quarterly,2025,Q1,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),369000000,S_AI_SEC_NVDA,10-Q,0001045810-25-000116,as-filed 3-month Q1 value
+2023-06-01,2024-05-31,annual,2024,FY,ORCL,Oracle Corporation,cash capex (purchases of PP&E),6866000000,S_AI_SEC_ORCL,10-K,0001193125-26-277521,as-filed 10-K annual value
+2023-06-01,2024-05-31,quarterly,2024,Q4,ORCL,Oracle Corporation,cash capex (purchases of PP&E),2798000000,S_AI_SEC_ORCL,10-K,0001193125-26-277521,derived: FY annual minus sum of Q1-Q3 3-month values
+2024-04-01,2024-06-30,quarterly,2024,Q2,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),17620000000,S_AI_SEC_AMZN,10-Q,0001018724-25-000086,as-filed 3-month Q2 value
+2024-01-01,2024-06-30,quarterly,2024,Q2,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),13186000000,S_AI_SEC_GOOGL,10-Q,0001652044-25-000062,derived: H1 YTD minus Q1 3-month
+2024-01-01,2024-06-30,quarterly,2024,Q2,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),8173000000,S_AI_SEC_META,10-Q,0001628280-25-036791,derived: H1 YTD minus Q1 3-month
+2023-07-01,2024-06-30,annual,2024,FY,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),44477000000,S_AI_SEC_MSFT,10-K,0001193125-26-323660,as-filed 10-K annual value
+2023-07-01,2024-06-30,quarterly,2024,Q4,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),13873000000,S_AI_SEC_MSFT,10-K,0001193125-26-323660,derived: FY annual minus sum of Q1-Q3 3-month values
+2024-01-29,2024-07-28,quarterly,2025,Q2,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),977000000,S_AI_SEC_NVDA,10-Q,0001045810-25-000209,derived: H1 YTD minus Q1 3-month
+2024-06-01,2024-08-31,quarterly,2025,Q1,ORCL,Oracle Corporation,cash capex (purchases of PP&E),2303000000,S_AI_SEC_ORCL,10-Q,0001193125-25-200095,as-filed 3-month Q1 value
+2024-07-01,2024-09-30,quarterly,2024,Q3,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),22620000000,S_AI_SEC_AMZN,10-Q,0001018724-25-000123,as-filed 3-month Q3 value
+2024-01-01,2024-09-30,quarterly,2024,Q3,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),13061000000,S_AI_SEC_GOOGL,10-Q,0001652044-25-000091,derived: 9M YTD minus H1 YTD
+2024-01-01,2024-09-30,quarterly,2024,Q3,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),8258000000,S_AI_SEC_META,10-Q,0001628280-25-047240,derived: 9M YTD minus H1 YTD
+2024-07-01,2024-09-30,quarterly,2025,Q1,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),14923000000,S_AI_SEC_MSFT,10-Q,0001193125-25-256321,as-filed 3-month Q1 value
+2024-01-29,2024-10-27,quarterly,2025,Q3,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),813000000,S_AI_SEC_NVDA,10-Q,0001045810-25-000230,derived: 9M YTD minus H1 YTD
+2024-06-01,2024-11-30,quarterly,2025,Q2,ORCL,Oracle Corporation,cash capex (purchases of PP&E),3970000000,S_AI_SEC_ORCL,10-Q,0001193125-25-315925,derived: H1 YTD minus Q1 3-month
+2024-01-01,2024-12-31,annual,2024,FY,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),82999000000,S_AI_SEC_AMZN,10-K,0001018724-26-000004,as-filed 10-K annual value
+2024-01-01,2024-12-31,quarterly,2024,Q4,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),27834000000,S_AI_SEC_AMZN,10-K,0001018724-26-000004,derived: FY annual minus sum of Q1-Q3 3-month values
+2024-01-01,2024-12-31,annual,2024,FY,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),52535000000,S_AI_SEC_GOOGL,10-K,0001652044-26-000018,as-filed 10-K annual value
+2024-01-01,2024-12-31,quarterly,2024,Q4,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),14276000000,S_AI_SEC_GOOGL,10-K,0001652044-26-000018,derived: FY annual minus sum of Q1-Q3 3-month values
+2024-01-01,2024-12-31,annual,2024,FY,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),37256000000,S_AI_SEC_META,10-K,0001628280-26-003942,as-filed 10-K annual value
+2024-01-01,2024-12-31,quarterly,2024,Q4,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),14425000000,S_AI_SEC_META,10-K,0001628280-26-003942,derived: FY annual minus sum of Q1-Q3 3-month values
+2024-10-01,2024-12-31,quarterly,2025,Q2,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),15804000000,S_AI_SEC_MSFT,10-Q,0001193125-26-027207,as-filed 3-month Q2 value
+2024-01-29,2025-01-26,annual,2025,FY,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),3236000000,S_AI_SEC_NVDA,10-K,0001045810-26-000021,as-filed 10-K annual value
+2024-01-29,2025-01-26,quarterly,2025,Q4,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),1077000000,S_AI_SEC_NVDA,10-K,0001045810-26-000021,derived: FY annual minus sum of Q1-Q3 3-month values
+2024-06-01,2025-02-28,quarterly,2025,Q3,ORCL,Oracle Corporation,cash capex (purchases of PP&E),5862000000,S_AI_SEC_ORCL,10-Q,0001193125-26-101045,derived: 9M YTD minus H1 YTD
+2025-01-01,2025-03-31,quarterly,2025,Q1,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),25019000000,S_AI_SEC_AMZN,10-Q,0001018724-26-000014,as-filed 3-month Q1 value
+2025-01-01,2025-03-31,quarterly,2025,Q1,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),17197000000,S_AI_SEC_GOOGL,10-Q,0001652044-26-000048,as-filed 3-month Q1 value
+2025-01-01,2025-03-31,quarterly,2025,Q1,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),12941000000,S_AI_SEC_META,10-Q,0001628280-26-028526,as-filed 3-month Q1 value
+2025-01-01,2025-03-31,quarterly,2025,Q3,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),16745000000,S_AI_SEC_MSFT,10-Q,0001193125-26-191507,as-filed 3-month Q3 value
+2025-01-27,2025-04-27,quarterly,2026,Q1,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),1227000000,S_AI_SEC_NVDA,10-Q,0001045810-26-000052,as-filed 3-month Q1 value
+2024-06-01,2025-05-31,annual,2025,FY,ORCL,Oracle Corporation,cash capex (purchases of PP&E),21215000000,S_AI_SEC_ORCL,10-K,0001193125-26-277521,as-filed 10-K annual value
+2024-06-01,2025-05-31,quarterly,2025,Q4,ORCL,Oracle Corporation,cash capex (purchases of PP&E),9080000000,S_AI_SEC_ORCL,10-K,0001193125-26-277521,derived: FY annual minus sum of Q1-Q3 3-month values
+2025-04-01,2025-06-30,quarterly,2025,Q2,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),32183000000,S_AI_SEC_AMZN,10-Q,0001018724-26-000026,as-filed 3-month Q2 value
+2025-01-01,2025-06-30,quarterly,2025,Q2,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),22446000000,S_AI_SEC_GOOGL,10-Q,0001652044-26-000071,derived: H1 YTD minus Q1 3-month
+2025-01-01,2025-06-30,quarterly,2025,Q2,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),16538000000,S_AI_SEC_META,10-Q,0001628280-26-050705,derived: H1 YTD minus Q1 3-month
+2024-07-01,2025-06-30,annual,2025,FY,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),64551000000,S_AI_SEC_MSFT,10-K,0001193125-26-323660,as-filed 10-K annual value
+2024-07-01,2025-06-30,quarterly,2025,Q4,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),17079000000,S_AI_SEC_MSFT,10-K,0001193125-26-323660,derived: FY annual minus sum of Q1-Q3 3-month values
+2025-01-27,2025-07-27,quarterly,2026,Q2,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),1895000000,S_AI_SEC_NVDA,10-Q,0001045810-26-000075,derived: H1 YTD minus Q1 3-month
+2025-06-01,2025-08-31,quarterly,2026,Q1,ORCL,Oracle Corporation,cash capex (purchases of PP&E),8502000000,S_AI_SEC_ORCL,10-Q,0001193125-26-389274,as-filed 3-month Q1 value
+2025-07-01,2025-09-30,quarterly,2025,Q3,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),35095000000,S_AI_SEC_AMZN,10-Q,0001018724-25-000123,as-filed 3-month Q3 value
+2025-01-01,2025-09-30,quarterly,2025,Q3,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),23953000000,S_AI_SEC_GOOGL,10-Q,0001652044-25-000091,derived: 9M YTD minus H1 YTD
+2025-01-01,2025-09-30,quarterly,2025,Q3,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),18829000000,S_AI_SEC_META,10-Q,0001628280-25-047240,derived: 9M YTD minus H1 YTD
+2025-07-01,2025-09-30,quarterly,2026,Q1,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),19394000000,S_AI_SEC_MSFT,10-Q,0001193125-25-256321,as-filed 3-month Q1 value
+2025-01-27,2025-10-26,quarterly,2026,Q3,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),1636000000,S_AI_SEC_NVDA,10-Q,0001045810-25-000230,derived: 9M YTD minus H1 YTD
+2025-06-01,2025-11-30,quarterly,2026,Q2,ORCL,Oracle Corporation,cash capex (purchases of PP&E),12033000000,S_AI_SEC_ORCL,10-Q,0001193125-25-315925,derived: H1 YTD minus Q1 3-month
+2025-01-01,2025-12-31,annual,2025,FY,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),131819000000,S_AI_SEC_AMZN,10-K,0001018724-26-000004,as-filed 10-K annual value
+2025-01-01,2025-12-31,quarterly,2025,Q4,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),39522000000,S_AI_SEC_AMZN,10-K,0001018724-26-000004,derived: FY annual minus sum of Q1-Q3 3-month values
+2025-01-01,2025-12-31,annual,2025,FY,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),91447000000,S_AI_SEC_GOOGL,10-K,0001652044-26-000018,as-filed 10-K annual value
+2025-01-01,2025-12-31,quarterly,2025,Q4,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),27851000000,S_AI_SEC_GOOGL,10-K,0001652044-26-000018,derived: FY annual minus sum of Q1-Q3 3-month values
+2025-01-01,2025-12-31,annual,2025,FY,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),69691000000,S_AI_SEC_META,10-K,0001628280-26-003942,as-filed 10-K annual value
+2025-01-01,2025-12-31,quarterly,2025,Q4,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),21383000000,S_AI_SEC_META,10-K,0001628280-26-003942,derived: FY annual minus sum of Q1-Q3 3-month values
+2025-10-01,2025-12-31,quarterly,2026,Q2,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),29876000000,S_AI_SEC_MSFT,10-Q,0001193125-26-027207,as-filed 3-month Q2 value
+2025-01-27,2026-01-25,annual,2026,FY,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),6042000000,S_AI_SEC_NVDA,10-K,0001045810-26-000021,as-filed 10-K annual value
+2025-01-27,2026-01-25,quarterly,2026,Q4,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),1284000000,S_AI_SEC_NVDA,10-K,0001045810-26-000021,derived: FY annual minus sum of Q1-Q3 3-month values
+2025-06-01,2026-02-28,quarterly,2026,Q3,ORCL,Oracle Corporation,cash capex (purchases of PP&E),18635000000,S_AI_SEC_ORCL,10-Q,0001193125-26-101045,derived: 9M YTD minus H1 YTD
+2026-01-01,2026-03-31,quarterly,2026,Q1,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),44203000000,S_AI_SEC_AMZN,10-Q,0001018724-26-000014,as-filed 3-month Q1 value
+2026-01-01,2026-03-31,quarterly,2026,Q1,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),35674000000,S_AI_SEC_GOOGL,10-Q,0001652044-26-000048,as-filed 3-month Q1 value
+2026-01-01,2026-03-31,quarterly,2026,Q1,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),18997000000,S_AI_SEC_META,10-Q,0001628280-26-028526,as-filed 3-month Q1 value
+2026-01-01,2026-03-31,quarterly,2026,Q3,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),30876000000,S_AI_SEC_MSFT,10-Q,0001193125-26-191507,as-filed 3-month Q3 value
+2026-01-26,2026-04-26,quarterly,2027,Q1,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),1757000000,S_AI_SEC_NVDA,10-Q,0001045810-26-000052,as-filed 3-month Q1 value
+2025-06-01,2026-05-31,annual,2026,FY,ORCL,Oracle Corporation,cash capex (purchases of PP&E),55663000000,S_AI_SEC_ORCL,10-K,0001193125-26-277521,as-filed 10-K annual value
+2025-06-01,2026-05-31,quarterly,2026,Q4,ORCL,Oracle Corporation,cash capex (purchases of PP&E),16493000000,S_AI_SEC_ORCL,10-K,0001193125-26-277521,derived: FY annual minus sum of Q1-Q3 3-month values
+2026-04-01,2026-06-30,quarterly,2026,Q2,AMZN,"Amazon.com, Inc.",cash capex (purchases of PP&E),54208000000,S_AI_SEC_AMZN,10-Q,0001018724-26-000026,as-filed 3-month Q2 value
+2026-01-01,2026-06-30,quarterly,2026,Q2,GOOGL,Alphabet Inc.,cash capex (purchases of PP&E),44924000000,S_AI_SEC_GOOGL,10-Q,0001652044-26-000071,derived: H1 YTD minus Q1 3-month
+2026-01-01,2026-06-30,quarterly,2026,Q2,META,"Meta Platforms, Inc.",cash capex (purchases of PP&E),30116000000,S_AI_SEC_META,10-Q,0001628280-26-050705,derived: H1 YTD minus Q1 3-month
+2025-07-01,2026-06-30,annual,2026,FY,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),115948000000,S_AI_SEC_MSFT,10-K,0001193125-26-323660,as-filed 10-K annual value
+2025-07-01,2026-06-30,quarterly,2026,Q4,MSFT,Microsoft Corporation,cash capex (purchases of PP&E),35802000000,S_AI_SEC_MSFT,10-K,0001193125-26-323660,derived: FY annual minus sum of Q1-Q3 3-month values
+2026-01-26,2026-07-26,quarterly,2027,Q2,NVDA,NVIDIA Corporation,cash capex (purchases of PP&E),2677000000,S_AI_SEC_NVDA,10-Q,0001045810-26-000075,derived: H1 YTD minus Q1 3-month
+2026-06-01,2026-08-31,quarterly,2027,Q1,ORCL,Oracle Corporation,cash capex (purchases of PP&E),28499000000,S_AI_SEC_ORCL,10-Q,0001193125-26-389274,as-filed 3-month Q1 value

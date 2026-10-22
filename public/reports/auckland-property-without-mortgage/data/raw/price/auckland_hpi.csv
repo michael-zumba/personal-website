@@ -1,0 +1,4 @@
+month,reinz_hpi_auckland_index,reinz_median_price_nzd,reinz_sales_count,reinz_median_days_to_sell,reinz_median_price_yoy_pct,reinz_hpi_yoy_pct,source_id,note
+2021-07,3881,1165000,2767,32,,,S_PRICE_REINZ_REPORT_JUL2022,"REINZ July 2022 Monthly Property Report, p.3 KEY DATA SUMMARY. July 2021 comparatives stated in the same table (HPI from 3,881; median from $1,165,000; volume from 2,767; DTS '13 days more than same month last year' => 45-13=32, derived)."
+2022-07,3604,1100000,1419,45,-5.6,-7.1,S_PRICE_REINZ_REPORT_JUL2022,"REINZ July 2022 Monthly Property Report, p.3 KEY DATA SUMMARY (Auckland HPI 3,604; median $1,100,000; volume 1,419; median DTS 45)."
+2026-09,,,,,-2.6,,S_PRICE_REINZ_RELEASE_SEP2026,"REINZ September 2026 media release (14 Oct 2026), 'September 2026 Overview' para 1: Auckland median price decreased 2.6% year-on-year; Auckland levels are not published in the free release."

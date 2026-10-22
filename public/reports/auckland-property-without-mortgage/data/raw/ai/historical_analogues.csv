@@ -1,0 +1,17 @@
+episode,period,variable,value,unit,change,source_id,locator,note
+dot-com 2000-02,2000-03-10 to 2002-10-09,Nasdaq Composite drawdown,-77.93,percent,peak-to-trough,S_AI_NASDAQ_COMP,Nasdaq COMP daily closes,US technology index
+dot-com 2000-02,2000-Q1 to 2002-Q4,New Zealand real house price index change,8.7,percent,cumulative change,S_AI_BIS_SPP,"BIS WS_SPP, NZ, real, 2010=100",NZ house prices rose through the dot-com bust
+GFC 2007-11,2007-10-31 to 2009-03-09,Nasdaq Composite drawdown,-55.63,percent,peak-to-trough,S_AI_NASDAQ_COMP,Nasdaq COMP daily closes,
+GFC 2007-11,2007-Q2 peak to 2011-Q2 trough,New Zealand real house price index,-15.69,percent,peak-to-trough,S_AI_BIS_SPP,"BIS WS_SPP, NZ, real, 2010=100","peak 114.06, trough 96.17"
+GFC 2007-11,2011-04,New Zealand CPI inflation (year-on-year),5.28,percent,,S_AI_BIS_LONG_CPI,"BIS WS_LONG_CPI, NZ",peak year-on-year rate in the window
+GFC 2007-11,2010,New Zealand unemployment rate,6.56,percent of labour force,,S_AI_WB_UNEMPLOYMENT,"World Bank SL.UEM.TOTL.ZS, NZ, annual",modeled ILO estimate; peak in the window
+1970s-80s inflation,1987-04,New Zealand CPI inflation (year-on-year),18.94,percent,,S_AI_BIS_LONG_CPI,"BIS WS_LONG_CPI, NZ",peak year-on-year rate in the window
+1970s-80s inflation,1970-Q1 to 1990-Q4,New Zealand real house price index change,34.73,percent,cumulative change,S_AI_BIS_SPP,"BIS WS_SPP, NZ, real, 2010=100",nominal appreciation against high inflation
+2020 pandemic,2020-02-19 to 2020-03-23,Nasdaq Composite drawdown,-30.12,percent,peak-to-trough,S_AI_NASDAQ_COMP,Nasdaq COMP daily closes,February-March 2020
+2020 pandemic,2019-Q4 to 2020-Q4,New Zealand real house price index change,14.42,percent,cumulative change,S_AI_BIS_SPP,"BIS WS_SPP, NZ, real, 2010=100",
+2020 pandemic,2021-10,New Zealand CPI inflation (year-on-year),5.95,percent,,S_AI_BIS_LONG_CPI,"BIS WS_LONG_CPI, NZ",peak year-on-year rate in the window
+2020 pandemic,2020,New Zealand unemployment rate,4.59,percent of labour force,,S_AI_WB_UNEMPLOYMENT,"World Bank SL.UEM.TOTL.ZS, NZ, annual",modeled ILO estimate; peak
+2021-2026 housing downturn,2021-Q4 peak to 2026-Q1 trough,New Zealand real house price index,-27.61,percent,peak-to-trough,S_AI_BIS_SPP,"BIS WS_SPP, NZ, real, 2010=100","peak 216.28, trough 156.57; latest quarter may be revised"
+2021-2026 housing downturn,2022-04,New Zealand CPI inflation (year-on-year),7.3,percent,,S_AI_BIS_LONG_CPI,"BIS WS_LONG_CPI, NZ",peak year-on-year rate in the window
+2021-2026 housing downturn,2023-05-25,New Zealand official cash rate (peak),5.5,percent per annum,,S_AI_BIS_CBPOL,"BIS WS_CBPOL, NZ, daily",peak in the tightening cycle
+2021-2026 housing downturn,2026-10-09,New Zealand official cash rate (latest),2.75,percent per annum,,S_AI_BIS_CBPOL,"BIS WS_CBPOL, NZ, daily",latest available observation

@@ -1,0 +1,14 @@
+period,geography,buyer_group,metric,value_numeric,value_published,unit,basis,source_id,notes
+2025-01 to 2025-04,New Zealand,first_home_buyers,share_of_all_property_purchases,,nearly 25,percent,"Share of all property purchases, Jan-Apr 2025; long-term average 21-22%",S_CENSUS_018,"Industry buyer classification (Cotality, formerly CoreLogic); not an official statistic. Not REINZ buyer classification."
+2005 to 2025 long-term average,New Zealand,first_home_buyers,share_of_all_property_purchases,,21-22,percent,Long-term average first-home-buyer share of property purchases,S_CENSUS_018,As stated in the May 2025 article
+2026-Q1,New Zealand,first_home_buyers,share_of_all_property_purchases,,more than 27,percent,Share of property purchases in the first three months of 2026,S_CENSUS_019,Article published 14 April 2026
+2026-Q1,Auckland,first_home_buyers,share_of_all_property_purchases,,about 30,percent,"Approximate first-home-buyer share of property purchases, Auckland",S_CENSUS_019,Approximate value as published
+2026-Q1,Hamilton,first_home_buyers,share_of_all_property_purchases,33,33,percent,"First-home-buyer share of property purchases, Hamilton",S_CENSUS_019,Published as 33%
+2026-Q1,Wellington (wider area),first_home_buyers,share_of_all_property_purchases,37,37,percent,"First-home-buyer share of property purchases, wider Wellington area",S_CENSUS_019,Published as 37%; includes Upper Hutt and Lower Hutt
+2005 to 2026 long-term average,New Zealand,first_home_buyers,share_of_all_property_purchases,,about 22,percent,Long-term average first-home-buyer share of property purchases since 2005,S_CENSUS_019,As stated in the April 2026 article
+2025,Auckland,first_home_buyers,average_age,37,37,years,"Average age of first home buyers, Auckland",S_CENSUS_018,"Article states Auckland buyers now average 37, each around two to three years older than in 2019"
+2025,Wellington,first_home_buyers,average_age,36,36,years,"Average age of first home buyers, Wellington",S_CENSUS_018,As published
+2025,Christchurch,first_home_buyers,average_age,35,35,years,"Average age of first home buyers, Christchurch",S_CENSUS_018,As published
+2025,New Zealand,first_home_buyers,median_price_paid,700000,700000,NZD,"Median price paid by first home buyers, 2025 to date",S_CENSUS_018,"Unchanged from the past two years; 2022 was $719,000"
+2022,New Zealand,first_home_buyers,median_price_paid,719000,719000,NZD,"Median price paid by first home buyers, 2022",S_CENSUS_018,As published
+2025,Auckland,first_home_buyers,median_price_paid,903000,903000,NZD,"Median price paid by first home buyers, Auckland, 2025 to date",S_CENSUS_018,"Published as $903,000; $127,000 below the all-buyer median and $114,000 above the lower quartile"

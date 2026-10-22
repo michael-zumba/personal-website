@@ -1,0 +1,8 @@
+scenario_id,severity,regime,global_equity_change_pct,auckland_nominal_price_change_pct,auckland_real_price_change_pct,cumulative_cpi_change_pct,unemployment_peak_pct,cash_after_tax_real_change_pct,owner_real_position_change_pct,renter_cash_real_return_pct,two_year_verdict,deposit_access,note
+A1,AI correction,Disinflationary,-25,-5,-6.86275,2,5.5,0.995098,-4.03234,1.9902,Renting and cash better,Normal,"Dot-com analogue: equity reset, no NZ credit event"
+A2,AI correction,Inflationary,-25,-3,-8.05687,5.5,5.5,-0.767773,-5.22647,-1.53555,Renting and cash better,Normal,Equity reset with currency and energy inflation
+B1,AI credit bust,Disinflationary,-40,-20,-20.7921,1,8.5,2.32673,-17.9617,4.65347,Renting and cash better,Stressed,GFC-style credit event without a funding freeze
+B2,AI credit bust,Inflationary,-40,-12,-17.757,7,8.5,-0.906542,-14.9266,-1.81308,Renting and cash better,Stressed,Credit event plus imported inflation and higher mortgage rates
+C1,Systemic AI unwind,Disinflationary,-65,-45,-44.4444,-1,15,3.71717,-41.614,7.43434,Renting and cash better,Impaired,Beyond the RBNZ 2020 very severe scenario; deposit access delayed
+C2,Systemic AI unwind,Inflationary,-65,-25,-31.1927,9,15,-1.49541,-28.3623,-2.99083,Renting and cash better,Impaired,Systemic funding closure with a currency and inflation crisis
+R0,Reference: no unwind,Reference,0,1,-1.46341,2.5,4.5,-0.15122,1.36699,-0.302439,Owning better,Normal,"Base case, not a forecast: prices broadly flat in real terms"

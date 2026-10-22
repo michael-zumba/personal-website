@@ -1,0 +1,14 @@
+period,indicator,value,unit,official_flag,source_id,locator,note
+2026-10-20,S&P 500 top-10 weight (SPY holdings),38.39,percent of fund,official,S_AI_SSGA_SPY,"SPY holdings xlsx, 'As of 20-Oct-2026', top 10 rows",sum of the 10 largest constituent weights of the S&P 500 tracker
+2026-10-20,NVIDIA weight in S&P 500 (SPY holdings),7.88,percent of fund,official,S_AI_SSGA_SPY,"SPY holdings xlsx, 'As of 20-Oct-2026', row NVIDIA CORP",single largest constituent of the S&P 500 tracker
+2026-10-21,Shiller CAPE,41.08,ratio,secondary,S_AI_MULTIPL_CAPE,"multpl.com Shiller P/E table, latest row",third-party reprint of the Shiller CAPE; not a statistical-agency series
+2000-01,Shiller CAPE,43.77,ratio,secondary,S_AI_SHILLER_YALE,"ie_data.xls, Data sheet, row 2000.01, CAPE column",dot-com peak reference value
+2021-01,Shiller CAPE,34.51,ratio,secondary,S_AI_SHILLER_YALE,"ie_data.xls, Data sheet, row 2021.01, CAPE column",2021 valuation peak reference value
+2023-09,Shiller CAPE,30.81,ratio,secondary,S_AI_SHILLER_YALE,"ie_data.xls, Data sheet, last CAPE observation",last observation in the Yale file retrieved on 2026-10-22 (series ends before 2026)
+2000-03-10 to 2002-10-09,Nasdaq Composite drawdown,-77.93,percent,official,S_AI_NASDAQ_COMP,Nasdaq COMP daily closes,peak-to-trough
+2007-10-31 to 2009-03-09,Nasdaq Composite drawdown,-55.63,percent,official,S_AI_NASDAQ_COMP,Nasdaq COMP daily closes,peak-to-trough
+2020-02-19 to 2020-03-23,Nasdaq Composite drawdown,-30.12,percent,official,S_AI_NASDAQ_COMP,Nasdaq COMP daily closes,"peak-to-trough, February-March 2020"
+2021-11-19 to 2022-12-28,Nasdaq Composite drawdown,-36.4,percent,official,S_AI_NASDAQ_COMP,Nasdaq COMP daily closes,"peak-to-trough, 2021-2022"
+2026-10-06 to 2026-10-16,Nasdaq Composite drawdown,-5.29,percent,official,S_AI_NASDAQ_COMP,Nasdaq COMP daily closes,drawdown from the 2026 peak to the latest 2026 low; market still near record
+2026-10-20,Nasdaq Composite level,26424.82,index points,official,S_AI_NASDAQ_COMP,"Nasdaq COMP daily closes, latest available session",latest close before the access date
+2025-11,Share of Fed survey contacts citing AI as a salient risk,30,percent of surveyed contacts,official,S_AI_FED_FSR,"Federal Reserve Financial Stability Report, November 2025, p.11, Survey of Salient Risks",Fall 2025 survey; Spring 2025 figure was 9 percent

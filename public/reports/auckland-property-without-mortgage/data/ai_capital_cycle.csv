@@ -1,0 +1,39 @@
+panel,period,series,value,unit,source_id
+AI capital expenditure,2015,"Big four hyperscaler capex, fiscal year",23,USD billion,S_AI_SEC_MSFT;S_AI_SEC_GOOGL;S_AI_SEC_AMZN;S_AI_SEC_META
+AI capital expenditure,2016,"Big four hyperscaler capex, fiscal year",30.8,USD billion,S_AI_SEC_MSFT;S_AI_SEC_GOOGL;S_AI_SEC_AMZN;S_AI_SEC_META
+AI capital expenditure,2017,"Big four hyperscaler capex, fiscal year",40,USD billion,S_AI_SEC_MSFT;S_AI_SEC_GOOGL;S_AI_SEC_AMZN;S_AI_SEC_META
+AI capital expenditure,2018,"Big four hyperscaler capex, fiscal year",64.1,USD billion,S_AI_SEC_MSFT;S_AI_SEC_GOOGL;S_AI_SEC_AMZN;S_AI_SEC_META
+AI capital expenditure,2019,"Big four hyperscaler capex, fiscal year",69.4,USD billion,S_AI_SEC_MSFT;S_AI_SEC_GOOGL;S_AI_SEC_AMZN;S_AI_SEC_META
+AI capital expenditure,2020,"Big four hyperscaler capex, fiscal year",93,USD billion,S_AI_SEC_MSFT;S_AI_SEC_GOOGL;S_AI_SEC_AMZN;S_AI_SEC_META
+AI capital expenditure,2021,"Big four hyperscaler capex, fiscal year",125,USD billion,S_AI_SEC_MSFT;S_AI_SEC_GOOGL;S_AI_SEC_AMZN;S_AI_SEC_META
+AI capital expenditure,2022,"Big four hyperscaler capex, fiscal year",150.2,USD billion,S_AI_SEC_MSFT;S_AI_SEC_GOOGL;S_AI_SEC_AMZN;S_AI_SEC_META
+AI capital expenditure,2023,"Big four hyperscaler capex, fiscal year",140.1,USD billion,S_AI_SEC_MSFT;S_AI_SEC_GOOGL;S_AI_SEC_AMZN;S_AI_SEC_META
+AI capital expenditure,2024,"Big four hyperscaler capex, fiscal year",217.3,USD billion,S_AI_SEC_MSFT;S_AI_SEC_GOOGL;S_AI_SEC_AMZN;S_AI_SEC_META
+AI capital expenditure,2025,"Big four hyperscaler capex, fiscal year",357.5,USD billion,S_AI_SEC_MSFT;S_AI_SEC_GOOGL;S_AI_SEC_AMZN;S_AI_SEC_META
+AI capital expenditure,2019 (calendar quarters),"Big four hyperscaler capex, calendar-year sum",69.1,USD billion,S_AI_SEC_MSFT;S_AI_SEC_GOOGL;S_AI_SEC_AMZN;S_AI_SEC_META
+AI capital expenditure,2020 (calendar quarters),"Big four hyperscaler capex, calendar-year sum",95.2,USD billion,S_AI_SEC_MSFT;S_AI_SEC_GOOGL;S_AI_SEC_AMZN;S_AI_SEC_META
+AI capital expenditure,2021 (calendar quarters),"Big four hyperscaler capex, calendar-year sum",127.6,USD billion,S_AI_SEC_MSFT;S_AI_SEC_GOOGL;S_AI_SEC_AMZN;S_AI_SEC_META
+AI capital expenditure,2022 (calendar quarters),"Big four hyperscaler capex, calendar-year sum",151.1,USD billion,S_AI_SEC_MSFT;S_AI_SEC_GOOGL;S_AI_SEC_AMZN;S_AI_SEC_META
+AI capital expenditure,2023 (calendar quarters),"Big four hyperscaler capex, calendar-year sum",147.2,USD billion,S_AI_SEC_MSFT;S_AI_SEC_GOOGL;S_AI_SEC_AMZN;S_AI_SEC_META
+AI capital expenditure,2024 (calendar quarters),"Big four hyperscaler capex, calendar-year sum",228.3,USD billion,S_AI_SEC_MSFT;S_AI_SEC_GOOGL;S_AI_SEC_AMZN;S_AI_SEC_META
+AI capital expenditure,2025 (calendar quarters),"Big four hyperscaler capex, calendar-year sum",376.1,USD billion,S_AI_SEC_MSFT;S_AI_SEC_GOOGL;S_AI_SEC_AMZN;S_AI_SEC_META
+Valuation and concentration,2026-10-20,S&P 500 top-10 weight (SPY holdings),38.39,percent of fund,S_AI_SSGA_SPY
+Valuation and concentration,2026-10-20,NVIDIA weight in S&P 500 (SPY holdings),7.88,percent of fund,S_AI_SSGA_SPY
+Valuation and concentration,2026-10-21,Shiller CAPE,41.08,ratio,S_AI_MULTIPL_CAPE
+Valuation and concentration,2000-01,Shiller CAPE,43.77,ratio,S_AI_SHILLER_YALE
+Valuation and concentration,2021-01,Shiller CAPE,34.51,ratio,S_AI_SHILLER_YALE
+Valuation and concentration,2023-09,Shiller CAPE,30.81,ratio,S_AI_SHILLER_YALE
+Valuation and concentration,2000-03-10 to 2002-10-09,Nasdaq Composite drawdown,-77.93,percent,S_AI_NASDAQ_COMP
+Valuation and concentration,2007-10-31 to 2009-03-09,Nasdaq Composite drawdown,-55.63,percent,S_AI_NASDAQ_COMP
+Valuation and concentration,2020-02-19 to 2020-03-23,Nasdaq Composite drawdown,-30.12,percent,S_AI_NASDAQ_COMP
+Valuation and concentration,2021-11-19 to 2022-12-28,Nasdaq Composite drawdown,-36.4,percent,S_AI_NASDAQ_COMP
+Valuation and concentration,2026-10-06 to 2026-10-16,Nasdaq Composite drawdown,-5.29,percent,S_AI_NASDAQ_COMP
+Valuation and concentration,2026-10-20,Nasdaq Composite level,26424.8,index points,S_AI_NASDAQ_COMP
+Valuation and concentration,2025-11,Share of Fed survey contacts citing AI as a salient risk,30,percent of surveyed contacts,S_AI_FED_FSR
+AI-related credit,2026-07,"Five AI hyperscalers' share of outstanding US IG debt, end-2025",3,percent,S_AI_BOE_FSR
+AI-related credit,2026-05,"Five AI hyperscalers' share of US IG debt issuance, 2026",15,percent,S_AI_BOE_FSR
+AI-related credit,2026-07,"AI issuers' share of non-refinance US high-yield issuance, 2026 to date",41,percent,S_AI_BOE_FSR
+AI-related credit,2026-07,"AI issuers' share of JPM US high-yield bond index, end-2025",1,percent,S_AI_BOE_FSR
+AI-related credit,2026-07,"private credit share of AI investment, 2024",9,percent,S_AI_BOE_FSR
+AI-related credit,2026-07,"private credit share of AI investment, 2025",34,percent,S_AI_BOE_FSR
+AI-related credit,2025-2029,IMF projected AI capex,3400,USD billion,S_AI_IMF_GFSR

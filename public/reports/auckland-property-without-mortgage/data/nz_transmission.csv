@@ -1,0 +1,12 @@
+period,indicator,value,unit,change,source_id,note
+2026-08,"BIS nominal broad effective exchange rate, New Zealand",94.01,index (2020=100),-1.95 percent year-on-year,S_AI_BIS_EER,"substitute for the RBNZ trade-weighted index, which was not accessible"
+2026-08,"BIS real broad effective exchange rate, New Zealand",102.84,index (2020=100),-0.17 percent year-on-year,S_AI_BIS_EER,
+2026-06-30,NZ Super Fund listed equities allocation,57,percent of fund,"49% developed markets, 4% New Zealand, 4% emerging markets",S_AI_NZSUPER_ANNUAL,"Reference Portfolio is 75% global equities, 20% fixed income, 5% NZ equities"
+2026-06-30,NZ Super Fund net assets,93.5,NZD billion,up from 82.8 in 2024/25,S_AI_NZSUPER_ANNUAL,"exact net assets NZD 93,497,038 thousand"
+2026-03-31,KiwiSaver funds under management,138.8,NZD billion,up 12.8 percent year-on-year,S_AI_FMA_KIWISAVER,"year to 31 March 2026; contributions NZD 13.2bn, investment returns NZD 10.7bn"
+2026-03-31,KiwiSaver growth-fund assets,68,NZD billion,largest single fund category,S_AI_FMA_KIWISAVER,
+2026-03-31,KiwiSaver average member balance,40340,NZD,up 11 percent year-on-year,S_AI_FMA_KIWISAVER,
+2026-03-31,KiwiSaver membership,3.44,million members,,S_AI_FMA_KIWISAVER,
+2026-06,"Net migration, June 2026 year (provisional)",17600,persons,"plus or minus 1,500; prior June 2025 year +10,300",S_AI_STATSNZ_MIGRATION,"provisional estimates; annual net migration peaked at 133,700 in the October 2023 year"
+2026-Q1,"BIS credit-to-GDP ratio, NZ private non-financial sector",160.49,percent of GDP,,S_AI_BIS_CREDIT_GDP,"credit-to-GDP ratio, not the gap; quarterly"
+2026-10-09,New Zealand official cash rate (BIS central bank policy rate),2.75,percent per annum,,S_AI_BIS_CBPOL,latest available observation

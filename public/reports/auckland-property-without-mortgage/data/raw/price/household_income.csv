@@ -1,0 +1,10 @@
+year,measure,geography,value_nzd,unit,statistical_note,source_id
+2025,median_annual_household_income_gross,Auckland region,130595,NZD per year,Household Income and Living Survey (HILS) year ended June 2025; households in occupied private dwellings; RSE 3.3%; published as unrounded/corrected series with a known-errors notice (income corrections due Feb 2027).,S_PRICE_STATS_HILS_2025
+2025,average_annual_household_income_gross,Auckland region,160687,NZD per year,HILS year ended June 2025; Auckland region; RSE 2.3%.,S_PRICE_STATS_HILS_2025
+2025,median_annual_household_income_gross,New Zealand,109556,NZD per year,HILS year ended June 2025; all regions; RSE 1.5%.,S_PRICE_STATS_HILS_2025
+2025,average_annual_housing_costs,Auckland region,29505,NZD per year,"HILS housing costs, Auckland region, year ended June 2025.",S_PRICE_STATS_HILS_2025
+2025,average_annual_household_disposable_income,Auckland region,123365,NZD per year,"HILS household disposable income, Auckland region, year ended June 2025.",S_PRICE_STATS_HILS_2025
+2025,housing_costs_pct_of_household_disposable_income,Auckland region,23.9,percent,"HILS ratio of average annual housing costs to average annual household disposable income, Auckland region.",S_PRICE_STATS_HILS_2025
+2023,median_estimated_household_income_gross,Auckland region,117900,NZD per year,"Stats NZ Integrated Data Infrastructure (IDI) estimate for 2023, purchased by Auckland Council; gross household income from the Administrative Population Census; NOT the same definition as the 2023 Census and not directly comparable with HILS.",S_PRICE_KA_IDI_INCOME_2024
+2023,median_personal_income,Auckland region,44700,NZD per year,"2023 Census, people aged 15 years and over, Auckland region; +30.0% since 2018. Personal income, not household income.",S_PRICE_STATS_CENSUS_AKL_2023
+2023,median_weekly_rent_paid_by_households,Auckland region,540,NZD per week,"2023 Census, households in occupied private dwellings, Auckland region; +20.0% since 2018.",S_PRICE_STATS_CENSUS_AKL_2023

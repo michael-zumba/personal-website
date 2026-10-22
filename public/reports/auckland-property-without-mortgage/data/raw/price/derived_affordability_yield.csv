@@ -1,0 +1,24 @@
+period,qv_avg_equalised_value_nzd,mbie_bond_auckland_weekly_rent_nzd,gross_yield_pct,median_household_income_nzd,price_to_income_ratio,computation,source_ids
+2007-09,555737.32,340,3.18,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2007-08 * 52) / qv_avg_equalised_value_2007-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2008-09,503379.97,350,3.62,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2008-08 * 52) / qv_avg_equalised_value_2008-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2009-09,524383.33,350,3.47,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2009-08 * 52) / qv_avg_equalised_value_2009-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2010-09,535298.86,370,3.59,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2010-08 * 52) / qv_avg_equalised_value_2010-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2011-09,551475.95,380,3.58,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2011-08 * 52) / qv_avg_equalised_value_2011-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2012-09,596352.49,400,3.49,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2012-08 * 52) / qv_avg_equalised_value_2012-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2013-09,689913.49,418,3.15,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2013-08 * 52) / qv_avg_equalised_value_2013-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2014-09,747456.87,445,3.10,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2014-08 * 52) / qv_avg_equalised_value_2014-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2015-09,948211.04,480,2.63,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2015-08 * 52) / qv_avg_equalised_value_2015-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2016-09,1074056.69,490,2.37,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2016-08 * 52) / qv_avg_equalised_value_2016-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2017-09,1064102.18,500,2.44,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2017-08 * 52) / qv_avg_equalised_value_2017-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2018-09,1055481.20,525,2.59,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2018-08 * 52) / qv_avg_equalised_value_2018-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2019-09,1035794.32,550,2.76,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2019-08 * 52) / qv_avg_equalised_value_2019-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2020-09,1122840.10,555,2.57,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2020-08 * 52) / qv_avg_equalised_value_2020-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2021-09,1391597.92,590,2.20,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2021-08 * 52) / qv_avg_equalised_value_2021-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2022-09,1358709.83,590,2.26,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2022-08 * 52) / qv_avg_equalised_value_2022-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2023-09,1261919.26,650,2.68,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2023-08 * 52) / qv_avg_equalised_value_2023-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2023-09,1261919.26,,,117900,10.70,price_to_income = qv_avg_equalised_value_2023-09 / median_estimated_household_income_2023 (IDI); numerator and denominator both 2023,S_PRICE_QV_HPI_API;S_PRICE_KA_IDI_INCOME_2024
+2024-09,1228955.45,650,2.75,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2024-08 * 52) / qv_avg_equalised_value_2024-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2025-09,1193994.19,650,2.83,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2025-08 * 52) / qv_avg_equalised_value_2025-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2025-09,1193994.19,,,130595,9.14,price_to_income = qv_avg_equalised_value_2025-09 / HILS median gross household income year ended June 2025,S_PRICE_QV_HPI_API;S_PRICE_STATS_HILS_2025
+2026-09,1159439.52,650,2.92,,,gross_yield = (mbie_bond_auckland_median_weekly_rent_2026-08 * 52) / qv_avg_equalised_value_2026-09,S_PRICE_QV_HPI_API;S_PRICE_MBIE_BOND_REGION
+2026-09,1159439.52,,,130595,8.88,price_to_income = qv_avg_equalised_value_2026-09 / HILS median gross household income year ended June 2025 (income denominator is the latest observed; no 2026 income observation exists),S_PRICE_QV_HPI_API;S_PRICE_STATS_HILS_2025

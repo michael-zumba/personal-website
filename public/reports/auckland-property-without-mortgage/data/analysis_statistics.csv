@@ -1,0 +1,20 @@
+statistic,value,unit,note
+latest_month,2026-09,,QV Auckland HPI
+nominal_peak_month,2022-01,,QV nominal peak
+nominal_peak_index,2996.489,index,Jan 2007 = 1000
+real_peak_month,2021-12,,QV real peak
+nominal_decline_from_peak_pct,-24.771958114980574,percent,Peak to September 2026
+real_decline_from_peak_pct,-37.73106261504383,percent,Real peak to September 2026
+real_5y_total_pct,-32.64264209353994,percent,
+real_10y_total_pct,-22.186952648838975,percent,
+real_15y_total_pct,45.657492473364435,percent,
+real_19y_total_pct,27.499281103413576,percent,
+real_19y_annualised_pct,1.286843904419821,percent,
+real_5y_annualised_pct,-7.598928220310874,percent,
+net_real_19y_annualised_pct,1.0738031418358718,percent,After 5% round-trip cost
+cash_longrun_real_after_tax_pct,0.46,percent,"2000-2026 mean, 33% tax"
+gross_yield_pct,2.92,percent,September 2026
+price_to_income_2025,9.14,ratio,Average value / median gross household income
+price_to_income_2023,10.7,ratio,IDI income denominator
+median_rent_weekly_nzd,650.0,NZD per week,August 2026
+cpi_latest_index,1368.0,index,June 2017 quarter = 1000

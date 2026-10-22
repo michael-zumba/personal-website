@@ -1,0 +1,993 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auckland Property, Cash and the AI Bubble</title>
+<meta name="description" content="An evidence-based research brief on buying an Auckland home without a mortgage, the case for holding cash, and what an unwinding AI-capital boom could do to Auckland housing.">
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<style>
+  :root {
+    --bg: #f7f4ec;
+    --paper: #fffdf8;
+    --text: #23241f;
+    --muted: #6a685e;
+    --border: #ded8ca;
+    --primary: #1f4d3f;
+    --primary-soft: #e7efeb;
+    --ochre: #a86b2d;
+    --slate: #60758a;
+    --radius: 10px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.72;
+  }
+  .container { max-width: 1040px; margin: 0 auto; padding: 42px 30px 70px; }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: var(--primary);
+    text-decoration: none;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 0.9rem;
+  }
+  .back-link:hover { text-decoration: underline; }
+  header {
+    padding: 38px 0 42px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 40px;
+  }
+  .eyebrow {
+    color: var(--primary);
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.12; margin: 0 0 18px; font-weight: 500; }
+  .dek { max-width: 760px; color: var(--muted); font-size: 1.12rem; margin: 0; }
+  .meta { font-family: Inter, system-ui, sans-serif; font-size: 0.86rem; color: var(--muted); margin-top: 16px; }
+  nav.toc {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px 26px;
+    margin-bottom: 42px;
+  }
+  nav.toc h2 { font-size: 1rem; margin: 0 0 12px; font-family: Inter, system-ui, sans-serif; }
+  nav.toc ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 38px; }
+  nav.toc li { margin-bottom: 6px; break-inside: avoid; }
+  nav.toc a { color: var(--primary); text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+  section { margin-bottom: 54px; }
+  section h2 {
+    font-size: 1.75rem;
+    line-height: 1.25;
+    margin: 0 0 18px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 500;
+  }
+  section h3 { font-size: 1.15rem; margin: 28px 0 10px; }
+  p { margin: 0 0 15px; }
+  ul, ol { padding-left: 24px; }
+  li { margin-bottom: 8px; }
+  .executive {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+  }
+  .key-points {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 22px;
+  }
+  .key-point {
+    background: var(--primary-soft);
+    border-radius: 7px;
+    padding: 15px 16px;
+    font-size: 0.91rem;
+    line-height: 1.55;
+  }
+  .key-point strong { display: block; color: var(--primary); margin-bottom: 5px; }
+  .callout {
+    background: #f1ece0;
+    border-left: 3px solid var(--ochre);
+    border-radius: 0 7px 7px 0;
+    padding: 16px 20px;
+    margin: 22px 0;
+    color: #4d463b;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0 24px;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 0.84rem;
+  }
+  th, td {
+    padding: 9px 11px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);
+  }
+  th { background: var(--primary-soft); color: var(--primary); font-weight: 650; }
+  .table-wrap { overflow-x: auto; }
+  .chart-container {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+    margin: 26px 0;
+  }
+  .chart-container h4 { margin: 0 0 4px; font-size: 1rem; line-height: 1.4; }
+  .chart-note, .figure-description {
+    color: var(--muted);
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 0.77rem;
+    line-height: 1.55;
+  }
+  .chart-note { margin: 0 0 13px; font-style: italic; }
+  .figure-description { margin: 10px 0 0; }
+  .chart-box { width: 100%; height: 430px; }
+  .chart-box.tall { height: 560px; }
+  .small-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .small-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+  .small-card h3 { margin-top: 0; font-size: 1.02rem; }
+  .download-list {
+    columns: 2;
+    column-gap: 32px;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 0.84rem;
+  }
+  .download-list li { break-inside: avoid; }
+  a { color: var(--primary); }
+  .ref-item { padding-left: 24px; text-indent: -24px; margin-bottom: 12px; font-size: 0.9rem; }
+  .source-table { font-size: 0.78rem; }
+  footer {
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    padding-top: 22px;
+    margin-top: 56px;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 0.78rem;
+  }
+  @media (max-width: 760px) {
+    .container { padding: 24px 16px 52px; }
+    .key-points, .small-grid { grid-template-columns: 1fr; }
+    nav.toc ol, .download-list { columns: 1; }
+    .chart-container { padding: 15px; }
+    .chart-box { height: 360px; }
+    .chart-box.tall { height: 520px; }
+    h1 { font-size: 2rem; }
+    table { min-width: 620px; }
+  }
+</style>
+<link rel="stylesheet" href="../chart-download.css">
+</head>
+<body>
+<main class="container">
+  <a class="back-link" href="/insights/">&larr; Back to Insights</a>
+
+  <header>
+    <div class="eyebrow">Research Brief</div>
+    <h1>Auckland Property, Cash and the AI Bubble</h1>
+    <p class="dek">The evidence does not support a simple buy-or-wait answer. It supports a smaller and more useful claim: shelter and investment are different decisions, and the AI bubble is a risk to test, not a fact to assume.</p>
+    <p class="meta">Dr Yuqian Zhang &middot; October 2026</p>
+  </header>
+
+  <nav class="toc" aria-label="Report contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#executive-summary">Executive Summary</a></li>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#background">Background</a></li>
+      <li><a href="#data">Data and Method</a></li>
+      <li><a href="#findings">Findings</a></li>
+      <li><a href="#discussion">Discussion</a></li>
+      <li><a href="#opportunities">Research Opportunities</a></li>
+      <li><a href="#replication">Data Availability and Replication</a></li>
+      <li><a href="#references">References</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
+  </nav>
+
+  <section id="executive-summary" class="executive">
+    <h2>Executive Summary</h2>
+    <p>This brief tests four beliefs held by a buyer who can pay cash for an Auckland home and does not want a mortgage: that Auckland property has fallen in real terms, that the mainstream investment case is weaker than its reputation, that younger generations are changing their relationship with ownership, and that an AI-driven global crisis in 2027 is a serious risk. It also tests the alternative those beliefs imply: that holding cash is the safer choice. The report does not forecast prices, assign probabilities to a crisis or recommend that anyone buy, rent or hold. It separates what the evidence shows from what is interpretation and labels the stress scenarios as assumptions.</p>
+    <p>The decline is real, and it is larger than the headline. The QV Auckland index fell 24.8 percent in nominal terms from its January 2022 peak to September 2026, and 37.7 percent after adjusting for consumer inflation. Over five years the real fall is 32.6 percent. But the longer record is more complicated: over 15 years Auckland housing still returned 45.7 percent in real terms, and over the 19 years the series covers it returned 27.5 percent, or about 1.3 percent a year. The GFC itself produced a milder Auckland fall of 11.8 percent nominal and 15.9 percent real. The honest reading is that the recent decline is exceptional and the long-run return is modest, not that the long-run case has vanished.</p>
+    <p>The investment case is substantially a leverage case. Gross rental yield is 2.92 percent, the price-to-income ratio is about 9, and a two-year mortgage rate is 5.89 percent. A leveraged buyer of a 2.9 percent yielding asset with 5.9 percent debt has negative carry before insurance, rates, maintenance and vacancy. The bank earns a net interest margin (2.30 percent across the system), and agents earn commission on each transaction. The sceptical view is supported for leveraged property investment. An unleveraged home is a different product: it provides shelter, avoids rent and carries no margin call. It should be judged on those terms.</p>
+    <p>Generational change is real in outcomes but not demonstrated in preferences. Auckland household ownership fell from 73.9 percent in 1986 to 59.5 percent in 2023. Among individuals aged 30 to 34, ownership fell from 43.6 percent in 2006 to 37.4 percent in 2023, and the share of 20-year-olds still living in a child role rose from 52.3 percent in 2018 to 53.0 percent in 2023. Delayed household formation, rising rents and housing stress appear alongside the tenure fall. No representative survey verifies a preference shift away from ownership, so the evidence supports constrained demand rather than rejection.</p>
+    <p>The AI bubble is a plausible risk, not an established fact. The four largest hyperscalers spent about 357.5 billion US dollars on property and equipment in their latest fiscal years, against 23.0 billion in 2015. The top ten holdings of the S and P 500 tracker are 38.4 percent of the fund and the Shiller CAPE is 41.1, below its 1999 peak of 44.2 but above its 2021 level. AI issuers are 41 percent of non-refinance US high-yield issuance even though they are 1 percent of the high-yield index. But the Nasdaq is only 5.3 percent below its October 2026 peak, so no correction has occurred. History is the key warning: New Zealand real house prices rose 8.7 percent through the dot-com bust but fell 15.7 percent in the credit-led GFC. In the stress matrix below, renting and holding cash beats buying in all six crisis cells, while buying wins in the reference case where no unwind occurs. A cash buyer is therefore making a bet on crisis probability and holding horizon, not choosing between safety and risk.</p>
+    <p>Cash is insurance, not a plan. At current rates a one-year term deposit yields 4.02 percent, which is 0.98 percent negative in real terms after 33 percent tax, and a six-month deposit is 1.30 percent negative. Over 2000 to 2026 the average after-tax real return was 0.46 percent a year and it was negative in 25.6 percent of months. In 1987 an 18 percent deposit rate still lost 6.1 percent a year in real terms at the inflation peak. Cash held above 100,000 dollars per deposit taker is not covered by the depositor compensation scheme. The right role for cash is liquidity, insured reserves and optionality, not a permanent store of all wealth.</p>
+    <p>The simple suggestion that follows is conditional rather than clever: buy the home you will live in for a decade if it passes the survivability and real-return hurdle tests; do not buy it as an investment at a 2.9 percent yield; keep 12 to 24 months of spending in insured cash; do not use a mortgage to make a thin-yield asset look attractive; and decide on observable triggers instead of a forecast.</p>
+    <div class="key-points">
+      <div class="key-point"><strong>The decline is real</strong>Auckland housing is 37.7 percent lower in real terms than its 2021 peak. A 5-year holding period lost 32.6 percent in real terms while cash barely preserved value.</div>
+      <div class="key-point"><strong>A mortgage is a separate decision</strong>At a 2.92 percent gross yield and a 5.89 percent mortgage rate, leverage turns a home into a capital-gains bet with negative carry. The bank is paid either way.</div>
+      <div class="key-point"><strong>Cash is insurance</strong>After tax and inflation, cash currently loses about 1 percent a year. Its value is liquidity and crisis optionality, and only up to the 100,000 dollar guarantee.</div>
+    </div>
+  </section>
+
+  <section id="introduction">
+    <h2>Introduction</h2>
+    <p>The decision behind this brief is concrete. A buyer in Auckland holds enough capital to buy a home without a mortgage and is trying to decide whether to do so. The buyer has seen real declines in value and doubts the decades-old claim that property is the safest investment available. The buyer also suspects that a global crisis rooted in the AI investment boom could arrive in 2027 and that holding cash might be the safer alternative. Each of those views contains a testable claim, and each can be partly right.</p>
+    <p>The report asks one question: for an unleveraged buyer deciding whether to buy an Auckland home in 2026 and 2027, what does the verifiable evidence say about the real return to housing, affordability and leverage, generational demand, policy risk, and the resilience of housing and cash in an extreme financial crisis? It then asks what decision rules follow from that evidence.</p>
+    <p>Five propositions are examined as competing claims, not as conclusions. First, Auckland housing has fallen in real terms but a fall from a peak is not proof that it is cheap. Second, the investment case is largely a leverage and tax case, so an unleveraged owner earns a different return. Third, generational tenure change may reflect constraint rather than a change in preference. Fourth, an AI-capital unwind is a plausible global shock that could reach Auckland through credit, funding, migration and unemployment, but its timing cannot be forecast. Fifth, cash is defensive but not risk-free, and its real return depends on tax and inflation more than on the advertised interest rate.</p>
+    <p>The report is written for readers who are considering a similar decision, not only for the author. It explains each term on first use and reports uncertainty where the evidence is thin. It does not use a house-price forecast, a probabilistic crisis estimate or a personal recommendation. Section 4 sets out the data and method. Section 5 reports the findings by dimension. Section 6 turns the evidence into a decision framework, a stress matrix and a short set of rules. Section 7 lists what further research would change the picture.</p>
+    <div class="callout">The report is research and not financial, investment, legal or tax advice. It does not know the reader's income, obligations, tax position or plans, and it does not recommend buying, renting or holding any asset.</div>
+  </section>
+
+  <section id="background">
+    <h2>Background</h2>
+    <p>Auckland housing in 2026 is the end point of a long boom and a sharp reversal. The QV Auckland index, which starts in January 2007, rose from an average equalised value of about 514,000 dollars in early 2007 to a peak of about 1.54 million dollars in January 2022. It then fell to about 1.16 million dollars by September 2026. The boom was supported by low and falling interest rates, rapid credit growth, constrained land supply, strong migration and a tax system that allowed investors to deduct mortgage interest. The reversal followed the tightening cycle that began in 2021 and continued through 2023, and it was amplified by the removal of interest deductibility in 2021 and then softened by its partial restoration in 2024.</p>
+    <p>Prices are only one part of the market. Gross rental yield fell from 3.58 percent in 2011 to 2.20 percent in 2021 and recovered only to 2.92 percent in 2026. Median weekly rent for newly lodged bonds in Auckland reached 650 dollars in August 2026, up 10.2 percent from 590 dollars five years earlier, while consumer prices rose 23.7 percent over the same period. In real terms, rents fell about 11.5 percent. Inflation in rates, maintenance and insurance adds to the cost of ownership without adding to the rent.</p>
+    <p>The policy regime changed repeatedly over the same period. Loan-to-value restrictions were introduced in 2013, removed in 2020 and reinstated in 2021. The bright-line test was extended and then shortened to two years for sales from July 2024. Foreign buyers were restricted in 2018. Interest deductibility was phased out from October 2021, restored to 80 percent from April 2024 and to 100 percent from April 2025. Debt-to-income limits were activated in July 2024, and loan-to-value settings were eased in December 2025. The depositor compensation scheme began on 1 July 2025. The practical effect is that the tax and credit regime of the 2015 to 2021 boom no longer exists in the same form, and the market has not returned to its old pattern.</p>
+    <p>The second background is the AI-capital cycle. The largest technology firms have increased spending on data centres, chips and computing infrastructure at an extraordinary rate. The four largest hyperscalers spent about 357.5 billion US dollars on property and equipment in their latest fiscal years, compared with 23.0 billion in 2015. The IMF projects about 3.4 trillion US dollars of AI-related capital expenditure through 2029. The financing is shifting from internal cash flow toward credit. The Bank of England reports that five AI hyperscalers were 3 percent of the outstanding US investment-grade stock at the end of 2025 but more than 15 percent of 2026 investment-grade issuance, and AI issuers were 41 percent of non-refinance US high-yield issuance in 2026 against 1 percent of the high-yield index. Private credit is estimated to fund a rising share of AI investment, from 9 percent in 2024 to 34 percent in 2025 on one OECD estimate cited by the Bank of England.</p>
+    <p>New Zealand is not at the centre of that cycle, which is why the transmission question matters. New Zealand is a small open economy with a banking system that funds itself partly offshore (about 16.5 percent of total funding in November 2025), a large KiwiSaver pool of 138.8 billion dollars, a Super Fund with 57 percent of assets in listed equities and a migration cycle that has already turned down from its 2023 peak. A global repricing could reach Auckland through wholesale funding costs, unemployment, migration, household confidence and the exchange rate, or it might not reach housing at all if it remains an equity valuation event. The difference between the dot-com bust and the Global Financial Crisis is the analytical centre of the stress test.</p>
+  </section>
+
+  <section id="data">
+    <h2>Data and Method</h2>
+    <p>The evidence base is built from primary and operational sources. Prices come from the QV House Price Index public API, which measures an average equalised residential value for the Auckland region, monthly from January 2007 to September 2026. The QV series is a state-owned valuer's index and is not the REINZ median sale price; it is labelled non-official throughout and is never spliced with REINZ values. The REINZ September 2026 media release and a public July 2022 report are used as official cross-references at those dates only. Consumer prices come from Stats NZ (series CPIQ.SE9A). Rents come from MBIE Tenancy Services bond data and the Stats NZ rent index. Income comes from the Household Income and Living Survey and, for one observation, from the 2023 Integrated Data Infrastructure estimate.</p>
+    <p>Credit data come from RBNZ statistical series: mortgage rates (B20, B3 and B30), household liabilities and disposable income (C21 and C22), investor lending (C31), housing loans and non-performing loans (S50), system net interest margin (S20) and capital and funding ratios (L2 and L3). The RBNZ website returned HTTP 403 to this research environment, so the series were retrieved from Internet Archive captures of the exact official data files; capture dates are recorded in the source ledger. Cash returns use RBNZ term deposit rates, Stats NZ CPI, IRD marginal tax rates and the depositor compensation scheme briefing. AI data come from SEC XBRL company filings, the official SPY holdings file, the Nasdaq index history, the Yale Shiller data and the IMF, BIS, Bank of England, ECB and Federal Reserve financial-stability publications. Census data come from Stats NZ tenure tables and figure data packages for 2006, 2013, 2018 and 2023.</p>
+    <p>Real values are computed with the national CPI, base June 2017 quarter equals 1000. Monthly prices are deflated with the CPI for the quarter containing the month. Real returns are shown for four matched windows (5, 10, 15 and 19 years) and for the GFC episode, because a single preferred window would hide the effect of the start date. Housing returns are shown before and after an assumed five percent round-trip transaction cost. Cash returns are shown after tax at 17.5, 30, 33 and 39 percent marginal rates. Percent changes are distinguished from percentage points, and levels from changes.</p>
+    <p>The stress test translates the request for a crisis ten times larger than 2008 into a bounded matrix. A literal tenfold repeat of the GFC would imply a price fall larger than 100 percent, which is impossible, while a tenfold repeat of the GFC's rise in unemployment would imply a rate in the mid-30s, beyond any modern experience. The report therefore uses three severities (AI correction, AI credit bust and systemic AI unwind) crossed with two regimes (disinflationary credit bust and inflationary funding stress), anchored to the RBNZ 2025 solvency stress test, the RBNZ 2020 very severe scenario, the 2024 reverse stress test and the IMF 2017 adverse scenario. Each cell states assumptions for global equities, AI capital expenditure, New Zealand unemployment, cumulative inflation, Auckland house prices, rents, deposit rates and deposit access. The assumptions are judgement, labelled as such, with no probabilities. The reference row is a no-unwind base case, not a forecast.</p>
+    <p>The owning-versus-renting comparison uses an explicit hurdle. Net shelter return equals gross rent avoided minus assumed ownership costs (rates, insurance and maintenance). Owning beats renting plus cash when real house-price growth exceeds the cash real return minus the net shelter return, plus the annualised transaction cost. The framework is sensitive to the cost assumptions, and the full calculation is published in the housing user cost dataset and explained in section 6.</p>
+    <p>Every source has a stable identifier, an exact locator and an archived snapshot. A source is used only after both its content and metadata pass verification; snapshots are hashed and recorded in the reference check. The complete methodology, codebook, limitations and replication instructions are in the methodology note linked below.</p>
+  </section>
+
+  <section id="findings">
+    <h2>Findings</h2>
+
+    <h3>The real decline is large, but the long-run picture is not a collapse</h3>
+    <p>The QV index peaked at 2,996.5 in January 2022 and stood at 2,254.2 in September 2026, a nominal fall of 24.8 percent. Deflated by consumer prices, the peak is December 2021 and the fall is 37.7 percent, because consumer prices rose about 19.8 percent over the same period. The different peak dates matter: a real decline should be measured from the real peak, not the nominal one.</p>
+    <p>The window chosen changes the answer. Over five years Auckland housing lost 32.6 percent in real terms, or about 7.6 percent a year. Over ten years it lost 22.2 percent real, or about 2.5 percent a year. Over fifteen years it gained 45.7 percent real, or about 2.5 percent a year. Over the 19 years the index covers it gained 27.5 percent real, or about 1.3 percent a year. After an assumed five percent round-trip cost, the 19-year net real return is about 1.1 percent a year. The GFC episode produced a fall of 11.8 percent nominal and 15.9 percent real, which is much smaller than the current decline.</p>
+    <p>These numbers support the buyer's observation and limit it at the same time. Auckland housing has suffered a genuine real loss, and the recent past is not a story of resilience. But a 19-year real return of about 1.3 percent a year is not nothing, and the 15-year figure shows that the post-GFC decade was exceptionally strong. The relevant question is not whether property has fallen, but whether forward real growth will clear the owning hurdle described in section 6.</p>
+
+    <div class="chart-container">
+      <h4>Figure 1: Auckland house prices rose, peaked, and fell sharply in real terms</h4>
+      <p class="chart-note">QV Auckland House Price Index, January 2007 = 1000, monthly to September 2026. The real series is divided by the national CPI for the quarter containing each month (June 2017 quarter = 1000). Sources: QV public HPI API; Stats NZ CPI.</p>
+      <div class="chart-box" id="chart-price" role="img" aria-label="Line chart of the Auckland QV house price index in nominal and CPI-deflated real terms from 2007 to 2026, showing a peak around late 2021 and a large real decline to 2026."></div>
+      <p class="figure-description">The nominal index peaked at 2,996.5 in January 2022 and the real index peaked at 2,646.3 in December 2021. By September 2026 the nominal index was 24.8 percent below its peak and the real index was 37.7 percent below its real peak. The real series falls more because consumer prices rose while house prices fell.</p>
+    </div>
+
+    <h3>Affordability improved at the margin, but yield remains thin</h3>
+    <p>Gross rental yield was 3.58 percent in 2011, 2.37 percent in 2016, 2.20 percent in 2021 and 2.92 percent in 2026. The rise from the 2021 low reflects falling prices and rising rents, but a 2.92 percent gross yield is still thin. It ignores rates, insurance, maintenance, vacancy, transaction costs and tax. The price-to-income ratio, using average equalised value and median gross household income, was 10.70 in 2023 and 9.14 in 2025; using the 2025 income for 2026 gives 8.88, which is an overstatement if incomes grew. The 2025 income figure is provisional because Statistics NZ has flagged an error in the year-ended June 2025 release, with corrections due in February 2027.</p>
+    <p>On the cost side, national consumer price indexes show local authority rates and payments up 6.18 percent in the year to the September 2026 quarter, property maintenance services up 6.10 percent and dwelling insurance up 0.1 percent. Those are national indexes, not Auckland Council schedules, so they describe direction rather than the exact bill. The ownership costs used in the hurdle calculation are assumptions and are published in full.</p>
+
+    <div class="chart-container">
+      <h4>Figure 2: Gross yield has recovered only slightly while price-to-income remains high</h4>
+      <p class="chart-note">Left: gross rental yield, (median weekly rent for new bonds x 52) / average equalised value. Right: average equalised value / median gross household income. The three price-to-income observations use different income concepts: IDI 2023, HILS 2025 and HILS 2025 reused for 2026. Sources: QV; MBIE Tenancy Services; Stats NZ HILS; Auckland Council IDI estimate.</p>
+      <div class="chart-box tall" id="chart-affordability" role="img" aria-label="Two-panel chart. The left panel shows gross rental yield rising from about 3.2 percent in 2007 to a low near 2.2 percent in 2021 and 2.92 percent in 2026. The right panel shows price-to-income ratios of 10.7 in 2023, 9.1 in 2025 and 8.9 in 2026."></div>
+      <p class="figure-description">The gross yield reached its low of 2.20 percent in 2021 and recovered to 2.92 percent by September 2026. Price-to-income eased from 10.70 in 2023 to 9.14 in 2025 because incomes rose and values fell, but it remains far above the levels of the early 2010s. The 2026 ratio reuses the 2025 income and is therefore provisional.</p>
+    </div>
+
+    <h3>The return depends on the window and on transaction costs</h3>
+    <p>Because the answer changes with the start date, the report measures real returns over four matched windows and adjusts for an assumed five percent round-trip transaction cost. Over five years Auckland housing returned minus 7.6 percent a year in real terms, or minus 9.0 percent after costs. Over ten years it returned minus 2.5 percent a year, or minus 3.1 percent after costs. Over fifteen years it returned plus 2.5 percent a year, or plus 2.3 percent after costs. Over nineteen years it returned plus 1.3 percent a year, or plus 1.1 percent after costs. Cash after tax averaged between minus 1.7 and plus 0.1 percent a year across the same windows. The table below reports the same values, and the published data file contains every input.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Window</th><th>Housing, nominal total</th><th>Housing, real total</th><th>Housing, net real annualised</th><th>Cash, real after tax annualised</th></tr></thead>
+        <tbody>
+          <tr><td>5 years</td><td>minus 16.7 percent</td><td>minus 32.6 percent</td><td>minus 9.0 percent</td><td>minus 1.70 percent</td></tr>
+          <tr><td>10 years</td><td>plus 7.9 percent</td><td>minus 22.2 percent</td><td>minus 3.1 percent</td><td>minus 0.90 percent</td></tr>
+          <tr><td>15 years</td><td>plus 110.2 percent</td><td>plus 45.7 percent</td><td>plus 2.3 percent</td><td>minus 0.07 percent</td></tr>
+          <tr><td>19 years</td><td>plus 108.6 percent</td><td>plus 27.5 percent</td><td>plus 1.1 percent</td><td>plus 0.06 percent</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="chart-container">
+      <h4>Figure 3: Real returns depend heavily on the holding window and on transaction costs</h4>
+      <p class="chart-note">Annualised real returns by holding window. Housing is shown gross and net of an assumed five percent round-trip transaction cost; cash is the window-specific mean of six-month term deposit returns after 33 percent tax and CPI. Sources: QV; Stats NZ CPI; RBNZ B3; author calculations.</p>
+      <div class="chart-box" id="chart-returns" role="img" aria-label="Grouped bar chart of annualised real returns for four holding windows. Five-year housing returns are strongly negative, ten-year returns are negative, and fifteen and nineteen-year returns are positive, while cash returns are close to zero or negative."></div>
+      <p class="figure-description">The five-year window is dominated by the 2021 to 2026 downturn and shows a real loss of about 9.0 percent a year after costs. The fifteen and nineteen-year windows remain positive after costs, at about 2.3 and 1.1 percent a year. Cash after tax was slightly negative in the ten and fifteen-year windows and slightly positive in the nineteen-year window.</p>
+    </div>
+
+    <h3>Leverage carries the investment case, and the bank is paid first</h3>
+    <p>A two-year standard mortgage rate was 5.89 percent in August 2026, the floating standard rate was 6.26 percent, and the official cash rate was 2.75 percent. Against a 2.92 percent gross yield, the interest cost alone exceeds rental income by 2.97 percentage points before rates, insurance, maintenance and vacancy. The system net interest margin was 2.30 percent in the September 2025 quarter, within a range of 1.82 to 2.66 percent since 2000. The housing loan yield was 4.81 percent in June 2026 against a total deposit cost of 2.41 percent in November 2025, a gross gap of about 2.4 percentage points that is not the same as profit.</p>
+    <p>Household credit stress is currently low. The housing non-performing loan ratio was 0.56 percent in November 2025, against a GFC peak of 1.2 percent in October 2009. The system tier 1 capital ratio was 15.1 percent in March 2026, the core funding ratio was 89.5 percent against a 75 percent minimum, and offshore funding was 16.5 percent of total funding. The investor share of new mortgage lending was 19.5 percent in August 2026, down from a peak of 34.8 percent in 2016, and the first-home-buyer share was 20.5 percent. That figure is the RBNZ measure of first-home buyers as a share of new mortgage lending. A separate industry buyer-classification measure puts first-home buyers at about 30 percent of Auckland property purchases, which uses a different denominator and is not an official statistic. Household debt to disposable income was 127 percent at its last official observation in June 2021, and the interest burden was 5.3 percent, well below the 14.0 percent peak in September 2008.</p>
+    <p>Two conclusions follow. First, the buyer's instinct about leverage has support: at current yields a mortgage converts a low-yield asset into a bet on capital gains, and the bank earns its margin whether or not the bet pays. Second, the claim that only the bank and the agent benefit is too strong. Lenders bear funding and credit risk, and owners in the 2011 to 2021 upswing captured large gains. Leverage amplifies gains as well as losses. What the evidence supports is narrower and more useful: for this buyer, a mortgage would add a negative-carry bet on top of an already uncertain capital-gains bet.</p>
+
+    <h3>Younger cohorts own less, but the evidence shows constraint rather than rejection</h3>
+    <p>Auckland household ownership fell from 73.9 percent in 1986 to 63.8 percent in 2006, 61.5 percent in 2013, 59.4 percent in 2018 and 59.5 percent in 2023. National household ownership was 66.9 percent in 2006, 64.8 percent in 2013, 64.5 percent in 2018 and 66.0 percent in 2023, the first national increase since the early 1990s. Auckland did not share that increase.</p>
+    <p>Individual ownership by age shows the same pattern. Among people aged 30 to 34, ownership fell from 43.6 percent in 2006 to 37.4 percent in 2023. The 35 to 39 group fell from 56.6 to 49.2 percent, the 40 to 44 group from 64.8 to 56.8 percent, and the 25 to 29 group from 22.9 to 20.8 percent. The fall was steepest between 2006 and 2013, a seven-year gap because the 2011 Census was cancelled after the Canterbury earthquake.</p>
+    <p>The constraint evidence sits alongside the tenure data. The share of 20-year-olds in a child role in a family nucleus rose from 52.3 percent in 2018 to 53.0 percent in 2023, and at age 25 it rose from 24.3 to 25.6 percent. Families with adult children increased 27.3 percent between 2013 and 2023 against 13.9 percent for all families. Household crowding rose from 5.0 percent of households in 2013 to 6.2 percent in 2023. Median weekly rent in Auckland rose from 450 dollars in 2018 to 540 dollars in 2023. None of these is a measure of preference, and no representative survey of the desire to own versus rent was verified. The evidence supports a story of delayed household formation and affordability constraint, not a generation that has abandoned ownership.</p>
+
+    <div class="chart-container">
+      <h4>Figure 4: Younger cohorts own less, and Auckland ownership has drifted down since the 1980s</h4>
+      <p class="chart-note">Left: individual home ownership rates for selected age bands, New Zealand, 2006, 2013, 2018 and 2023. Right: household ownership rate, Auckland region, 1986 to 2023. Sources: Stats NZ Census tenure tables and 2023 Census figure data.</p>
+      <div class="chart-box tall" id="chart-ownership" role="img" aria-label="Two-panel chart. The left panel shows ownership rates for age bands 25 to 29, 30 to 34, 35 to 39 and 40 to 44 falling between 2006 and 2023. The right panel shows Auckland household ownership falling from 73.9 percent in 1986 to 59.5 percent in 2023."></div>
+      <p class="figure-description">Every prime-age band owns less in 2023 than in 2006. The 30 to 34 band fell from 43.6 to 37.4 percent, the 35 to 39 band from 56.6 to 49.2 percent and the 40 to 44 band from 64.8 to 56.8 percent. Auckland household ownership fell 14.4 percentage points between 1986 and 2023, with most of the fall before 2013.</p>
+    </div>
+
+    <h3>Policy has moved from supporting leverage to containing it</h3>
+    <p>The policy timeline is not a single regime. Loan-to-value limits were introduced in 2013 to slow high-leverage lending and were removed in 2020 during the pandemic. They were reinstated in 2021, tightened for investors, and progressively eased in 2023 and again in December 2025. The bright-line test was extended, then shortened to two years for sales from July 2024. Interest deductibility was removed from October 2021, restored to 80 percent from April 2024 and to 100 percent from April 2025. Debt-to-income limits were activated in July 2024. The first-home grant was discontinued in 2024. Deposit protection began in July 2025. Foreign buyers were restricted in 2018.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Date</th><th>Setting</th><th>What changed</th></tr></thead>
+        <tbody>
+          <tr><td>October 2013</td><td>LVR limits introduced</td><td>High-LVR lending capped at 10 percent of new lending.</td></tr>
+          <tr><td>August 2018</td><td>Foreign-buyer restriction</td><td>Most overseas persons required consent to buy residential land.</td></tr>
+          <tr><td>March 2021</td><td>LVR reinstated</td><td>Owner-occupier limit 20 percent of new lending above 80 percent LVR; investor limit 5 percent above 70 percent.</td></tr>
+          <tr><td>October 2021</td><td>Interest deductibility phased out</td><td>Residential investment property interest limitation began.</td></tr>
+          <tr><td>April 2024</td><td>Interest deductibility restored to 80 percent</td><td>Partial restoration for residential investment property.</td></tr>
+          <tr><td>July 2024</td><td>DTI limits and two-year bright-line</td><td>Debt-to-income limits activated with an LVR easing; bright-line period shortened to two years.</td></tr>
+          <tr><td>April 2025</td><td>Interest deductibility restored to 100 percent</td><td>Full deduction of interest on residential investment property.</td></tr>
+          <tr><td>July 2025</td><td>Depositor compensation scheme</td><td>Cover of up to 100,000 dollars per depositor per deposit taker.</td></tr>
+          <tr><td>December 2025</td><td>LVR eased further</td><td>Owner-occupier limit raised to 25 percent above 80 percent LVR; investor limit eased.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The table describes settings, not measured effects. The report does not claim that any single setting caused a given change in prices; interest rates, supply, migration and income growth moved at the same time. The useful conclusion for a buyer is that the regime has become less generous to leveraged investors and more focused on financial stability, while remaining supportive of owner-occupiers with stable income. That is a reason to evaluate a home as a home, not as a tax-efficient investment vehicle.</p>
+
+    <h3>The AI-capital boom is large, concentrated and increasingly debt-financed</h3>
+    <p>The evidence supports concern about the scale and financing of the AI boom, but not a claim that the boom is certainly a bubble. The four largest hyperscalers spent about 357.5 billion US dollars on property and equipment in their latest fiscal years, against 23.0 billion in 2015. The six largest technology firms in the dataset had a combined latest fiscal-year capex of 470.6 billion dollars and 593.7 billion across their latest four reported quarters. The S and P 500 tracker's top-ten weight is 38.4 percent and NVIDIA alone is 7.9 percent. The Shiller CAPE is 41.1, compared with 43.8 in January 2000 and 34.5 in January 2021. The Nasdaq Composite is 26,424.8 and only 5.3 percent below its 6 October 2026 peak, so the correction has not happened.</p>
+    <p>The financing evidence is the more relevant warning. Five AI hyperscalers were 3 percent of the outstanding US investment-grade stock at the end of 2025 but more than 15 percent of 2026 investment-grade issuance. AI issuers were 41 percent of non-refinance US high-yield issuance in 2026 against 1 percent of the high-yield index. The OECD estimate cited by the Bank of England puts the private-credit share of AI investment at 9 percent in 2024 and 34 percent in 2025. The ECB reports that up to 30 percent of a 3 trillion dollar data-centre buildout could be funded by private credit. Those are exactly the channels through which an AI capex reversal could become a credit event rather than a share-price event.</p>
+    <p>New Zealand's exposure is indirect but real. About 16.5 percent of bank funding was offshore in November 2025 and the core funding ratio was 89.5 percent, so a global funding shock would reach mortgage pricing before it reached house prices. KiwiSaver held 138.8 billion dollars at March 2026, including 68 billion dollars in growth funds, and the Super Fund held 93.5 billion dollars with 57 percent in listed equities. Net migration fell to 17,600 in the June 2026 year from a peak of 133,700 in the October 2023 year. A global repricing that reduced migration and lifted bank funding costs would hit Auckland demand and supply conditions at the same time.</p>
+
+    <div class="chart-container">
+      <h4>Figure 5: The AI capital boom is large, concentrated and increasingly financed with credit</h4>
+      <p class="chart-note">Top left: big-four hyperscaler capital expenditure, fiscal years, US dollars billion. Top right: Shiller CAPE at three dates. Bottom left: S and P 500 top-ten weight and NVIDIA weight, October 2026. Bottom right: AI-related credit shares, percent. Sources: SEC XBRL company facts; SPY holdings; Yale Shiller data and a third-party reprint; Bank of England and IMF publications.</p>
+      <div class="chart-box tall" id="chart-ai" role="img" aria-label="Four-panel chart. Big-four capex rises from about 23 billion dollars in 2015 to 357.5 billion in the latest fiscal year. Shiller CAPE is 43.8 in 2000, 34.5 in 2021 and 41.1 in 2026. The top ten S and P 500 weight is 38.4 percent and NVIDIA is 7.9 percent. AI issuers are 41 percent of non-refinance high-yield issuance but 1 percent of the high-yield index, and the private-credit share of AI investment rose from 9 to 34 percent."></div>
+      <p class="figure-description">The capex series rises about fifteen-fold between 2015 and the latest fiscal years. Valuation and concentration are high but below the 1999 CAPE peak. The credit panels show the financing shift that would matter in an unwind: AI borrowers are a small share of outstanding debt but a large share of new issuance, and private credit is funding a rising share of the buildout.</p>
+    </div>
+
+    <h3>Cash is defensive, but it is not a risk-free store of value</h3>
+    <p>At October 2026 settings, the official cash rate is 2.75 percent, the 90-day bank bill is 3.13 percent, the six-month term deposit rate is 3.53 percent and the one-year rate is 4.02 percent. Consumer price inflation is 3.7 percent a year. The six-month deposit therefore returns 0.18 percent negative in real terms before tax, and 0.77 to 1.51 percent negative after tax depending on the marginal rate. The one-year rate returns 0.30 percent positive before tax and 0.98 percent negative after 33 percent tax. A depositor on the top 39 percent rate faces a 1.51 percent real loss on the six-month rate.</p>
+    <p>The long-run picture is better but still thin. Over the 320 months from January 2000 to August 2026, the average real six-month deposit return was 1.93 percent before tax and 0.46 percent after 33 percent tax, or 0.20 percent at 39 percent. The after-tax real return was negative in 25.6 percent of months at 33 percent. In the high-inflation episode of 1987 to 1991, the six-month rate reached 18.00 percent in July 1987, yet at the inflation peak a 33 percent taxpayer still lost about 6 percent a year in real terms. In 2008 to 2011, at the CPI peak of 5.3 percent, the after-tax real return was minus 2.35 percent. Cash preserves purchasing power only when the nominal rate exceeds inflation after tax, and that is not the current position.</p>
+    <p>Deposit protection is real but capped. The New Zealand Depositor Compensation Scheme began on 1 July 2025 and covers up to 100,000 dollars per depositor per deposit taker. It is not a blanket guarantee, and it does not protect a large cash balance held with one institution. Cash also carries reinvestment risk, exchange-rate risk for a reader whose spending is in another currency, and the risk that a crisis produces a funding freeze or delayed access even where deposits are ultimately protected.</p>
+    <p>Compared with housing, cash has better liquidity, better crisis optionality in a deflationary bust, no transaction cost and no maintenance bill. It has worse inflation protection, no shelter, no imputed rent and a hard guarantee limit. In an inflationary crisis, cash is the asset that loses real value while nominal house prices may hold or rise; in a deflationary credit bust, cash is the asset that protects purchasing power while house prices fall. The regime matters more than the label.</p>
+  </section>
+
+  <section id="discussion">
+    <h2>Discussion</h2>
+    <p>The findings do not resolve into a single verdict. They resolve into a set of conditions under which buying, waiting and holding cash make sense. This section sets out the owning-versus-renting arithmetic, the generational interpretation, the AI-unwind stress matrix, the role of cash and a short set of decision rules.</p>
+
+    <h3>Shelter is not the same decision as investment</h3>
+    <p>The average equalised Auckland home is worth about 1.16 million dollars. At a 2.92 percent gross yield, the rent avoided is about 33,800 dollars a year. Assume ownership costs of 1.50 percent of value (rates 0.35 percent, insurance 0.30 percent and maintenance 0.85 percent, all assumptions within stated ranges). That is about 17,392 dollars a year, leaving a net shelter return of about 16,408 dollars, or 1.42 percent of value a year. The owner also bears capital risk, illiquidity and transaction costs. The renter pays rent from income and keeps the capital in cash, which at a 4.02 percent one-year deposit and 33 percent tax returns 2.69 percent nominal and minus 0.97 percent real at 3.7 percent inflation.</p>
+    <p>The comparison reduces to a simple hurdle: owning beats renting plus cash when real house-price growth exceeds the cash real return minus the net shelter return, plus the annualised transaction cost. At the current after-tax cash return of about minus 0.97 percent the hurdle is about minus 2.4 percent a year before transaction costs. With an assumed five percent round trip over ten years it is about minus 1.9 percent a year, and over five years about minus 1.4 percent a year. Using the long-run cash return of plus 0.46 percent a year, the hurdle is about minus 1.0 percent a year before costs. The table below shows the calculation; every assumption is published in the housing user cost dataset.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Item</th><th>Value</th><th>Basis</th></tr></thead>
+        <tbody>
+          <tr><td>Average equalised Auckland value</td><td>1,159,440 dollars</td><td>QV, September 2026</td></tr>
+          <tr><td>Gross rent avoided</td><td>33,800 dollars a year (2.92 percent)</td><td>MBIE bond median rent, 650 dollars a week</td></tr>
+          <tr><td>Total ownership costs</td><td>17,392 dollars a year (1.50 percent)</td><td>Assumption: rates 0.35, insurance 0.30, maintenance 0.85</td></tr>
+          <tr><td>Net shelter return</td><td>16,408 dollars a year (1.42 percent)</td><td>Rent avoided minus costs</td></tr>
+          <tr><td>Cash after tax</td><td>2.69 percent nominal; minus 0.97 percent real</td><td>4.02 percent one-year deposit; 33 percent tax; 3.7 percent CPI</td></tr>
+          <tr><td>Owning hurdle, current cash return</td><td>About minus 2.4 percent a year</td><td>Cash real return minus net shelter return</td></tr>
+          <tr><td>Owning hurdle, 10-year hold with 5 percent round trip</td><td>About minus 1.9 percent a year</td><td>Hurdle plus annualised transaction cost</td></tr>
+          <tr><td>Owning hurdle, long-run cash return</td><td>About minus 1.0 percent a year</td><td>0.46 percent long-run cash real return</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The interpretation is concrete. If Auckland real house prices fall more than about 1 to 2 percent a year over the buyer's horizon, renting and holding cash wins financially. If they fall less or rise, owning wins, before the non-financial value of security and control. Over the last five years real prices fell about 7.6 percent a year, so renting and cash clearly won. Over the last 19 years they rose about 1.3 percent a year, so owning won. The decision is not a referendum on whether property is a good investment in general. It is a judgement about the next decade's real growth relative to a hurdle of roughly minus 1 to minus 2 percent a year, and about whether the buyer can hold through a crisis without being forced to sell.</p>
+
+    <h3>What the generational evidence does and does not show</h3>
+    <p>The view that a new generation has changed its mind about housing is partly supported and partly not. Ownership has fallen for younger cohorts, and household formation is delayed. But the same data show rising rents, crowding, adult children staying longer and a first-home-buyer share that, on industry buyer-classification data rather than an official statistic, rose above 27 percent in early 2026 and about 30 percent in Auckland. The average age of an Auckland first-home buyer is 37, two to three years older than in 2019. That is a picture of people still trying to buy, later and with more help, not a generation that has rejected the idea.</p>
+    <p>A genuine preference shift would show up in different evidence: longer and more satisfied renting, lower stated desire to own, different household forms, and policy that treats secure renting as a permanent tenure. The available survey evidence is thinner than the claim requires. The Ipsos Issues Monitor in September 2026 found housing named among the three most important issues by 19 percent of respondents, fifth behind inflation at 63 percent, healthcare at 44 percent and the economy at 34 percent. That measures salience, not tenure preference. The General Social Survey finding that 22 percent of people in non-owner households would prefer a more suitable home, against 10 percent of owners, measures housing suitability. Neither establishes a change in the desire to own.</p>
+    <p>The practical conclusion is that the generational thesis is a slow force, not a reason to expect a sudden fall in demand. It may reduce the future rate of capital gain, but it does not by itself make ownership undesirable, and it may reverse if prices and rents move in favour of buyers.</p>
+
+    <h3>The AI-unwind stress test: the regime matters more than the multiplier</h3>
+    <p>The request for a 2027 crisis ten times larger than 2008 cannot be answered with one number. A tenfold repeat of the Auckland GFC price fall of 11.8 percent would be a fall larger than 100 percent. A tenfold repeat of the GFC's rise in unemployment, about 3 percentage points, would put the rate in the mid-30s. The report therefore uses a bounded ladder anchored to the most severe published stress tests. The RBNZ 2025 solvency stress test assumed unemployment of 10.5 percent and house prices 35 percent lower. The RBNZ 2020 very severe scenario assumed unemployment of 17.7 percent and residential and commercial property prices 48 percent lower. The RBNZ 2024 reverse stress test had banks designing scenarios with unemployment of 8 to 18 percent and house prices 30 to 55 percent lower. The IMF 2017 adverse scenario assumed unemployment above 10 percent and house prices 40 percent lower. The tail cell in this report sits near the most severe of these, not beyond the limits of the possible.</p>
+    <p>Six cells are modelled, plus a no-unwind reference. In the AI correction cells, global equities fall 25 percent and AI capex stops growing. Unemployment rises to 5.5 percent, Auckland nominal prices fall 5 percent in the disinflationary case or 3 percent in the inflationary case, and real prices fall 6.9 or 8.1 percent. In the AI credit bust cells, equities fall 40 percent, AI capex falls 25 percent, unemployment reaches 8.5 percent, and Auckland nominal prices fall 20 percent or 12 percent depending on the regime, with real falls of 20.8 or 17.8 percent. In the systemic unwind cells, equities fall 65 percent, AI capex falls 60 percent, unemployment reaches 15 percent, deposit access is impaired, and Auckland nominal prices fall 45 percent in the deflationary case or 25 percent in the inflationary case, with real falls of 44.4 or 31.2 percent.</p>
+    <p>The verdict is consistent across the six crisis cells: renting and holding cash produces a better two-year real position than buying. The cash return in the tail cells assumes that protected deposits are ultimately accessible; a depositor above the 100,000 dollar cap or in a failed institution would do worse. In the disinflationary tail, the owner loses about 41.6 percent of the initial position while the renter's cash gains 3.7 percent after tax. In the inflationary tail, the owner loses about 28.4 percent while the renter loses about 3.0 percent. The no-unwind reference reverses the result: buying gains about 1.4 percent while renting and cash loses about 0.3 percent over two years. The matrix therefore shows the price of insurance, not a free lunch. Waiting in cash is a bet that the crisis arrives; buying is a bet that it does not, or that the buyer can hold through it.</p>
+    <p>The historical analogues explain why the AI label is not enough. New Zealand real house prices rose 8.7 percent through the dot-com bust from 2000 to 2002, because that was an equity valuation event, not a credit event, and interest rates fell. New Zealand real house prices fell 15.7 percent in the GFC, which was a credit event with a funding freeze and a global recession. The current AI boom has both an equity valuation channel and a credit channel. The equity channel alone is not a housing disaster; the credit channel is. That is why the report watches AI issuance shares, private-credit exposure and bank funding costs rather than the Nasdaq alone. It is also why the inflation regime matters: in the 1970 to 1990 period, New Zealand real house prices rose 34.7 percent despite inflation peaking near 18.9 percent, so housing was a partial long-run hedge, while cash lost real value even at an 18 percent deposit rate.</p>
+    <p>For the buyer, the scenario is informative rather than predictive. If the buyer is confident that an AI-driven credit event will arrive in 2027, waiting in cash is financially superior in every modelled cell. If the buyer is not confident, the no-unwind reference and the 19-year real return argue for buying, provided the buyer can hold through the stress. The decision cannot be reduced to a forecast, but it can be made robust to both outcomes.</p>
+
+    <h3>Is holding cash a good option?</h3>
+    <p>Cash is a good option for the right job. It is the only liquid, capital-certain asset available without transaction cost, and in a deflationary credit bust it preserves purchasing power while house prices fall. It is also the natural source of dry powder if prices fall and a buyer wants to enter. But cash is a poor long-run store of value in the current regime: after tax and inflation it loses about 1 to 1.5 percent a year, and it lost 6.1 percent a year in real terms at the 1987 inflation peak even with an 18 percent deposit rate. It carries bank risk above 100,000 dollars per institution, and it offers no shelter, no imputed rent and no protection against a housing shortage.</p>
+    <p>A defensible cash strategy is therefore a barbell. Hold enough insured cash for 12 to 24 months of spending and for crisis optionality, spread below the guarantee cap where necessary. Keep the rest of the portfolio diversified rather than concentrated in one asset or one currency. Do not treat a term deposit as an investment strategy, and do not measure the safety of cash by its nominal balance. The relevant measure is real purchasing power after tax, and on that measure cash is currently negative.</p>
+
+    <h3>The simple suggestion: six rules and a checklist</h3>
+    <p>The evidence supports a short set of rules for a buyer who does not want a mortgage. They are deliberately conditional, because the data do not support a universal buy or wait call.</p>
+    <ol>
+      <li>Separate shelter from investment. If you are buying a home to live in, judge it on a ten-year living plan, total cost and security, not on the capital gain you hope to earn. If you are buying an investment, a 2.92 percent gross yield and a 5.89 percent mortgage rate is a negative-carry bet before costs.</li>
+      <li>Run the hurdle before you commit. Owning beats renting plus cash only if Auckland real house prices do better than roughly minus 1 to minus 2 percent a year over your horizon, given current cash returns, assumed ownership costs and transaction costs. If you expect worse, waiting is rational.</li>
+      <li>Stress-test survival, not prediction. Ask whether you could hold through a 35 to 50 percent nominal price fall, unemployment of 10 to 18 percent and 12 to 24 months of illiquidity without being forced to sell. If the answer is no, do not buy, or buy a smaller and cheaper home.</li>
+      <li>Do not use a mortgage to fix a yield problem. If the property does not work with cash, a mortgage does not make the economics better; it adds a negative carry and a margin call. A mortgage can be rational for an owner-occupier with stable income and a long horizon, but it is a separate risk decision, not a way to make a thin yield acceptable.</li>
+      <li>Hold cash as insurance, not as a plan. Size it to 12 to 24 months of spending and to the crisis opportunity you want to be able to take, keep it within the 100,000 dollar per-institution guarantee, and do not hold all your wealth in New Zealand dollars.</li>
+      <li>Decide on triggers, not forecasts. Write down the observable conditions that would make you buy, wait or walk away, and review them quarterly. The trigger list below is a starting point.</li>
+    </ol>
+    <p>Triggers that would support buying: Auckland gross yield above 4 percent; price-to-income below 6; real prices stabilising for four or more quarters; net migration turning positive again; mortgage rates below 5 percent; and the buyer's income secure for five years. Triggers that would support waiting: AI capex guidance being cut sharply; high-yield credit spreads widening materially; private-credit defaults rising; New Zealand unemployment above 6.5 percent; housing non-performing loans above 1 percent; bank funding costs rising; net migration turning negative; and Auckland rents falling in nominal terms. No single trigger is decisive, and the list should be adapted to the buyer's circumstances.</p>
+    <p>Two non-financial factors deserve weight. The first is security of tenure: an owner-occupied home cannot be ended by a landlord's decision, and the average owner stays 10.6 years at their usual residence against 4.6 years for non-owners. The second is the option to customise, renovate and stay. Those are real benefits that the hurdle calculation does not monetise, and they can justify buying even when the financial advantage is marginal.</p>
+
+    <h3>What would change this conclusion</h3>
+    <p>The conclusion is conditional on evidence that could change. It would strengthen the case for buying if Auckland real prices stabilised for several years, if rents reaccelerated faster than costs, if mortgage rates fell materially below gross yields, if the deposit guarantee were expanded, or if the AI boom were shown to be primarily productive investment rather than a credit-financed valuation cycle. It would strengthen the case for waiting if AI capital expenditure guidance were cut sharply, if credit spreads widened and private-credit stress appeared, if New Zealand unemployment and arrears rose, if net migration turned negative, or if real prices continued to fall faster than the hurdle. The report will be wrong in a useful way if it makes those conditions explicit enough to be checked.</p>
+
+    <div class="chart-container">
+      <h4>Figure 6: An AI-unwind stress would hurt a buyer in every severity, but by very different amounts</h4>
+      <p class="chart-note">Hypothetical scenarios, author assumptions anchored to RBNZ, IMF and BIS stress tests and historical episodes. Values are percentage changes over a two-year window; the owner position excludes transaction costs and assumes the owner holds through the period. No probabilities are assigned. The reference row is a base case, not a forecast. Sources: stress anchors and historical analogues in the evidence ledger.</p>
+      <div class="chart-box tall" id="chart-scenario" role="img" aria-label="Heatmap with seven scenario rows and four outcome columns. In every crisis row the renter and cash position is better than the owner position; in the no-unwind reference row the owner position is better."></div>
+      <p class="figure-description">In all six crisis cells, renting and holding cash outperforms buying over two years. In the disinflationary tail the owner loses about 41.6 percent while the renter gains 3.7 percent; in the inflationary tail the owner loses about 28.4 percent while the renter loses about 3.0 percent. In the no-unwind reference, buying gains about 1.4 percent while renting and cash loses about 0.3 percent. The matrix measures the cost of insurance, not a certain outcome.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Decision test</th><th>Question</th><th>Pass condition</th></tr></thead>
+        <tbody>
+          <tr><td>Shelter or investment</td><td>Is this mainly a home to live in, or a return-seeking investment?</td><td>Pass as shelter if the home fits a ten-year living plan; fails as an investment if the return depends on capital gain.</td></tr>
+          <tr><td>Holding horizon</td><td>Can I hold without selling for at least ten years?</td><td>Pass at ten years or more with safe cash flows; fails if a sale within five years is likely.</td></tr>
+          <tr><td>Crisis survivability</td><td>Would a 35 to 50 percent nominal price fall and 12 to 24 months of illiquidity force a sale?</td><td>Pass if no, and reserves cover two years of costs; fails if the purchase relies on selling or refinancing.</td></tr>
+          <tr><td>Real return hurdle</td><td>Is real house-price growth likely to exceed about minus 1 to minus 2 percent a year?</td><td>Pass if expected real growth is above the hurdle; fails if you expect a sustained real decline.</td></tr>
+          <tr><td>Cash safety</td><td>Is my cash below 100,000 dollars per deposit taker and enough for liquidity?</td><td>Pass if insured, diversified and sufficient; fails if all cash sits with one bank.</td></tr>
+          <tr><td>Liquidity</td><td>Do I keep 12 to 24 months of spending outside the home?</td><td>Pass if yes; fails if all capital goes into the property.</td></tr>
+          <tr><td>Alternatives</td><td>Have I compared the home decision with renting plus a diversified portfolio?</td><td>Pass if the alternative is explicitly costed; fails if cash versus house is treated as the only choice.</td></tr>
+          <tr><td>Leverage</td><td>If I used a mortgage, would the yield cover the interest?</td><td>Not applicable for a cash buyer; a 2.92 percent yield against a 5.89 percent mortgage does not cover interest before costs.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="opportunities">
+    <h2>Research Opportunities</h2>
+    <p>Four gaps limit what this brief can settle. The first is price data. Continuous free REINZ Auckland history is paywalled, so the report relies on the QV index and cannot test a 20-year window. A licensed REINZ series, or agreement to publish a historical extract, would materially improve the analysis. The second is debt. The official household debt-to-disposable-income series stops in 2021, which prevents a current measure of debt service and forces the report to use the 2021 observation and the interest burden series instead. A consistent current series would clarify how much buffer households actually have.</p>
+    <p>The third gap is preference. No representative, publicly verified survey of the desire to own versus rent was found. A longitudinal tenure and attitudes survey, linked to the census, would let researchers separate preference from constraint instead of inferring one from the other. The fourth is AI-credit exposure. New Zealand bank and non-bank exposure to AI-related credit, data-centre lending and private credit is not publicly disclosed in a comparable form. Better disclosure would allow a direct mapping from a global AI unwind to New Zealand funding costs and mortgage pricing.</p>
+    <p>Three smaller opportunities would improve future versions of this work: Auckland-specific rates and insurance series, which are currently proxied with national CPI indexes and assumptions; suburb-level price and rent data, which are outside the scope of a market-level brief but matter for a real purchase; and deposit-access stress testing, which is assumed rather than measured in the tail scenario. Each is feasible with better data access and none requires a new model.</p>
+  </section>
+
+  <section id="replication">
+    <h2>Data Availability and Replication</h2>
+    <p>All compiled datasets, the methodology note and the Python replication script are available below. The script reads the saved CSV files, validates units and denominators, prints the statistics used in this report and summary, and regenerates all six PNG figures from the same values. It does not embed chart-data arrays.</p>
+    <p><a href="data/README_methodology.txt">Read the full methodology and codebook</a> &middot; <a href="scripts/replicate.py">Download the replication script</a></p>
+    <ul class="download-list">
+      <li><a href="data/auckland_price_index.csv">auckland_price_index.csv</a></li>
+      <li><a href="data/affordability_yield.csv">affordability_yield.csv</a></li>
+      <li><a href="data/real_returns.csv">real_returns.csv</a></li>
+      <li><a href="data/ownership_cohorts.csv">ownership_cohorts.csv</a></li>
+      <li><a href="data/migration.csv">migration.csv</a></li>
+      <li><a href="data/cash_returns.csv">cash_returns.csv</a></li>
+      <li><a href="data/credit_stress.csv">credit_stress.csv</a></li>
+      <li><a href="data/policy_timeline.csv">policy_timeline.csv</a></li>
+      <li><a href="data/ai_capital_cycle.csv">ai_capital_cycle.csv</a></li>
+      <li><a href="data/nz_transmission.csv">nz_transmission.csv</a></li>
+      <li><a href="data/stress_anchors.csv">stress_anchors.csv</a></li>
+      <li><a href="data/housing_user_cost.csv">housing_user_cost.csv</a></li>
+      <li><a href="data/scenario_assumptions.csv">scenario_assumptions.csv</a></li>
+      <li><a href="data/scenario_outcomes.csv">scenario_outcomes.csv</a></li>
+      <li><a href="data/transmission_channels.csv">transmission_channels.csv</a></li>
+      <li><a href="data/decision_tests.csv">decision_tests.csv</a></li>
+      <li><a href="data/analysis_statistics.csv">analysis_statistics.csv</a></li>
+    </ul>
+    <p>The public files reproduce the reported measures and assumptions. They do not include paywalled REINZ reports or copyrighted source documents. Source locators and permitted local verification records are documented in the methodology.</p>
+  </section>
+
+  <section id="references">
+    <h2>References</h2>
+    <div class="ref-item">[1] Jorda, O., Knoll, K., Kuvshinov, D., Schularick, M., and Taylor, A. M. (2019). The Rate of Return on Everything, 1870-2015. <em>Quarterly Journal of Economics</em>. <a href="https://doi.org/10.1093/qje/qjz012">https://doi.org/10.1093/qje/qjz012</a></div>
+    <div class="ref-item">[2] Shiller, R. J. (2015). <em>Irrational Exuberance</em>. Princeton University Press. Data updated at <a href="https://shillerdata.com/">https://shillerdata.com/</a>. Accessed 22 October 2026.</div>
+    <div class="ref-item">[3] International Monetary Fund (2026). <em>Global Financial Stability Report, April 2026</em>. Washington, DC. Archived copy recorded in the source ledger.</div>
+    <div class="ref-item">[4] Bank of England (2026). <em>Financial Stability Report, July 2026</em>. London. Archived copy recorded in the source ledger.</div>
+    <div class="ref-item">[5] European Central Bank (2026). <em>Financial Stability Review, May 2026</em>. Frankfurt. Archived copy recorded in the source ledger.</div>
+    <div class="ref-item">[6] Reserve Bank of New Zealand (2025). <em>Financial Stability Report, November 2025</em> and 2025 bank solvency stress test results, Reserve Bank Bulletin Vol. 88 No. 11. Archived copies recorded in the source ledger.</div>
+    <div class="ref-item">[7] Reserve Bank of New Zealand (2024). <em>Financial Stability Report, November 2024</em>, reverse stress test special topic. Archived copy recorded in the source ledger.</div>
+    <div class="ref-item">[8] International Monetary Fund (2017). <em>New Zealand: Financial Sector Assessment Program, Technical Note on Stress Testing the Banking Sector and Systemic Risk Analysis</em>. IMF Country Report No. 17/119. Archived copy recorded in the source ledger.</div>
+    <div class="ref-item">[9] Statistics New Zealand (2023-2026). Census tenure tables, Household Income and Living Survey, consumers price index, migration and rental price releases. <a href="https://www.stats.govt.nz/">https://www.stats.govt.nz/</a>. Accessed 22 October 2026.</div>
+    <div class="ref-item">[10] Quotable Value (2026). QV House Price Index public API, Auckland region. <a href="https://www.qv.co.nz/">https://www.qv.co.nz/</a>. Accessed 22 October 2026.</div>
+    <div class="ref-item">[11] Ministry of Business, Innovation and Employment (2026). Tenancy Services rental bond data. <a href="https://www.tenancy.govt.nz/">https://www.tenancy.govt.nz/</a>. Accessed 22 October 2026.</div>
+    <div class="ref-item">[12] Bank for International Settlements (2026). Property price, effective exchange rate, credit and policy rate datasets. <a href="https://www.bis.org/statistics/">https://www.bis.org/statistics/</a>. Accessed 22 October 2026.</div>
+  </section>
+
+  <section id="sources">
+    <h2>Sources</h2>
+    <div class="table-wrap">
+      <table class="source-table">
+        <thead><tr><th>Source</th><th>Use in this report</th><th>Access or observation date</th></tr></thead>
+        <tbody>
+          <tr><td>QV House Price Index API</td><td>Auckland nominal and real price path</td><td>22 October 2026</td></tr>
+          <tr><td>Stats NZ</td><td>CPI, census tenure, household income, rents, migration</td><td>2023 to 2026 releases</td></tr>
+          <tr><td>MBIE Tenancy Services</td><td>Auckland bond rents</td><td>August 2026</td></tr>
+          <tr><td>Reserve Bank of New Zealand</td><td>Mortgage rates, credit, capital, funding and stress tests</td><td>Archived captures to October 2026</td></tr>
+          <tr><td>Inland Revenue</td><td>Marginal tax rates and property tax settings</td><td>22 October 2026</td></tr>
+          <tr><td>SEC XBRL company facts</td><td>Hyperscaler capital expenditure</td><td>Filings to October 2026</td></tr>
+          <tr><td>Bank of England, ECB, IMF, BIS, Federal Reserve</td><td>AI financing, stress anchors and financial stability</td><td>2025 to 2026 publications</td></tr>
+          <tr><td>FMA and New Zealand Super Fund</td><td>KiwiSaver and Super Fund exposure</td><td>March and June 2026</td></tr>
+          <tr><td>REINZ</td><td>Official cross-reference at two dates</td><td>July 2022 and September 2026</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The complete source and claim ledgers contain exact locators, archived snapshots, hashes and limitations. They remain in the project evidence folder for audit and replication.</p>
+  </section>
+
+  <footer>
+    <p>Dr Yuqian Zhang. Research brief prepared with verified public data and archived official sources. Report, data and code are open for inspection; source documents remain subject to their publishers' terms. This is research, not financial advice.</p>
+  </footer>
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  function parseCsv(text) {
+    var rows = [];
+    var row = [];
+    var field = "";
+    var quoted = false;
+    for (var i = 0; i < text.length; i += 1) {
+      var ch = text[i];
+      var next = text[i + 1];
+      if (quoted) {
+        if (ch === '"' && next === '"') {
+          field += '"';
+          i += 1;
+        } else if (ch === '"') {
+          quoted = false;
+        } else {
+          field += ch;
+        }
+      } else if (ch === '"') {
+        quoted = true;
+      } else if (ch === ",") {
+        row.push(field);
+        field = "";
+      } else if (ch === "\n") {
+        row.push(field);
+        rows.push(row);
+        row = [];
+        field = "";
+      } else if (ch !== "\r") {
+        field += ch;
+      }
+    }
+    if (field !== "" || row.length) {
+      row.push(field);
+      rows.push(row);
+    }
+    var headers = rows.shift().map(function (d) { return d.trim(); });
+    return rows.filter(function (r) { return r.some(function (v) { return v !== ""; }); }).map(function (r) {
+      var obj = {};
+      headers.forEach(function (h, i) { obj[h] = r[i]; });
+      return obj;
+    });
+  }
+
+  function loadCsv(path) {
+    return fetch(path).then(function (response) {
+      if (!response.ok) throw new Error("Could not load " + path);
+      return response.text();
+    }).then(parseCsv);
+  }
+
+  function num(value) {
+    if (value === null || value === undefined) return null;
+    var text = String(value).trim();
+    if (text === "" || text.toLowerCase() === "nan") return null;
+    var parsed = Number(text);
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+
+  var palette = {
+    pine: "#1f4d3f",
+    pineLight: "#6a9c8b",
+    ochre: "#a86b2d",
+    slate: "#60758a",
+    muted: "#6a685e",
+    text: "#23241f",
+    grid: "#ded8ca",
+    paper: "#fffdf8",
+    red: "#a23b32",
+    cream: "#f1ece0"
+  };
+
+  var reducedMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var animationDuration = reducedMotion ? 0 : 450;
+  var chartInstances = [];
+  var mobile = window.innerWidth < 760;
+
+  function baseAxis(extra) {
+    return Object.assign({
+      axisLine: { lineStyle: { color: palette.grid } },
+      axisTick: { show: false },
+      axisLabel: { color: palette.muted, fontFamily: "Inter, sans-serif", fontSize: 10 },
+      splitLine: { lineStyle: { color: palette.grid, opacity: 0.5 } }
+    }, extra || {});
+  }
+
+  function figureNote() {
+    return {
+      textStyle: { color: palette.muted, fontFamily: "Inter, sans-serif", fontSize: 10 },
+      left: "center",
+      bottom: 0
+    };
+  }
+
+  Promise.all([
+    loadCsv("data/auckland_price_index.csv"),
+    loadCsv("data/affordability_yield.csv"),
+    loadCsv("data/real_returns.csv"),
+    loadCsv("data/ownership_cohorts.csv"),
+    loadCsv("data/ai_capital_cycle.csv"),
+    loadCsv("data/scenario_outcomes.csv")
+  ]).then(function (loaded) {
+    var price = loaded[0];
+    var affordability = loaded[1];
+    var returns = loaded[2];
+    var ownership = loaded[3];
+    var ai = loaded[4];
+    var scenarios = loaded[5];
+
+    // Figure 1: nominal and real price index
+    var priceMonths = price.map(function (row) { return row.month; });
+    var nominal = price.map(function (row) { return num(row.nominal_index); });
+    var real = price.map(function (row) { return num(row.real_index); });
+    var chart1 = echarts.init(document.getElementById("chart-price"));
+    chart1.setOption({
+      animationDuration: animationDuration,
+      color: [palette.ochre, palette.pine],
+      grid: { left: 58, right: 26, top: 46, bottom: 54 },
+      tooltip: {
+        trigger: "axis",
+        valueFormatter: function (v) { return v == null ? "No observation" : Number(v).toFixed(1); }
+      },
+      legend: {
+        top: 6,
+        textStyle: { color: palette.muted, fontFamily: "Inter, sans-serif", fontSize: 11 },
+        data: ["Nominal index", "Real index (CPI-deflated)"]
+      },
+      xAxis: baseAxis({
+        type: "category",
+        data: priceMonths,
+        boundaryGap: false,
+        axisLabel: {
+          color: palette.muted,
+          fontFamily: "Inter, sans-serif",
+          fontSize: 10,
+          interval: function (index) {
+            return priceMonths[index] && priceMonths[index].slice(5, 7) === "01";
+          },
+          formatter: function (value) { return value.slice(0, 4); }
+        }
+      }),
+      yAxis: baseAxis({
+        type: "value",
+        name: "Index, Jan 2007 = 1000",
+        nameLocation: "middle",
+        nameRotate: 90,
+        nameGap: 44,
+        nameTextStyle: { color: palette.muted, fontFamily: "Inter, sans-serif", fontSize: 10 }
+      }),
+      series: [
+        {
+          name: "Nominal index",
+          type: "line",
+          symbol: "none",
+          lineStyle: { width: 2.2, color: palette.ochre },
+          itemStyle: { color: palette.ochre },
+          data: nominal,
+          markPoint: {
+            symbolSize: 10,
+            label: { show: false },
+            itemStyle: { color: palette.ochre },
+            data: [{ type: "max", name: "Nominal peak" }]
+          }
+        },
+        {
+          name: "Real index (CPI-deflated)",
+          type: "line",
+          symbol: "none",
+          lineStyle: { width: 2.4, color: palette.pine },
+          itemStyle: { color: palette.pine },
+          areaStyle: { color: palette.pine, opacity: 0.06 },
+          data: real,
+          markPoint: {
+            symbolSize: 10,
+            label: { show: false },
+            itemStyle: { color: palette.pine },
+            data: [{ type: "max", name: "Real peak" }]
+          }
+        }
+      ]
+    });
+    chartInstances.push(chart1);
+
+    // Figure 2: yield and price-to-income
+    var yieldRows = affordability.filter(function (row) { return num(row.gross_yield_pct) != null; });
+    var piRows = affordability.filter(function (row) { return num(row.price_to_income_ratio) != null; });
+    var chart2 = echarts.init(document.getElementById("chart-affordability"));
+    var grids = mobile
+      ? [{ left: 54, right: 22, top: 38, height: 190 }, { left: 54, right: 22, top: 300, height: 190 }]
+      : [{ left: 58, right: "52%", top: 38, bottom: 58 }, { left: "56%", right: 22, top: 38, bottom: 58 }];
+    var xAxes = mobile
+      ? [
+          baseAxis({ type: "category", data: yieldRows.map(function (r) { return r.year; }), gridIndex: 0, axisLabel: { color: palette.muted, fontSize: 9, interval: 4 } }),
+          baseAxis({ type: "category", data: piRows.map(function (r) { return r.year; }), gridIndex: 1 })
+        ]
+      : [
+          baseAxis({ type: "category", data: yieldRows.map(function (r) { return r.year; }), gridIndex: 0, axisLabel: { color: palette.muted, fontSize: 9, interval: 4 } }),
+          baseAxis({ type: "category", data: piRows.map(function (r) { return r.year; }), gridIndex: 1 })
+        ];
+    var yAxes = [
+      baseAxis({ type: "value", name: "Gross yield (%)", nameTextStyle: { color: palette.muted, fontSize: 10 }, nameLocation: "middle", nameGap: 34, nameRotate: 90, min: 1.8, max: 4, gridIndex: 0 }),
+      baseAxis({ type: "value", name: "Price / income (ratio)", nameTextStyle: { color: palette.muted, fontSize: 10 }, nameLocation: "middle", nameGap: 38, nameRotate: 90, min: 0, max: 12, gridIndex: 1 })
+    ];
+    chart2.setOption({
+      animationDuration: animationDuration,
+      color: [palette.pine, palette.ochre],
+      tooltip: { trigger: "axis" },
+      title: mobile
+        ? [{ text: "Gross rental yield", left: "center", top: 8, textStyle: { fontSize: 12, color: palette.text } }, { text: "Price-to-income", left: "center", top: 272, textStyle: { fontSize: 12, color: palette.text } }]
+        : [{ text: "Gross rental yield", left: "26%", top: 8, textStyle: { fontSize: 12, color: palette.text } }, { text: "Price-to-income", left: "76%", top: 8, textStyle: { fontSize: 12, color: palette.text } }],
+      grid: grids,
+      xAxis: xAxes,
+      yAxis: yAxes,
+      series: [
+        {
+          name: "Gross yield",
+          type: "line",
+          xAxisIndex: 0,
+          yAxisIndex: 0,
+          symbolSize: 6,
+          lineStyle: { width: 2.4, color: palette.pine },
+          itemStyle: { color: palette.pine },
+          data: yieldRows.map(function (row) { return num(row.gross_yield_pct); }),
+          markLine: {
+            symbol: "none",
+            lineStyle: { color: palette.ochre, type: "dashed" },
+            label: { show: false },
+            data: [{ yAxis: 2.92 }]
+          }
+        },
+        {
+          name: "Price-to-income",
+          type: "bar",
+          xAxisIndex: 1,
+          yAxisIndex: 1,
+          barWidth: "42%",
+          itemStyle: { color: palette.ochre },
+          data: piRows.map(function (row) { return num(row.price_to_income_ratio); }),
+          label: { show: true, position: "top", formatter: "{c}", color: palette.ochre, fontSize: 10 }
+        }
+      ]
+    });
+    chartInstances.push(chart2);
+
+    // Figure 3: real returns by window
+    var windowOrder = ["5 years", "10 years", "15 years, post-GFC", "19 years, 2007-2026"];
+    var windowLabels = ["5 years", "10 years", "15 years", "19 years"];
+    var returnByWindow = {};
+    returns.forEach(function (row) { returnByWindow[row.window] = row; });
+    var grossReal = windowOrder.map(function (w) { return num((returnByWindow[w] || {}).housing_real_annualised_pct); });
+    var netReal = windowOrder.map(function (w) { return num((returnByWindow[w] || {}).housing_net_real_annualised_pct); });
+    var cashReal = windowOrder.map(function (w) { return num((returnByWindow[w] || {}).cash_real_annualised_pct); });
+    var chart3 = echarts.init(document.getElementById("chart-returns"));
+    chart3.setOption({
+      animationDuration: animationDuration,
+      color: [palette.pine, palette.slate, palette.ochre],
+      grid: { left: 60, right: 24, top: 46, bottom: 48 },
+      tooltip: { trigger: "axis", valueFormatter: function (v) { return v == null ? "No observation" : Number(v).toFixed(1) + "% a year"; } },
+      legend: {
+        top: 6,
+        textStyle: { color: palette.muted, fontFamily: "Inter, sans-serif", fontSize: 11 },
+        data: ["Housing, gross of costs", "Housing, net of 5% round trip", "Cash after tax"]
+      },
+      xAxis: baseAxis({ type: "category", data: windowLabels }),
+      yAxis: baseAxis({ type: "value", name: "Real return (% a year)", nameTextStyle: { color: palette.muted, fontSize: 10 }, nameLocation: "middle", nameGap: 46, nameRotate: 90 }),
+      series: [
+        { name: "Housing, gross of costs", type: "bar", data: grossReal, itemStyle: { color: palette.pine }, barGap: "12%" },
+        { name: "Housing, net of 5% round trip", type: "bar", data: netReal, itemStyle: { color: palette.slate } },
+        { name: "Cash after tax", type: "bar", data: cashReal, itemStyle: { color: palette.ochre } }
+      ]
+    });
+    chartInstances.push(chart3);
+
+    // Figure 4: ownership by age and Auckland household tenure
+    var ageBands = ["25-29", "30-34", "35-39", "40-44"];
+    var censusYears = [2006, 2013, 2018, 2023];
+    var individual = ownership.filter(function (row) {
+      return row.geography === "New Zealand" && row.measure_used !== "household tenure (Auckland region)";
+    });
+    function ageSeries(band) {
+      return censusYears.map(function (year) {
+        var match = individual.find(function (row) {
+          return Number(row.census_year) === year && row.age_band === band;
+        });
+        return match ? num(match.rate_percent) : null;
+      });
+    }
+    var auckland = ownership.filter(function (row) {
+      return row.geography === "Auckland Region" && row.measure_used === "household tenure (Auckland region)";
+    }).sort(function (a, b) { return Number(a.census_year) - Number(b.census_year); });
+    var chart4 = echarts.init(document.getElementById("chart-ownership"));
+    var ownershipGrids = mobile
+      ? [{ left: 46, right: 18, top: 42, height: 190 }, { left: 46, right: 18, top: 300, height: 190 }]
+      : [{ left: 48, right: "50%", top: 42, bottom: 58 }, { left: "54%", right: 20, top: 42, bottom: 58 }];
+    chart4.setOption({
+      animationDuration: animationDuration,
+      color: [palette.pine, palette.pineLight, palette.ochre, palette.slate],
+      tooltip: { trigger: "axis", valueFormatter: function (v) { return v == null ? "No observation" : Number(v).toFixed(1) + "%"; } },
+      title: mobile
+        ? [{ text: "Individual ownership by age, New Zealand", left: "center", top: 8, textStyle: { fontSize: 11, color: palette.text } }, { text: "Household ownership, Auckland", left: "center", top: 268, textStyle: { fontSize: 11, color: palette.text } }]
+        : [{ text: "Individual ownership by age, New Zealand", left: "26%", top: 8, textStyle: { fontSize: 11, color: palette.text } }, { text: "Household ownership, Auckland", left: "76%", top: 8, textStyle: { fontSize: 11, color: palette.text } }],
+      legend: {
+        top: mobile ? 26 : 26,
+        textStyle: { color: palette.muted, fontFamily: "Inter, sans-serif", fontSize: 10 },
+        data: ageBands
+      },
+      grid: ownershipGrids,
+      xAxis: [
+        baseAxis({ type: "category", data: censusYears.map(String), gridIndex: 0 }),
+        baseAxis({ type: "category", data: auckland.map(function (r) { return String(r.census_year); }), gridIndex: 1 })
+      ],
+      yAxis: [
+        baseAxis({ type: "value", name: "Ownership (%)", nameTextStyle: { color: palette.muted, fontSize: 10 }, nameLocation: "middle", nameGap: 30, nameRotate: 90, min: 0, max: 80, gridIndex: 0 }),
+        baseAxis({ type: "value", name: "Ownership (%)", nameTextStyle: { color: palette.muted, fontSize: 10 }, nameLocation: "middle", nameGap: 30, nameRotate: 90, min: 50, max: 80, gridIndex: 1 })
+      ],
+      series: ageBands.map(function (band, index) {
+        return {
+          name: band,
+          type: "line",
+          xAxisIndex: 0,
+          yAxisIndex: 0,
+          symbolSize: 6,
+          lineStyle: { width: 2.2, color: [palette.pine, palette.pineLight, palette.ochre, palette.slate][index] },
+          itemStyle: { color: [palette.pine, palette.pineLight, palette.ochre, palette.slate][index] },
+          data: ageSeries(band)
+        };
+      }).concat([{
+        name: "Auckland households",
+        type: "line",
+        xAxisIndex: 1,
+        yAxisIndex: 1,
+        symbolSize: 6,
+        lineStyle: { width: 2.6, color: palette.pine },
+        itemStyle: { color: palette.pine },
+        areaStyle: { color: palette.pine, opacity: 0.07 },
+        data: auckland.map(function (row) { return num(row.rate_percent); })
+      }])
+    });
+    chartInstances.push(chart4);
+
+    // Figure 5: AI capital cycle panels
+    var capexRows = ai.filter(function (row) {
+      return row.panel === "AI capital expenditure" && row.series.indexOf("fiscal year") >= 0;
+    }).sort(function (a, b) { return Number(a.period) - Number(b.period); });
+    var capexCategories = capexRows.map(function (row) { return row.period; });
+    var capexData = capexRows.map(function (row) { return num(row.value); });
+    var capeRows = ai.filter(function (row) {
+      return row.panel === "Valuation and concentration" && row.series === "Shiller CAPE";
+    });
+    var capeLabels = ["2000-01", "2021-01", "2026-10-21"];
+    var capeValues = capeLabels.map(function (label) {
+      var match = capeRows.find(function (row) { return row.period === label; });
+      return match ? num(match.value) : null;
+    });
+    var weightRows = ai.filter(function (row) {
+      return row.panel === "Valuation and concentration" && row.series.indexOf("weight") >= 0;
+    });
+    var weightLabels = ["Top 10 S and P 500 weight", "NVIDIA weight"];
+    var weightValues = weightRows.slice(0, 2).map(function (row) { return num(row.value); });
+    var creditRows = ai.filter(function (row) { return row.panel === "AI-related credit"; });
+    var creditMap = {};
+    creditRows.forEach(function (row) { creditMap[row.series] = num(row.value); });
+    var creditLabels = ["Private credit 2024", "Private credit 2025", "HY issuance 2026", "HY index 2025"];
+    var creditValues = [
+      creditMap["private credit share of AI investment, 2024"],
+      creditMap["private credit share of AI investment, 2025"],
+      creditMap["AI issuers' share of non-refinance US high-yield issuance, 2026 to date"],
+      creditMap["AI issuers' share of JPM US high-yield bond index, end-2025"]
+    ];
+    var chart5 = echarts.init(document.getElementById("chart-ai"));
+    chart5.setOption({
+      animationDuration: animationDuration,
+      color: [palette.pine, palette.ochre, palette.slate, palette.pineLight],
+      tooltip: { trigger: "axis" },
+      title: [
+        { text: "Big-four capex, US$ billion", left: mobile ? "26%" : "24%", top: 6, textStyle: { fontSize: 11, color: palette.text } },
+        { text: "Shiller CAPE", left: mobile ? "78%" : "76%", top: 6, textStyle: { fontSize: 11, color: palette.text } },
+        { text: "Concentration, October 2026 (%)", left: mobile ? "26%" : "24%", top: mobile ? 258 : "58%", textStyle: { fontSize: 11, color: palette.text } },
+        { text: "AI-related credit shares (%)", left: mobile ? "78%" : "76%", top: mobile ? 258 : "58%", textStyle: { fontSize: 11, color: palette.text } }
+      ],
+      grid: mobile
+        ? [{ left: 46, right: "54%", top: 30, height: 165 }, { left: "56%", right: 10, top: 30, height: 165 }, { left: 46, right: "54%", top: 282, height: 165 }, { left: "56%", right: 10, top: 282, height: 165 }]
+        : [{ left: 52, right: "56%", top: 34, bottom: "58%" }, { left: "52%", right: 14, top: 34, bottom: "58%" }, { left: 52, right: "56%", top: "60%", bottom: 46 }, { left: "52%", right: 14, top: "60%", bottom: 46 }],
+      xAxis: [
+        baseAxis({ type: "category", data: capexCategories, gridIndex: 0, axisLabel: { color: palette.muted, fontSize: 9, interval: 2 } }),
+        baseAxis({ type: "category", data: ["2000", "2021", "2026"], gridIndex: 1 }),
+        baseAxis({ type: "category", data: ["Top 10 weight", "NVIDIA"], gridIndex: 2, axisLabel: { color: palette.muted, fontSize: 9 } }),
+        baseAxis({ type: "category", data: creditLabels, gridIndex: 3, axisLabel: { color: palette.muted, fontSize: 8, interval: 0, rotate: 18 } })
+      ],
+      yAxis: [
+        baseAxis({ type: "value", gridIndex: 0, name: "", axisLabel: { color: palette.muted, fontSize: 9 } }),
+        baseAxis({ type: "value", gridIndex: 1, min: 30, max: 46, axisLabel: { color: palette.muted, fontSize: 9 } }),
+        baseAxis({ type: "value", gridIndex: 2, min: 0, max: 45, axisLabel: { color: palette.muted, fontSize: 9 } }),
+        baseAxis({ type: "value", gridIndex: 3, min: 0, max: 45, axisLabel: { color: palette.muted, fontSize: 9 } })
+      ],
+      series: [
+        { name: "Capex", type: "bar", xAxisIndex: 0, yAxisIndex: 0, data: capexData, itemStyle: { color: palette.pine } },
+        { name: "Shiller CAPE", type: "bar", xAxisIndex: 1, yAxisIndex: 1, data: capeValues, itemStyle: { color: palette.ochre }, label: { show: true, position: "top", fontSize: 9, color: palette.ochre } },
+        { name: "Concentration", type: "bar", xAxisIndex: 2, yAxisIndex: 2, data: weightValues, itemStyle: { color: palette.slate }, label: { show: true, position: "top", fontSize: 9, color: palette.slate } },
+        { name: "AI credit", type: "bar", xAxisIndex: 3, yAxisIndex: 3, data: creditValues, itemStyle: { color: palette.pineLight }, label: { show: true, position: "top", fontSize: 9, color: palette.pine } }
+      ]
+    });
+    chartInstances.push(chart5);
+
+    // Figure 6: scenario heatmap
+    var scenarioOrder = ["A1", "A2", "B1", "B2", "C1", "C2", "R0"];
+    var scenarioNames = {
+      A1: "AI correction / disinflation",
+      A2: "AI correction / inflation",
+      B1: "AI credit bust / disinflation",
+      B2: "AI credit bust / inflation",
+      C1: "Systemic unwind / disinflation",
+      C2: "Systemic unwind / inflation",
+      R0: "Reference: no unwind"
+    };
+    var metricKeys = ["auckland_real_price_change_pct", "cash_after_tax_real_change_pct", "owner_real_position_change_pct", "renter_cash_real_return_pct"];
+    var metricLabels = ["House real change", "Cash real change", "Owner 2-year", "Renter 2-year"];
+    var byId = {};
+    scenarios.forEach(function (row) { byId[row.scenario_id] = row; });
+    var heatData = [];
+    scenarioOrder.forEach(function (id, yIndex) {
+      metricKeys.forEach(function (key, xIndex) {
+        var row = byId[id];
+        heatData.push([xIndex, yIndex, row ? num(row[key]) : null]);
+      });
+    });
+    var chart6 = echarts.init(document.getElementById("chart-scenario"));
+    chart6.setOption({
+      animationDuration: animationDuration,
+      grid: { left: mobile ? 120 : 190, right: 70, top: 58, bottom: 60 },
+      tooltip: {
+        position: "top",
+        formatter: function (params) {
+          var value = params.data[2];
+          return metricLabels[params.data[0]] + "<br/>" + scenarioNames[scenarioOrder[params.data[1]]] + ": " + (value == null ? "n/a" : Number(value).toFixed(1) + "%");
+        }
+      },
+      xAxis: baseAxis({ type: "category", data: metricLabels, splitArea: { show: true }, axisLabel: { color: palette.muted, fontSize: 9, interval: 0, rotate: 20 } }),
+      yAxis: baseAxis({ type: "category", data: scenarioOrder.map(function (id) { return scenarioNames[id]; }), splitArea: { show: true }, axisLabel: { color: palette.muted, fontSize: 9 } }),
+      visualMap: {
+        min: -45,
+        max: 8,
+        calculable: false,
+        orient: "horizontal",
+        left: "center",
+        bottom: 4,
+        textStyle: { color: palette.muted, fontSize: 9 },
+        inRange: { color: ["#a23b32", "#d9b8a7", "#fffdf8", "#c7ddd4", "#1f4d3f"] }
+      },
+      series: [{
+        name: "Scenario outcome",
+        type: "heatmap",
+        data: heatData,
+        label: {
+          show: true,
+          fontSize: 9,
+          color: palette.text,
+          formatter: function (params) {
+            return params.data[2] == null ? "" : Number(params.data[2]).toFixed(1);
+          }
+        },
+        itemStyle: { borderColor: palette.paper, borderWidth: 2 }
+      }]
+    });
+    chartInstances.push(chart6);
+
+    function resizeCharts() {
+      chartInstances.forEach(function (chart) { chart.resize(); });
+    }
+    window.addEventListener("resize", resizeCharts);
+  }).catch(function (error) {
+    console.error("Chart data could not be loaded:", error);
+  });
+})();
+</script>
+<script src="../chart-download.js"></script>
+</body>
+</html>

@@ -45,6 +45,7 @@ jobs:
           cp -r public/reports/ai-era-daily-life site/
           cp -r public/reports/prompt-literacy-ai-era site/
           cp -r public/reports/accounting-finance-research-ai-era site/
+          cp -r public/reports/auckland-property-without-mortgage site/
 
           # Copy downloadable data files.
           mkdir -p site/data
