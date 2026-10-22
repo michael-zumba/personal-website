@@ -290,64 +290,215 @@
     <section class="pb-10 md:pb-14">
       <h2 class="scholar-h2 font-serif pb-5 mb-6" style="color:var(--scholar-foreground);border-bottom:1px solid var(--scholar-border);">Available Projects</h2>
 
-<!-- Research Brief: Auckland Property, Cash and the AI Bubble -->
-<div class="p-5 md:p-6 mb-6 rounded-lg border" style="border-color:var(--scholar-border);background-color:var(--scholar-card);">
-  <h3 class="scholar-h3 font-serif" style="color:var(--scholar-foreground);">Auckland Property, Cash and the AI Bubble</h3>
-  <p class="font-sans text-sm mt-2" style="color:var(--scholar-muted-foreground);line-height:1.6;">This report tests four beliefs held by a cash buyer of Auckland property: that real prices have fallen, that the investment case is weaker than its reputation, that younger generations are changing their relationship with ownership, and that an AI-driven global crisis is a serious risk. It also tests whether holding cash is the safer choice. It does not forecast prices or recommend buying, renting or holding any asset.</p>
-  <p><a href="/auckland-property-without-mortgage/">Features 6 interactive ECharts visualisations and 17 downloadable datasets. View report</a></p>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-    <a href="/auckland-property-without-mortgage/data/affordability_yield.csv" download>affordability_yield.csv</a>
-    <a href="/auckland-property-without-mortgage/data/ai_capital_cycle.csv" download>ai_capital_cycle.csv</a>
-    <a href="/auckland-property-without-mortgage/data/analysis_statistics.csv" download>analysis_statistics.csv</a>
-    <a href="/auckland-property-without-mortgage/data/auckland_price_index.csv" download>auckland_price_index.csv</a>
-    <a href="/auckland-property-without-mortgage/data/cash_returns.csv" download>cash_returns.csv</a>
-    <a href="/auckland-property-without-mortgage/data/credit_stress.csv" download>credit_stress.csv</a>
-    <a href="/auckland-property-without-mortgage/data/decision_tests.csv" download>decision_tests.csv</a>
-    <a href="/auckland-property-without-mortgage/data/housing_user_cost.csv" download>housing_user_cost.csv</a>
-    <a href="/auckland-property-without-mortgage/data/migration.csv" download>migration.csv</a>
-    <a href="/auckland-property-without-mortgage/data/nz_transmission.csv" download>nz_transmission.csv</a>
-    <a href="/auckland-property-without-mortgage/data/ownership_cohorts.csv" download>ownership_cohorts.csv</a>
-    <a href="/auckland-property-without-mortgage/data/policy_timeline.csv" download>policy_timeline.csv</a>
-    <a href="/auckland-property-without-mortgage/data/real_returns.csv" download>real_returns.csv</a>
-    <a href="/auckland-property-without-mortgage/data/scenario_assumptions.csv" download>scenario_assumptions.csv</a>
-    <a href="/auckland-property-without-mortgage/data/scenario_outcomes.csv" download>scenario_outcomes.csv</a>
-    <a href="/auckland-property-without-mortgage/data/stress_anchors.csv" download>stress_anchors.csv</a>
-    <a href="/auckland-property-without-mortgage/data/transmission_channels.csv" download>transmission_channels.csv</a>
-    <a href="/auckland-property-without-mortgage/data/README_methodology.txt" download>README_methodology.txt</a>
-    <a href="/auckland-property-without-mortgage/scripts/replicate.py" download>replicate.py</a>
-  </div>
-</div>
+      <!-- Project: Auckland Property, Cash and the AI Bubble -->
+      <div class="p-5 md:p-6 mb-6 rounded-lg border" style="border-color:var(--scholar-border);background-color:var(--scholar-card);">
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-5">
+          <div>
+            <h3 class="scholar-h3 font-serif" style="color:var(--scholar-foreground);">Auckland Property, Cash and the AI Bubble</h3>
+            <p class="font-sans text-sm mt-2 max-w-[680px]" style="color:var(--scholar-muted-foreground);line-height:1.6;">
+              Compiled dataset of the QV Auckland house price index in nominal and real terms, gross rental yield and price-to-income, real returns for housing and cash, census home-ownership cohorts, migration and household income context, dated policy settings, RBNZ stress anchors and credit indicators, AI capital-cycle indicators, housing user-cost calculations, transmission channels, scenario assumptions and outcomes, a decision-test checklist, and analysis statistics.
+            </p>
+          </div>
+          <a href="/auckland-property-without-mortgage/" class="inline-flex items-center gap-1.5 rounded-md px-4 py-2.5 text-sm font-semibold whitespace-nowrap shrink-0" style="background-color:var(--scholar-primary);color:var(--scholar-primary-foreground);text-decoration:none;transition:background-color 200ms ease;" onmouseover="this.style.backgroundColor='var(--scholar-primary-800)'" onmouseout="this.style.backgroundColor='var(--scholar-primary)'">
+            <i data-lucide="file-text" style="width:14px;height:14px;"></i>
+            View report
+          </a>
+        </div>
+        <p class="font-sans text-xs font-semibold uppercase tracking-wider mb-3" style="color:var(--scholar-muted-foreground);">Downloadable files</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-2">
+          <a href="/auckland-property-without-mortgage/data/README_methodology.txt" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">README_methodology.txt</span>
+          </a>
+          <a href="/auckland-property-without-mortgage/scripts/replicate.py" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-primary);background-color:var(--scholar-primary-100);color:var(--scholar-primary);" onmouseover="this.style.borderColor='var(--scholar-primary-800)';this.style.backgroundColor='var(--scholar-primary-200)';" onmouseout="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';">
+            <i data-lucide="code-2" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">replicate.py (replication script)</span>
+          </a>
+          <a href="/auckland-property-without-mortgage/data/affordability_yield.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">affordability_yield.csv</span>
+          </a>
+          <a href="/auckland-property-without-mortgage/data/ai_capital_cycle.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">ai_capital_cycle.csv</span>
+          </a>
+          <a href="/auckland-property-without-mortgage/data/analysis_statistics.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">analysis_statistics.csv</span>
+          </a>
+          <a href="/auckland-property-without-mortgage/data/auckland_price_index.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">auckland_price_index.csv</span>
+          </a>
+          <a href="/auckland-property-without-mortgage/data/cash_returns.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">cash_returns.csv</span>
+          </a>
+          <a href="/auckland-property-without-mortgage/data/credit_stress.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">credit_stress.csv</span>
+          </a>
+          <a href="/auckland-property-without-mortgage/data/decision_tests.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">decision_tests.csv</span>
+          </a>
+          <a href="/auckland-property-without-mortgage/data/housing_user_cost.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">housing_user_cost.csv</span>
+          </a>
+          <a href="/auckland-property-without-mortgage/data/migration.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">migration.csv</span>
+          </a>
+          <a href="/auckland-property-without-mortgage/data/nz_transmission.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">nz_transmission.csv</span>
+          </a>
+          <a href="/auckland-property-without-mortgage/data/ownership_cohorts.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">ownership_cohorts.csv</span>
+          </a>
+          <a href="/auckland-property-without-mortgage/data/policy_timeline.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">policy_timeline.csv</span>
+          </a>
+          <a href="/auckland-property-without-mortgage/data/real_returns.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">real_returns.csv</span>
+          </a>
+          <a href="/auckland-property-without-mortgage/data/scenario_assumptions.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">scenario_assumptions.csv</span>
+          </a>
+          <a href="/auckland-property-without-mortgage/data/scenario_outcomes.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">scenario_outcomes.csv</span>
+          </a>
+          <a href="/auckland-property-without-mortgage/data/stress_anchors.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">stress_anchors.csv</span>
+          </a>
+          <a href="/auckland-property-without-mortgage/data/transmission_channels.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">transmission_channels.csv</span>
+          </a>
+          <a href="/auckland-property-without-mortgage/" class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-primary);background-color:var(--scholar-primary-100);color:var(--scholar-primary);" onmouseover="this.style.borderColor='var(--scholar-primary-800)';this.style.backgroundColor='var(--scholar-primary-200)';" onmouseout="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';">
+            <i data-lucide="file-text" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">Full research brief (HTML)</span>
+          </a>
+        </div>
+      </div>
 
-<!-- Research Brief: What Is Accounting and Finance Research For in the AI Era? -->
-<div class="p-5 md:p-6 mb-6 rounded-lg border" style="border-color:var(--scholar-border);background-color:var(--scholar-card);">
-  <h3 class="scholar-h3 font-serif" style="color:var(--scholar-foreground);">What Is Accounting and Finance Research For in the AI Era?</h3>
-  <p class="font-sans text-sm mt-2" style="color:var(--scholar-muted-foreground);line-height:1.6;">This report uses journal, citation, review and policy evidence to examine what accounting and finance research should do when AI makes writing, coding and synthesis cheaper. It shows where value shifts from output volume to problem choice, difficult data, verification and accountable judgement.</p>
-  <p><a href="/accounting-finance-research-ai-era/">Features 5 interactive ECharts visualisations and 20 downloadable datasets. View report</a></p>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-    <a href="/accounting-finance-research-ai-era/data/ai_policy_latest.csv" download>ai_policy_latest.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/ai_policy_status.csv" download>ai_policy_status.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/analysis_statistics.csv" download>analysis_statistics.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/attention_cohorts.csv" download>attention_cohorts.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/attention_journal_summary.csv" download>attention_journal_summary.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/capability_model.csv" download>capability_model.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/contribution_scorecard.csv" download>contribution_scorecard.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/corrections_retractions.csv" download>corrections_retractions.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/crossref_article_counts.csv" download>crossref_article_counts.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/crossref_articles.csv" download>crossref_articles.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/editorial_priorities.csv" download>editorial_priorities.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/editorial_priority_summary.csv" download>editorial_priority_summary.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/field_article_counts.csv" download>field_article_counts.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/journal_scope.csv" download>journal_scope.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/openalex_attention_articles.csv" download>openalex_attention_articles.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/openalex_coverage.csv" download>openalex_coverage.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/review_workload.csv" download>review_workload.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/scenario_assumptions.csv" download>scenario_assumptions.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/submission_index.csv" download>submission_index.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/submissions_outputs.csv" download>submissions_outputs.csv</a>
-    <a href="/accounting-finance-research-ai-era/data/README_methodology.txt" download>README_methodology.txt</a>
-    <a href="/accounting-finance-research-ai-era/scripts/replicate.py" download>replicate.py</a>
-  </div>
-</div>
+      <!-- Project: What Is Accounting and Finance Research For in the AI Era? -->
+      <div class="p-5 md:p-6 mb-6 rounded-lg border" style="border-color:var(--scholar-border);background-color:var(--scholar-card);">
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-5">
+          <div>
+            <h3 class="scholar-h3 font-serif" style="color:var(--scholar-foreground);">What Is Accounting and Finance Research For in the AI Era?</h3>
+            <p class="font-sans text-sm mt-2 max-w-[680px]" style="color:var(--scholar-muted-foreground);line-height:1.6;">
+              Compiled dataset of the journal sample and inclusion decisions, Crossref-indexed article records and counts, journal submission and decision statistics, OpenAlex citation-attention cohorts, dated journal AI-policy snapshots, coded editorial-priority criteria, correction and retraction record counts, a capability and responsibility model, a contribution scorecard, labelled 2030 scenarios, and analysis statistics.
+            </p>
+          </div>
+          <a href="/accounting-finance-research-ai-era/" class="inline-flex items-center gap-1.5 rounded-md px-4 py-2.5 text-sm font-semibold whitespace-nowrap shrink-0" style="background-color:var(--scholar-primary);color:var(--scholar-primary-foreground);text-decoration:none;transition:background-color 200ms ease;" onmouseover="this.style.backgroundColor='var(--scholar-primary-800)'" onmouseout="this.style.backgroundColor='var(--scholar-primary)'">
+            <i data-lucide="file-text" style="width:14px;height:14px;"></i>
+            View report
+          </a>
+        </div>
+        <p class="font-sans text-xs font-semibold uppercase tracking-wider mb-3" style="color:var(--scholar-muted-foreground);">Downloadable files</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-2">
+          <a href="/accounting-finance-research-ai-era/data/README_methodology.txt" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">README_methodology.txt</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/scripts/replicate.py" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-primary);background-color:var(--scholar-primary-100);color:var(--scholar-primary);" onmouseover="this.style.borderColor='var(--scholar-primary-800)';this.style.backgroundColor='var(--scholar-primary-200)';" onmouseout="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';">
+            <i data-lucide="code-2" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">replicate.py (replication script)</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/ai_policy_latest.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">ai_policy_latest.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/ai_policy_status.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">ai_policy_status.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/analysis_statistics.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">analysis_statistics.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/attention_cohorts.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">attention_cohorts.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/attention_journal_summary.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">attention_journal_summary.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/capability_model.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">capability_model.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/contribution_scorecard.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">contribution_scorecard.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/corrections_retractions.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">corrections_retractions.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/crossref_article_counts.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">crossref_article_counts.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/crossref_articles.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">crossref_articles.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/editorial_priorities.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">editorial_priorities.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/editorial_priority_summary.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">editorial_priority_summary.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/field_article_counts.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">field_article_counts.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/journal_scope.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">journal_scope.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/openalex_attention_articles.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">openalex_attention_articles.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/openalex_coverage.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">openalex_coverage.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/review_workload.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">review_workload.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/scenario_assumptions.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">scenario_assumptions.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/submission_index.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">submission_index.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/data/submissions_outputs.csv" download class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+            <i data-lucide="download" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">submissions_outputs.csv</span>
+          </a>
+          <a href="/accounting-finance-research-ai-era/" class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-primary);background-color:var(--scholar-primary-100);color:var(--scholar-primary);" onmouseover="this.style.borderColor='var(--scholar-primary-800)';this.style.backgroundColor='var(--scholar-primary-200)';" onmouseout="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';">
+            <i data-lucide="file-text" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
+            <span class="truncate">Full research brief (HTML)</span>
+          </a>
+        </div>
+      </div>
 
       <!-- Project: Prompt Literacy and the AI Era Research Brief -->
       <div class="p-5 md:p-6 mb-6 rounded-lg border" style="border-color:var(--scholar-border);background-color:var(--scholar-card);">
