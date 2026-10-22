@@ -195,7 +195,7 @@ def build() -> None:
             "statistic_id": "zero_citation_share_2020_2022",
             "value": zero_total / article_total,
             "unit": "fraction",
-            "definition": "Pooled OpenAlex articles with zero citations in first three calendar years",
+            "definition": "Pooled zero-citation share for Crossref-matched OpenAlex articles, 2020-2022 issue-year cohorts, three calendar years from the Crossref year",
         },
         {
             "statistic_id": "explicit_ai_guidance_latest",

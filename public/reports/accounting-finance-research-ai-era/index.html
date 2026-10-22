@@ -168,6 +168,9 @@
     font-family: Inter, system-ui, sans-serif;
     font-size: 0.78rem;
   }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
   @media (max-width: 760px) {
     .container { padding: 24px 16px 52px; }
     .key-points, .small-grid { grid-template-columns: 1fr; }
@@ -183,7 +186,7 @@
 </head>
 <body>
 <main class="container">
-  <a class="back-link" href="/insights/">&larr; Back to Insights</a>
+  <a class="back-link" href="/insights/">&larr; Back to Insights</a> <a class="back-link" href="summary.html" style="margin-left:18px;">One-page summary</a>
 
   <header>
     <div class="eyebrow">Research Brief</div>
@@ -211,7 +214,7 @@
   <section id="executive-summary" class="executive">
     <h2>Executive Summary</h2>
     <p>AI does not make accounting and finance research worthless. It makes undifferentiated research output less scarce. The main question is therefore not whether a model can produce a plausible paper. The question is what a research contribution must now contain to deserve attention, editorial capacity and public trust.</p>
-    <p>The evidence in this brief points to a shift in scarcity. Crossref-indexed research article output in 11 selected journals rose 17.2% between 2015 and 2025. In the two finance journals with usable public submission records, however, submissions did not rise continuously after large language models became widely available. Editorial acceptance remained selective, and median time to an editorial decision remained between 30 and 52 days. Citation attention varied sharply across journals, while visible AI guidance and stated criteria for valuable research were uneven.</p>
+    <p>The evidence in this brief points to a shift in scarcity. Crossref-indexed research article output in 11 selected journals rose 27.9% between 2015 and 2025. In the two finance journals with usable public submission records, however, submissions did not rise continuously after large language models became widely available. Editorial acceptance remained selective, and observed median time to an editorial decision ranged from 30 to 52 days across the reported years. Citation attention could not be used to compare journals reliably, while AI guidance is now common but uneven in scope, and stated guidance specifies few research criteria.</p>
     <p>These findings do not support a simple story of research abundance leading to research collapse. They support a more specific claim: production is not the main bottleneck. Judgement, verifiable evidence, access to difficult settings, editorial evaluation and accountable use are more likely to determine value.</p>
     <div class="key-points">
       <div class="key-point"><strong>Publication remains a threshold</strong>The evidence does not show that publication counts will disappear. It shows that a count alone is an increasingly weak account of contribution.</div>
@@ -234,19 +237,20 @@
     <p>Experiments show clear gains in some writing tasks. Noy and Zhang found that, among 453 college-educated professionals completing mid-level writing tasks, access to ChatGPT reduced average time by 40% and raised output quality by 18% [1]. Their experiment did not study accounting or finance scholarship. It does, however, show why drafting alone is a weak professional advantage.</p>
     <p>Evidence about research ideas is more mixed. Si, Yang and Hashimoto recruited more than 100 NLP researchers to compare expert and model-generated ideas. The model-generated ideas were judged more novel, but slightly weaker on feasibility. The authors also reported limited diversity and failures of model self-evaluation [2]. Novelty in a blinded review is not the same as a defensible contribution.</p>
     <p>A third experiment, on short-story writing, found higher individual creativity ratings for people given AI ideas, but greater similarity across AI-assisted stories [3]. The setting is not academic research. It nevertheless illustrates a possible collective problem: a tool can improve each person's output while narrowing the range of ideas the system produces.</p>
+    <p>Direct evidence from accounting itself is now emerging. Gardner, Krupa and Mammadov (2026) analysed 3,573 accounting papers across 10 journals and 4,166 abstracts across 22 journals, and found that AI-associated vocabulary rose by about 75% after 2023, with heavier use among junior authors and lower-ranked journals [12]. A separate study of more than 15 million biomedical abstracts estimated that at least 13.5% of 2024 abstracts showed signs of LLM processing [13]. These are vocabulary-based lower bounds, not verified tool use, and they say nothing about research quality. They do show that AI-assisted writing is already inside the published record.</p>
     <p>These results suggest a distinction that matters throughout the rest of the report. AI may improve measured output quality on a defined task. It may also create common ideas, common errors and common forms of presentation. Neither result establishes the value of a longer-term research programme.</p>
   </section>
 
   <section id="data">
     <h2>Data and Method</h2>
     <p>The report uses a frozen sample of 11 English-language accounting and finance journals: The Accounting Review, Journal of Accounting Research, Journal of Accounting and Economics, Contemporary Accounting Research, Review of Accounting Studies, Accounting, Organizations and Society, The Journal of Finance, Journal of Financial Economics, The Review of Financial Studies, Journal of Financial and Quantitative Analysis, and Review of Finance. The sample is purposeful and is not a global census.</p>
-    <p>Crossref supplied article metadata. The queries used each journal ISSN, the journal-article type and a publication window from 2014 through 2026. Only issue years from 2015 through 2025 were retained. DOI duplicates were removed. Titles beginning with a fixed set of nonresearch labels, including annual editor reports, editor notes, retractions, errata, corrections, book reviews and issue introductions, were excluded. The final Crossref dataset contains 10,377 unique research article records. Article typing and indexing are not identical to journal-specific definitions of a research paper.</p>
-    <p>Only two journals had public submission records that could be used under the evidence rules. The Journal of Finance publishes calendar-year totals, and The Review of Financial Studies publishes rolling May-to-May periods. Their definitions are not sufficiently similar to pool. Figure 1 therefore indexes each journal to its own first observed period and a companion table keeps the reported counts visible.</p>
+    <p>Crossref [7] supplied article metadata. The queries used each journal ISSN, the journal-article type and a publication window from 2014 through 2026. Only issue years from 2015 through 2025 were retained. DOI duplicates were removed. A fixed, documented title rule excluded nonresearch records: editor and editorial matter, front and back matter, issue information, announcements and society business, prize notices, conference programmes, reviewer lists, placement advertisements, corrections, retractions, book reviews, discussion pieces and introductions. The final dataset contains 9,044 unique research article records from 11 journals. Two limits matter. First, Crossref typing and indexing are not identical to journal-specific definitions of a research paper, and some residual miscellany may remain. Second, the 2025 counts are the latest available at the access date: Journal of Accounting and Economics records show a large one-year fall that is more consistent with a deposit gap than with a publication decision. The 2025 endpoint is therefore provisional. At the 2024 endpoint the count is 887, a 23.5% increase on 2015.</p>
+    <p>Only two journals had public submission records that could be used under the evidence rules. The Journal of Finance publishes calendar-year totals, and The Review of Financial Studies publishes rolling May-to-May periods. Their definitions are not sufficiently similar to pool. Figure 1 therefore indexes each journal to its own first observed period and a companion table keeps the reported counts visible. The other nine journals publish only rolling, non-comparable metrics such as submission-to-first-decision timelines or current acceptance rates, so those values are not pooled here.</p>
 
-    <div class="table-wrap">
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable table">
       <table>
         <caption class="chart-note">Reported submission totals and definitions</caption>
-        <thead><tr><th>Journal</th><th>Reporting period</th><th>Total submissions</th><th>Definition</th></tr></thead>
+        <thead><tr><th scope="col">Journal</th><th scope="col">Reporting period</th><th scope="col">Total submissions</th><th scope="col">Definition</th></tr></thead>
         <tbody>
           <tr><td>The Journal of Finance</td><td>2015</td><td>1,227</td><td>Calendar year; includes resubmissions</td></tr>
           <tr><td>The Journal of Finance</td><td>2020</td><td>1,333</td><td>Calendar year; includes resubmissions</td></tr>
@@ -260,12 +264,12 @@
       </table>
     </div>
 
-    <p>Attention is measured with OpenAlex research article cohorts from 2020, 2021 and 2022. The same title rule was applied. Citations were summed for the publication year and the next two calendar years. An article with no positive count in that three-calendar-year window is classified as having zero indexed citations. The final attention sample contains 2,551 articles from 10 journals. Review of Finance was excluded because its OpenAlex source was too sparse for comparison.</p>
+    <p>Citation attention was tested but not used as a comparative measure. For the 2020, 2021 and 2022 Crossref research articles, we matched DOIs to OpenAlex records [8] and summed citations in the three calendar years starting with the Crossref issue year. Of 2,655 cohort articles, 2,578 (97.1%) were matched by DOI; the unmatched records were mostly OpenAlex redirects to SSRN versions. Twenty-six matched articles (1.0%) had no recorded citation in the window. Journal shares ranged from 0.0% to 3.1%, with no more than five zero-citation articles in any journal, and the differences are not statistically distinguishable. The exercise is reported in the data appendix; it is not used to compare journals.</p>
     <p>A citation cohort is the set of articles sharing a publication year. This measure does not count human readers. Automated access, citation lag, incomplete indexing and differences in citation cultures all affect the result. The evidence can show uneven visible attention. It cannot establish that human readers have disappeared.</p>
-    <p>AI guidance was collected from dated author-page snapshots. Visible text was searched for generative AI, artificial intelligence, AI-assisted tools, large language models, LLM and ChatGPT. A page was coded as showing explicit AI guidance when an AI term appeared with a policy term such as disclosure, authorship, accountability or responsibility. A missing mention means only that the guidance was not visible on that page. It does not prove that a linked publisher policy is absent.</p>
-    <p>Editorial priorities were coded with six transparent keyword categories: contribution, research design, data transparency, reproducibility, decision relevance, and integrity and accountability. This is a measure of stated criteria, not editorial behaviour.</p>
+    <p>AI guidance was collected from the latest usable official journal guidance or editorial-policy page for each journal. Nine pages were observed live on 22 October 2026. The Review of Financial Studies and Review of Finance use the latest usable archived pages (April 2025 and June 2024) because their live pages blocked automated access. Visible text was searched for generative AI, artificial intelligence, AI-assisted tools, large language models, LLM and ChatGPT. A page was coded as showing explicit AI guidance when an AI term appeared with a policy term such as disclosure, authorship, accountability, responsibility or prohibition. For Contemporary Accounting Research, the publisher page now directs authors to the CAAA author-information page, and the linked CAAA statement supplies the explicit terms. A missing mention means only that the guidance was not visible on the captured page. It does not prove that a linked publisher policy is absent.</p>
+    <p>Editorial priorities were recoded by hand from the substantive author-guidance and editorial-policy text of each journal's captured page, using a six-category codebook. A criterion counts only where the page states it as an author requirement or editorial expectation, with a quotable sentence. Navigation menus, JEL browse lists, copyright and cookie boilerplate, proof-stage notices and publisher-wide template paragraphs were excluded. This is a measure of stated criteria, not editorial behaviour.</p>
     <p>Crossref update filters were also run for retractions, errata and corrections. The resulting record counts are not clean retraction rates because one event can appear in both the original record and a notice. No rate is inferred.</p>
-    <p>Terms used in this report have precise meanings. A desk rejection is a rejection before external peer review. Identification concerns whether a relationship can be interpreted as causal rather than merely correlated. Replication means that another researcher can reproduce the analysis from the documented data and code, within legitimate access limits. Generative-AI guidance is an explicit statement about permitted use, disclosure or accountability.</p>
+    <p>Terms used in this report have precise meanings. Crossref and OpenAlex are open bibliographic databases: Crossref records publication metadata such as DOIs and ISSNs, and OpenAlex adds citation links. A DOI is a persistent identifier for a publication, and an ISSN identifies a journal. Contribution is used in its ordinary scholarly sense: a defensible advance in knowledge or practice, not a count of outputs. An indexed record is one that a database has matched to a publication. A desk rejection is a rejection before external peer review. Identification concerns whether a relationship can be interpreted as causal rather than merely correlated. Replication means that another researcher can reproduce the analysis from the documented data and code, within legitimate access limits. Generative-AI guidance is an explicit statement about permitted use, disclosure or accountability.</p>
   </section>
 
   <section id="findings">
@@ -275,61 +279,52 @@
     <p>Figure 1 compares the two journals with usable public submission records. Their reporting periods differ, so each series is indexed separately.</p>
     <div class="chart-container">
       <h4>Figure 1: Submission trends differ at the two journals with public data</h4>
-      <p class="chart-note">Index: first observed period for each journal equals 100. The Journal of Finance uses calendar years; The Review of Financial Studies uses rolling May-to-May periods. Sources: AFA and SFS.</p>
+      <p class="chart-note">Index: first observed period for each journal equals 100. The Journal of Finance uses calendar years; The Review of Financial Studies uses rolling May-to-May periods. Sources: AFA [4] and SFS [5].</p>
       <div class="chart-box" id="chart-submissions" role="img" aria-label="Line chart indexing submissions in The Journal of Finance and The Review of Financial Studies to their first observed periods."></div>
       <p class="figure-description">The Journal of Finance stands at 86.9 in 2024 on its 2015 base. The Review of Financial Studies stands at 108.5 in 2026 on its 2023 base, after dipping in 2025.</p>
     </div>
 
     <p>Submission counts tell a limited story. The Journal of Finance recorded 1,227 submissions in 2015, 1,333 in 2020, 1,307 in 2023 and 1,066 in 2024. The Review of Financial Studies reported 1,534 in its 2022-2023 period, 1,544 in 2023-2024, 1,474 in 2024-2025 and 1,664 in 2025-2026. These movements are inconsistent with a simple claim that AI caused a permanent increase in finance submissions.</p>
 
-    <p>Crossref-indexed research article output across the selected journals rose from 856 in 2015 to 1,003 in 2025, an increase of 17.2%. The path was not steady, and three journals published fewer articles in 2025 than in 2015. This is evidence of modest growth in indexed output, not an AI-driven explosion.</p>
+    <p>Crossref-indexed research article output across the selected journals rose from 718 in 2015 to 918 in 2025, an increase of 27.9%. The path was not steady, and three journals published fewer articles in 2025 than in 2015. That endpoint is provisional: at 2024, two journals were below their 2015 level and the count was 23.5% above 2015. This is evidence of modest growth in indexed output, not an AI-driven explosion.</p>
 
     <div class="chart-container">
-      <h4>Figure 2: Crossref research article counts rose 17.2% from 2015 to 2025</h4>
-      <p class="chart-note">Crossref-indexed research articles in 11 selected journals. Unit: article records. Editor reports, editor notes, corrections, retractions, book reviews and issue introductions are excluded. Source: Crossref.</p>
+      <h4>Figure 2: Crossref research article counts rose 27.9% from 2015 to 2025</h4>
+      <p class="chart-note">Crossref-indexed research articles in 11 selected journals. Unit: article records. A fixed title rule excludes editorial matter, front and back matter, issue information, announcements, society business, prizes, conference programmes, reviewer lists, placement advertisements, corrections, retractions, book reviews, discussion pieces and introductions. Source: Crossref [7].</p>
       <div class="chart-box" id="chart-article-output" role="img" aria-label="Line chart showing Crossref-indexed article output for accounting and finance journals from 2015 to 2025."></div>
-      <p class="figure-description">Accounting and finance counts fluctuate without a continuous rise. The combined count rises from 856 in 2015 to 1,003 in 2025, a 17.2% increase.</p>
+      <p class="figure-description">Accounting and finance counts fluctuate without a continuous rise. The two field series sum to 718 in 2015 and 918 in 2025, a 27.9% increase; the 2025 endpoint is provisional.</p>
     </div>
 
     <p>The data do not reveal one uniform trend because the journals use different definitions and because most journals in the sample did not provide submission counts that met the evidence rules. The absence of a clear post-2022 surge at these outlets does not imply that AI has no effect. It means the effect cannot be inferred from a short, selective series. Later research should test preprint volume, desk-rejection behaviour and submissions to lower-ranked and specialist journals.</p>
 
-    <h3>Citations are uneven, and they are not readership</h3>
-    <p>In the 2020-2022 OpenAlex cohorts, 202 of 2,551 articles had no indexed citations in their first three calendar years. The pooled share was 7.9%. The journal-level difference was much larger than the pooled figure suggests. It was 0.0% for Accounting, Organizations and Society, 26.1% for The Journal of Finance and 18.6% for the Journal of Financial and Quantitative Analysis.</p>
-
-    <div class="chart-container">
-      <h4>Figure 3: The share of uncited articles varies widely by journal</h4>
-      <p class="chart-note">Share of 2020-2022 articles with zero OpenAlex citations in the publication year through year two. Labels show zero-count articles divided by cohort size. Source: OpenAlex.</p>
-      <div class="chart-box tall" id="chart-attention" role="img" aria-label="Horizontal bar chart of zero-citation shares by journal for 2020 to 2022 article cohorts."></div>
-      <p class="figure-description">The pooled zero-citation share is 7.9%, ranging from 0.0% in Accounting, Organizations and Society to 26.1% in The Journal of Finance.</p>
-    </div>
-
-    <p>The variation warns against treating citation counts as a universal value measure. Journals differ in their citation cultures, article lengths and indexing coverage. A zero count may reflect no attention, delayed attention or incomplete records. A high count may reflect a useful contribution, a fashionable topic or an established network. Citations are evidence of visible scholarly use, not proof of quality or human reading.</p>
-    <p>This limitation matters for the original question. A fall in human readership remains plausible but unverified. What the evidence supports is a distribution of attention in which output is not automatically matched by use. AI makes that distinction more important because text can be produced without being read.</p>
+    <h3>Citation counts are not readership</h3>
+    <p>We also tested whether citation attention had become more uneven. It had not, in any way the data can defend. After cleaning the article cohort and matching citations to the Crossref issue year, the pooled share of articles with no citation in their first three calendar years was 1.0%, and journal-level shares ranged from 0.0% to 3.1%. The zero counts are small, the intervals overlap and the measure is sensitive to when an article first appeared online. An earlier version of this brief reported large journal differences; that result came from a cohort that still contained front matter, announcements and articles with inconsistent publication years, and it is withdrawn.</p>
+    <p>This limitation matters for the original question. A fall in human readership remains plausible but unverified. Citation counts record visible scholarly use, not reading, and a zero count can mean no attention, delayed attention or an indexing gap. AI makes the distinction more important because text can be produced without being read.</p>
 
     <h3>Editorial gatekeeping remains selective, and decisions still take weeks</h3>
-    <p>Acceptance and rejection rates add useful context. The Journal of Finance accepted 6.4% of 1,226 editorial decisions in 2023 and desk-rejected 43% of new submissions. Its median turnaround was 43 days. The Review of Financial Studies reported an 8.1% acceptance rate and a 33-day median turnaround in its 2024-2025 period.</p>
+    <p>Acceptance and rejection rates add useful context. The Journal of Finance accepted 6.4% of 1,226 editorial decisions in 2023 and desk-rejected 43% of new submissions. Its median turnaround was 43 days. The Review of Financial Studies reported an 8.1% acceptance rate and a 33-day median turnaround in its 2024-2025 period, and 7.27% with a 30-day median in its 2025-2026 period [5].</p>
 
     <div class="chart-container">
-      <h4>Figure 4: Median time to an editorial decision ranged from 30 to 52 days</h4>
-      <p class="chart-note">Median time to an editorial decision by reporting period. Gaps are shown without interpolation. Sources: Journal of Finance editor reports and SFS statistics.</p>
-      <div class="chart-box tall" id="chart-review" role="img" aria-label="Two line charts showing median editorial decision times for the Journal of Finance and the Review of Financial Studies."></div>
-      <p class="figure-description">The Journal of Finance reported medians between 40.5 and 52 days. The Review of Financial Studies reported 35, 33 and 30 days in 2023, 2025 and 2026.</p>
+      <h4>Figure 3: Median time to an editorial decision ranged from 30 to 52 days</h4>
+      <p class="chart-note">Median time to an editorial decision by reporting period. Gaps are shown without interpolation. The Journal of Finance series runs from 2015 to 2023; the 2024 and 2025 editor reports are published but could not be accessed for this brief. Sources: Journal of Finance editor reports [6] and SFS statistics [5].</p>
+      <div class="chart-box tall" id="chart-review" role="img" aria-label="Line chart with two journal series showing median editorial decision times for the Journal of Finance and the Review of Financial Studies."></div>
+      <p class="figure-description">The Journal of Finance reported medians between 40.5 and 52 days, including 48 days in 2021. The Review of Financial Studies reported 35, 33 and 30 days in 2023, 2025 and 2026.</p>
     </div>
 
-    <p>The Journal of Finance reported a median of 52 days in 2022 and 43 days in 2023. Its 2023 desk-rejection rate was also 43%. The Review of Financial Studies median fell to 30 days in its latest period. These figures show that fast triage is possible. They do not show that careful review has become easier or faster.</p>
-    <p>The relevant bottleneck is therefore not typing speed. It is the supply of reviewers who can test a claim, editors who can compare contributions, and researchers who can detect errors that a model will also miss. AI can help editors screen submissions. It can also increase the number of plausible but underdeveloped submissions requiring screening.</p>
+    <p>The Journal of Finance reported a median of 48 days in 2021, 52 days in 2022 and 43 days in 2023. Its 2023 desk-rejection rate was also 43%. The Review of Financial Studies median fell to 30 days in its latest period. These figures show that fast triage is possible. They do not show that careful review has become easier or faster.</p>
+    <p>The evidence here cannot measure reviewer supply directly. But the pattern is consistent with a different bottleneck: the supply of reviewers who can test a claim, editors who can compare contributions, and researchers who can detect errors that a model will also miss. AI can help editors screen submissions. It can also increase the number of plausible but underdeveloped submissions requiring screening.</p>
 
-    <h3>AI rules are visible on few author pages</h3>
-    <p>Across the latest usable author-page snapshots, 4 of 11 journals showed explicit AI guidance in the visible page text. The Accounting Review requires disclosure and states that AI cannot serve as an author. Review of Accounting Studies states that large language models do not meet authorship criteria and that use should be documented. Accounting, Organizations and Society and the Journal of Financial Economics also displayed explicit AI or generative-AI guidance in their latest snapshots.</p>
+    <h3>AI rules are visible on most author pages, but scope varies</h3>
+    <p>Across the latest usable official pages, 8 of 11 journals showed explicit AI guidance in the visible text. The Accounting Review requires disclosure and states that AI cannot serve as an author [9]. Review of Accounting Studies states that large language models do not meet authorship criteria and that use should be documented [11]. Journal of Accounting Research, Journal of Accounting and Economics, Contemporary Accounting Research, Accounting, Organizations and Society, The Journal of Finance and Journal of Financial Economics also displayed explicit AI rules on their latest pages. The Journal of Finance, for example, publishes an AFA AI policy that makes authors responsible for fact-checking outputs, bars AI tools from co-authorship and asks for model versions and prompts when AI is used to create data or analysis [14]. The Review of Financial Studies, Journal of Financial and Quantitative Analysis and Review of Finance did not show explicit AI guidance on the pages captured.</p>
 
     <div class="chart-container">
-      <h4>Figure 5: Only 4 of 11 journal pages showed visible AI guidance</h4>
-      <p class="chart-note">Latest usable snapshot per journal; dates range from May 2021 to September 2026. A missing page statement does not rule out a linked publisher policy. Source: archived official journal pages.</p>
-      <div class="chart-box tall" id="chart-ai-guidance" role="img" aria-label="Status list showing which selected journals have explicit AI guidance visible on their latest author page."></div>
-      <p class="figure-description">Four journals show explicit AI guidance and seven do not. The status reflects visible author-page text, not compliance or the complete policy environment of the publisher.</p>
+      <h4>Figure 4: 8 of 11 official journal pages showed explicit AI guidance</h4>
+      <p class="chart-note">Latest usable official guidance or policy page per journal. Nine pages were observed live on 22 October 2026; The Review of Financial Studies and Review of Finance use the latest usable archived pages (April 2025 and June 2024). A missing page statement does not rule out a linked publisher policy. Source: official journal pages.</p>
+      <div class="chart-box tall" id="chart-ai-guidance" role="img" aria-label="Status list showing which selected journals have explicit AI guidance on their latest usable official guidance or policy page."></div>
+      <p class="figure-description">Eight journals show explicit AI guidance and three do not. The status reflects visible page text, not compliance or the complete policy environment of the publisher.</p>
     </div>
 
-    <p>The variation should not be read as a journal ranking. Wiley, Elsevier, Springer Nature, Oxford University Press, Cambridge University Press and the American Accounting Association maintain different policy structures. A journal page may link to a publisher policy rather than reproduce it. The narrow finding is that a reader arriving at the author page will not always see the relevant AI rules.</p>
+    <p>The variation should not be read as a journal ranking. Wiley, Elsevier, Springer Nature, Oxford University Press, Cambridge University Press and the American Accounting Association maintain different policy structures. A journal page may link to a publisher policy rather than reproduce it, and capture dates differ. The finding is narrower than it first appears: AI rules are now common, but most of them address writing, disclosure and authorship rather than data, code, model use or verification. A reader arriving at an author page will not always see the full policy environment, and three pages showed no explicit rule at all.</p>
     <p>A publisher-level example makes the accountability issue explicit. Elsevier's journal policy permits AI support for manuscript preparation but states that AI tools must not substitute for human critical thinking, expertise and evaluation. Authors remain accountable and must verify sources, disclose substantive use and protect confidential material [10]. This makes clear where responsibility remains, but it does not show that the policy prevents error.</p>
     <p>For accounting and finance, the policy question is broader than manuscript writing. AI may process earnings-call transcripts, propose empirical specifications, classify disclosures, generate code and produce recommendations. A journal rule that covers only grammar support would leave the research process largely unaddressed. Journals and universities need procedures for model choice, prompts, data retention, versioning and independent verification.</p>
 
@@ -338,16 +333,16 @@
     <p>The practical implication is not that the journals are unreliable. It is that a useful research record must include later correction, replication and data provenance. A publication is one point in a continuing evidence record, not its final state. When models can produce polished explanations of weak evidence, the ability to maintain and correct the record becomes more valuable.</p>
 
     <h3>Author guidance uses different ideas of valuable research</h3>
-    <p>The coded author-page sample named data transparency on 8 of 11 pages. Contribution and reproducibility appeared on 6, integrity and accountability on 5, and research design and decision relevance on 4. These counts concern explicit terms. They are not weights and they do not represent editorial decisions.</p>
+    <p>The recoded author-page sample states data transparency on 5 of 11 pages, integrity and accountability on 4, reproducibility on 3, contribution on 2 and research design on 1. No captured page states relevance to practitioners or policy. The counts are lower bounds: two journals' captured pages carried no substantive guidance, and three hold their policy in linked files.</p>
 
     <div class="chart-container">
-      <h4>Figure 6: Author pages name different research criteria</h4>
-      <p class="chart-note">Number of journals with an explicit keyword match in the latest usable author-guidance page. Unit: journals. Source: coded official author-page snapshots.</p>
-      <div class="chart-box" id="chart-editorial" role="img" aria-label="Horizontal bar chart counting explicit author-guidance keywords across six criteria."></div>
-      <p class="figure-description">Data transparency appears on 8 pages. Contribution and reproducibility appear on 6. Integrity and accountability appear on 5, and research design and decision relevance on 4.</p>
+      <h4>Figure 5: Author guidance states few research criteria explicitly</h4>
+      <p class="chart-note">Number of journals whose author-guidance or editorial-policy text explicitly states each criterion. Unit: journals. Source: manual coding of official author-page captures (2026 pages where available; archived pages for RFS and Review of Finance). Navigation, JEL browse lists, copyright notices and shared publisher template text excluded.</p>
+      <div class="chart-box" id="chart-editorial" role="img" aria-label="Horizontal bar chart counting journals whose author guidance explicitly states each research criterion, out of eleven."></div>
+      <p class="figure-description">Data transparency is stated on 5 of 11 pages, integrity and accountability on 4, reproducibility on 3, contribution on 2 and research design on 1. Decision relevance is stated on none.</p>
     </div>
 
-    <p>The variation shows that journals do not define a research contribution in the same way. One journal may stress practical or policy relevance, another data and code, and another contribution to the literature. A single universal metric would hide differences that shape evaluation.</p>
+    <p>The gap is the finding. Only data transparency is stated by close to half the sample, and no journal states relevance to practitioners or policy as an evaluation criterion. Contribution to the literature is named by two journals and research design by one. Author guidance therefore specifies very little about what makes research valuable; most of that judgement stays with editors and referees, which is where AI-assisted submission volume will press hardest.</p>
   </section>
 
   <section id="discussion">
@@ -379,9 +374,9 @@
 
     <h3>Critical skills need to work together</h3>
     <p>The practical response is not a longer list of software tools. Technical ability should support research judgement rather than replace it.</p>
-    <div class="table-wrap">
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable table">
       <table>
-        <thead><tr><th>Capability</th><th>What remains scarce</th><th>Evidence of capability</th></tr></thead>
+        <thead><tr><th scope="col">Capability</th><th scope="col">What remains scarce</th><th scope="col">Evidence of capability</th></tr></thead>
         <tbody>
           <tr><td>Problem judgement</td><td>Recognising a question that matters before the literature, a model or a trend labels it important</td><td>A coherent agenda connected to unresolved theory or consequential decisions</td></tr>
           <tr><td>Research design</td><td>Choosing a credible comparison, measure and identification strategy</td><td>Pre-specified claims, tests against rival explanations and explicit limits</td></tr>
@@ -417,9 +412,9 @@
     <p>The evidence reviewed here is not sufficient to show that universities have abandoned publication counts or replaced them with a new metric. A likely near-term outcome is hybrid evaluation: publication remains an eligibility threshold, while appointments, promotion and funding use a broader evidence portfolio. Publication is likely to remain visible because it provides peer evaluation, a durable record and a common language for comparison. Its weakness is that a count cannot distinguish a carefully verified contribution from a technically compliant paper.</p>
     <p>A credible next step is a research contribution portfolio. It would report contribution across several dimensions rather than hide them inside one undisclosed number.</p>
 
-    <div class="table-wrap">
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable table">
       <table>
-        <thead><tr><th>Dimension</th><th>What the evidence should show</th><th>Main gaming risk</th></tr></thead>
+        <thead><tr><th scope="col">Dimension</th><th scope="col">What the evidence should show</th><th scope="col">Main gaming risk</th></tr></thead>
         <tbody>
           <tr><td>Problem importance</td><td>A consequential unresolved question and a credible claim about who would be affected by the answer</td><td>Topic labels and novelty claims without consequence</td></tr>
           <tr><td>Evidence strength</td><td>Research design, measurement validity and survival under credible alternatives</td><td>Complex robustness tables around a weak question</td></tr>
@@ -437,9 +432,9 @@
     <h3>Three scenarios for 2030</h3>
     <p>The following scenarios are analytical possibilities. They are not forecasts. Their purpose is to make assumptions explicit and to identify indicators that could distinguish them.</p>
 
-    <div class="table-wrap">
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable table">
       <table>
-        <thead><tr><th>Scenario</th><th>Conditions and indicators</th><th>Consequence for research value</th><th>Main risk</th></tr></thead>
+        <thead><tr><th scope="col">Scenario</th><th scope="col">Conditions and indicators</th><th scope="col">Consequence for research value</th><th scope="col">Main risk</th></tr></thead>
         <tbody>
           <tr><td>More output, weaker attention</td><td>Submission volume rises while human reading and reviewer supply do not. Editors desk-reject more and visible attention stays concentrated.</td><td>Problem selection, verification and trusted synthesis become more valuable.</td><td>Evaluation becomes a competition in volume and visibility.</td></tr>
           <tr><td>Quality checks become standard</td><td>Journals and institutions adopt evidence labels, replication checks, data-access registration or contribution portfolios.</td><td>Identification, data provenance and maintained evidence become core assets.</td><td>New metrics become expensive and gameable.</td></tr>
@@ -502,31 +497,34 @@
 
   <section id="references">
     <h2>References</h2>
-    <div class="ref-item">[1] Noy, S., &amp; Zhang, W. (2023). Experimental evidence on the productivity effects of generative artificial intelligence. <em>Science</em>. <a href="https://doi.org/10.1126/science.adh2586">https://doi.org/10.1126/science.adh2586</a></div>
+    <div class="ref-item">[1] Noy, S., &amp; Zhang, W. (2023). Experimental evidence on the productivity effects of generative artificial intelligence. <em>Science</em>, 381(6654), 187-192. <a href="https://doi.org/10.1126/science.adh2586">https://doi.org/10.1126/science.adh2586</a></div>
     <div class="ref-item">[2] Si, C., Yang, D., &amp; Hashimoto, T. (2024). Can LLMs generate novel research ideas? A large-scale human study with 100+ NLP researchers. <a href="https://arxiv.org/abs/2409.04109">arXiv:2409.04109</a>. Preprint.</div>
-    <div class="ref-item">[3] Doshi, A. R., &amp; Hauser, O. P. (2024). Generative AI enhances individual creativity but reduces the collective diversity of novel content. <em>Science Advances</em>. <a href="https://doi.org/10.1126/sciadv.adn5290">https://doi.org/10.1126/sciadv.adn5290</a></div>
+    <div class="ref-item">[3] Doshi, A. R., &amp; Hauser, O. P. (2024). Generative AI enhances individual creativity but reduces the collective diversity of novel content. <em>Science Advances</em>, 10(28), eadn5290. <a href="https://doi.org/10.1126/sciadv.adn5290">https://doi.org/10.1126/sciadv.adn5290</a></div>
     <div class="ref-item">[4] American Finance Association. Journal Statistics. <a href="https://afajof.org/journal-statistics/">https://afajof.org/journal-statistics/</a>. Accessed 22 October 2026.</div>
     <div class="ref-item">[5] Society for Financial Studies. RFS Statistics. <a href="https://sfs.org/rfs-statistics/">https://sfs.org/rfs-statistics/</a>. Accessed 22 October 2026.</div>
-    <div class="ref-item">[6] Schoar, A. (2024). Report of the Editor of The Journal of Finance for the Year 2023. <em>The Journal of Finance</em>. <a href="https://doi.org/10.1111/jofi.13329">https://doi.org/10.1111/jofi.13329</a></div>
+    <div class="ref-item">[6] Schoar, A. (2024). Report of the Editor of The Journal of Finance for the Year 2023. <em>The Journal of Finance</em>, 79(2), 1697-1706. <a href="https://doi.org/10.1111/jofi.13329">https://doi.org/10.1111/jofi.13329</a></div>
     <div class="ref-item">[7] Crossref. REST API. <a href="https://api.crossref.org/">https://api.crossref.org/</a>. Accessed 22 October 2026.</div>
     <div class="ref-item">[8] OpenAlex. Works API. <a href="https://api.openalex.org/works">https://api.openalex.org/works</a>. Accessed 22 October 2026.</div>
-    <div class="ref-item">[9] American Accounting Association. Guide for Authors: The Accounting Review. Archived 24 September 2026. <a href="https://web.archive.org/web/20260924102238id_/https://aaahq.org/Research/Journals/The-Accounting-Review/Guide-for-Authors">Archived page</a>.</div>
+    <div class="ref-item">[9] American Accounting Association. Guide for Authors: The Accounting Review. <a href="https://aaahq.org/Research/Journals/The-Accounting-Review/Guide-for-Authors">https://aaahq.org/Research/Journals/The-Accounting-Review/Guide-for-Authors</a>. Accessed 22 October 2026.</div>
     <div class="ref-item">[10] Elsevier. Generative AI policies for journals. <a href="https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals">https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals</a>. Accessed 22 October 2026.</div>
-    <div class="ref-item">[11] Springer Nature. Review of Accounting Studies submission guidelines. Archived 22 January 2024. <a href="https://web.archive.org/web/20240122090046id_/https://link.springer.com/journal/11142/submission-guidelines">Archived page</a>.</div>
+    <div class="ref-item">[11] Springer Nature. Review of Accounting Studies submission guidelines. <a href="https://link.springer.com/journal/11142/submission-guidelines">https://link.springer.com/journal/11142/submission-guidelines</a>. Accessed 22 October 2026.</div>
+    <div class="ref-item">[12] Gardner, J., Krupa, N. R., &amp; Mammadov, B. (2026). Generative artificial intelligence in the writing process of accounting research. <em>Accounting Open</em>, 2, 100010. <a href="https://doi.org/10.1016/j.accop.2026.100010">https://doi.org/10.1016/j.accop.2026.100010</a></div>
+    <div class="ref-item">[13] Kobak, D., Gonz&aacute;lez-M&aacute;rquez, R., Horv&aacute;t, E.-&Aacute;., &amp; Lause, J. (2025). Delving into LLM-assisted writing in biomedical publications through excess vocabulary. <em>Science Advances</em>, 11. <a href="https://doi.org/10.1126/sciadv.adt3813">https://doi.org/10.1126/sciadv.adt3813</a></div>
+    <div class="ref-item">[14] American Finance Association. Editorial Policies, including Artificial Intelligence Disclosure Policies. <a href="https://afajof.org/editorial-policies/">https://afajof.org/editorial-policies/</a>. Accessed 22 October 2026.</div>
   </section>
 
   <section id="sources">
     <h2>Sources</h2>
-    <div class="table-wrap">
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable table">
       <table class="source-table">
-        <thead><tr><th>Source</th><th>Use</th><th>Access or observation date</th></tr></thead>
+        <thead><tr><th scope="col">Source</th><th scope="col">Use</th><th scope="col">Access or observation date</th></tr></thead>
         <tbody>
           <tr><td>Crossref REST API</td><td>Article output and update records</td><td>22 October 2026</td></tr>
           <tr><td>OpenAlex Works API</td><td>Citation cohorts and coverage</td><td>22 October 2026</td></tr>
           <tr><td>American Finance Association journal statistics</td><td>Journal of Finance submissions, decisions and review time</td><td>22 October 2026</td></tr>
-          <tr><td>Journal of Finance editor reports</td><td>Annual decisions, desk rejection and turnaround</td><td>2015-2023 reports</td></tr>
+          <tr><td>Journal of Finance editor reports</td><td>Annual decisions, desk rejection and turnaround</td><td>2015-2021 and 2023 reports; 2022 comparison from the 2023 report</td></tr>
           <tr><td>Society for Financial Studies statistics</td><td>Review of Financial Studies submissions, acceptance and turnaround</td><td>22 October 2026</td></tr>
-          <tr><td>Official journal author pages</td><td>Visible AI guidance and coded editorial criteria</td><td>2021-2026 snapshots</td></tr>
+          <tr><td>Official journal guidance pages</td><td>Visible AI guidance and coded editorial criteria</td><td>Nine live pages on 22 October 2026; two archived pages (2024-2025)</td></tr>
           <tr><td>Noy and Zhang (2023)</td><td>Writing-task productivity evidence</td><td>Published 2023</td></tr>
           <tr><td>Si, Yang and Hashimoto (2024)</td><td>Research-idea generation evidence</td><td>Preprint, 2024</td></tr>
           <tr><td>Doshi and Hauser (2024)</td><td>Individual creativity and collective similarity</td><td>Published 2024</td></tr>
@@ -648,17 +646,15 @@
   Promise.all([
     loadCsv("data/submission_index.csv"),
     loadCsv("data/field_article_counts.csv"),
-    loadCsv("data/attention_journal_summary.csv"),
     loadCsv("data/review_workload.csv"),
     loadCsv("data/ai_policy_latest.csv"),
     loadCsv("data/editorial_priority_summary.csv")
   ]).then(function (data) {
     var submissions = data[0];
     var fields = data[1];
-    var attention = data[2];
-    var review = data[3];
-    var policy = data[4];
-    var priorities = data[5];
+    var review = data[2];
+    var policy = data[3];
+    var priorities = data[4];
 
     var submissionYears = Array.from(new Set(submissions.map(function (r) {
       return Number(r.reporting_period_end.slice(0, 4));
@@ -736,31 +732,6 @@
       series: [fieldSeries("Accounting", palette.pine), fieldSeries("Finance", palette.slate)]
     });
     charts.push(chart2);
-
-    var attentionSorted = attention.slice().sort(function (a, b) {
-      return Number(a.zero_citation_share) - Number(b.zero_citation_share);
-    });
-    var chart3 = echarts.init(document.getElementById("chart-attention"));
-    chart3.setOption({
-      animationDuration: animationDuration,
-      grid: { left: 70, right: 82, top: 20, bottom: 58 },
-      tooltip: {
-        trigger: "item",
-        formatter: function (p) {
-          var row = attentionSorted[p.dataIndex];
-          return row.journal + "<br>" + row.zero_citations_articles + " of " + row.articles + " articles<br>" + (Number(row.zero_citation_share) * 100).toFixed(1) + "%";
-        }
-      },
-      xAxis: baseAxis({ type: "value", name: "Zero citations (%)", nameLocation: "middle", nameGap: 31, axisLabel: { color: palette.muted, formatter: "{value}%" } }),
-      yAxis: baseAxis({ type: "category", data: attentionSorted.map(function (r) { return shortName(r.journal); }), axisLabel: { color: palette.text, fontSize: 10 } }),
-      series: [{
-        type: "bar",
-        data: attentionSorted.map(function (r) { return Number(r.zero_citation_share) * 100; }),
-        itemStyle: { color: palette.pineLight, borderColor: palette.pine, borderWidth: 0.7 },
-        label: { show: true, position: "right", color: palette.text, fontSize: 10, formatter: function (p) { var r = attentionSorted[p.dataIndex]; return p.value.toFixed(1) + "% (" + r.zero_citations_articles + "/" + r.articles + ")"; } }
-      }]
-    });
-    charts.push(chart3);
 
     var reviewYears = Array.from({ length: 12 }, function (_, i) { return 2015 + i; });
     function reviewSeries(journal, color) {

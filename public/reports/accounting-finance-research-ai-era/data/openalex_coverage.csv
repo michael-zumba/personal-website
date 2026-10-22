@@ -1,11 +1,12 @@
 journal,field,openalex_source_id,crossref_dois_2020_2022,openalex_matched_dois_2020_2022,doi_coverage_share,assessment,accessed_at
-The Accounting Review,Accounting,https://openalex.org/S160506855,369,207,0.5609756097560976,Included in attention analysis.,2026-10-22
-Journal of Accounting Research,Accounting,https://openalex.org/S111116695,156,97,0.6217948717948718,Included in attention analysis.,2026-10-22
-Journal of Accounting and Economics,Accounting,https://openalex.org/S62142384,168,108,0.6428571428571429,Included in attention analysis.,2026-10-22
-Contemporary Accounting Research,Accounting,https://openalex.org/S65924262,283,191,0.6749116607773852,Included in attention analysis.,2026-10-22
-Review of Accounting Studies,Accounting,https://openalex.org/S11853582,119,99,0.8319327731092437,Included in attention analysis.,2026-10-22
-"Accounting, Organizations and Society",Accounting,https://openalex.org/S198892436,136,92,0.6764705882352942,Included in attention analysis.,2026-10-22
-The Journal of Finance,Finance,https://openalex.org/S5353659,301,227,0.7541528239202658,Included in attention analysis.,2026-10-22
-Journal of Financial Economics,Finance,https://openalex.org/S149240962,599,420,0.7011686143572621,Included in attention analysis.,2026-10-22
-The Review of Financial Studies,Finance,https://openalex.org/S170137484,421,282,0.669833729216152,Included in attention analysis.,2026-10-22
-Journal of Financial and Quantitative Analysis,Finance,https://openalex.org/S193228710,325,204,0.6276923076923077,Included in attention analysis.,2026-10-22
+Review of Finance,Finance,,129,129,1.0,Crossref-issued-year cohort matched to OpenAlex by DOI.,2026-10-22
+The Journal of Finance,Finance,,218,218,1.0,Crossref-issued-year cohort matched to OpenAlex by DOI.,2026-10-22
+Contemporary Accounting Research,Accounting,,266,266,1.0,Crossref-issued-year cohort matched to OpenAlex by DOI.,2026-10-22
+The Accounting Review,Accounting,,312,245,0.7852564102564102,Crossref-issued-year cohort matched to OpenAlex by DOI.,2026-10-22
+The Review of Financial Studies,Finance,,415,415,1.0,Crossref-issued-year cohort matched to OpenAlex by DOI.,2026-10-22
+Journal of Accounting Research,Accounting,,116,116,1.0,Crossref-issued-year cohort matched to OpenAlex by DOI.,2026-10-22
+Journal of Accounting and Economics,Accounting,,133,132,0.9924812030075187,Crossref-issued-year cohort matched to OpenAlex by DOI.,2026-10-22
+Journal of Financial and Quantitative Analysis,Finance,,277,271,0.9783393501805054,Crossref-issued-year cohort matched to OpenAlex by DOI.,2026-10-22
+"Accounting, Organizations and Society",Accounting,,109,109,1.0,Crossref-issued-year cohort matched to OpenAlex by DOI.,2026-10-22
+Journal of Financial Economics,Finance,,561,558,0.9946524064171123,Crossref-issued-year cohort matched to OpenAlex by DOI.,2026-10-22
+Review of Accounting Studies,Accounting,,119,119,1.0,Crossref-issued-year cohort matched to OpenAlex by DOI.,2026-10-22

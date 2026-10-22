@@ -1,11 +1,11 @@
 statistic_id,value,unit,definition
-articles_2015,856,Crossref research articles,Sum across 11 selected journals
-articles_2025,1003,Crossref research articles,Sum across 11 selected journals
-articles_change_2015_2025,0.17172897196261672,fraction,2025 count divided by 2015 count minus one
+articles_2015,718,Crossref research articles,Sum across 11 selected journals
+articles_2025,918,Crossref research articles,Sum across 11 selected journals
+articles_change_2015_2025,0.2785515320334262,fraction,2025 count divided by 2015 count minus one
 jf_submissions_2015,1227,submissions,Journal of Finance calendar-year total
 jf_submissions_2024,1066,submissions,Journal of Finance calendar-year total
 rfs_submissions_2023,1534,submissions,RFS 2022-05-15 to 2023-05-15 reporting period
 rfs_submissions_2026,1664,submissions,RFS 2025-05-01 to 2026-05-01 reporting period
-zero_citation_share_2020_2022,0.07918463347706782,fraction,Pooled OpenAlex articles with zero citations in first three calendar years
-explicit_ai_guidance_latest,4,journals,Latest verified author-page snapshot in the sample
+zero_citation_share_2020_2022,0.01008533747090768,fraction,"Pooled zero-citation share for Crossref-matched OpenAlex articles, 2020-2022 issue-year cohorts, three calendar years from the Crossref year"
+explicit_ai_guidance_latest,8,journals,Latest verified author-page snapshot in the sample
 journals_with_policy_snapshot,11,journals,Journals with a usable latest author-page snapshot

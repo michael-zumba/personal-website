@@ -1,9 +1,18 @@
 #!/usr/bin/env python3
-"""Code explicit editorial priorities in the latest author-guidance snapshots.
+"""Assemble the manual editorial-priority coding into the published data table.
 
 Author: Dr Yuqian Zhang
-Date: 2026-10-22
-Purpose: Produce an auditable text-presence matrix with a simple published codebook.
+Date: 2026-10-22 (revised after technical review)
+Purpose: Record a context-verified, hand-coded matrix of stated editorial criteria.
+
+The coding is done by hand from the extracted visible guidance text of each
+journal's latest usable official page. Each PRESENT cell carries a short
+quotable excerpt in evidence/expansion/editorial_recode/editorial_recode.csv.
+A criterion counts only when the page states it as an author requirement or an
+editorial expectation. Site navigation, JEL browse lists, copyright and cookie
+boilerplate, proof-stage notices and shared publisher template paragraphs are
+excluded: only "journal-specific" and "society-or-publisher-policy" bases are
+counted.
 """
 
 from __future__ import annotations
@@ -11,94 +20,66 @@ from __future__ import annotations
 import csv
 from pathlib import Path
 
-from bs4 import BeautifulSoup
-
 PROJECT = Path(__file__).resolve().parents[1]
 DATA = PROJECT / "data"
-
-CODEBOOK = {
-    "Contribution": ("contribution", "novelty", "significance", "importance"),
-    "Research design": ("research design", "identification", "rigorous", "rigor"),
-    "Data transparency": (
-        "data availability",
-        "data sharing",
-        "data access",
-        "data policy",
-        "research data",
-    ),
-    "Reproducibility": (
-        "replicat",
-        "reproduc",
-        "code sharing",
-        "code and data",
-    ),
-    "Decision relevance": (
-        "practitioner",
-        "policymaker",
-        "regulator",
-        "decision-making",
-        "real-world",
-        "policy implication",
-        "practical implication",
-        "practically relevant",
-    ),
-    "Integrity and accountability": (
-        "research integrity",
-        "plagiarism",
-        "misconduct",
-        "accountab",
-    ),
-}
-
-
-def _main_text(path: Path) -> str:
-    soup = BeautifulSoup(
-        path.read_text(encoding="utf-8", errors="replace"), "html.parser"
-    )
-    for node in soup(["script", "style", "noscript", "nav", "footer", "header"]):
-        node.decompose()
-    main = soup.find("main") or soup.body or soup
-    return " ".join(main.get_text(" ", strip=True).split())
+RECODE = PROJECT / "evidence/expansion/editorial_recode/editorial_recode.csv"
+CATEGORIES = [
+    "Contribution",
+    "Research design",
+    "Data transparency",
+    "Reproducibility",
+    "Decision relevance",
+    "Integrity and accountability",
+]
+SUBSTANTIVE_BASES = {"journal-specific", "society-or-publisher-policy"}
 
 
 def main() -> None:
+    recode = list(csv.DictReader(RECODE.open(newline="", encoding="utf-8")))
+
+    latest: dict[str, dict[str, str]] = {}
     with (DATA / "ai_policy_status.csv").open(
         newline="", encoding="utf-8"
     ) as handle:
-        policy_rows = list(csv.DictReader(handle))
-
-    latest = {}
-    for row in policy_rows:
-        current = latest.get(row["journal"])
-        if current is None or row["snapshot_timestamp"] > current["snapshot_timestamp"]:
-            latest[row["journal"]] = row
+        for row in csv.DictReader(handle):
+            current = latest.get(row["journal"])
+            if (
+                current is None
+                or row["snapshot_timestamp"] > current["snapshot_timestamp"]
+            ):
+                latest[row["journal"]] = row
 
     rows = []
-    for journal in sorted(latest):
-        source = latest[journal]
-        text = _main_text(PROJECT / source["snapshot_path"])
-        folded = text.casefold()
-        for category, terms in CODEBOOK.items():
-            matches = [term for term in terms if term in folded]
-            rows.append(
-                {
-                    "journal": journal,
-                    "field": source["field"],
-                    "snapshot_date": source["snapshot_timestamp"][:8],
-                    "category": category,
-                    "present": int(bool(matches)),
-                    "matched_terms": ";".join(matches),
-                    "source_id": f"S_POLICY_{journal.upper().replace(' ', '_').replace(',', '').replace('.', '')}_{source['snapshot_timestamp'][:8]}",
-                    "snapshot_path": source["snapshot_path"],
-                }
-            )
-
+    for code in recode:
+        source = latest[code["journal"]]
+        present = int(code["present"]) if code["basis"] in SUBSTANTIVE_BASES else 0
+        rows.append(
+            {
+                "journal": code["journal"],
+                "field": source["field"],
+                "snapshot_date": source["snapshot_timestamp"][:8],
+                "category": code["category"],
+                "present": present,
+                "matched_terms": f"manual code: {code['basis']}",
+                "source_id": source["source_id"],
+                "snapshot_path": source["snapshot_path"],
+            }
+        )
+    rows.sort(key=lambda row: (row["journal"], row["category"]))
     path = DATA / "editorial_priorities.csv"
     with path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
         writer.writeheader()
         writer.writerows(rows)
+
+    counts = {
+        category: sum(
+            row["present"] == 1 for row in rows if row["category"] == category
+        )
+        for category in CATEGORIES
+    }
     print(f"Wrote {len(rows)} coded journal-category observations")
+    print("Counts:", counts)
 
 
 if __name__ == "__main__":

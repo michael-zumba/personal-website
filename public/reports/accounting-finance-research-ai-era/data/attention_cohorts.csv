@@ -1,31 +1,34 @@
 journal,field,publication_year,articles,zero_citations_articles,zero_citation_share,median_citations_first_3y,mean_citations_first_3y,maximum_citations_first_3y,window,source,accessed_at
-"Accounting, Organizations and Society",Accounting,2020,43,0,0.0,11,12.511627906976743,29,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-"Accounting, Organizations and Society",Accounting,2021,36,0,0.0,10.5,11.194444444444445,31,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-"Accounting, Organizations and Society",Accounting,2022,29,0,0.0,8,10.724137931034482,44,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-Contemporary Accounting Research,Accounting,2020,78,7,0.08974358974358974,7.5,9.217948717948717,50,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-Contemporary Accounting Research,Accounting,2021,74,4,0.05405405405405406,6.0,10.04054054054054,62,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-Contemporary Accounting Research,Accounting,2022,87,6,0.06896551724137931,6,12.160919540229886,215,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-Journal of Accounting Research,Accounting,2020,35,1,0.02857142857142857,17,18.571428571428573,50,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-Journal of Accounting Research,Accounting,2021,47,2,0.0425531914893617,13,16.425531914893618,54,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-Journal of Accounting Research,Accounting,2022,36,1,0.027777777777777776,15.0,18.52777777777778,74,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-Journal of Accounting and Economics,Accounting,2020,49,1,0.02040816326530612,15,18.816326530612244,220,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-Journal of Accounting and Economics,Accounting,2021,42,1,0.023809523809523808,12.5,14.404761904761905,47,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-Journal of Accounting and Economics,Accounting,2022,57,1,0.017543859649122806,15,18.859649122807017,121,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-Journal of Financial Economics,Finance,2020,144,1,0.006944444444444444,16.0,32.9375,596,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-Journal of Financial Economics,Finance,2021,235,3,0.01276595744680851,21,32.4936170212766,630,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-Journal of Financial Economics,Finance,2022,81,0,0.0,20,57.641975308641975,1371,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-Journal of Financial and Quantitative Analysis,Finance,2020,119,22,0.18487394957983194,4,8.487394957983193,88,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-Journal of Financial and Quantitative Analysis,Finance,2021,74,19,0.25675675675675674,6.0,11.108108108108109,103,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-Journal of Financial and Quantitative Analysis,Finance,2022,140,21,0.15,6.0,9.807142857142857,90,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-Review of Accounting Studies,Accounting,2020,50,2,0.04,8.0,14.86,155,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-Review of Accounting Studies,Accounting,2021,72,3,0.041666666666666664,10.0,18.76388888888889,381,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-Review of Accounting Studies,Accounting,2022,80,3,0.0375,9.5,24.1125,266,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-The Accounting Review,Accounting,2020,101,10,0.09900990099009901,8,10.405940594059405,44,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-The Accounting Review,Accounting,2021,105,8,0.0761904761904762,8,13.00952380952381,321,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-The Accounting Review,Accounting,2022,108,7,0.06481481481481481,7.0,9.398148148148149,81,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-The Journal of Finance,Finance,2020,92,24,0.2608695652173913,9.5,25.402173913043477,311,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-The Journal of Finance,Finance,2021,85,23,0.27058823529411763,17,25,238,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-The Journal of Finance,Finance,2022,84,21,0.25,14.5,31.345238095238095,286,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-The Review of Financial Studies,Finance,2020,153,4,0.026143790849673203,14,28.92156862745098,520,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-The Review of Financial Studies,Finance,2021,130,5,0.038461538461538464,17.5,25.2,192,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
-The Review of Financial Studies,Finance,2022,85,2,0.023529411764705882,13,22.6,161,publication year through publication year plus two,OpenAlex work counts_by_year,2026-10-22
+"Accounting, Organizations and Society",Accounting,2020,42,0,0.0,16.0,19.30952380952381,55,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+"Accounting, Organizations and Society",Accounting,2021,35,0,0.0,11,13.742857142857142,38,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+"Accounting, Organizations and Society",Accounting,2022,32,0,0.0,11.5,14.625,45,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Contemporary Accounting Research,Accounting,2020,87,2,0.022988505747126436,13,15.74712643678161,66,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Contemporary Accounting Research,Accounting,2021,95,1,0.010526315789473684,10,13.757894736842106,70,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Contemporary Accounting Research,Accounting,2022,84,2,0.023809523809523808,9.0,13.988095238095237,93,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Journal of Accounting Research,Accounting,2020,31,1,0.03225806451612903,18,25.806451612903224,120,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Journal of Accounting Research,Accounting,2021,40,0,0.0,18.0,19.4,50,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Journal of Accounting Research,Accounting,2022,45,0,0.0,18,28.044444444444444,169,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Journal of Accounting and Economics,Accounting,2020,36,0,0.0,20.0,32,220,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Journal of Accounting and Economics,Accounting,2021,49,1,0.02040816326530612,14,18.306122448979593,81,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Journal of Accounting and Economics,Accounting,2022,47,0,0.0,20,29.659574468085108,121,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Journal of Financial Economics,Finance,2020,152,0,0.0,25.0,37.828947368421055,300,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Journal of Financial Economics,Finance,2021,205,0,0.0,23,50.073170731707314,859,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Journal of Financial Economics,Finance,2022,201,0,0.0,27,54.7363184079602,1371,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Journal of Financial and Quantitative Analysis,Finance,2020,82,1,0.012195121951219513,11.5,16.109756097560975,77,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Journal of Financial and Quantitative Analysis,Finance,2021,91,0,0.0,12,21.857142857142858,160,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Journal of Financial and Quantitative Analysis,Finance,2022,98,1,0.01020408163265306,10.0,16.8265306122449,162,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Review of Accounting Studies,Accounting,2020,40,0,0.0,9.5,17.525,155,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Review of Accounting Studies,Accounting,2021,39,0,0.0,18,34.743589743589745,381,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Review of Accounting Studies,Accounting,2022,40,0,0.0,16.0,27.475,178,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Review of Finance,Finance,2020,35,2,0.05714285714285714,11,17.285714285714285,165,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Review of Finance,Finance,2021,48,1,0.020833333333333332,15.0,23.583333333333332,189,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+Review of Finance,Finance,2022,46,1,0.021739130434782608,13.5,55.08695652173913,1145,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+The Accounting Review,Accounting,2020,72,1,0.013888888888888888,13.0,17.930555555555557,69,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+The Accounting Review,Accounting,2021,80,2,0.025,13.0,16.475,59,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+The Accounting Review,Accounting,2022,93,1,0.010752688172043012,12,21.473118279569892,641,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+The Journal of Finance,Finance,2020,73,1,0.0136986301369863,32,47.821917808219176,311,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+The Journal of Finance,Finance,2021,74,2,0.02702702702702703,27.0,36.5945945945946,224,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+The Journal of Finance,Finance,2022,71,2,0.028169014084507043,32,48.33802816901409,286,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+The Review of Financial Studies,Finance,2020,139,0,0.0,24,48.92805755395683,527,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+The Review of Financial Studies,Finance,2021,152,4,0.02631578947368421,19.0,39.78947368421053,356,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22
+The Review of Financial Studies,Finance,2022,124,0,0.0,24.0,35.88709677419355,248,publication year through publication year plus two,"OpenAlex counts_by_year, Crossref issue-year cohort",2026-10-22

@@ -8,6 +8,7 @@ Purpose: Read the saved CSVs and regenerate all charts and key statistics.
 
 from __future__ import annotations
 
+import html
 import random
 import re
 from pathlib import Path
@@ -33,15 +34,41 @@ SLATE = "#60758a"
 GRID = "#ded8ca"
 BG = "#fffdf8"
 NONRESEARCH_TITLE = re.compile(
-    r"^(?:introduction(?:\s*:|\s*$)|editor['’]s note\b|"
-    r"annual editor report\b|annual report of the society\b|"
-    r"annual report and editorial commentary\b|report of the editor\b|"
-    r"(?:retraction|retracted)(?:\s*:|\s*$)|"
-    r"erratum(?:\s*:|\s+to\b|\s*$)|"
-    r"correction(?:\s*:|\s+to\b|\s*$)|book review\b|"
-    r"commentary(?:\s*:|\s+on\b))",
+    r"^(?:"
+    r"editor(?:['\u2019])?s?\s+note\b|editorial\b|"
+    r"(?:annual\s+)?editor\s+report\b|"
+    r"annual\s+report\s+(?:of|and)\b|report\s+of\s+the\b|"
+    r"(?:retraction|retractions|retracted)\b|"
+    r"errat(?:um|a)\b|corrigend(?:um|a)\b|correction\b|"
+    r"expression\s+of\s+concern\b|addendum\b|"
+    r"publisher(?:['\u2019])?s?\s+(?:note|correction)\b|"
+    r"book\s+reviews?\b|commentary\b|comment\s+on\b|"
+    r"discussion\s+of\b|introduction\b|"
+    r"issue\s+information\b|covers?\s+and\s+front\s+matter\b|"
+    r"front\s+matter\b|back\s+matter\b|"
+    r"cover(?:\s*$|\s+image\b)|in\s+this\s+issue\b|masthead\b|"
+    r"table\s+of\s+contents\b|"
+    r"announcements?\b|american\s+finance\s+association\b|"
+    r"miscellanea\b|dimensional\s+fund\s+advisors\b|"
+    r"brattle\s+group\b|amundi\b|"
+    r"call\s+for\s+papers?\b|forthcoming\s+articles?\b|"
+    r"preliminary\s+program\b|participant\s+schedule\b|"
+    r"afa\s+\d{4}\b|index\s+to\s+volume\b|"
+    r"acknowledg(?:e)?ments?\b|in\s+memoriam\b|minutes\s+of\b|"
+    r"obituary\b|preface\b|foreward\b|foreword\b|"
+    r"list\s+of\s+(?:reviewers|referees)\b|ad\s+hoc\s+reviewers\b|"
+    r"\d{4}\s+excellence\s+in\s+refereeing\b|"
+    r"jfq\b|car\b|abstracts/|oup\s+accepted\s+manuscript\b|"
+    r"sfs\s+statement\b|aaa\b|biblioscene\b|"
+    r"be\s+the\s+thought\s+leaders\b"
+    r")",
     re.IGNORECASE,
 )
+NONRESEARCH_ANYWHERE = re.compile(r"\bplacement\s+ads?\b", re.IGNORECASE)
+
+
+def _clean_title(value: str) -> str:
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", value or ""))).strip()
 
 
 def read(name: str) -> pd.DataFrame:
@@ -60,7 +87,10 @@ def validate_inputs() -> None:
 
     if not articles["doi"].is_unique:
         raise ValueError("Crossref article DOIs are not unique.")
-    if articles["title"].str.contains(NONRESEARCH_TITLE, na=False).any():
+    titles = articles["title"].fillna("").map(_clean_title)
+    if titles.str.contains(NONRESEARCH_TITLE, na=False).any() or titles.str.contains(
+        NONRESEARCH_ANYWHERE, na=False
+    ).any():
         raise ValueError("Nonresearch Crossref titles remain in the article data.")
     grouped = (
         articles.groupby(["journal", "field", "publication_year"])
@@ -82,7 +112,10 @@ def validate_inputs() -> None:
 
     if not attention["doi"].is_unique:
         raise ValueError("OpenAlex DOIs are not unique.")
-    if attention["title"].str.contains(NONRESEARCH_TITLE, na=False).any():
+    titles = attention["title"].fillna("").map(_clean_title)
+    if titles.str.contains(NONRESEARCH_TITLE, na=False).any() or titles.str.contains(
+        NONRESEARCH_ANYWHERE, na=False
+    ).any():
         raise ValueError("Nonresearch OpenAlex titles remain in the attention data.")
     if not attention["zero_citations_first_3y"].isin([0, 1]).all():
         raise ValueError("Attention flag must be binary.")
@@ -247,54 +280,9 @@ def figure_two() -> None:
     add_source(
         fig,
         "Source: Crossref research article queries for 11 selected journals. "
-        "Editor reports and other nonresearch titles are excluded.",
+        "Editorial, front-matter, announcement and other nonresearch titles are excluded.",
     )
     fig.savefig(CHARTS / "fig2_article_output.png", dpi=190, facecolor=BG)
-    plt.close(fig)
-
-
-def figure_three() -> None:
-    data = read("attention_journal_summary.csv").sort_values(
-        "zero_citation_share", ascending=True
-    )
-    labels = [short_journal(value) for value in data["journal"]]
-    values = data["zero_citation_share"] * 100
-    fig, axis = plt.subplots(figsize=(10, 6.4), facecolor=BG)
-    style_axis(axis)
-    bars = axis.barh(labels, values, color=PINE_LIGHT, edgecolor=PINE, linewidth=0.6)
-    for bar, value, zeros, total in zip(
-        bars,
-        values,
-        data["zero_citations_articles"],
-        data["articles"],
-    ):
-        axis.text(
-            bar.get_width() + 0.4,
-            bar.get_y() + bar.get_height() / 2,
-            f"{value:.1f}% ({zeros}/{total})",
-            va="center",
-            fontsize=8,
-            color=INK,
-        )
-    axis.set_xlim(0, max(values) * 1.28)
-    axis.set_title(
-        "The share of uncited articles varies widely by journal",
-        loc="left",
-        fontsize=14,
-        color=INK,
-        pad=14,
-    )
-    axis.set_xlabel(
-        "Articles with zero citations in first three calendar years (%)",
-        color=MUTED,
-    )
-    fig.tight_layout(rect=(0, 0.04, 1, 1))
-    add_source(
-        fig,
-        "Source: OpenAlex, 2020-2022 article cohorts. Citations are not readers; "
-        "coverage and citation lag vary.",
-    )
-    fig.savefig(CHARTS / "fig3_zero_citations.png", dpi=190, facecolor=BG)
     plt.close(fig)
 
 
@@ -358,7 +346,7 @@ def figure_four() -> None:
         "Sources: Journal of Finance editor reports; Review of Financial Studies statistics. "
         "Missing years are not interpolated.",
     )
-    fig.savefig(CHARTS / "fig4_review_capacity.png", dpi=190, facecolor=BG)
+    fig.savefig(CHARTS / "fig3_review_capacity.png", dpi=190, facecolor=BG)
     plt.close(fig)
 
 
@@ -390,7 +378,7 @@ def figure_five() -> None:
     axis.set_xticks([])
     axis.grid(False)
     axis.set_title(
-        f"Only {explicit} of {total} journal pages showed visible AI guidance",
+        f"{explicit} of {total} official journal pages showed explicit AI guidance",
         loc="left",
         fontsize=14,
         color=INK,
@@ -402,7 +390,7 @@ def figure_five() -> None:
         "Source: verified author-page snapshots. Missing page text does not prove "
         "that no linked publisher policy applies.",
     )
-    fig.savefig(CHARTS / "fig5_ai_guidance.png", dpi=190, facecolor=BG)
+    fig.savefig(CHARTS / "fig4_ai_guidance.png", dpi=190, facecolor=BG)
     plt.close(fig)
 
 
@@ -434,20 +422,20 @@ def figure_six() -> None:
         )
     axis.set_xlim(0, 10)
     axis.set_title(
-        "Author pages name different research criteria",
+        "Author guidance states few research criteria explicitly",
         loc="left",
         fontsize=14,
         color=INK,
         pad=14,
     )
-    axis.set_xlabel("Journals with an explicit keyword match", color=MUTED)
+    axis.set_xlabel("Journals stating the criterion", color=MUTED)
     fig.tight_layout(rect=(0, 0.04, 1, 1))
     add_source(
         fig,
         "Source: coded latest author-guidance pages. Keyword presence is not an "
         "editorial decision rule.",
     )
-    fig.savefig(CHARTS / "fig6_editorial_priorities.png", dpi=190, facecolor=BG)
+    fig.savefig(CHARTS / "fig5_editorial_priorities.png", dpi=190, facecolor=BG)
     plt.close(fig)
 
 
@@ -565,12 +553,11 @@ def main() -> None:
     print("Input validation: pass")
     figure_one()
     figure_two()
-    figure_three()
     figure_four()
     figure_five()
     figure_six()
     print_statistics()
-    print("Generated 6 PNG figures from CSV inputs.")
+    print("Generated 5 PNG figures from CSV inputs.")
 
 
 if __name__ == "__main__":

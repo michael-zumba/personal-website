@@ -9,6 +9,7 @@ Purpose: Build a reproducible three-calendar-year attention measure.
 from __future__ import annotations
 
 import csv
+import html
 import json
 import re
 import statistics
@@ -22,15 +23,41 @@ PROJECT = Path(__file__).resolve().parents[1]
 DATA = PROJECT / "data"
 ACCESS_DATE = "2026-10-22"
 NONRESEARCH_TITLE = re.compile(
-    r"^(?:introduction(?:\s*:|\s*$)|editor['’]s note\b|"
-    r"annual editor report\b|annual report of the society\b|"
-    r"annual report and editorial commentary\b|report of the editor\b|"
-    r"(?:retraction|retracted)(?:\s*:|\s*$)|"
-    r"erratum(?:\s*:|\s+to\b|\s*$)|"
-    r"correction(?:\s*:|\s+to\b|\s*$)|book review\b|"
-    r"commentary(?:\s*:|\s+on\b))",
+    r"^(?:"
+    r"editor(?:['\u2019])?s?\s+note\b|editorial\b|"
+    r"(?:annual\s+)?editor\s+report\b|"
+    r"annual\s+report\s+(?:of|and)\b|report\s+of\s+the\b|"
+    r"(?:retraction|retractions|retracted)\b|"
+    r"errat(?:um|a)\b|corrigend(?:um|a)\b|correction\b|"
+    r"expression\s+of\s+concern\b|addendum\b|"
+    r"publisher(?:['\u2019])?s?\s+(?:note|correction)\b|"
+    r"book\s+reviews?\b|commentary\b|comment\s+on\b|"
+    r"discussion\s+of\b|introduction\b|"
+    r"issue\s+information\b|covers?\s+and\s+front\s+matter\b|"
+    r"front\s+matter\b|back\s+matter\b|"
+    r"cover(?:\s*$|\s+image\b)|in\s+this\s+issue\b|masthead\b|"
+    r"table\s+of\s+contents\b|"
+    r"announcements?\b|american\s+finance\s+association\b|"
+    r"miscellanea\b|dimensional\s+fund\s+advisors\b|"
+    r"brattle\s+group\b|amundi\b|"
+    r"call\s+for\s+papers?\b|forthcoming\s+articles?\b|"
+    r"preliminary\s+program\b|participant\s+schedule\b|"
+    r"afa\s+\d{4}\b|index\s+to\s+volume\b|"
+    r"acknowledg(?:e)?ments?\b|in\s+memoriam\b|minutes\s+of\b|"
+    r"obituary\b|preface\b|foreward\b|foreword\b|"
+    r"list\s+of\s+(?:reviewers|referees)\b|ad\s+hoc\s+reviewers\b|"
+    r"\d{4}\s+excellence\s+in\s+refereeing\b|"
+    r"jfq\b|car\b|abstracts/|oup\s+accepted\s+manuscript\b|"
+    r"sfs\s+statement\b|aaa\b|biblioscene\b|"
+    r"be\s+the\s+thought\s+leaders\b"
+    r")",
     re.IGNORECASE,
 )
+NONRESEARCH_ANYWHERE = re.compile(r"\bplacement\s+ads?\b", re.IGNORECASE)
+
+
+def _clean_title(value: str) -> str:
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", value or ""))).strip()
 USER_AGENT = (
     "accounting-finance-research-ai-era/1.0 "
     "(mailto:research@zhangyuqian.com)"
@@ -128,7 +155,8 @@ def collect() -> None:
                     doi = _doi(item.get("doi"))
                     if item_year not in YEARS or not doi:
                         continue
-                    if NONRESEARCH_TITLE.search(item.get("title") or ""):
+                    title = _clean_title(item.get("title") or "")
+                    if NONRESEARCH_TITLE.search(title) or NONRESEARCH_ANYWHERE.search(title):
                         continue
                     first_three = sum(
                         int(c["cited_by_count"])
@@ -144,7 +172,7 @@ def collect() -> None:
                             "publication_year": item_year,
                             "doi": doi,
                             "openalex_id": item.get("id", ""),
-                            "title": item.get("title") or "",
+                            "title": title,
                             "citations_first_3y": first_three,
                             "zero_citations_first_3y": int(first_three == 0),
                             "current_citations": int(

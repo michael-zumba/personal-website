@@ -6,13 +6,14 @@ Evidence window: 2015-2025, with selected 2026 operational and policy observatio
 
 Purpose
 
-This research brief asks what becomes scarce and valuable in accounting and finance research when AI makes some parts of writing, coding, modelling and literature work cheaper. The analysis separates five things that are often combined:
+This research brief asks what becomes scarce and valuable in accounting and finance research when AI makes some parts of writing, coding, modelling and literature work cheaper. The analysis separates six things that are often combined:
 
 1. Research production.
 2. Citation attention.
 3. Editorial gatekeeping and review time.
 4. AI rules and visible author guidance.
 5. Stated criteria for valuable research.
+6. Corrections and retractions.
 
 The report does not measure human readership directly. It also does not identify the causal effect of AI on research quality.
 
@@ -33,9 +34,9 @@ The Crossref REST API was queried separately for each journal ISSN. The work fil
 - issue or publication year retained only for 2015 through 2025;
 - DOI de-duplication within the collected sample.
 
-The issue-year hierarchy was published-print, then published-online, then issued. One fixed title rule excluded nonresearch records labelled as annual editor reports, editor notes, retractions, errata, corrections, book reviews, issue introductions and commentary. The resulting 10,377 unique Crossref research article records are stored in crossref_articles.csv. Journal-year counts are stored in crossref_article_counts.csv, and field totals are in field_article_counts.csv.
+The issue-year hierarchy was published-print, then published-online, then issued. One fixed, documented title rule excluded nonresearch records: editor and editorial matter, front and back matter, issue information, announcements and society business, prize notices, conference programmes, participant schedules, reviewer lists, placement advertisements, corrections, retractions, corrigenda, book reviews, discussion pieces, issue introductions, obituaries and obituary-adjacent notices. Titles were normalised (HTML tags and entities removed) before matching. The resulting 9,044 unique Crossref research article records are stored in crossref_articles.csv. Journal-year counts are stored in crossref_article_counts.csv, and field totals are in field_article_counts.csv. Counts are 718 in 2015 and 918 in 2025 (+27.9%); at the 2024 endpoint the count is 887 (+23.5%).
 
-Crossref article typing is not the same as a journal's internal definition of a research paper. Records can include editorials, corrections, introductions or other content indexed as journal articles. The counts therefore describe Crossref-indexed journal articles, not all research activity.
+Crossref article typing is not the same as a journal's internal definition of a research paper, and some residual miscellany may remain. The 2025 endpoint is provisional: Journal of Accounting and Economics records show a one-year fall that is more consistent with a deposit gap than with a publication decision. The counts therefore describe cleaned Crossref-indexed journal articles, not all research activity.
 
 Journal submissions
 
@@ -51,17 +52,15 @@ No missing submission count was inferred from article output, acceptance rates o
 
 Citation attention
 
-OpenAlex was queried by source ID for article records published in 2020, 2021 and 2022. Filters required type article and a DOI. The same fixed title rule removed editor reports, editor notes, retractions, errata, corrections, book reviews, issue introductions and commentary.
+Citation attention was tested but is not used as a comparative measure. The cohort is the set of Crossref research articles with 2020, 2021 and 2022 issue years (2,655 articles across 11 journals). Each DOI was matched to OpenAlex [8] in batches of up to 50 via the works API; all request URLs and raw responses are cached in the project evidence folder (attention_rebuild/). Of 2,655 articles, 2,578 (97.1%) were matched. The 68 unmatched records are OpenAlex redirects to SSRN versions, 67 of them in The Accounting Review, which explains that journal's lower match rate. Nine non-article records were excluded.
 
-Citations in the first three calendar years were calculated by summing OpenAlex counts_by_year from the publication year through the publication year plus two. An article with no positive count in those years is classified as having zero citations in the window.
+Citations were summed over the three calendar years starting with the Crossref issue year (not the OpenAlex year, which differs for 63% of records). Twenty-six matched articles (1.0%) had no recorded citation in the window. Journal shares ranged from 0.0% to 3.1%, with no more than five zero-citation articles in any journal and overlapping confidence intervals. The differences are not statistically distinguishable. An earlier version of the analysis used an OpenAlex online-first cohort that retained front matter and mis-dated records; it is withdrawn and the rebuild is documented in the project evidence folder (attention_rebuild/NOTES.md).
 
-Review of Finance was excluded from the attention comparison because its OpenAlex source record was too sparse for this measure. Coverage for the other journals is documented in openalex_coverage.csv. OpenAlex coverage is incomplete even where records were available.
-
-A citation is not a reader. A zero count can reflect a paper with no readers, a paper that is read but not cited, a paper that is cited but not indexed, or a paper that is cited outside the OpenAlex record. The measure is citation attention, not human attention.
+A citation is not a reader. Automated access, citation lag, incomplete indexing and differences in citation cultures all affect counts. The measure can show visible scholarly use; it cannot establish that human readers have disappeared, and it does not support a cross-journal ranking.
 
 Review and gatekeeping
 
-Journal of Finance editor reports provide annual acceptance rates, desk-rejection rates, decision counts and median turnaround times. The values used in review_workload.csv come from the 2015 through 2020 reports and the 2023 report, which also contains 2022 comparison values.
+Journal of Finance editor reports provide annual acceptance rates, desk-rejection rates, decision counts and median turnaround times. The values used in review_workload.csv come from the 2015 through 2021 reports and the 2023 report, which also contains 2022 comparison values. The 2021 report PDF is image-only: its values (submissions 1,298; 1,301 decisions; median 48 days; acceptance 7.5%; desk rejection 31.9%) were transcribed from pages 1413-1416 by OCR and visual check. The 2022 report's Figure 1 annotates a different 2021 median (46 days); the 2021 report's own Table II value of 48 days is used. The 2024 and 2025 editor reports are published (DOIs 10.1111/jofi.13435 and 10.1111/jofi.70061) but could not be accessed, so the series stops in 2023.
 
 The Review of Financial Studies statistics page provides rolling-period submission counts, acceptance rates and median turnaround times.
 
@@ -69,38 +68,26 @@ Missing years were retained as missing. Reporting definitions differ. A 43-day m
 
 AI guidance snapshots
 
-The Internet Archive CDX API was used to locate snapshots of official journal author-guideline pages. The analysis uses one baseline snapshot from 2021 through June 2022 where available and the latest usable snapshot from 2023 through the access date. Exact timestamps, archive URLs and local HTML snapshots are recorded in ai_policy_status.csv.
+The analysis uses the latest usable official journal guidance or editorial-policy page for each journal. Nine pages were captured live on 22 October 2026 with a desktop browser user agent; The Review of Financial Studies and Review of Finance use the latest usable Internet Archive captures (30 April 2025 and 23 June 2024) because their live pages blocked automated access. The Journal of Finance is coded from the American Finance Association editorial-policies page because the Wiley author page was blocked and no later archived capture exists. Contemporary Accounting Research's publisher page now directs authors to the CAAA author-information page; the linked CAAA statement on the use of generative AI supplies the explicit terms.
 
-The code searched visible page text for:
+The code searched visible page text for generative AI, generative artificial intelligence, artificial intelligence, AI-assisted, large language model, LLM and ChatGPT. An observation is coded as "Explicit AI guidance" when at least one AI term and at least one policy term are visible. Policy terms include disclose, disclosure, must not, cannot, not permitted, authorship, confidential, accountable, responsibility and responsible. Otherwise the observation is "No visible AI guidance".
 
-- generative AI;
-- generative artificial intelligence;
-- artificial intelligence;
-- AI-assisted;
-- large language model;
-- LLM;
-- ChatGPT.
-
-An observation is coded as "Explicit AI guidance" when at least one AI term and at least one policy term are visible. Examples of policy terms include disclose, authorship, confidential, accountable and responsibility. Otherwise the observation is "No visible AI guidance".
-
-This is a measure of guidance visible on the author page. A journal or publisher may have a linked policy elsewhere. The report does not describe page visibility as policy effectiveness, compliance or research quality.
-
-The public policy CSV contains only short evidence excerpts. Full archived HTML pages are retained in the private project evidence store for audit and are not redistributed.
+Eight of the 11 journals show explicit AI guidance on the latest usable page. The three without visible guidance are The Review of Financial Studies (archived 2025), Journal of Financial and Quantitative Analysis (live 2026) and Review of Finance (archived 2024). Capture dates differ, and a missing page statement does not prove that a linked publisher policy is absent. The report does not describe page visibility as policy effectiveness, compliance or research quality.
 
 Editorial priorities
 
-The latest usable author-guidance snapshot for each journal was coded against a short codebook:
+The six-category matrix was recoded by hand from the extracted visible guidance text of each journal's latest usable page. A criterion counts only where the page states it as an author requirement or an editorial expectation, with a quotable sentence. Site navigation, JEL browse lists, copyright and cookie boilerplate, proof-stage notices and shared publisher template paragraphs are excluded; only journal-specific and society-or-publisher-policy statements count. Every present cell and its excerpt are stored in the project evidence folder (editorial_recode.csv).
 
-Contribution: contribution, novelty, significance or importance.
-Research design: research design, identification, rigorous or rigor.
-Data transparency: data availability, data sharing, data access, data policy or research data.
-Reproducibility: replicate, replication, reproducible, reproducibility, code sharing or code and data.
-Decision relevance: practitioner, policymaker, regulator, decision-making, real-world, policy implication, practical implication or practically relevant.
-Integrity and accountability: research integrity, plagiarism, misconduct, accountability or accountable.
+The codebook is:
 
-The first pass was generated mechanically from visible main-page text. All matches were inspected in context, and the full sample was recoded in a second deterministic pass. Ambiguities were resolved conservatively. A term is recorded as present only when it appears in visible guidance text.
+Contribution: contribution, novelty, significance or importance stated as an acceptance criterion.
+Research design: research design, identification or rigour stated as an evaluation criterion.
+Data transparency: data availability, sharing or access stated as an author requirement.
+Reproducibility: replication, reproducibility or code sharing stated as a requirement.
+Decision relevance: relevance to practitioners, policymakers or practice stated as a criterion.
+Integrity and accountability: research integrity, plagiarism, misconduct or accountability stated as a requirement.
 
-This matrix is not an editorial ranking. It records explicit words. It cannot show how editors weight the criteria or whether their decisions match the stated guidance.
+The counts are data transparency 5, integrity and accountability 4, reproducibility 3, contribution 2, research design 1 and decision relevance 0, out of 11 journals. They are lower bounds: two captured pages carry no substantive guidance and three journals hold policy in linked files. An earlier version used mechanical keyword matches; navigation menus and boilerplate inflated those counts and they are withdrawn. This matrix is not an editorial ranking and cannot show how editors weight criteria or whether decisions match the stated guidance.
 
 Corrections and retractions
 
@@ -115,16 +102,20 @@ Three research studies are used only for bounded evidence about what AI changes:
 - Noy and Zhang examine mid-level professional writing tasks.
 - Doshi and Hauser examine short-story creativity and collective similarity.
 - Si, Yang and Hashimoto examine research-idea generation among NLP researchers.
+- Gardner, Krupa and Mammadov measure AI-associated vocabulary in accounting papers and abstracts.
+- Kobak and coauthors estimate a lower bound on LLM-processed biomedical abstracts.
 
 None of these studies estimates the long-run value of accounting and finance research. They are not treated as direct evidence about accounting or finance research quality.
 
 Evidence verification
 
-DOI-bearing papers and reports have Crossref metadata checks. Journal reports, archived author pages, live statistics pages and API-derived datasets were retrieved to local snapshots. The source ledger records exact locators, access dates and limitations. The reference-check file reports the verification result for all sources.
+DOI-bearing papers and reports have Crossref metadata checks. Journal reports, official guidance pages, live statistics pages and API-derived datasets were retrieved to local snapshots or cached API responses. The source ledger records exact locators, access dates and limitations. Numeric claims in the report and summary are recomputed from the published CSV files by scripts/replicate.py, and qualitative claims were checked against their source snapshots. The source and claim ledgers describe the verification method per record.
 
 Interpretive material
 
 The capability matrix, contribution scorecard and 2030 scenarios are labelled analytical proposals. They are not observed outcomes.
+
+Scope note: the approved contract anticipated coding official journal editorials as well as author guidance, and corrections from Retraction Watch as well as Crossref. The delivered measures are narrower: six criteria are coded from author-guidance pages, and correction counts come from Crossref update records only. The report labels both measures by what they actually cover.
 
 Files
 
@@ -155,4 +146,12 @@ Run:
 
 python3 scripts/replicate.py
 
-The script reads the CSV files, prints the statistics used in the report and summary, and regenerates all six charts.
+The script reads the CSV files, prints the statistics used in the report and summary, and regenerates all five charts.
+
+Supporting re-runs:
+
+- python3 scripts/code_editorial_priorities.py rebuilds the editorial-priority table from the manual coding file.
+- python3 scripts/build_analysis_data.py rebuilds derived tables.
+- python3 scripts/build_evidence_ledgers.py rebuilds the source, claim and figure ledgers.
+- evidence/expansion/attention_rebuild/attention_rebuild.py rebuilds the Crossref-matched citation windows (network; cached responses included).
+- scripts/collect_crossref.py rebuilds the cleaned Crossref article set (network); scripts/collect_corrections.py reproduces the correction and retraction record counts (network).
