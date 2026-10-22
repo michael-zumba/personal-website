@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is Accounting and Finance Research For in the AI Era?</title>
+<meta name="description" content="An evidence-based research brief on the value, credibility and organisation of accounting and finance research when AI makes cognitive production cheaper.">
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<style>
+  :root {
+    --bg: #f7f4ec;
+    --paper: #fffdf8;
+    --text: #23241f;
+    --muted: #6a685e;
+    --border: #ded8ca;
+    --primary: #1f4d3f;
+    --primary-soft: #e7efeb;
+    --ochre: #a86b2d;
+    --slate: #60758a;
+    --radius: 10px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.72;
+  }
+  .container { max-width: 1040px; margin: 0 auto; padding: 42px 30px 70px; }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: var(--primary);
+    text-decoration: none;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 0.9rem;
+  }
+  .back-link:hover { text-decoration: underline; }
+  header {
+    padding: 38px 0 42px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 40px;
+  }
+  .eyebrow {
+    color: var(--primary);
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.12; margin: 0 0 18px; font-weight: 500; }
+  .dek { max-width: 760px; color: var(--muted); font-size: 1.12rem; margin: 0; }
+  .meta { font-family: Inter, system-ui, sans-serif; font-size: 0.86rem; color: var(--muted); margin-top: 16px; }
+  nav.toc {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px 26px;
+    margin-bottom: 42px;
+  }
+  nav.toc h2 { font-size: 1rem; margin: 0 0 12px; font-family: Inter, system-ui, sans-serif; }
+  nav.toc ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 38px; }
+  nav.toc li { margin-bottom: 6px; break-inside: avoid; }
+  nav.toc a { color: var(--primary); text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+  section { margin-bottom: 54px; }
+  section h2 {
+    font-size: 1.75rem;
+    line-height: 1.25;
+    margin: 0 0 18px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 500;
+  }
+  section h3 { font-size: 1.15rem; margin: 28px 0 10px; }
+  p { margin: 0 0 15px; }
+  ul, ol { padding-left: 24px; }
+  li { margin-bottom: 8px; }
+  .executive {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+  }
+  .key-points {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 22px;
+  }
+  .key-point {
+    background: var(--primary-soft);
+    border-radius: 7px;
+    padding: 15px 16px;
+    font-size: 0.91rem;
+    line-height: 1.55;
+  }
+  .key-point strong { display: block; color: var(--primary); margin-bottom: 5px; }
+  .callout {
+    background: #f1ece0;
+    border-left: 3px solid var(--ochre);
+    border-radius: 0 7px 7px 0;
+    padding: 16px 20px;
+    margin: 22px 0;
+    color: #4d463b;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0 24px;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 0.84rem;
+  }
+  th, td {
+    padding: 9px 11px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);
+  }
+  th { background: var(--primary-soft); color: var(--primary); font-weight: 650; }
+  .table-wrap { overflow-x: auto; }
+  .chart-container {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+    margin: 26px 0;
+  }
+  .chart-container h4 { margin: 0 0 4px; font-size: 1rem; line-height: 1.4; }
+  .chart-note, .figure-description {
+    color: var(--muted);
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 0.77rem;
+    line-height: 1.55;
+  }
+  .chart-note { margin: 0 0 13px; font-style: italic; }
+  .figure-description { margin: 10px 0 0; }
+  .chart-box { width: 100%; height: 430px; }
+  .chart-box.tall { height: 535px; }
+  .small-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .small-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+  .small-card h3 { margin-top: 0; font-size: 1.02rem; }
+  .download-list {
+    columns: 2;
+    column-gap: 32px;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 0.84rem;
+  }
+  .download-list li { break-inside: avoid; }
+  a { color: var(--primary); }
+  .ref-item { padding-left: 24px; text-indent: -24px; margin-bottom: 12px; font-size: 0.9rem; }
+  .source-table { font-size: 0.78rem; }
+  footer {
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    padding-top: 22px;
+    margin-top: 56px;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 0.78rem;
+  }
+  @media (max-width: 760px) {
+    .container { padding: 24px 16px 52px; }
+    .key-points, .small-grid { grid-template-columns: 1fr; }
+    nav.toc ol, .download-list { columns: 1; }
+    .chart-container { padding: 15px; }
+    .chart-box { height: 360px; }
+    .chart-box.tall { height: 480px; }
+    h1 { font-size: 2rem; }
+    table { min-width: 620px; }
+  }
+</style>
+<link rel="stylesheet" href="../chart-download.css">
+</head>
+<body>
+<main class="container">
+  <a class="back-link" href="/insights/">&larr; Back to Insights</a>
+
+  <header>
+    <div class="eyebrow">Research Brief</div>
+    <h1>What Is Accounting and Finance Research For in the AI Era?</h1>
+    <p class="dek">When writing, coding and basic synthesis become cheaper, research does not lose all value. The basis of its value changes.</p>
+    <p class="meta">Dr Yuqian Zhang &middot; October 2026</p>
+  </header>
+
+  <nav class="toc" aria-label="Report contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#executive-summary">Executive Summary</a></li>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#background">Background</a></li>
+      <li><a href="#data">Data and Method</a></li>
+      <li><a href="#findings">Findings</a></li>
+      <li><a href="#discussion">Discussion</a></li>
+      <li><a href="#opportunities">Research Opportunities</a></li>
+      <li><a href="#replication">Data Availability and Replication</a></li>
+      <li><a href="#references">References</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
+  </nav>
+
+  <section id="executive-summary" class="executive">
+    <h2>Executive Summary</h2>
+    <p>AI does not make accounting and finance research worthless. It makes undifferentiated research output less scarce. The main question is therefore not whether a model can produce a plausible paper. The question is what a research contribution must now contain to deserve attention, editorial capacity and public trust.</p>
+    <p>The evidence in this brief points to a shift in scarcity. Public article output in 11 selected journals rose 16.2% between 2015 and 2025. In the two finance journals with usable public submission records, however, submissions did not rise continuously after large language models became widely available. Editorial acceptance remained selective, and median decisions still took weeks. Citation attention varied sharply across journals, while visible AI guidance and stated criteria for valuable research were uneven.</p>
+    <p>These findings do not support a simple story of research abundance leading to research collapse. They support a more specific claim: production is not the main bottleneck. Judgement, verifiable evidence, access to difficult settings, editorial evaluation and accountable use are more likely to determine value.</p>
+    <div class="key-points">
+      <div class="key-point"><strong>Publication remains a threshold</strong>The evidence does not show that publication counts will disappear. It shows that a count alone is an increasingly weak account of contribution.</div>
+      <div class="key-point"><strong>Verification becomes the constraint</strong>Cheap drafting and code generation shift effort toward checking sources, assumptions, models and claims, and toward deciding what the evidence warrants.</div>
+      <div class="key-point"><strong>Prepare for the scarcity shift</strong>Develop a defensible problem agenda, privileged data or context, reproducible methods and the ability to make and defend decisions under uncertainty.</div>
+    </div>
+  </section>
+
+  <section id="introduction">
+    <h2>Introduction</h2>
+    <p>The immediate effect of generative AI is easy to notice. A model can draft a literature review, write code, propose a regression and turn results into polished prose. The larger institutional effect is less clear. If these tasks become cheap, will research become more plentiful, less valuable or differently valuable?</p>
+    <p>This brief treats research value as a social and evidentiary question rather than a question about text production. A paper has little value if no one can establish what it contributes. A model or dataset has little value if no one can verify how it was built. A recommendation has little value if its authors cannot explain uncertainty or accept responsibility for error. Those conditions matter more when fluent output is abundant.</p>
+    <p>The report examines six dimensions: research production, citation attention, review and gatekeeping, visible AI guidance, evidence correction and stated editorial priorities. It then connects the evidence to a practical question: what should individual researchers, doctoral programmes, journals, departments and universities do next?</p>
+    <div class="callout"><strong>Central argument.</strong> The scarce academic asset is moving from the ability to produce a paper toward the ability to choose a worthwhile problem, obtain and understand difficult evidence, verify the chain from data to claim, and make a responsible judgement that others can audit.</div>
+  </section>
+
+  <section id="background">
+    <h2>Background</h2>
+    <p>AI is not a single technology. In this brief, the term includes generative models that write and reason with language, code-generation tools, machine learning and automated data processing. The relevant concern is not that these tools can imitate an academic article. It is that they reduce the cost of many intermediate tasks while leaving the hardest social and evidentiary tasks intact.</p>
+    <p>Experimental evidence supports substantial gains in some cognitive tasks. Noy and Zhang found that, among 453 college-educated professionals completing mid-level writing tasks, access to ChatGPT reduced average time by 40% and raised output quality by 18% [1]. Their experiment did not study accounting or finance scholarship. It does, however, show why drafting alone is a weak basis for a professional moat.</p>
+    <p>Evidence about research ideas is more mixed. Si, Yang and Hashimoto recruited more than 100 NLP researchers to compare expert and model-generated ideas. The model-generated ideas were judged more novel, but slightly weaker on feasibility. The authors also reported limited diversity and failures of model self-evaluation [2]. Novelty in a blinded review is not the same as a defensible contribution.</p>
+    <p>A third experiment, on short-story writing, found higher individual creativity ratings for people given AI ideas, but greater similarity across AI-assisted stories [3]. The setting is not academic research. It nevertheless illustrates a possible collective problem: a tool can improve each person's output while narrowing the range of ideas the system produces.</p>
+    <p>These results suggest a distinction that matters throughout the rest of the report. AI may improve measured output quality on a defined task. It may also create common ideas, common errors and common forms of presentation. Neither result establishes the value of a longer-term research programme.</p>
+  </section>
+
+  <section id="data">
+    <h2>Data and Method</h2>
+    <p>The report uses a frozen sample of 11 English-language accounting and finance journals: The Accounting Review, Journal of Accounting Research, Journal of Accounting and Economics, Contemporary Accounting Research, Review of Accounting Studies, Accounting, Organizations and Society, The Journal of Finance, Journal of Financial Economics, The Review of Financial Studies, Journal of Financial and Quantitative Analysis, and Review of Finance. The sample is purposive. It represents influential general-interest outlets and is not a global census.</p>
+    <p>Crossref supplied article metadata. The queries used each journal ISSN, the journal-article type and a publication window from 2014 through 2026. Only issue years from 2015 through 2025 were retained. DOI duplicates were removed. The final Crossref dataset contains 10,477 unique article records. Article typing and indexing are not identical to journal-specific definitions of a research paper.</p>
+    <p>Only two journals had public submission records that could be used under the evidence rules. The Journal of Finance publishes calendar-year totals, and The Review of Financial Studies publishes rolling May-to-May periods. Their definitions are not sufficiently similar to pool. Figure 1 therefore indexes each journal to its own first observed period and a companion table keeps the reported counts visible.</p>
+
+    <div class="table-wrap">
+      <table>
+        <caption class="chart-note">Reported submission totals and definitions</caption>
+        <thead><tr><th>Journal</th><th>Reporting period</th><th>Total submissions</th><th>Definition</th></tr></thead>
+        <tbody>
+          <tr><td>The Journal of Finance</td><td>2015</td><td>1,227</td><td>Calendar year; includes resubmissions</td></tr>
+          <tr><td>The Journal of Finance</td><td>2020</td><td>1,333</td><td>Calendar year; includes resubmissions</td></tr>
+          <tr><td>The Journal of Finance</td><td>2023</td><td>1,307</td><td>Calendar year; includes resubmissions</td></tr>
+          <tr><td>The Journal of Finance</td><td>2024</td><td>1,066</td><td>Calendar year; includes resubmissions</td></tr>
+          <tr><td>The Review of Financial Studies</td><td>May 2022 to May 2023</td><td>1,534</td><td>New and dual submissions; excludes resubmissions</td></tr>
+          <tr><td>The Review of Financial Studies</td><td>May 2023 to May 2024</td><td>1,544</td><td>New and dual submissions; excludes resubmissions</td></tr>
+          <tr><td>The Review of Financial Studies</td><td>May 2024 to May 2025</td><td>1,474</td><td>New and dual submissions; excludes resubmissions</td></tr>
+          <tr><td>The Review of Financial Studies</td><td>May 2025 to May 2026</td><td>1,664</td><td>New and dual submissions; excludes resubmissions</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Attention is measured with OpenAlex article cohorts from 2020, 2021 and 2022. Citations were summed for the publication year and the next two calendar years. An article with no positive count in that three-calendar-year window is classified as having zero indexed citations. The final attention sample contains 2,563 articles from 10 journals. Review of Finance was excluded because its OpenAlex source was too sparse for comparison.</p>
+    <p>A citation cohort is the set of articles sharing a publication year. The measure is not a measure of human reading. Automated access, citation lag, incomplete indexing and differences in citation cultures all affect the result. The evidence can show uneven visible attention. It cannot establish that human readers have disappeared.</p>
+    <p>AI guidance was collected from dated author-page snapshots. Visible text was searched for generative AI, artificial intelligence, AI-assisted tools, large language models, LLM and ChatGPT. A page was coded as showing explicit AI guidance when an AI term appeared with a policy term such as disclosure, authorship, accountability or responsibility. A missing mention means only that the guidance was not visible on that page. It does not prove that a linked publisher policy is absent.</p>
+    <p>Editorial priorities were coded with six transparent keyword categories: contribution, research design, data transparency, reproducibility, decision relevance, and integrity and accountability. This is a measure of stated criteria, not editorial behaviour.</p>
+    <p>Crossref update filters were also run for retractions, errata and corrections. The resulting record counts are not clean retraction rates because one event can appear in both the original record and a notice. No rate is inferred.</p>
+    <p>Terms used in this report have precise meanings. A desk rejection is a rejection before external peer review. Identification concerns whether a relationship can be interpreted as causal rather than merely correlated. Replication means that another researcher can reproduce the analysis from the documented data and code, within legitimate access limits. Generative-AI guidance is an explicit statement about permitted use, disclosure or accountability.</p>
+  </section>
+
+  <section id="findings">
+    <h2>Findings</h2>
+
+    <h3>Research production increased, but the submission story is uneven</h3>
+    <div class="chart-container">
+      <h4>Figure 1: Submissions rose unevenly in the two journals that disclose them</h4>
+      <p class="chart-note">Index: first observed period for each journal equals 100. The Journal of Finance uses calendar years; The Review of Financial Studies uses rolling May-to-May periods. Sources: AFA and SFS.</p>
+      <div class="chart-box" id="chart-submissions" role="img" aria-label="Line chart indexing submissions in The Journal of Finance and The Review of Financial Studies to their first observed periods."></div>
+      <p class="figure-description">The Journal of Finance stands at 86.9 in 2024 on its 2015 base. The Review of Financial Studies stands at 108.5 in 2026 on its 2023 base, after dipping in 2025.</p>
+    </div>
+
+    <p>Submission counts tell a limited story. The Journal of Finance recorded 1,227 submissions in 2015, 1,333 in 2020, 1,307 in 2023 and 1,066 in 2024. The Review of Financial Studies reported 1,534 in its 2022-2023 period, 1,544 in 2023-2024, 1,474 in 2024-2025 and 1,664 in 2025-2026. These movements are inconsistent with a simple claim that AI caused a permanent increase in finance submissions.</p>
+
+    <p>Crossref-indexed article output across the selected journals rose from 869 in 2015 to 1,010 in 2025, an increase of 16.2%. The path was not steady, and three journals published fewer articles in 2025 than in 2015. This is evidence of modest growth in indexed output, not an AI-driven explosion.</p>
+
+    <div class="chart-container">
+      <h4>Figure 2: Published article output grew modestly and unevenly</h4>
+      <p class="chart-note">Crossref-indexed journal articles in 11 selected journals. Unit: article records. Source: Crossref. Coverage and article typing differ from journal-specific definitions.</p>
+      <div class="chart-box" id="chart-article-output" role="img" aria-label="Line chart showing Crossref-indexed article output for accounting and finance journals from 2015 to 2025."></div>
+      <p class="figure-description">Accounting and finance counts fluctuate without a continuous rise. The combined count rises from 869 in 2015 to 1,010 in 2025, a 16.2% increase.</p>
+    </div>
+
+    <p>The data do not reveal one uniform trend because the journals use different definitions and because most journals in the sample did not provide submission counts that met the evidence rules. The absence of a clear post-2022 surge at these outlets does not imply that AI has no effect. It means the effect cannot be inferred from a short, selective series. Later research should test preprint volume, desk-rejection behaviour and submissions to lower-ranked and specialist journals.</p>
+
+    <h3>Citation attention is uneven, and it is not readership</h3>
+    <p>In the 2020-2022 OpenAlex cohorts, 207 of 2,563 articles had no indexed citations in their first three calendar years. The pooled share was 8.1%. The journal-level difference was much larger than the pooled figure suggests. It was 0.0% for Accounting, Organizations and Society, 26.0% for The Journal of Finance and 18.6% for the Journal of Financial and Quantitative Analysis.</p>
+
+    <div class="chart-container">
+      <h4>Figure 3: Citation attention after three years varies sharply across journals</h4>
+      <p class="chart-note">Share of 2020-2022 articles with zero OpenAlex citations in the publication year through year two. Labels show zero-count articles divided by cohort size. Source: OpenAlex.</p>
+      <div class="chart-box tall" id="chart-attention" role="img" aria-label="Horizontal bar chart of zero-citation shares by journal for 2020 to 2022 article cohorts."></div>
+      <p class="figure-description">The pooled zero-citation share is 8.1%, ranging from 0.0% in Accounting, Organizations and Society to 26.0% in The Journal of Finance.</p>
+    </div>
+
+    <p>The variation warns against treating citation counts as a universal value measure. Accounting, finance, critical and quantitative journals have different citation cultures, article lengths and indexing coverage. A zero count may reflect no attention, delayed attention or incomplete records. A high count may reflect a useful contribution, a fashionable topic or an established network. Citations are evidence of visible scholarly use, not proof of quality or human reading.</p>
+    <p>This limitation matters for the original question. The claim that human readership is falling is plausible, but it cannot be established from public citation data alone. What the evidence does support is a distribution of attention in which output is not automatically matched by use. AI makes that distinction more important because text can be produced without being read.</p>
+
+    <h3>Editorial gatekeeping remains severe, and decisions still take weeks</h3>
+    <p>Acceptance and rejection data sharpen the picture. The Journal of Finance accepted 6.4% of 1,226 editorial decisions in 2023 and desk-rejected 43% of new submissions. Its median turnaround was 43 days. The Review of Financial Studies reported an 8.1% acceptance rate and a 33-day median turnaround in its 2024-2025 period.</p>
+
+    <div class="chart-container">
+      <h4>Figure 4: Editorial decisions still take weeks</h4>
+      <p class="chart-note">Median days to editorial decision by reporting period. Missing years are not interpolated. Sources: Journal of Finance editor reports and SFS statistics.</p>
+      <div class="chart-box tall" id="chart-review" role="img" aria-label="Two line charts showing median editorial decision times for the Journal of Finance and the Review of Financial Studies."></div>
+      <p class="figure-description">The Journal of Finance median turnaround is between 40.5 and 52 days in the reported years. The Review of Financial Studies reports medians of 35, 33 and 30 days in 2023, 2025 and 2026.</p>
+    </div>
+
+    <p>The Journal of Finance reduced its median turnaround from 52 days in 2022 to 43 days in 2023, even as the desk-rejection rate was reported at 43%. The Review of Financial Studies median also fell to 30 days in its latest period. These figures do not show a system becoming unable to process more work. They show that efficient triage remains possible while deep evaluation remains scarce.</p>
+    <p>The relevant bottleneck is therefore not typing speed. It is the supply of reviewers who can test a claim, editors who can compare contributions, and researchers who can detect errors that a model will also miss. AI can help editors screen submissions. It can also increase the number of plausible but underdeveloped submissions requiring screening.</p>
+
+    <h3>AI rules are visible on few author pages</h3>
+    <p>Across the latest usable author-page snapshots, 4 of 11 journals showed explicit AI guidance in the visible page text. The Accounting Review requires disclosure and states that AI cannot serve as an author. Review of Accounting Studies states that large language models do not meet authorship criteria and that use should be documented. Accounting, Organizations and Society and the Journal of Financial Economics also displayed explicit AI or generative-AI guidance in their latest snapshots.</p>
+
+    <div class="chart-container">
+      <h4>Figure 5: AI guidance is visible on only four of eleven latest author pages</h4>
+      <p class="chart-note">Latest usable snapshot per journal; dates range from May 2021 to September 2026. A missing page statement does not rule out a linked publisher policy. Source: archived official journal pages.</p>
+      <div class="chart-box tall" id="chart-ai-guidance" role="img" aria-label="Status list showing which selected journals have explicit AI guidance visible on their latest author page."></div>
+      <p class="figure-description">Four journals show explicit AI guidance and seven do not. The status reflects visible author-page text, not compliance or the complete policy environment of the publisher.</p>
+    </div>
+
+    <p>The variation should not be read as a journal ranking. Wiley, Elsevier, Springer Nature, Oxford University Press, Cambridge University Press and the American Accounting Association maintain different policy structures. A journal page may link to a publisher policy rather than reproduce it. The narrow finding is that a reader arriving at the author page will not always see the relevant AI rules.</p>
+    <p>A publisher-level example makes the accountability issue explicit. Elsevier's journal policy permits AI support for manuscript preparation but states that AI tools must not substitute for human critical thinking, expertise and evaluation. Authors remain accountable and must verify sources, disclose substantive use and protect confidential material [10]. This is an operational definition of human responsibility, not a claim that the policy prevents error.</p>
+    <p>For accounting and finance, the policy question is broader than manuscript writing. AI may process earnings-call transcripts, propose empirical specifications, classify disclosures, generate code and produce recommendations. A policy that covers only grammar support leaves the research process largely unaddressed. Journals and universities need procedures for model choice, prompts, data retention, versioning and independent verification.</p>
+
+    <h3>Corrections and retractions show why the evidence record needs maintenance</h3>
+    <p>Crossref returned 20 retraction-update records, 21 erratum records and 28 correction records across the selected journals for 2015-2025. These are filtered record counts, not retraction rates. One event can appear more than once, and reporting practices differ.</p>
+    <p>The practical implication is not that the journals are unreliable. It is that a useful research record must include later correction, replication and data provenance. A publication is one point in an evidence lifecycle, not its final state. When models can produce polished explanations of weak evidence, the ability to maintain and correct the record becomes more valuable.</p>
+
+    <h3>Author guidance does not define one common model of valuable research</h3>
+    <p>The coded author-page sample named data transparency and decision relevance on 8 of 11 pages. Contribution and reproducibility appeared on 6, integrity and accountability on 5, and research design on 4. These counts concern explicit keywords. They are not weights and they do not represent editorial decisions.</p>
+
+    <div class="chart-container">
+      <h4>Figure 6: Author guidance uses different definitions of valuable research</h4>
+      <p class="chart-note">Number of journals with an explicit keyword match in the latest usable author-guidance page. Unit: journals. Source: coded official author-page snapshots.</p>
+      <div class="chart-box" id="chart-editorial" role="img" aria-label="Horizontal bar chart counting explicit author-guidance keywords across six criteria."></div>
+      <p class="figure-description">Data transparency and decision relevance each appear on 8 pages. Contribution and reproducibility appear on 6. Integrity and accountability appear on 5, and research design on 4.</p>
+    </div>
+
+    <p>The variance suggests that “research contribution” is not a stable operational construct. One journal may foreground practice and regulation, another data and code, and another significance in the literature. That heterogeneity is useful. It also means that a single universal metric would compress distinctions that matter.</p>
+  </section>
+
+  <section id="discussion">
+    <h2>Discussion</h2>
+
+    <h3>The scarcity shifts</h3>
+    <p>A better response to cheaper writing and coding is not to increase output. It is to shift effort toward assets that remain costly, difficult to copy or necessary for trust.</p>
+
+    <div class="small-grid">
+      <div class="small-card">
+        <h3>1. Problem selection</h3>
+        <p>The ability to identify a question that matters to theory or a real decision becomes more valuable when articles are easy to generate. Judgment about importance cannot be automated by asking a model whether a topic is interesting.</p>
+      </div>
+      <div class="small-card">
+        <h3>2. Data and context</h3>
+        <p>Proprietary audit data, loan records, internal controls, hand-collected governance information, field access and regulatory knowledge create a defensible research position. Public, standardised data remain useful, but their analysis is less distinctive when the analysis is easy to reproduce.</p>
+      </div>
+      <div class="small-card">
+        <h3>3. Verification</h3>
+        <p>The supply of plausible claims may rise faster than the supply of people who can test them. Research infrastructure should make it easy to inspect data lineage, code, assumptions, failed tests and alternative explanations.</p>
+      </div>
+      <div class="small-card">
+        <h3>4. Accountability</h3>
+        <p>Someone must decide which evidence is sufficient and accept responsibility when the recommendation is wrong. That decision requires domain knowledge, ethics and institutional judgment, not only model capability.</p>
+      </div>
+    </div>
+
+    <p>This is why general coding skill is no longer a durable advantage. It remains necessary, but its marginal scarcity has fallen. The same applies to basic writing. A researcher can know Python and use a model well and still produce a well-written answer to an unimportant question. The advantage now lies in combining technical ability with problem judgment, evidence access and accountable interpretation.</p>
+
+    <h3>Critical skills become a stack, not a single technical qualification</h3>
+    <p>The practical response to the skills question is not a longer list of software tools. It is a stack in which technical ability supports research judgement rather than replacing it.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Capability</th><th>What remains scarce</th><th>Evidence of capability</th></tr></thead>
+        <tbody>
+          <tr><td>Problem judgement</td><td>Recognising a question that matters before the literature, a model or a trend labels it important</td><td>A coherent agenda connected to unresolved theory or consequential decisions</td></tr>
+          <tr><td>Research design</td><td>Choosing a credible comparison, measure and identification strategy</td><td>Pre-specified claims, tests against rival explanations and explicit limits</td></tr>
+          <tr><td>Data and institutional knowledge</td><td>Accessing and understanding accounting rules, markets, firms, regulators and confidential settings</td><td>Documented provenance, domain interpretation and lawful access to data that others cannot easily obtain</td></tr>
+          <tr><td>Computational audit</td><td>Knowing when generated code or an automated classification is wrong</td><td>Independent replication, edge-case tests, sensitivity analysis and model evaluation</td></tr>
+          <tr><td>Evidence synthesis</td><td>Weighing conflicting results without erasing disagreement</td><td>A verified evidence map with stable identifiers and explicit uncertainty</td></tr>
+          <tr><td>Accountable judgement</td><td>Deciding what the evidence means for a decision and accepting responsibility</td><td>Clear recommendations, stated tradeoffs and a correction process</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Programming and prompt fluency are becoming baseline capabilities, not distinctive intellectual positions. They are still valuable because a researcher who can inspect data, build tools, evaluate a model and read its code has more control over the evidence. Model literacy is broader than prompt writing. It includes understanding training data, retrieval, context limits, uncertainty, evaluation, failure modes and the difference between fluency and reliability.</p>
+    <p>Productivity is an outcome, not a strategy. The useful question is whether a workflow reduces the time and cost required to reach a defensible answer, or whether it merely increases the number of unfinished outputs. Workflow optimisation matters when it improves verification and reuse. It creates risk when it accelerates production faster than evaluation.</p>
+
+    <h3>Workflow optimisation is necessary, but not sufficient</h3>
+    <p>A useful AI workflow changes where human attention is spent. The objective is fewer errors, shorter iteration cycles and more auditable decisions. A workflow designed mainly to raise output volume can increase editorial burden without increasing knowledge.</p>
+
+    <ol>
+      <li><strong>Frame a consequential question.</strong> State the decision or theoretical problem, the audience and what evidence would change an answer.</li>
+      <li><strong>Specify the claim before generating text.</strong> Identify the estimand, comparison, expected direction and limits.</li>
+      <li><strong>Map existing evidence.</strong> Use structured retrieval, maintain stable identifiers and verify every citation against the source.</li>
+      <li><strong>Secure data and rights.</strong> Document the source, permission, coverage and transformations. Keep confidential material out of tools that cannot protect it.</li>
+      <li><strong>Design before prompting.</strong> Let AI propose alternatives, but require human approval of the identification strategy, measures and falsification tests.</li>
+      <li><strong>Generate code with tests.</strong> Use the model to write code and tests, then rerun from a clean environment and compare outputs with an independent implementation.</li>
+      <li><strong>Red-team the result.</strong> Ask another model or colleague for the strongest competing explanation, then test the criticism against data.</li>
+      <li><strong>Write the argument, not just the prose.</strong> Use AI to critique structure and clarity, while a named human owns every factual claim and normative judgement.</li>
+      <li><strong>Preserve provenance.</strong> Retain data dictionaries, prompts where relevant, model versions, outputs, failed tests and decision notes.</li>
+      <li><strong>Maintain the contribution.</strong> Correct errors, update data, document replication and track use.</li>
+    </ol>
+
+    <p>This workflow treats the model as a research instrument and a critic, not as a substitute for the researcher. The phrase “human in the loop” is insufficient if the human merely approves polished output. Oversight has to include the authority, time and competence to stop a result that does not meet the evidence threshold.</p>
+
+    <h3>What replaces publish or perish?</h3>
+    <p>The evidence does not show that universities have abandoned publication counts or that a new metric has replaced them. It is safer to describe a probable reweighting than a completed revolution. Publication will remain a visible threshold because it provides peer evaluation, a durable record and a common language for comparison. Its weakness is that a count cannot distinguish a carefully verified contribution from a technically compliant paper.</p>
+    <p>A credible next step is a research contribution portfolio. It would report contribution across several dimensions rather than hide them inside one undisclosed number.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Dimension</th><th>What the evidence should show</th><th>Main gaming risk</th></tr></thead>
+        <tbody>
+          <tr><td>Problem importance</td><td>A consequential unresolved question and a credible claim about who would be affected by the answer</td><td>Topic labels and novelty claims without consequence</td></tr>
+          <tr><td>Evidence strength</td><td>Research design, measurement validity and survival under credible alternatives</td><td>Complex robustness tables around a weak question</td></tr>
+          <tr><td>Provenance and reproducibility</td><td>Data and code access where lawful, plus a traceable chain from source to result</td><td>Openness as a badge with unusable files</td></tr>
+          <tr><td>Decision use</td><td>Documented use by researchers, firms, regulators or standard setters</td><td>Citation padding and stakeholder name-dropping</td></tr>
+          <tr><td>Maintained value</td><td>Corrections, updates, replication and reuse over time</td><td>One-off publication without maintenance</td></tr>
+          <tr><td>Scholarly stewardship</td><td>Review, data curation, mentorship and infrastructure that improve shared research capacity</td><td>Counting service volume without quality</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The portfolio is a design proposal, not a validated evaluation system. It has costs. Collecting evidence is burdensome. Weights can be gamed. Qualitative evidence can be captured by powerful institutions. Researchers without proprietary data may be disadvantaged. A portfolio should therefore expose its components and permit contextual weighting rather than claim that one number is neutral.</p>
+    <p>A defensible implementation would separate three layers: contribution quality, process integrity and external use. Contribution quality concerns problem selection and evidence. Process integrity concerns data, code, disclosure and correction. External use concerns citations, policy or practice. The three layers answer different questions and should not be collapsed without explanation.</p>
+
+    <h3>Three scenarios for 2030</h3>
+    <p>The following scenarios are analytical possibilities. They are not forecasts. Their purpose is to make assumptions explicit and to identify indicators that could distinguish them.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Scenario</th><th>Conditions and indicators</th><th>Consequence for research value</th><th>Main risk</th></tr></thead>
+        <tbody>
+          <tr><td>More output, weaker attention</td><td>Submission volume rises while human reading and reviewer supply do not. Editors desk-reject more and visible attention stays concentrated.</td><td>Problem selection, verification and trusted synthesis become more valuable.</td><td>Evaluation becomes a competition in volume and visibility.</td></tr>
+          <tr><td>Quality-first segmentation</td><td>Journals and institutions adopt evidence labels, replication checks, data-access registration or contribution portfolios.</td><td>Identification, data provenance and maintained evidence become core assets.</td><td>New metrics become expensive and gameable.</td></tr>
+          <tr><td>Embedded research</td><td>Firms, regulators and standard setters commission and use research more directly.</td><td>Decision relevance, implementation and accountability gain status.</td><td>Funding relationships weaken independence and public credibility.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>How to prepare</h3>
+    <p><strong>Individuals.</strong> Build one or two deep problem agendas rather than a large set of disconnected papers. Develop a defensible data or field position. Learn to specify causal designs, test code independently and use models against a written evidence standard. Keep a portfolio record that shows what changed in understanding or practice, not only where work was published.</p>
+    <p><strong>Doctoral programmes.</strong> Teach research design, measurement, data engineering, model evaluation and research integrity as one connected sequence. Require students to replicate a published result, document a data pipeline and defend the assumptions of an AI-assisted analysis. Writing instruction should focus on argument, uncertainty and evidence, not only prose generation.</p>
+    <p><strong>Journals.</strong> Publish clear rules for AI use across writing, data work, modelling and review. Require enough provenance for readers to understand the chain from data to claim. Invest in reviewer support and experiments with verification, registered reports and evidence audits. Publish the limitations of operational statistics when comparable data are unavailable.</p>
+    <p><strong>Departments and universities.</strong> Stop using paper counts as the only evidence of capability. Use contribution portfolios with transparent dimensions and contextual weights. Fund long-lived data infrastructure and research software. Recognise replication, correction and data curation as research work. Audit any new metric for exclusion, gaming and administrative cost.</p>
+    <p>The preparation plan can begin before institutions agree on a new metric. Over 90 days, map the data and fields that provide a genuine research advantage, establish a source and code ledger, and run one AI-assisted workflow with independent verification. Over 12 months, aim for one contribution that can be defended, one reusable data or method asset, one output aimed at a decision maker, and one act of replication or stewardship. The objective is not to use more tools. It is to build a record that remains credible when tools are cheap.</p>
+  </section>
+
+  <section id="opportunities">
+    <h2>Research Opportunities</h2>
+    <p>The evidence base suggests several research questions that accounting and finance can answer better than general commentary on AI.</p>
+    <ul>
+      <li><strong>AI disclosure and review outcomes.</strong> Do mandatory AI-use declarations change reviewer assessments, revision requests or rejection rates after controlling for topic, author and journal? Journals with staggered disclosure rules provide possible comparison settings.</li>
+      <li><strong>Submission composition.</strong> If AI lowers production costs, does it change the distribution of topics, methods, author experience or institutional affiliation? The question requires anonymous submission-level data, not public totals.</li>
+      <li><strong>Data moats and research value.</strong> Which accounting and finance contributions become more concentrated when public-data analysis is cheap? A useful design would compare fields with different dependence on proprietary, field or hand-collected evidence.</li>
+      <li><strong>Verification costs.</strong> How much reviewer time is needed to detect fabricated references, coding errors, inappropriate tests and unsupported causal language? The answer matters for journal design and academic labour.</li>
+      <li><strong>Collective diversity.</strong> Do AI-assisted research workflows produce a narrower set of questions and methods? The Doshi and Hauser result provides a reason to test this in accounting and finance without treating it as settled evidence.</li>
+      <li><strong>Metric experiments.</strong> Which contribution-portfolio elements predict later replication, decision use or scholarly trust? The question requires prospective evaluation rather than another retrospective index.</li>
+      <li><strong>Institutional accountability.</strong> How should responsibility be assigned when an AI-assisted model, disclosure classification or investment recommendation causes harm? This is a legal, ethical and governance question with direct accounting relevance.</li>
+    </ul>
+    <p>These projects require access that will itself become part of the research contribution. The most valuable studies may use confidential review records, firm data, regulator access or longitudinal fieldwork. Public aggregation is useful for describing the environment. It is less useful for identifying the mechanisms that determine which research survives scrutiny.</p>
+  </section>
+
+  <section id="replication">
+    <h2>Data Availability and Replication</h2>
+    <p>All compiled datasets, the methodology note, the codebook and the Python replication script are available below. The script reads the saved CSV files, prints the statistics used in this report and summary, and regenerates all six PNG figures.</p>
+    <p><a href="data/README_methodology.txt">Read the full methodology and codebook</a> · <a href="scripts/replicate.py">Download the replication script</a></p>
+    <ul class="download-list">
+      <li><a href="data/journal_scope.csv">journal_scope.csv</a></li>
+      <li><a href="data/submissions_outputs.csv">submissions_outputs.csv</a></li>
+      <li><a href="data/submission_index.csv">submission_index.csv</a></li>
+      <li><a href="data/crossref_articles.csv">crossref_articles.csv</a></li>
+      <li><a href="data/crossref_article_counts.csv">crossref_article_counts.csv</a></li>
+      <li><a href="data/field_article_counts.csv">field_article_counts.csv</a></li>
+      <li><a href="data/openalex_attention_articles.csv">openalex_attention_articles.csv</a></li>
+      <li><a href="data/attention_cohorts.csv">attention_cohorts.csv</a></li>
+      <li><a href="data/attention_journal_summary.csv">attention_journal_summary.csv</a></li>
+      <li><a href="data/openalex_coverage.csv">openalex_coverage.csv</a></li>
+      <li><a href="data/review_workload.csv">review_workload.csv</a></li>
+      <li><a href="data/ai_policy_status.csv">ai_policy_status.csv</a></li>
+      <li><a href="data/ai_policy_latest.csv">ai_policy_latest.csv</a></li>
+      <li><a href="data/editorial_priorities.csv">editorial_priorities.csv</a></li>
+      <li><a href="data/editorial_priority_summary.csv">editorial_priority_summary.csv</a></li>
+      <li><a href="data/corrections_retractions.csv">corrections_retractions.csv</a></li>
+      <li><a href="data/capability_model.csv">capability_model.csv</a></li>
+      <li><a href="data/contribution_scorecard.csv">contribution_scorecard.csv</a></li>
+      <li><a href="data/scenario_assumptions.csv">scenario_assumptions.csv</a></li>
+      <li><a href="data/analysis_statistics.csv">analysis_statistics.csv</a></li>
+    </ul>
+    <p>The public files reproduce the reported measures. They do not include paywalled editor reports or copyrighted journal text. Source locators and permitted local verification records are documented in the methodology.</p>
+  </section>
+
+  <section id="references">
+    <h2>References</h2>
+    <div class="ref-item">[1] Noy, S., &amp; Zhang, W. (2023). Experimental evidence on the productivity effects of generative artificial intelligence. <em>Science</em>. <a href="https://doi.org/10.1126/science.adh2586">https://doi.org/10.1126/science.adh2586</a></div>
+    <div class="ref-item">[2] Si, C., Yang, D., &amp; Hashimoto, T. (2024). Can LLMs generate novel research ideas? A large-scale human study with 100+ NLP researchers. <a href="https://arxiv.org/abs/2409.04109">arXiv:2409.04109</a>. Preprint.</div>
+    <div class="ref-item">[3] Doshi, A. R., &amp; Hauser, O. P. (2024). Generative AI enhances individual creativity but reduces the collective diversity of novel content. <em>Science Advances</em>. <a href="https://doi.org/10.1126/sciadv.adn5290">https://doi.org/10.1126/sciadv.adn5290</a></div>
+    <div class="ref-item">[4] American Finance Association. Journal Statistics. <a href="https://afajof.org/journal-statistics/">https://afajof.org/journal-statistics/</a>. Accessed 22 October 2026.</div>
+    <div class="ref-item">[5] Society for Financial Studies. RFS Statistics. <a href="https://sfs.org/rfs-statistics/">https://sfs.org/rfs-statistics/</a>. Accessed 22 October 2026.</div>
+    <div class="ref-item">[6] Schoar, A. (2024). Report of the Editor of The Journal of Finance for the Year 2023. <em>The Journal of Finance</em>. <a href="https://doi.org/10.1111/jofi.13329">https://doi.org/10.1111/jofi.13329</a></div>
+    <div class="ref-item">[7] Crossref. REST API. <a href="https://api.crossref.org/">https://api.crossref.org/</a>. Accessed 22 October 2026.</div>
+    <div class="ref-item">[8] OpenAlex. Works API. <a href="https://api.openalex.org/works">https://api.openalex.org/works</a>. Accessed 22 October 2026.</div>
+    <div class="ref-item">[9] American Accounting Association. Guide for Authors: The Accounting Review. Archived 24 September 2026. <a href="https://web.archive.org/web/20260924102238id_/https://aaahq.org/Research/Journals/The-Accounting-Review/Guide-for-Authors">Archived page</a>.</div>
+    <div class="ref-item">[10] Elsevier. Generative AI policies for journals. <a href="https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals">https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals</a>. Accessed 22 October 2026.</div>
+    <div class="ref-item">[11] Springer Nature. Review of Accounting Studies submission guidelines. Archived 22 January 2024. <a href="https://web.archive.org/web/20240122090046id_/https://link.springer.com/journal/11142/submission-guidelines">Archived page</a>.</div>
+  </section>
+
+  <section id="sources">
+    <h2>Sources</h2>
+    <div class="table-wrap">
+      <table class="source-table">
+        <thead><tr><th>Source</th><th>Use</th><th>Access or observation date</th></tr></thead>
+        <tbody>
+          <tr><td>Crossref REST API</td><td>Article output and update records</td><td>22 October 2026</td></tr>
+          <tr><td>OpenAlex Works API</td><td>Citation cohorts and coverage</td><td>22 October 2026</td></tr>
+          <tr><td>American Finance Association journal statistics</td><td>Journal of Finance submissions, decisions and review time</td><td>22 October 2026</td></tr>
+          <tr><td>Journal of Finance editor reports</td><td>Annual decisions, desk rejection and turnaround</td><td>2015-2023 reports</td></tr>
+          <tr><td>Society for Financial Studies statistics</td><td>Review of Financial Studies submissions, acceptance and turnaround</td><td>22 October 2026</td></tr>
+          <tr><td>Official journal author pages</td><td>Visible AI guidance and coded editorial criteria</td><td>2021-2026 snapshots</td></tr>
+          <tr><td>Noy and Zhang (2023)</td><td>Writing-task productivity evidence</td><td>Published 2023</td></tr>
+          <tr><td>Si, Yang and Hashimoto (2024)</td><td>Research-idea generation evidence</td><td>Preprint, 2024</td></tr>
+          <tr><td>Doshi and Hauser (2024)</td><td>Individual creativity and collective similarity</td><td>Published 2024</td></tr>
+          <tr><td>Elsevier generative-AI policy</td><td>Publisher accountability and disclosure rules</td><td>22 October 2026</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The complete source and claim ledgers contain exact locators, local snapshot records and limitations. Those files remain in the project evidence folder for audit and replication.</p>
+  </section>
+
+  <footer>
+    <p>Dr Yuqian Zhang. Research brief prepared with verified public data and archived policy sources. Report and code are open for inspection; source documents remain subject to their publishers' terms.</p>
+  </footer>
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  function parseCsv(text) {
+    var rows = [];
+    var row = [];
+    var field = "";
+    var quoted = false;
+    for (var i = 0; i < text.length; i += 1) {
+      var ch = text[i];
+      var next = text[i + 1];
+      if (quoted) {
+        if (ch === '"' && next === '"') {
+          field += '"';
+          i += 1;
+        } else if (ch === '"') {
+          quoted = false;
+        } else {
+          field += ch;
+        }
+      } else if (ch === '"') {
+        quoted = true;
+      } else if (ch === ",") {
+        row.push(field);
+        field = "";
+      } else if (ch === "\n") {
+        row.push(field);
+        rows.push(row);
+        row = [];
+        field = "";
+      } else if (ch !== "\r") {
+        field += ch;
+      }
+    }
+    if (field !== "" || row.length) {
+      row.push(field);
+      rows.push(row);
+    }
+    var headers = rows.shift().map(function (d) { return d.trim(); });
+    return rows.filter(function (r) { return r.some(function (v) { return v !== ""; }); }).map(function (r) {
+      var obj = {};
+      headers.forEach(function (h, i) { obj[h] = r[i]; });
+      return obj;
+    });
+  }
+
+  function loadCsv(path) {
+    return fetch(path).then(function (response) {
+      if (!response.ok) throw new Error("Could not load " + path);
+      return response.text();
+    }).then(parseCsv);
+  }
+
+  function num(value) {
+    var parsed = Number(value);
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+
+  function shortName(value) {
+    var map = {
+      "The Accounting Review": "TAR",
+      "Journal of Accounting Research": "JAR",
+      "Journal of Accounting and Economics": "JAE",
+      "Contemporary Accounting Research": "CAR",
+      "Review of Accounting Studies": "RAS",
+      "Accounting, Organizations and Society": "AOS",
+      "The Journal of Finance": "JF",
+      "Journal of Financial Economics": "JFE",
+      "The Review of Financial Studies": "RFS",
+      "Journal of Financial and Quantitative Analysis": "JFQA",
+      "Review of Finance": "RoF"
+    };
+    return map[value] || value;
+  }
+
+  var palette = {
+    pine: "#1f4d3f",
+    pineLight: "#6a9c8b",
+    ochre: "#a86b2d",
+    slate: "#60758a",
+    muted: "#6a685e",
+    text: "#23241f",
+    grid: "#ded8ca",
+    paper: "#fffdf8"
+  };
+
+  var reducedMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var animationDuration = reducedMotion ? 0 : 500;
+
+  function baseAxis(extra) {
+    return Object.assign({
+      axisLine: { lineStyle: { color: palette.grid } },
+      axisTick: { show: false },
+      axisLabel: { color: palette.muted, fontFamily: "Inter, sans-serif", fontSize: 10 },
+      splitLine: { lineStyle: { color: palette.grid, opacity: 0.55 } }
+    }, extra || {});
+  }
+
+  var charts = [];
+
+  Promise.all([
+    loadCsv("data/submission_index.csv"),
+    loadCsv("data/field_article_counts.csv"),
+    loadCsv("data/attention_journal_summary.csv"),
+    loadCsv("data/review_workload.csv"),
+    loadCsv("data/ai_policy_latest.csv"),
+    loadCsv("data/editorial_priority_summary.csv")
+  ]).then(function (data) {
+    var submissions = data[0];
+    var fields = data[1];
+    var attention = data[2];
+    var review = data[3];
+    var policy = data[4];
+    var priorities = data[5];
+
+    var submissionYears = Array.from(new Set(submissions.map(function (r) {
+      return Number(r.reporting_period_end.slice(0, 4));
+    }))).sort(function (a, b) { return a - b; });
+
+    function indexedSeries(journal, color) {
+      return {
+        name: journal,
+        type: "line",
+        symbolSize: 7,
+        lineStyle: { width: 2.4 },
+        itemStyle: { color: color },
+        endLabel: { show: true, color: color, formatter: shortName(journal) },
+        connectNulls: false,
+        data: submissionYears.map(function (year) {
+          var row = submissions.find(function (d) {
+            return d.journal === journal && Number(d.reporting_period_end.slice(0, 4)) === year;
+          });
+          return row ? Number(row.submission_index) : null;
+        })
+      };
+    }
+
+    var chart1 = echarts.init(document.getElementById("chart-submissions"));
+    chart1.setOption({
+      animationDuration: animationDuration,
+      color: [palette.pine, palette.ochre],
+      grid: { left: 58, right: 26, top: 35, bottom: 52 },
+      tooltip: { trigger: "axis", valueFormatter: function (v) { return v == null ? "No observation" : Number(v).toFixed(1); } },
+      xAxis: baseAxis({ type: "category", data: submissionYears, name: "Reporting period ending year", nameLocation: "middle", nameGap: 31, nameTextStyle: { color: palette.muted } }),
+      yAxis: baseAxis({ type: "value", name: "Submission index", min: 70, max: 115 }),
+      series: [indexedSeries("The Journal of Finance", palette.pine), indexedSeries("The Review of Financial Studies", palette.ochre)]
+    });
+    charts.push(chart1);
+
+    var fieldYears = Array.from(new Set(fields.map(function (r) { return Number(r.year); }))).sort(function (a, b) { return a - b; });
+    function fieldSeries(field, color) {
+      return {
+        name: field,
+        type: "line",
+        symbolSize: 6,
+        lineStyle: { width: 2.4 },
+        itemStyle: { color: color },
+        endLabel: { show: true, color: color, formatter: field },
+        data: fieldYears.map(function (year) {
+          var row = fields.find(function (d) { return d.field === field && Number(d.year) === year; });
+          return row ? Number(row.crossref_journal_articles) : null;
+        })
+      };
+    }
+
+    var chart2 = echarts.init(document.getElementById("chart-article-output"));
+    chart2.setOption({
+      animationDuration: animationDuration,
+      color: [palette.pine, palette.slate],
+      grid: { left: 64, right: 28, top: 38, bottom: 52 },
+      tooltip: { trigger: "axis" },
+      legend: { top: 0, textStyle: { color: palette.muted } },
+      xAxis: baseAxis({ type: "category", data: fieldYears, name: "Publication year", nameLocation: "middle", nameGap: 31 }),
+      yAxis: baseAxis({ type: "value", name: "Crossref articles" }),
+      series: [fieldSeries("Accounting", palette.pine), fieldSeries("Finance", palette.slate)]
+    });
+    charts.push(chart2);
+
+    var attentionSorted = attention.slice().sort(function (a, b) {
+      return Number(a.zero_citation_share) - Number(b.zero_citation_share);
+    });
+    var chart3 = echarts.init(document.getElementById("chart-attention"));
+    chart3.setOption({
+      animationDuration: animationDuration,
+      grid: { left: 70, right: 82, top: 20, bottom: 46 },
+      tooltip: {
+        trigger: "item",
+        formatter: function (p) {
+          var row = attentionSorted[p.dataIndex];
+          return row.journal + "<br>" + row.zero_citations_articles + " of " + row.articles + " articles<br>" + (Number(row.zero_citation_share) * 100).toFixed(1) + "%";
+        }
+      },
+      xAxis: baseAxis({ type: "value", name: "Zero citations (%)", nameLocation: "middle", nameGap: 31, axisLabel: { color: palette.muted, formatter: "{value}%" } }),
+      yAxis: baseAxis({ type: "category", data: attentionSorted.map(function (r) { return shortName(r.journal); }), axisLabel: { color: palette.text, fontSize: 10 } }),
+      series: [{
+        type: "bar",
+        data: attentionSorted.map(function (r) { return Number(r.zero_citation_share) * 100; }),
+        itemStyle: { color: palette.pineLight, borderColor: palette.pine, borderWidth: 0.7 },
+        label: { show: true, position: "right", color: palette.text, fontSize: 10, formatter: function (p) { var r = attentionSorted[p.dataIndex]; return p.value.toFixed(1) + "% (" + r.zero_citations_articles + "/" + r.articles + ")"; } }
+      }]
+    });
+    charts.push(chart3);
+
+    var reviewYears = Array.from({ length: 12 }, function (_, i) { return 2015 + i; });
+    function reviewSeries(journal, color) {
+      return {
+        name: journal,
+        type: "line",
+        symbolSize: 7,
+        lineStyle: { width: 2.3 },
+        itemStyle: { color: color },
+        endLabel: { show: true, color: color, formatter: shortName(journal) },
+        data: reviewYears.map(function (year) {
+          var row = review.find(function (d) {
+            return d.journal === journal && Number(d.reporting_period_end.slice(0, 4)) === year && d.median_turnaround_days !== "";
+          });
+          return row ? Number(row.median_turnaround_days) : null;
+        })
+      };
+    }
+
+    var chart4 = echarts.init(document.getElementById("chart-review"));
+    chart4.setOption({
+      animationDuration: animationDuration,
+      color: [palette.pine, palette.ochre],
+      grid: { left: 58, right: 28, top: 38, bottom: 52 },
+      tooltip: { trigger: "axis", valueFormatter: function (v) { return v == null ? "No observation" : Number(v).toFixed(1) + " days"; } },
+      legend: { top: 0, textStyle: { color: palette.muted } },
+      xAxis: baseAxis({ type: "category", data: reviewYears, name: "Reporting period ending year", nameLocation: "middle", nameGap: 31 }),
+      yAxis: baseAxis({ type: "value", name: "Median days", min: 20, max: 60 }),
+      series: [reviewSeries("The Journal of Finance", palette.pine), reviewSeries("The Review of Financial Studies", palette.ochre)]
+    });
+    charts.push(chart4);
+
+    var policySorted = policy.slice().sort(function (a, b) { return a.journal.localeCompare(b.journal); });
+    var chart5 = echarts.init(document.getElementById("chart-ai-guidance"));
+    chart5.setOption({
+      animationDuration: animationDuration,
+      grid: { left: 72, right: 155, top: 20, bottom: 24 },
+      tooltip: { trigger: "item", formatter: function (p) { var r = policySorted[p.dataIndex]; return r.journal + "<br>" + r.policy_status + "<br>Snapshot: " + r.snapshot_date; } },
+      xAxis: baseAxis({ type: "value", show: false, max: 1 }),
+      yAxis: baseAxis({ type: "category", data: policySorted.map(function (r) { return shortName(r.journal); }), axisLabel: { color: palette.text, fontSize: 10 } }),
+      series: [{
+        type: "bar",
+        barWidth: "62%",
+        data: policySorted.map(function (r) {
+          return {
+            value: 1,
+            itemStyle: { color: r.policy_status === "Explicit AI guidance" ? palette.pine : "#c7b9a7" }
+          };
+        }),
+        label: {
+          show: true,
+          position: "right",
+          color: palette.text,
+          fontSize: 10,
+          formatter: function (p) {
+            var r = policySorted[p.dataIndex];
+            var d = String(r.snapshot_date);
+            return r.policy_status + " | " + d.slice(0, 4) + "-" + d.slice(4, 6) + "-" + d.slice(6);
+          }
+        }
+      }]
+    });
+    charts.push(chart5);
+
+    var prioritySorted = priorities.slice().sort(function (a, b) {
+      return Number(a.journals_with_explicit_mention) - Number(b.journals_with_explicit_mention);
+    });
+    var chart6 = echarts.init(document.getElementById("chart-editorial"));
+    chart6.setOption({
+      animationDuration: animationDuration,
+      grid: { left: 175, right: 50, top: 20, bottom: 45 },
+      tooltip: { trigger: "axis", axisPointer: { type: "shadow" } },
+      xAxis: baseAxis({ type: "value", name: "Journals with explicit term", nameLocation: "middle", nameGap: 30, max: 10 }),
+      yAxis: baseAxis({ type: "category", data: prioritySorted.map(function (r) { return r.category; }), axisLabel: { color: palette.text, fontSize: 10 } }),
+      series: [{
+        type: "bar",
+        data: prioritySorted.map(function (r) { return Number(r.journals_with_explicit_mention); }),
+        itemStyle: { color: palette.slate },
+        label: { show: true, position: "right", color: palette.text, formatter: function (p) { var r = prioritySorted[p.dataIndex]; return p.value + "/" + r.journals_observed; } }
+      }]
+    });
+    charts.push(chart6);
+
+    window.addEventListener("resize", function () {
+      charts.forEach(function (chart) { chart.resize(); });
+    });
+  }).catch(function (error) {
+    console.error(error);
+    document.querySelectorAll(".chart-container").forEach(function (container) {
+      var note = document.createElement("p");
+      note.className = "figure-description";
+      note.textContent = "Interactive chart unavailable. The underlying data and static PNG are available in the report files.";
+      container.appendChild(note);
+    });
+  });
+})();
+</script>
+<script src="../chart-download.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+journal,year,reporting_period_start,reporting_period_end,median_turnaround_days,acceptance_rate,desk_rejection_rate,decisions,source_id,definition_note
+The Journal of Finance,2015,2015-01-01,2015-12-31,43.0,0.053,0.36,1259,S_JF_REPORT_2015,"Calendar-year editorial decisions; desk rejection rate reported for new submissions"
+The Journal of Finance,2016,2016-01-01,2016-12-31,40.5,0.045,0.39,1198,S_JF_REPORT_2016,"Calendar-year editorial decisions; desk rejection rate reported for new submissions"
+The Journal of Finance,2017,2017-01-01,2017-12-31,45.0,0.075,0.36,1147,S_JF_REPORT_2017,"Calendar-year editorial decisions; desk rejection rate reported for new submissions"
+The Journal of Finance,2018,2018-01-01,2018-12-31,49.0,0.049,0.33,1129,S_JF_REPORT_2018,"Calendar-year editorial decisions; desk rejection rate reported for new submissions"
+The Journal of Finance,2019,2019-01-01,2019-12-31,48.0,0.059,0.34,1229,S_JF_REPORT_2019,"Calendar-year editorial decisions; desk rejection rate reported for new submissions"
+The Journal of Finance,2020,2020-01-01,2020-12-31,50.0,0.044,0.30,1274,S_JF_REPORT_2020,"Calendar-year editorial decisions; desk rejection rate reported for new submissions"
+The Journal of Finance,2022,2022-01-01,2022-12-31,52.0,0.069,,1298,S_JF_REPORT_2023,"Calendar-year comparison reported in the 2023 editor report"
+The Journal of Finance,2023,2023-01-01,2023-12-31,43.0,0.064,0.43,1226,S_JF_REPORT_2023,"Calendar-year editorial decisions; desk rejection rate reported for new submissions"
+The Review of Financial Studies,2023,2022-05-15,2023-05-15,35.0,0.060,,,S_RFS_STATS,"Rolling reporting period; time is median days"
+The Review of Financial Studies,2024,2023-05-15,2024-05-15,,0.060,,,S_RFS_STATS,"Rolling reporting period; no turnaround time published for this period"
+The Review of Financial Studies,2025,2024-05-08,2025-05-08,33.0,0.081,,,S_RFS_STATS,"Rolling reporting period; time is median days"
+The Review of Financial Studies,2026,2025-05-01,2026-05-01,30.0,0.0727,,,S_RFS_STATS,"Rolling reporting period; time is median days"
