@@ -11,7 +11,7 @@ real_15y_total_pct,45.657492473364435,percent,
 real_19y_total_pct,27.499281103413576,percent,
 real_19y_annualised_pct,1.286843904419821,percent,
 real_5y_annualised_pct,-7.598928220310874,percent,
-net_real_19y_annualised_pct,1.0738031418358718,percent,After 5% round-trip cost
+net_real_19y_annualised_pct,1.0137739348555774,percent,After 5% round-trip cost
 cash_longrun_real_after_tax_pct,0.46,percent,"2000-2026 mean, 33% tax"
 gross_yield_pct,2.92,percent,September 2026
 price_to_income_2025,9.14,ratio,Average value / median gross household income

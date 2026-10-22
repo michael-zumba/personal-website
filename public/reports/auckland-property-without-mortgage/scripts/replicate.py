@@ -158,7 +158,7 @@ def chart_price() -> None:
     ax.annotate("Real peak\nDec 2021", xy=(pd.Timestamp(real_peak["month"]), real_peak["real_index"]),
                 xytext=(pd.Timestamp("2017-06-01"), real_peak["real_index"] * 0.96), fontsize=8, color=PINE)
     ax.set_title("Auckland house prices rose, peaked and fell sharply in real terms")
-    ax.set_ylabel("Index, January 2007 = 1000")
+    ax.set_ylabel("Nominal base Jan 2007 = 1000; real CPI-adjusted")
     ax.legend(frameon=False, loc="upper left")
     ax.grid(axis="y", color=GRID, alpha=0.6)
     fig.text(0.01, 0.01, "QV Auckland HPI and Stats NZ CPI. QV is a non-official average equalised index.",

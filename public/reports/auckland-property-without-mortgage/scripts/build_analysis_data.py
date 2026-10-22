@@ -145,7 +145,7 @@ def build_real_returns(price_index: pd.DataFrame) -> pd.DataFrame:
         nominal_total = (nominal.loc[end_ts] / nominal.loc[start_ts] - 1) * 100
         real_total = (real.loc[end_ts] / real.loc[start_ts] - 1) * 100
         real_annualised = ((1 + real_total / 100) ** (1 / years) - 1) * 100
-        net_real_total = real_total - round_trip_cost
+        net_real_total = ((1 + real_total / 100) * (1 - round_trip_cost / 100) - 1) * 100
         net_real_annualised = ((1 + net_real_total / 100) ** (1 / years) - 1) * 100
         cash_window = cash.loc[start_ts:end_ts]
         cash_real = cash_window.mean() if len(cash_window) else float("nan")
@@ -560,8 +560,8 @@ def build_user_cost(affordability: pd.DataFrame) -> pd.DataFrame:
         ("Net shelter return before capital change", "gross yield minus ownership costs", value * net_shelter_pct / 100, net_shelter_pct, "Analytical: rent avoided minus costs, as % of value"),
         ("Cash after tax (1-year term deposit, 33% rate)", "4.02% x (1-0.33)", cash_after_tax, cash_after_tax, "Sourced rate; tax rate sourced"),
         ("Cash real return after tax", "(1+2.69%)/(1+3.7%)-1", cash_real, cash_real, "Current CPI applied; sourced"),
-        ("Owning-versus-renting hurdle, current cash return", "cash real return - net shelter return", hurdle_current, hurdle_current, "Owning wins if real house price growth exceeds this"),
-        ("Owning-versus-renting hurdle, long-run cash return", "0.46% - net shelter return", hurdle_longrun, hurdle_longrun, "Long-run cash real return from 2000-2026 evidence"),
+        ("Owning-versus-renting break-even rate, current cash return", "cash real return - net shelter return", hurdle_current, hurdle_current, "Owning wins if real house price growth exceeds this"),
+        ("Owning-versus-renting break-even rate, long-run cash return", "0.46% - net shelter return", hurdle_longrun, hurdle_longrun, "Long-run cash real return from 2000-2026 evidence"),
         ("Round-trip transaction cost (assumed)", "2% buy plus 3% sell", round_trip, round_trip, "Assumption; sensitivity 3%-7%"),
     ]
     frame = pd.DataFrame(
@@ -692,8 +692,8 @@ def build_decision_tests() -> pd.DataFrame:
         ("Shelter or investment", "Is the purchase mainly a home to live in, or a return-seeking investment?", "Housing user cost and real return tables", "Pass as shelter if the home fits a 10-year living plan", "Fails as an investment if the return depends on capital gain"),
         ("Holding horizon", "Can I hold without selling for at least 10 years?", "Transaction cost and real return windows", "Pass if 10 years or more and cash flows are safe", "Fails if a sale within 5 years is likely"),
         ("Crisis survivability", "Would a 35-50% nominal price fall, a 10-15% unemployment rate and 12-24 months of illiquidity force a sale?", "Scenario matrix and stress anchors", "Pass if the answer is no and reserves cover 2 years of costs", "Fails if the purchase relies on selling or refinancing"),
-        ("Real return hurdle", "Is real house price growth likely to exceed the owning-versus-renting hurdle over my horizon?", "Housing user cost and real returns", "Pass if expected real growth is above about -1% to -2% a year", "Fails if you expect a sustained real decline"),
-        ("Cash safety", "Is my cash below $100,000 per deposit taker and enough for liquidity?", "Deposit protection and cash returns", "Pass if insured, diversified and sufficient", "Fails if all cash sits with one bank or in one asset"),
+        ("Real return break-even test", "Is real house price growth likely to exceed the break-even rate over my horizon?", "Housing user cost and real returns", "Pass if expected real growth is above the break-even rate", "Fails if you expect a sustained real decline"),
+        ("Cash safety", "Is my cash below $100,000 per depositor per deposit taker and enough for liquidity?", "Deposit protection and cash returns", "Pass if insured, diversified and sufficient", "Fails if all cash sits with one bank or in one asset"),
         ("Liquidity", "Do I keep 12-24 months of spending outside the home?", "Cash and deposit evidence", "Pass if yes", "Fails if all capital goes into the property"),
         ("Alternatives", "Have I compared the home decision with renting plus a diversified portfolio?", "Cash, real returns and user cost", "Pass if the alternative is explicitly costed", "Fails if cash versus house is treated as the only choice"),
         ("Leverage", "If I used a mortgage, would the yield cover the interest?", "Mortgage rates and gross yield", "Not applicable for a cash buyer", "A 2.92% gross yield against a 5.89% mortgage does not cover interest before costs"),

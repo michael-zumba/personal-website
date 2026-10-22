@@ -9,6 +9,6 @@ Total ownership costs (assumed),sum of the three items,17391.6,1.5,"Analytical a
 Net shelter return before capital change,gross yield minus ownership costs,16408.4,1.4152,"Analytical: rent avoided minus costs, as % of value"
 "Cash after tax (1-year term deposit, 33% rate)",4.02% x (1-0.33),2.6934,2.6934,Sourced rate; tax rate sourced
 Cash real return after tax,(1+2.69%)/(1+3.7%)-1,-0.970685,-0.970685,Current CPI applied; sourced
-"Owning-versus-renting hurdle, current cash return",cash real return - net shelter return,-2.38589,-2.38589,Owning wins if real house price growth exceeds this
-"Owning-versus-renting hurdle, long-run cash return",0.46% - net shelter return,-0.955202,-0.955202,Long-run cash real return from 2000-2026 evidence
+"Owning-versus-renting break-even rate, current cash return",cash real return - net shelter return,-2.38589,-2.38589,Owning wins if real house price growth exceeds this
+"Owning-versus-renting break-even rate, long-run cash return",0.46% - net shelter return,-0.955202,-0.955202,Long-run cash real return from 2000-2026 evidence
 Round-trip transaction cost (assumed),2% buy plus 3% sell,5,5,Assumption; sensitivity 3%-7%

@@ -23,9 +23,9 @@ Extreme scenario: a labelled stress test. It is not a forecast, a probability or
 prediction that the AI-capital boom will burst in 2027.
 AI-capital boom: the rapid increase since 2022 in computing, data-centre, semiconductor
 and related investment, with the equity valuations and debt financing attached to it.
-Owning-versus-renting hurdle: the real house-price growth rate at which an unleveraged
-owner's total real position equals a renter's cash plus rent position. It is derived in
-section 8.
+Owning-versus-renting break-even rate: the real house-price growth rate at which an
+owning position without a mortgage equals a renting position with the capital in cash.
+It is derived in section 8.
 
 3. Source hierarchy
 
@@ -66,13 +66,16 @@ that contains the month: real index = nominal index / CPI x 1000. The national C
 not an Auckland-specific deflator and its basket has changed over time.
 
 4.3 Rent. MBIE Tenancy Services bond data, Auckland region, median weekly rent for
-newly lodged bonds (August 2026: $650). The Stats NZ monthly rent index (flow and stock
+newly lodged bonds (August 2026: $650). The real rent change is computed as
+(1 + nominal rent change) / (1 + CPI change) - 1. Between August 2021 and August 2026
+the median bond rent rose 10.17 percent while consumer prices rose 23.69 percent, so
+real rents fell about 10.9 percent. The Stats NZ monthly rent index (flow and stock
 measures) is included for cross-reference. Bond medians since 2020 are provisional and
 mix new tenancies only.
 
 4.4 Affordability. Gross yield = (median weekly rent x 52) / average equalised value.
 Price-to-income = average equalised value / median gross household income. The income
-denominators are not interchangeable: HILS year ended June 2025 ($130,595, provisional
+denominators are not interchangeable: the household income and housing-cost statistics release (HILS) for the year ended June 2025 ($130,595, provisional
 with a Stats NZ corrections notice), the 2023 IDI estimate ($117,900), and the 2023
 Census median personal income ($44,700) are different concepts. The 2026 price-to-income
 ratio reuses the 2025 income because no 2026 observation exists, so it likely overstates
@@ -136,7 +139,10 @@ BIS, Bank of England and ECB publications. Values published inside official repo
 attributed to banks or market intelligence are labelled as estimates in the claim ledger.
 
 6.4 New Zealand transmission. BIS effective exchange rate and credit-to-GDP, KiwiSaver
-and New Zealand Super Fund exposure, net migration and the official cash rate. RBNZ
+and New Zealand Super Fund exposure, net migration and the official cash rate. The
+report uses the latest rolling-year migration release (year to August 2026: net 20,500).
+The transmission dataset separately records the June 2026 vintage obtained from the AI
+evidence stream, so the two files differ by release date rather than by definition. RBNZ
 offshore funding and wholesale spread data are taken from the credit stream; the AI
 stream could not verify them. Terms of trade and forward P/E are documented gaps.
 
@@ -152,7 +158,7 @@ prices -35 percent, credit losses 3.2 percent), the 2020 COVID-19 very severe sc
 (unemployment 8-18 percent, residential prices -30 to -55 percent) and the IMF 2017
 FSAP adverse scenario (unemployment above 10 percent, house prices -40 percent).
 
-8. Scenario matrix and owning-versus-renting hurdle
+8. Scenario matrix and owning-versus-renting break-even rate
 
 The scenario matrix crosses three severities (AI correction, AI credit bust, systemic
 AI unwind) with two regimes (disinflationary credit bust and inflationary funding
@@ -173,16 +179,16 @@ Scenario outcomes are computed as:
 The owner calculation excludes transaction costs and assumes the owner holds through the
 period; a forced sale would reduce the owner position by up to the round-trip cost.
 
-The owning-versus-renting hurdle uses the same accounting. Net shelter return is gross
+The owning-versus-renting break-even rate uses the same accounting. Net shelter return is gross
 rent avoided minus ownership costs. With gross yield at 2.92 percent and assumed
 ownership costs of 1.50 percent of value (rates 0.35, insurance 0.30, maintenance 0.85),
 the net shelter return is about 1.42 percent of value a year. Owning beats renting plus
 cash when real house-price growth exceeds:
 cash real return - net shelter return + annualised transaction cost.
-At the current after-tax cash return of about -0.97 percent the hurdle is about
+At the current after-tax cash return of about -0.97 percent the break-even rate is about
 -2.4 percent a year before transaction costs; with a five percent round trip over ten
 years it is about -1.9 percent a year, and over five years about -1.4 percent a year.
-Using the long-run cash return of +0.46 percent a year, the hurdle is about -1.0 percent
+Using the long-run cash return of +0.46 percent a year, the break-even rate is about -1.0 percent
 a year before costs. These values are sensitive to the ownership-cost and tax
 assumptions and are presented as a framework, not a measurement.
 
@@ -242,8 +248,8 @@ python3 scripts/merge_streams.py
 python3 scripts/verify_primary_sources.py
 python3 scripts/build_analysis_data.py
 python3 scripts/replicate.py
-The replication script reads the data CSVs, validates units, prints the statistics quoted
-in the report and summary, and regenerates every chart as a PNG. It does not embed chart
+The replication script reads the data CSVs, checks the required columns, prints the statistics
+quoted in the report and summary, and regenerates every chart as a PNG. It does not embed chart
 data arrays.
 
 12. Attribution and terms
