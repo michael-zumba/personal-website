@@ -64,6 +64,7 @@ jobs:
               -e 's|\.\./pages/insights\.html|/insights/|g' \
               -e 's|\.\./pages/article\.html|/article/|g' \
               -e 's|\.\./pages/contact\.html|/contact/|g' \
+              -e 's|\.\./pages/property-scout\.html|/property-scout/|g' \
               -e 's|\.\./assets/|/assets/|g' \
               "$1"
           }
@@ -76,6 +77,16 @@ jobs:
             mkdir -p "site/$name"
             rewrite "$SRC/pages/$name.html" > "site/$name/index.html"
           done
+
+          # Property Scout: write the authored landing page first, then place the
+          # generated app tree underneath it. public/property-scout/app is produced
+          # by the research publisher and is never hand-edited; the landing
+          # index.html must win over anything copied into the same directory.
+          mkdir -p site/property-scout
+          rewrite "$SRC/pages/property-scout.html" > site/property-scout/index.html
+          if [ -d public/property-scout/app ]; then
+            cp -r public/property-scout/app site/property-scout/app
+          fi
 
           # 404 falls back to the home page.
           cat > site/404.html <<'HTML'
@@ -102,6 +113,14 @@ jobs:
 
           echo "Assembled site:"
           find site -maxdepth 2 -type f | sort
+
+          echo "Property Scout:"
+          if [ -d site/property-scout/app ]; then
+            find site/property-scout/app -maxdepth 1 -type f | sort
+            echo "  data files: $(find site/property-scout/app/data -maxdepth 1 -type f | wc -l | tr -d ' ')"
+          else
+            echo "  app/ not present yet (landing page only)"
+          fi
 
       - uses: actions/upload-pages-artifact@v5
         with:
