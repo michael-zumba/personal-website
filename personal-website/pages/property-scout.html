@@ -275,6 +275,19 @@
   line-height: 1.6;
   color: var(--scholar-muted-foreground);
 }
+/* ---------- Story ---------- */
+.ps-story {
+  margin-top: 4px;
+  max-width: 68ch;
+}
+.ps-story p {
+  margin: 0 0 18px;
+  font-family: var(--scholar-font-serif);
+  font-size: clamp(17px, 1.35vw, 19px);
+  line-height: 1.72;
+  color: var(--scholar-foreground);
+}
+.ps-story p:last-child { margin-bottom: 0; }
 .ps-inline-link {
   color: var(--scholar-primary);
   text-decoration: underline;
@@ -1437,7 +1450,28 @@
     </section>
 
     <!-- =========================================================
-         2 — WHY THIS IS DIFFERENT
+         2 — WHY I BUILT THIS
+         ========================================================= -->
+    <section class="ps-section" aria-labelledby="ps-why-title" id="why">
+      <div class="ps-container">
+        <div class="ps-section-head">
+          <div class="ps-eyebrow-row">
+            <span class="ps-eyebrow-line" aria-hidden="true"></span>
+            <span class="scholar-eyebrow">Why I built this</span>
+          </div>
+          <h2 id="ps-why-title" class="ps-section-title">A property question, handled like a research question.</h2>
+        </div>
+        <div class="ps-story">
+          <p>I teach and research in accounting and finance. Most of that work is testing claims against evidence. This project started with a personal question. What are the houses in my part of Auckland worth, and how would I know?</p>
+          <p>The tools I could buy gave me a number. They did not give me the reasoning. So I collected the data myself: active listings, council valuations, nearby sales, and the price guidance hidden in the listing pages. Then I worked on it the way I would work on a research sample. Build the model. Test it on data it hasn't seen. Correct for the number of tests. Report what failed.</p>
+          <p>Some of it worked. On held-out cases the calibrated model is about 7% away from Homes' own estimate, and the 80% interval covered about 80% of them. The text analysis was more mixed. Listing language helped when the council valuation was missing, but no single topic survived correction, and in the full model it did not improve things. So it stays a research signal, not a valuation input.</p>
+          <p>That's the part I think property data usually leaves out. Not a better number, but enough evidence that you can disagree with the number. The map and the research lab are there so you can check the working yourself.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         3 — WHY THIS IS DIFFERENT
          ========================================================= -->
     <section class="ps-section" aria-labelledby="ps-different-title" id="approach">
       <div class="ps-container">
