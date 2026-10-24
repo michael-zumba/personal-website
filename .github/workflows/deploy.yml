@@ -64,7 +64,7 @@ jobs:
               -e 's|\.\./pages/insights\.html|/insights/|g' \
               -e 's|\.\./pages/article\.html|/article/|g' \
               -e 's|\.\./pages/contact\.html|/contact/|g' \
-              -e 's|\.\./pages/property-scout\.html|/property-scout/|g' \
+              -e 's|\.\./pages/property-scout\.html|/research/property-scout/|g' \
               -e 's|\.\./assets/|/assets/|g' \
               "$1"
           }
@@ -78,15 +78,32 @@ jobs:
             rewrite "$SRC/pages/$name.html" > "site/$name/index.html"
           done
 
-          # Property Scout: write the authored landing page first, then place the
-          # generated app tree underneath it. public/property-scout/app is produced
-          # by the research publisher and is never hand-edited; the landing
-          # index.html must win over anything copied into the same directory.
-          mkdir -p site/property-scout
-          rewrite "$SRC/pages/property-scout.html" > site/property-scout/index.html
-          if [ -d public/property-scout/app ]; then
-            cp -r public/property-scout/app site/property-scout/app
+          # Auckland Property Scout lives under Research as a sub-page. Write the
+          # authored page first, then place the generated app tree beside it.
+          # public/research/property-scout/app is produced by the research
+          # publisher and is never hand-edited.
+          mkdir -p site/research/property-scout
+          rewrite "$SRC/pages/property-scout.html" > site/research/property-scout/index.html
+          if [ -d public/research/property-scout/app ]; then
+            cp -r public/research/property-scout/app site/research/property-scout/app
           fi
+
+          # Old top-level URL: keep existing links working with a small redirect.
+          mkdir -p site/property-scout
+          cat > site/property-scout/index.html <<'HTML'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="refresh" content="0; url=/research/property-scout/">
+            <link rel="canonical" href="https://zhangyuqian.com/research/property-scout/">
+            <title>Moved</title>
+          </head>
+          <body>
+            <p>This page has moved to <a href="/research/property-scout/">the research project page</a>.</p>
+          </body>
+          </html>
+          HTML
 
           # 404 falls back to the home page.
           cat > site/404.html <<'HTML'
@@ -115,11 +132,11 @@ jobs:
           find site -maxdepth 2 -type f | sort
 
           echo "Property Scout:"
-          if [ -d site/property-scout/app ]; then
-            find site/property-scout/app -maxdepth 1 -type f | sort
-            echo "  data files: $(find site/property-scout/app/data -maxdepth 1 -type f | wc -l | tr -d ' ')"
+          if [ -d site/research/property-scout/app ]; then
+            find site/research/property-scout/app -maxdepth 1 -type f | sort
+            echo "  data files: $(find site/research/property-scout/app/data -maxdepth 1 -type f | wc -l | tr -d ' ')"
           else
-            echo "  app/ not present yet (landing page only)"
+            echo "  app/ not present yet (project page only)"
           fi
 
       - uses: actions/upload-pages-artifact@v5

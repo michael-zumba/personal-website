@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auckland Property Scout — Yuqian Zhang</title>
-    <meta name="description" content="Auckland Property Scout is a live, source-attributed property research tool: every active Auckland listing with a calibrated 80% valuation range, the comparable sales behind it, and the provenance of every number. Personal research, not financial advice.">
-    <link rel="canonical" href="https://zhangyuqian.com/property-scout/">
+    <title>Auckland Property Scout — research project | Yuqian Zhang</title>
+    <meta name="description" content="A live research project on the Auckland property market: checkable value ranges, the comparable sales behind them, and the method published alongside the numbers. Personal research, not financial advice.">
+    <link rel="canonical" href="https://zhangyuqian.com/research/property-scout/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Auckland Property Scout — Yuqian Zhang">
-    <meta property="og:description" content="Can a buyer see the evidence behind a property estimate, not just the estimate? A live Auckland property research tool with calibrated valuation ranges, comparable sales and visible provenance.">
-    <meta property="og:url" content="https://zhangyuqian.com/property-scout/">
-    <meta property="og:image" content="https://zhangyuqian.com/property-scout/app/data/preview/og-property-scout.png">
+    <meta property="og:description" content="A live research project on the Auckland property market: checkable value ranges, the sales behind them, and the method published alongside the numbers.">
+    <meta property="og:url" content="https://zhangyuqian.com/research/property-scout/">
+    <meta property="og:image" content="https://zhangyuqian.com/research/property-scout/app/data/preview/og-property-scout.png">
     <meta property="og:site_name" content="Yuqian Zhang">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Auckland Property Scout — Yuqian Zhang">
-    <meta name="twitter:description" content="A live Auckland property research tool with calibrated valuation ranges, comparable sales and visible provenance.">
-    <meta name="twitter:image" content="https://zhangyuqian.com/property-scout/app/data/preview/og-property-scout.png">
+    <meta name="twitter:description" content="Checkable Auckland property value ranges, the sales behind them, and the method published alongside the numbers.">
+    <meta name="twitter:image" content="https://zhangyuqian.com/research/property-scout/app/data/preview/og-property-scout.png">
     <style id="theme-vars">
 :root {
   --scholar-background: #f7f4ec;
@@ -168,6 +168,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
     <style id="property-scout-styles">
+  /* Compact project page: 2x2 method cards and a narrower reading measure. */
+  .ps-methods { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (max-width: 700px) { .ps-methods { grid-template-columns: minmax(0, 1fr); } }
 /* =============================================================
    AUCKLAND PROPERTY SCOUT — page styles
    Scholar palette and type scale only; no dashboard chrome.
@@ -1259,164 +1262,121 @@
 }
     </style>
 </head>
+
 <body class="min-h-screen font-sans antialiased" style="background-color:var(--scholar-background);color:var(--scholar-foreground);">
 
   <a class="ps-skip-link" href="#main">Skip to content</a>
 
-  <!-- ============================================================= -->
-  <!-- SHELL:HEADER (verbatim from partials/project-shell.html) -->
-  <!-- ============================================================= -->
-  <header class="shell-nav" role="banner">
-    <div class="shell-nav-inner">
+<!-- SHELL:HEADER -->
+<header class="shell-nav" role="banner">
+  <div class="shell-nav-inner">
 
-      <!-- Wordmark -->
-      <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-home-brand" class="shell-wordmark" aria-label="Yuqian Zhang — Home">
-        <div class="shell-wordmark-main">
-          <span class="shell-wordmark-name">Yuqian Zhang</span>
-          <span class="shell-wordmark-phd">PhD</span>
-        </div>
-        <span class="shell-wordmark-desc">Accounting &middot; Finance &middot; AI</span>
-      </a>
+    <!-- Wordmark -->
+    <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-home-brand" class="shell-wordmark" aria-label="Yuqian Zhang — Home">
+      <div class="shell-wordmark-main">
+        <span class="shell-wordmark-name">Yuqian Zhang</span>
+        <span class="shell-wordmark-phd">PhD</span>
+      </div>
+      <span class="shell-wordmark-desc">Accounting &middot; Finance &middot; AI</span>
+    </a>
 
-      <!-- Desktop nav links -->
-      <nav class="shell-nav-links" aria-label="Main navigation">
-        <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-home" class="shell-nav-link">Home</a>
-        <a href="../pages/research.html" data-nav-key="research" data-dom-id="nav-research" class="shell-nav-link">Research</a>
-        <a href="../pages/property-scout.html" data-nav-key="property-scout" data-dom-id="nav-property-scout" class="shell-nav-link" data-active="true">Property Scout</a>
-        <a href="../pages/data-code.html" data-nav-key="data-code" data-dom-id="nav-data-code" class="shell-nav-link">Data &amp; Code</a>
-        <a href="../pages/insights.html" data-nav-key="insights" data-dom-id="nav-insights" class="shell-nav-link">Insights</a>
-        <a href="../pages/contact.html" data-nav-key="contact" data-dom-id="nav-contact" class="shell-nav-cta">Contact</a>
-      </nav>
+    <!-- Desktop nav links -->
+    <nav class="shell-nav-links" aria-label="Main navigation">
+      <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-home" class="shell-nav-link">Home</a>
+      <a href="../pages/research.html" data-nav-key="research" data-dom-id="nav-research" data-active="true" class="shell-nav-link">Research</a>
+      <a href="../pages/data-code.html" data-nav-key="data-code" data-dom-id="nav-data-code" class="shell-nav-link">Data &amp; Code</a>
+      <a href="../pages/insights.html" data-nav-key="insights" data-dom-id="nav-insights" class="shell-nav-link">Insights</a>
+      <a href="../pages/contact.html" data-nav-key="contact" data-dom-id="nav-contact" class="shell-nav-cta">Contact</a>
+    </nav>
 
-      <!-- Mobile hamburger toggle -->
-      <button class="shell-hamburger" id="mobile-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
-        <svg id="hamburger-icon" width="22" height="16" viewBox="0 0 22 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <line x1="1" y1="1" x2="21" y2="1"/>
-          <line x1="1" y1="8" x2="21" y2="8"/>
-          <line x1="1" y1="15" x2="21" y2="15"/>
-        </svg>
-        <svg id="close-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;">
-          <line x1="3" y1="3" x2="17" y2="17"/>
-          <line x1="17" y1="3" x2="3" y2="17"/>
-        </svg>
-      </button>
-    </div>
+    <!-- Mobile hamburger toggle -->
+    <button class="shell-hamburger" id="mobile-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+      <svg id="hamburger-icon" width="22" height="16" viewBox="0 0 22 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="1" y1="1" x2="21" y2="1"/>
+        <line x1="1" y1="8" x2="21" y2="8"/>
+        <line x1="1" y1="15" x2="21" y2="15"/>
+      </svg>
+      <svg id="close-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;">
+        <line x1="3" y1="3" x2="17" y2="17"/>
+        <line x1="17" y1="3" x2="3" y2="17"/>
+      </svg>
+    </button>
+  </div>
 
-    <!-- Mobile dropdown menu -->
-    <div class="shell-mobile-menu" id="mobile-menu" role="menu" aria-label="Mobile navigation">
-      <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-mobile-home" class="shell-mobile-link" role="menuitem">Home</a>
-      <a href="../pages/research.html" data-nav-key="research" data-dom-id="nav-mobile-research" class="shell-mobile-link" role="menuitem">Research</a>
-      <a href="../pages/property-scout.html" data-nav-key="property-scout" data-dom-id="nav-mobile-property-scout" class="shell-mobile-link" role="menuitem" data-active="true">Property Scout</a>
-      <a href="../pages/data-code.html" data-nav-key="data-code" data-dom-id="nav-mobile-data-code" class="shell-mobile-link" role="menuitem">Data &amp; Code</a>
-      <a href="../pages/insights.html" data-nav-key="insights" data-dom-id="nav-mobile-insights" class="shell-mobile-link" role="menuitem">Insights</a>
-      <a href="../pages/contact.html" data-nav-key="contact" data-dom-id="nav-mobile-contact" class="shell-mobile-cta" role="menuitem">Contact</a>
-    </div>
-  </header>
+  <!-- Mobile dropdown menu -->
+  <div class="shell-mobile-menu" id="mobile-menu" role="menu" aria-label="Mobile navigation">
+    <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-mobile-home" class="shell-mobile-link" role="menuitem">Home</a>
+    <a href="../pages/research.html" data-nav-key="research" data-dom-id="nav-mobile-research" data-active="true" class="shell-mobile-link" role="menuitem">Research</a>
+    <a href="../pages/data-code.html" data-nav-key="data-code" data-dom-id="nav-mobile-data-code" class="shell-mobile-link" role="menuitem">Data &amp; Code</a>
+    <a href="../pages/insights.html" data-nav-key="insights" data-dom-id="nav-mobile-insights" class="shell-mobile-link" role="menuitem">Insights</a>
+    <a href="../pages/contact.html" data-nav-key="contact" data-dom-id="nav-mobile-contact" class="shell-mobile-cta" role="menuitem">Contact</a>
+  </div>
+</header>
 
-  <script>
-  (function() {
-    var toggle = document.getElementById('mobile-toggle');
-    var menu = document.getElementById('mobile-menu');
-    var hamburgerIcon = document.getElementById('hamburger-icon');
-    var closeIcon = document.getElementById('close-icon');
-    if (!toggle || !menu) return;
+<script>
+(function() {
+  var toggle = document.getElementById('mobile-toggle');
+  var menu = document.getElementById('mobile-menu');
+  var hamburgerIcon = document.getElementById('hamburger-icon');
+  var closeIcon = document.getElementById('close-icon');
+  if (!toggle || !menu) return;
 
-    function openMenu() {
-      menu.classList.add('open');
-      toggle.setAttribute('aria-expanded', 'true');
-      hamburgerIcon.style.display = 'none';
-      closeIcon.style.display = 'block';
+  function openMenu() {
+    menu.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    hamburgerIcon.style.display = 'none';
+    closeIcon.style.display = 'block';
+  }
+  function closeMenu() {
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    hamburgerIcon.style.display = 'block';
+    closeIcon.style.display = 'none';
+  }
+  toggle.addEventListener('click', function() {
+    if (menu.classList.contains('open')) { closeMenu(); }
+    else { openMenu(); }
+  });
+  menu.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') { closeMenu(); }
+  });
+  document.addEventListener('click', function(e) {
+    if (!toggle.contains(e.target) && !menu.contains(e.target)) { closeMenu(); }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && menu.classList.contains('open')) {
+      closeMenu();
+      toggle.focus();
     }
-    function closeMenu() {
-      menu.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      hamburgerIcon.style.display = 'block';
-      closeIcon.style.display = 'none';
-    }
-    toggle.addEventListener('click', function() {
-      if (menu.classList.contains('open')) { closeMenu(); }
-      else { openMenu(); }
-    });
-    menu.addEventListener('click', function(e) {
-      if (e.target.tagName === 'A') { closeMenu(); }
-    });
-    document.addEventListener('click', function(e) {
-      if (!toggle.contains(e.target) && !menu.contains(e.target)) { closeMenu(); }
-    });
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && menu.classList.contains('open')) {
-        closeMenu();
-        toggle.focus();
-      }
-    });
-  })();
-  </script>
-  <!-- /SHELL:HEADER -->
+  });
+})();
+</script>
+<!-- /SHELL:HEADER -->
 
   <main id="main">
 
-    <!-- =========================================================
-         1 — HERO
-         ========================================================= -->
+    <!-- Hero -->
     <section class="ps-hero ps-section--flush" aria-labelledby="ps-title">
       <div class="ps-container">
-        <div class="ps-hero-grid">
-          <div>
-            <div class="ps-eyebrow-row">
-              <span class="ps-eyebrow-line" aria-hidden="true"></span>
-              <span class="scholar-eyebrow">Property intelligence &middot; Auckland, New Zealand</span>
-            </div>
-
-            <h1 id="ps-title" class="ps-title">Auckland Property Scout</h1>
-
-            <p class="ps-standfirst">
-              Can a buyer see the evidence behind a property estimate — not just the estimate?
-              This project rebuilds an Auckland property valuation from public listing pages,
-              council capital values and sold comparables, then publishes the working: a
-              calibrated range, the comparable sales behind it, and the provenance of every
-              number.
-            </p>
-
-            <div class="ps-hero-actions">
-              <a href="./app/" class="ps-btn ps-btn-primary" data-dom-id="ps-cta-map">
-                <span>Open the interactive map</span>
-                <i data-lucide="arrow-right" class="ps-arrow" style="width:16px;height:16px;" aria-hidden="true"></i>
-              </a>
-              <a href="#methodology" class="ps-btn ps-btn-ghost">Methodology</a>
-            </div>
-
-            <p class="ps-hero-note">A research project by Yuqian Zhang &middot; refreshed daily &middot; personal research, not financial advice</p>
-          </div>
-
-          <aside class="ps-aside" aria-label="What every estimate carries">
-            <p class="ps-aside-k">Every estimate carries</p>
-            <ul class="ps-aside-list">
-              <li>
-                <span class="ps-aside-icon"><i data-lucide="gauge" aria-hidden="true"></i></span>
-                <span>
-                  <span class="ps-aside-t">A point estimate and an 80% interval</span>
-                  <span class="ps-aside-d">The range is shown, not implied. Interval width is part of the answer.</span>
-                </span>
-              </li>
-              <li>
-                <span class="ps-aside-icon"><i data-lucide="scale" aria-hidden="true"></i></span>
-                <span>
-                  <span class="ps-aside-t">A value-to-CV ratio and the comparable sales</span>
-                  <span class="ps-aside-d">Where sold comparables drive the estimate they are normalised to council capital value, and the sales are listed.</span>
-                </span>
-              </li>
-              <li>
-                <span class="ps-aside-icon"><i data-lucide="route" aria-hidden="true"></i></span>
-                <span>
-                  <span class="ps-aside-t">A stated route and a source</span>
-                  <span class="ps-aside-d">Homes AVM, independent comps or the calibrated fallback — labelled, never mixed silently.</span>
-                </span>
-              </li>
-            </ul>
-          </aside>
+        <div class="ps-eyebrow-row">
+          <span class="ps-eyebrow-line" aria-hidden="true"></span>
+          <span class="scholar-eyebrow">Research project &middot; Live tool</span>
         </div>
+        <h1 id="ps-title" class="ps-title">Auckland Property Scout</h1>
+        <p class="ps-standfirst">
+          A research project that turns public Auckland listing data into checkable value
+          ranges. I built it to see the evidence behind a property estimate, and to publish
+          the working.
+        </p>
+        <div class="ps-hero-actions">
+          <a href="./app/" class="ps-btn ps-btn-primary" data-dom-id="ps-cta-map">
+            <span>Open the live map</span>
+            <i data-lucide="arrow-right" class="ps-arrow" style="width:16px;height:16px;" aria-hidden="true"></i>
+          </a>
+          <a href="./app/#/research" class="ps-btn ps-btn-ghost">Research Lab</a>
+        </div>
+        <p class="ps-hero-note">A research project by Yuqian Zhang &middot; refreshed daily &middot; not financial advice</p>
 
-        <!-- Live data stamp row: everything here is hydrated from snapshot.json -->
         <div class="ps-stamp-row" aria-label="Current data snapshot">
           <div class="ps-stamp">
             <span class="ps-stamp-k">Suburbs</span>
@@ -1428,132 +1388,138 @@
           </div>
           <div class="ps-stamp">
             <span class="ps-stamp-k">Snapshot date</span>
-            <span class="ps-stamp-v"><span data-snap="snapshot_date">&mdash;</span></span>
+            <span class="ps-stamp-v"><span data-snap="snapshot_date" data-fmt="text">&mdash;</span></span>
           </div>
           <div class="ps-stamp">
-            <span class="ps-stamp-k">Model version</span>
-            <span class="ps-stamp-v ps-stamp-v--mono"><span data-snap="model.version">&mdash;</span></span>
+            <span class="ps-stamp-k">Model</span>
+            <span class="ps-stamp-v ps-stamp-v--mono"><span data-snap="model.version" data-fmt="text">&mdash;</span></span>
           </div>
         </div>
 
         <div class="ps-status-line">
           <span class="ps-status" data-snapshot-status data-state="loading" role="status" aria-live="polite">Reading data snapshot&hellip;</span>
           <a class="ps-inline-link" href="./app/data/snapshot.json" target="_blank" rel="noopener">View snapshot JSON</a>
-          <a class="ps-inline-link" href="./app/#/research">Research Lab</a>
+          <a class="ps-inline-link" href="./app/">Open the app</a>
         </div>
 
         <div class="ps-snapshot-banner" data-when-unavailable hidden>
           <i data-lucide="alert-triangle" aria-hidden="true"></i>
-          <p>The data snapshot could not be loaded, so measured figures on this page show em dashes. The interactive app may still be available: <a class="ps-inline-link" href="./app/">open the map</a>.</p>
+          <p>The data snapshot could not be loaded, so measured figures show em dashes. The interactive app may still be available: <a class="ps-inline-link" href="./app/">open the map</a>.</p>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================
-         2 — WHY I BUILT THIS
-         ========================================================= -->
-    <section class="ps-section" aria-labelledby="ps-why-title" id="why">
+    <!-- What it is and why -->
+    <section class="ps-section" aria-labelledby="ps-what-title">
       <div class="ps-container">
         <div class="ps-section-head">
           <div class="ps-eyebrow-row">
             <span class="ps-eyebrow-line" aria-hidden="true"></span>
-            <span class="scholar-eyebrow">Why I built this</span>
+            <span class="scholar-eyebrow">The project</span>
           </div>
-          <h2 id="ps-why-title" class="ps-section-title">A property question, handled like a research question.</h2>
+          <h2 id="ps-what-title" class="ps-section-title">What this is, and why I built it</h2>
         </div>
         <div class="ps-story">
-          <p>I teach and research in accounting and finance. Most of that work is testing claims against evidence. This project started with a personal question. What are the houses in my part of Auckland worth, and how would I know?</p>
-          <p>The tools I could buy gave me a number. They did not give me the reasoning. So I collected the data myself: active listings, council valuations, nearby sales, and the price guidance hidden in the listing pages. Then I worked on it the way I would work on a research sample. Build the model. Test it on data it hasn't seen. Correct for the number of tests. Report what failed.</p>
-          <p>Some of it worked. On held-out cases the calibrated model is about 7% away from Homes' own estimate, and the 80% interval covered about 80% of them. The text analysis was more mixed. Listing language helped when the council valuation was missing, but no single topic survived correction, and in the full model it did not improve things. So it stays a research signal, not a valuation input.</p>
-          <p>That's the part I think property data usually leaves out. Not a better number, but enough evidence that you can disagree with the number. The map and the research lab are there so you can check the working yourself.</p>
+          <p>I teach and research in accounting and finance. This began with a personal question: what are the houses in my part of Auckland worth, and how would I know?</p>
+          <p>The tools I could buy gave me a number, not the reasoning. So I collected the data myself: active listings, council valuations, nearby sales and the price guidance hidden in listing pages. Then I treated it like a research sample. Build the model, test it on data it has not seen, correct for the number of tests, and report what failed.</p>
+          <p>Some of it worked. The calibrated model is about 7% away from Homes' own estimate on held-out cases, and the 80% interval covered about 80% of them. The text analysis was more mixed: listing language helped when the council valuation was missing, but no topic survived correction. It stays a research signal, not a valuation input.</p>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================
-         3 — WHY THIS IS DIFFERENT
-         ========================================================= -->
-    <section class="ps-section" aria-labelledby="ps-different-title" id="approach">
+    <!-- Numbers -->
+    <section class="ps-section" aria-labelledby="ps-numbers-title">
       <div class="ps-container">
         <div class="ps-section-head">
           <div class="ps-eyebrow-row">
             <span class="ps-eyebrow-line" aria-hidden="true"></span>
-            <span class="scholar-eyebrow">Approach</span>
+            <span class="scholar-eyebrow">Snapshot</span>
           </div>
-          <h2 id="ps-different-title" class="ps-section-title">Why this is different</h2>
-          <p class="ps-lede">
-            Automated valuation models are useful, and Auckland already has several. This
-            project is built for a different job: showing the evidence behind an estimate so
-            that a reader can check it. The test is not whether a number sounds plausible. The
-            test is whether the estimate can be interrogated.
-          </p>
+          <h2 id="ps-numbers-title" class="ps-section-title">Four numbers, and where they come from</h2>
         </div>
-
-        <div class="ps-compare">
-          <table>
-            <caption class="ps-sr-only">How a single-number estimate differs from a source-attributed calibrated range</caption>
-            <thead>
-              <tr>
-                <th scope="col">Question</th>
-                <th scope="col">A single-number estimate</th>
-                <th scope="col">This project</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td data-label="Question">What you get</td>
-                <td data-label="A single-number estimate">One number, with no stated interval.</td>
-                <td data-label="This project">A point estimate inside an 80% interval, and the width of that interval is always visible.</td>
-              </tr>
-              <tr>
-                <td data-label="Question">What it is based on</td>
-                <td data-label="A single-number estimate">A model whose inputs are not published.</td>
-                <td data-label="This project">Active listings, council capital values, sold comparables and the recovered price signal &mdash; each attributed to its source.</td>
-              </tr>
-              <tr>
-                <td data-label="Question">Where the AVM stops</td>
-                <td data-label="A single-number estimate">Listings without AVM coverage can drop out of the estimate.</td>
-                <td data-label="This project">A comparable-sales or calibrated hedonic route takes over, labelled on the listing rather than hidden.</td>
-              </tr>
-              <tr>
-                <td data-label="Question">How to read the number</td>
-                <td data-label="A single-number estimate">A figure with no reference point.</td>
-                <td data-label="This project">A value-to-CV ratio against council capital value, and the comparable sales behind comparable-sales estimates.</td>
-              </tr>
-              <tr>
-                <td data-label="Question">What it admits</td>
-                <td data-label="A single-number estimate">Uncertainty is not part of the output.</td>
-                <td data-label="This project">Interval, cross-validated calibration error and known limitations are published beside the estimate.</td>
-              </tr>
-              <tr>
-                <td data-label="Question">Whether it can be checked</td>
-                <td data-label="A single-number estimate">Not without access to the vendor&rsquo;s model.</td>
-                <td data-label="This project">Snapshot, methodology and research lab are public, with the refresh time and pipeline status logged.</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="ps-metrics">
+          <article class="ps-metric">
+            <span class="ps-metric-tag">Active listings</span>
+            <span class="ps-metric-v"><span data-snap="counts.listings" data-fmt="int">&mdash;</span></span>
+            <span class="ps-metric-l">Listings observed in the current snapshot</span>
+            <span class="ps-metric-n"><span data-snap="counts.standard" data-fmt="int">&mdash;</span> standard &middot; <span data-snap="counts.non_standard" data-fmt="int">&mdash;</span> non-standard</span>
+          </article>
+          <article class="ps-metric">
+            <span class="ps-metric-tag">Homes AVM coverage</span>
+            <span class="ps-metric-v"><span data-snap="coverage.homes_avm_pct" data-fmt="pct1">&mdash;</span></span>
+            <span class="ps-metric-l">Standard listings whose primary range is a Homes AVM</span>
+            <span class="ps-metric-n"><span data-snap="coverage.homes_avm" data-fmt="int">&mdash;</span> of <span data-snap="counts.standard" data-fmt="int">&mdash;</span> standard listings carry an AVM</span>
+          </article>
+          <article class="ps-metric">
+            <span class="ps-metric-tag">Calibrated fallback</span>
+            <span class="ps-metric-v"><span data-snap="model.mape_with_cv" data-fmt="ratio-pct1">&mdash;</span></span>
+            <span class="ps-metric-l">5-fold cross-validated error of the hedonic model</span>
+            <span class="ps-metric-n">Validated on <span data-snap="model.n_train" data-fmt="int">&mdash;</span> sales, with council CV as a feature</span>
+          </article>
+          <article class="ps-metric">
+            <span class="ps-metric-tag">Sold comparables</span>
+            <span class="ps-metric-v"><span data-snap="counts.sales" data-fmt="int">&mdash;</span></span>
+            <span class="ps-metric-l">Nearby sold prices used as comparables</span>
+            <span class="ps-metric-n">Independent of the Homes AVM; weighted by distance and recency</span>
+          </article>
         </div>
-
-        <p class="ps-compare-note">
-          This is a comparison of methods, not a ranking of vendors. A single number is the
-          right output for some jobs &mdash; a quick screen, a portfolio view, a desktop estimate.
-          The narrower claim here is that for a decision about one property, the evidence
-          should be inspectable.
+        <p class="ps-note">
+          Every figure is read from <a class="ps-inline-link" href="./app/data/snapshot.json" target="_blank" rel="noopener">snapshot.json</a> at load time. If the file cannot be read, the dashes stay and the status line says so.
         </p>
-
-        <div class="ps-source-chips" aria-label="Data sources used by the project">
-          <span class="ps-source-chip"><i data-lucide="tag" aria-hidden="true"></i>Trade Me listing pages</span>
-          <span class="ps-source-chip"><i data-lucide="gauge" aria-hidden="true"></i>Homes.co.nz AVM</span>
-          <span class="ps-source-chip"><i data-lucide="landmark" aria-hidden="true"></i>Council capital values</span>
-          <span class="ps-source-chip"><i data-lucide="map-pin" aria-hidden="true"></i>Stats NZ SA2 geography</span>
-          <span class="ps-source-chip"><i data-lucide="map" aria-hidden="true"></i>OpenStreetMap</span>
-        </div>
       </div>
     </section>
 
-    <!-- =========================================================
-         3 — EMBEDDED LIVE MAP (CONTRACT §6)
-         ========================================================= -->
+    <!-- Method -->
+    <section class="ps-section" aria-labelledby="ps-method-title" id="method">
+      <div class="ps-container">
+        <div class="ps-section-head">
+          <div class="ps-eyebrow-row">
+            <span class="ps-eyebrow-line" aria-hidden="true"></span>
+            <span class="scholar-eyebrow">Method</span>
+          </div>
+          <h2 id="ps-method-title" class="ps-section-title">How a value range is built</h2>
+        </div>
+        <div class="ps-methods">
+          <article class="ps-method">
+            <div class="ps-method-top">
+              <span class="ps-method-index">01</span>
+              <span class="ps-method-icon"><i data-lucide="tag" aria-hidden="true"></i></span>
+            </div>
+            <h3>Recover the price signal</h3>
+            <p>Asking price, guide, deadline or auction date, read from the listing page and dated.</p>
+          </article>
+          <article class="ps-method">
+            <div class="ps-method-top">
+              <span class="ps-method-index">02</span>
+              <span class="ps-method-icon"><i data-lucide="layers" aria-hidden="true"></i></span>
+            </div>
+            <h3>Value the tenure</h3>
+            <p>Leasehold, cross-lease and unit title are valued differently before any number is produced.</p>
+          </article>
+          <article class="ps-method">
+            <div class="ps-method-top">
+              <span class="ps-method-index">03</span>
+              <span class="ps-method-icon"><i data-lucide="scale" aria-hidden="true"></i></span>
+            </div>
+            <h3>Compare nearby sales</h3>
+            <p>Sold prices weighted by distance and recency, normalised by council capital value where one is available.</p>
+          </article>
+          <article class="ps-method">
+            <div class="ps-method-top">
+              <span class="ps-method-index">04</span>
+              <span class="ps-method-icon"><i data-lucide="gauge" aria-hidden="true"></i></span>
+            </div>
+            <h3>Calibrate a fallback</h3>
+            <p>A hedonic model for listings with no AVM or usable comparables, with an 80% interval and its error stated.</p>
+          </article>
+        </div>
+        <p class="ps-note">
+          The <a class="ps-inline-link" href="./app/#/research">Research Lab</a> shows the model card, coverage and the full results, including the parts that did not work.
+        </p>
+      </div>
+    </section>
+
+    <!-- Map -->
     <section class="ps-section" aria-labelledby="ps-map-title" id="map">
       <div class="ps-container">
         <div class="ps-section-head">
@@ -1561,39 +1527,26 @@
             <span class="ps-eyebrow-line" aria-hidden="true"></span>
             <span class="scholar-eyebrow">The tool</span>
           </div>
-          <h2 id="ps-map-title" class="ps-section-title">Explore the market on the map</h2>
+          <h2 id="ps-map-title" class="ps-section-title">Explore the evidence</h2>
           <p class="ps-lede">
-            The map is the full collection: every active listing, filters across suburb,
-            price, sale method and tenure, the comparable sales for a selected property, and
-            the estimate history behind each value. It runs entirely in your browser from a
-            static data pack &mdash; no account and no server round-trip.
+            The full app runs in your browser from a static data pack: every active listing,
+            filters, the comparable sales behind a property, and the research lab. No account.
           </p>
         </div>
 
         <div class="ps-map-shell" id="ps-live-map">
-          <!-- Desktop: iframe is mounted by script only when the viewport is wide
-               enough; the poster stays behind it until the app signals readiness. -->
           <div class="ps-map-desktop">
             <img class="ps-map-poster" src="./app/data/preview/map-desktop.png"
-                 data-poster-fallback="./app/data/preview/map-desktop.png"
-                 alt="Preview of the Auckland Property Scout map, showing listing pins and a filter rail."
+                 alt="Preview of the Auckland Property Scout map, showing price clusters and a filter rail."
                  loading="lazy" decoding="async">
             <div data-iframe-slot></div>
             <span class="ps-map-loading" data-map-status>Loading the interactive map&hellip;</span>
-            <div class="ps-map-unavailable" data-map-unavailable hidden>
-              <span class="ps-map-unavailable-icon" aria-hidden="true"><i data-lucide="map"></i></span>
-              <p class="ps-map-unavailable-title">Map preview not available</p>
-              <p class="ps-map-unavailable-text">The interactive map has not been published to this site yet. It will appear after the next data publish; the full app remains one click away.</p>
-              <a class="ps-btn ps-btn-primary" href="./app/">Open the app</a>
-            </div>
           </div>
 
-          <!-- Mobile: no iframe; poster plus a link to the full app (CONTRACT §6). -->
           <div class="ps-map-mobile">
             <div class="ps-map-mobile-frame">
               <div class="ps-map-mobile-media">
                 <img class="ps-map-poster" src="./app/data/preview/map-mobile.png"
-                     data-poster-fallback="./app/data/preview/map-desktop.png"
                      alt="Preview of the Auckland Property Scout map on a phone."
                      loading="lazy" decoding="async">
               </div>
@@ -1615,564 +1568,94 @@
 
         <noscript>
           <p class="ps-noscript">
-            This page reads a JSON data snapshot in your browser, so the figures here stay as
-            em dashes without JavaScript. The map and the full numbers are available directly
-            in the <a class="ps-inline-link" href="./app/">interactive app</a>.
+            This page reads a JSON data snapshot in your browser, so the figures stay as em
+            dashes without JavaScript. The map and the full numbers are in the
+            <a class="ps-inline-link" href="./app/">interactive app</a>.
           </p>
         </noscript>
       </div>
     </section>
 
-    <!-- =========================================================
-         4 — FOUR HEADLINE METRICS
-         ========================================================= -->
-    <section class="ps-section" aria-labelledby="ps-metrics-title" id="snapshot">
-      <div class="ps-container">
-        <div class="ps-section-head">
-          <div class="ps-eyebrow-row">
-            <span class="ps-eyebrow-line" aria-hidden="true"></span>
-            <span class="scholar-eyebrow">Snapshot</span>
-          </div>
-          <h2 id="ps-metrics-title" class="ps-section-title">Four numbers, and where each one comes from</h2>
-          <p class="ps-lede">
-            Every measured figure on this page is read from a single compact snapshot file at
-            load time. Nothing here is typed into the page source, and nothing is rounded away
-            from its source.
-          </p>
-        </div>
-
-        <div class="ps-metrics">
-          <article class="ps-metric">
-            <span class="ps-metric-tag">Active listings</span>
-            <span class="ps-metric-v"><span data-snap="counts.listings" data-fmt="int">&mdash;</span></span>
-            <span class="ps-metric-l">Listings observed in the current snapshot</span>
-            <span class="ps-metric-n"><span data-snap="counts.standard" data-fmt="int">&mdash;</span> standard &middot; <span data-snap="counts.non_standard" data-fmt="int">&mdash;</span> non-standard</span>
-          </article>
-          <article class="ps-metric">
-            <span class="ps-metric-tag">Homes AVM coverage</span>
-            <span class="ps-metric-v"><span data-snap="coverage.homes_avm_pct" data-fmt="pct1">&mdash;</span></span>
-            <span class="ps-metric-l">Standard listings whose primary range is a Homes AVM</span>
-            <span class="ps-metric-n"><span data-snap="coverage.homes_avm" data-fmt="int">&mdash;</span> of <span data-snap="counts.standard" data-fmt="int">&mdash;</span> standard listings carry an AVM</span>
-          </article>
-          <article class="ps-metric">
-            <span class="ps-metric-tag">Calibrated fallback</span>
-            <span class="ps-metric-v"><span data-snap="model.mape_with_cv" data-fmt="ratio-pct1">&mdash;</span></span>
-            <span class="ps-metric-l">5-fold cross-validated MAPE of the hedonic model</span>
-            <span class="ps-metric-n">Validated on <span data-snap="model.n_train" data-fmt="int">&mdash;</span> sales, with council CV as a feature</span>
-          </article>
-          <article class="ps-metric">
-            <span class="ps-metric-tag">Sold comparables</span>
-            <span class="ps-metric-v"><span data-snap="counts.sales" data-fmt="int">&mdash;</span></span>
-            <span class="ps-metric-l">Recent sales used as comparables</span>
-            <span class="ps-metric-n">Independent of the Homes AVM: weighted nearby sold prices, CV-normalised where a council CV exists</span>
-          </article>
-        </div>
-
-        <p class="ps-note">
-          All four tiles are hydrated from <code>snapshot.json</code>; the page HTML contains
-          only em dashes. If the snapshot cannot be fetched the dashes remain, and the status
-          chip above says so. The snapshot also carries a <code>definitions</code> and
-          <code>sources</code> block documenting every metric it exposes.
-          <a class="ps-inline-link" href="./app/data/snapshot.json" target="_blank" rel="noopener">Inspect the snapshot file</a>.
-        </p>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         5 — METHODOLOGY
-         ========================================================= -->
-    <section class="ps-section" aria-labelledby="ps-method-title" id="methodology">
-      <div class="ps-container">
-        <div class="ps-section-head">
-          <div class="ps-eyebrow-row">
-            <span class="ps-eyebrow-line" aria-hidden="true"></span>
-            <span class="scholar-eyebrow">Method</span>
-          </div>
-          <h2 id="ps-method-title" class="ps-section-title">How an estimate is built</h2>
-          <p class="ps-lede">
-            Six steps, each with a named input, a stated output and a guardrail. The guardrail
-            is the part that matters: it says what the method refuses to do.
-          </p>
-        </div>
-
-        <div class="ps-model-strip">
-          <span>MODEL <span data-snap="model.version">&mdash;</span></span>
-          <span>TRAINED ON <span data-snap="model.n_train" data-fmt="int">&mdash;</span> SALES</span>
-          <span>5-FOLD CV MAPE <span data-snap="model.mape_with_cv" data-fmt="ratio-pct1">&mdash;</span></span>
-          <span><span data-snap="model.interval_level" data-fmt="ratio-pct0">&mdash;</span> INTERVAL</span>
-        </div>
-
-        <div class="ps-methods">
-          <article class="ps-method">
-            <div class="ps-method-top">
-              <span class="ps-method-index">01</span>
-              <span class="ps-method-icon"><i data-lucide="tag" aria-hidden="true"></i></span>
-            </div>
-            <h3>Price-signal recovery</h3>
-            <p>Public listing pages are read for the price signals they actually publish: an asking price, a guide, a deadline, an auction date. Nothing is inferred from a headline or a photograph.</p>
-            <dl class="ps-method-dl">
-              <div><dt>Input</dt><dd>Trade Me listing page: asking price, guide, deadline, auction date, description.</dd></div>
-              <div><dt>Output</dt><dd>A recovered price signal, with its source and the date it was read.</dd></div>
-              <div><dt>Guardrail</dt><dd>If the page publishes no signal, the field stays empty rather than being guessed.</dd></div>
-            </dl>
-          </article>
-
-          <article class="ps-method">
-            <div class="ps-method-top">
-              <span class="ps-method-index">02</span>
-              <span class="ps-method-icon"><i data-lucide="layers" aria-hidden="true"></i></span>
-            </div>
-            <h3>Tenure-aware valuation hierarchy</h3>
-            <p>Freehold, leasehold, cross-lease and unit title are different assets, not labels. The valuation route is chosen for the tenure before any number is produced.</p>
-            <dl class="ps-method-dl">
-              <div><dt>Input</dt><dd>Tenure, title type, land area and the council capital value of the property.</dd></div>
-              <div><dt>Output</dt><dd>The valuation route that fits the tenure, recorded on the listing.</dd></div>
-              <div><dt>Guardrail</dt><dd>Tenure is never imputed silently; a leasehold property is not valued as if it were freehold.</dd></div>
-            </dl>
-          </article>
-
-          <article class="ps-method">
-            <div class="ps-method-top">
-              <span class="ps-method-index">03</span>
-              <span class="ps-method-icon"><i data-lucide="scale" aria-hidden="true"></i></span>
-            </div>
-            <h3>Independent CV-normalised comps</h3>
-            <p>A comparable-sales model that divides each sale by its council capital value, so properties of different values and ages can be compared on the same footing.</p>
-            <dl class="ps-method-dl">
-              <div><dt>Input</dt><dd>Sold comparables and their council capital values, matched on tenure, type and location.</dd></div>
-              <div><dt>Output</dt><dd>A CV-ratio estimate that does not depend on any third-party AVM.</dd></div>
-              <div><dt>Guardrail</dt><dd>The comparable sales are visible, and outliers are excluded explicitly rather than quietly.</dd></div>
-            </dl>
-          </article>
-
-          <article class="ps-method">
-            <div class="ps-method-top">
-              <span class="ps-method-index">04</span>
-              <span class="ps-method-icon"><i data-lucide="activity" aria-hidden="true"></i></span>
-            </div>
-            <h3>Calibrated hedonic fallback</h3>
-            <p>When no Homes AVM exists, a hedonic model supplies the estimate. It is validated with 5-fold cross-validation, and the label &mdash; &ldquo;calibrated fallback&rdquo; &mdash; stays attached to the number.</p>
-            <dl class="ps-method-dl">
-              <div><dt>Input</dt><dd>Property characteristics from public records and the listing page, when no AVM is available.</dd></div>
-              <div><dt>Output</dt><dd>A point estimate with an 80% interval, marked as a fallback.</dd></div>
-              <div><dt>Guardrail</dt><dd>The 5-fold cross-validated MAPE is <span data-snap="model.mape_with_cv" data-fmt="ratio-pct1">&mdash;</span>; the interval is always shown and fallbacks are never counted as AVM coverage.</dd></div>
-            </dl>
-          </article>
-
-          <article class="ps-method">
-            <div class="ps-method-top">
-              <span class="ps-method-index">05</span>
-              <span class="ps-method-icon"><i data-lucide="file-text" aria-hidden="true"></i></span>
-            </div>
-            <h3>Description and sale-pressure signals</h3>
-            <p>Listing text, days on market, sale method and auction deadlines are treated as signals of sale pressure &mdash; evidence to read, not motivation to speculate about.</p>
-            <dl class="ps-method-dl">
-              <div><dt>Input</dt><dd>Listing body text, days on market, sale method and auction or deadline dates.</dd></div>
-              <div><dt>Output</dt><dd>Sale-pressure indicators attached to each listing.</dd></div>
-              <div><dt>Guardrail</dt><dd>Signals are labelled as signals, never as forecasts, and no claim is made about vendor motivation.</dd></div>
-            </dl>
-          </article>
-
-          <article class="ps-method">
-            <div class="ps-method-top">
-              <span class="ps-method-index">06</span>
-              <span class="ps-method-icon"><i data-lucide="calendar" aria-hidden="true"></i></span>
-            </div>
-            <h3>Calendar artefacts and limitations</h3>
-            <p>Dates are not neutral. Holiday periods, auction calendars and the age of a listing shape what a snapshot sees, so those patterns are flagged and published with the estimate.</p>
-            <dl class="ps-method-dl">
-              <div><dt>Input</dt><dd>Date fields on every listing, plus holiday and seasonality patterns.</dd></div>
-              <div><dt>Output</dt><dd>Flagged timing artefacts and a limitations list published alongside the numbers.</dd></div>
-              <div><dt>Guardrail</dt><dd>Artefacts are disclosed, not corrected away silently; an estimate is not a valuation.</dd></div>
-            </dl>
-          </article>
-        </div>
-
-        <div class="ps-lab-callout">
-          <p>
-            The <strong>Research Lab</strong> works through <strong><span data-snap="research.topics" data-fmt="int">&mdash;</span></strong> research topics. Across
-            <strong><span data-snap="research.fdr_tests" data-fmt="int">&mdash;</span></strong> text-regression coefficients tested with Benjamini&ndash;Hochberg
-            false-discovery-rate control, <strong><span data-snap="research.fdr_significant" data-fmt="int">&mdash;</span></strong> survive correction. Null results are
-            published too, because a method that only reports its wins is not reproducible.
-          </p>
-          <a class="ps-inline-link" href="./app/#/research">Open the Research Lab &#8599;</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         6 — LIVE MARKET SNAPSHOT
-         ========================================================= -->
-    <section class="ps-section" aria-labelledby="ps-market-title" id="market">
-      <div class="ps-container">
-        <div class="ps-section-head">
-          <div class="ps-eyebrow-row">
-            <span class="ps-eyebrow-line" aria-hidden="true"></span>
-            <span class="scholar-eyebrow">Evidence</span>
-          </div>
-          <h2 id="ps-market-title" class="ps-section-title">Live market snapshot</h2>
-          <p class="ps-lede">
-            The aggregate view: suburb medians, the share of asking prices below the model
-            estimate, how long standard listings sit, and how the median estimate has moved over
-            the stored twelve-week window. Snapshot date: <strong><span data-snap="snapshot_date">&mdash;</span></strong>.
-          </p>
-        </div>
-
-        <div class="ps-market-stats">
-          <div class="ps-market-stat">
-            <span class="ps-market-stat-k">Median estimate</span>
-            <span class="ps-market-stat-v"><span data-snap="market.median_value_mid" data-fmt="money-compact">&mdash;</span></span>
-          </div>
-          <div class="ps-market-stat">
-            <span class="ps-market-stat-k">Median value &divide; CV</span>
-            <span class="ps-market-stat-v"><span data-snap="market.median_cv_ratio" data-fmt="ratio2">&mdash;</span></span>
-          </div>
-          <div class="ps-market-stat">
-            <span class="ps-market-stat-k">Median days on market</span>
-            <span class="ps-market-stat-v"><span data-snap="market.median_days_on_market" data-fmt="int">&mdash;</span></span>
-          </div>
-          <div class="ps-market-stat">
-            <span class="ps-market-stat-k">Asking below estimate</span>
-            <span class="ps-market-stat-v"><span data-snap="market.below_avm_pct" data-fmt="pct1">&mdash;</span></span>
-          </div>
-        </div>
-
-        <div class="ps-market-grid">
-          <div class="ps-card">
-            <div class="ps-card-head">
-              <h3 class="ps-card-title">Suburb medians</h3>
-              <span class="ps-card-note">ordered by listing count</span>
-            </div>
-            <div class="ps-table-scroll">
-              <table class="ps-table">
-                <caption class="ps-sr-only">All figures are for standard listings only. Median model estimate, median of per-listing value-to-CV ratios for listings with a council CV, median days on market, and Homes AVM coverage as the share of the suburb&rsquo;s standard listings whose primary range is the AVM.</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Suburb</th>
-                    <th scope="col">Listings</th>
-                    <th scope="col">Median value</th>
-                    <th scope="col">Median value &divide; CV</th>
-                    <th scope="col">DOM</th>
-                    <th scope="col">AVM coverage</th>
-                  </tr>
-                </thead>
-                <tbody data-snap-list="suburbs" data-template="tpl-suburb-row"></tbody>
-                <tbody data-ps-fallback="suburbs" hidden>
-                  <tr><td class="ps-table-fallback" colspan="6">Suburb figures are unavailable because the data snapshot has not loaded. <a class="ps-inline-link" href="./app/">Open the live app</a> for current figures.</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <div class="ps-card">
-            <div class="ps-card-head">
-              <h3 class="ps-card-title">Sale-method mix</h3>
-              <span class="ps-card-note">share of standard listings</span>
-            </div>
-            <ul class="ps-mix" data-snap-list="sale_methods" data-template="tpl-sale-method" aria-label="Sale method mix"></ul>
-            <p class="ps-data-fallback" data-ps-fallback="sale_methods" hidden>Sale-method figures are unavailable because the data snapshot has not loaded.</p>
-          </div>
-        </div>
-
-        <div class="ps-card ps-spark-card">
-          <div class="ps-card-head">
-            <h3 class="ps-card-title">Twelve-week median estimate</h3>
-            <span class="ps-card-note">standard listings &middot; stored fortnightly</span>
-          </div>
-          <div class="ps-spark-wrap">
-            <div class="ps-spark" data-spark="trend" role="img" aria-label="Median estimate trend over the last twelve weeks"></div>
-            <p class="ps-data-fallback" data-ps-fallback="trend" hidden>The twelve-week trend is unavailable because the data snapshot has not loaded.</p>
-          </div>
-          <div class="ps-spark-axis">
-            <span data-spark-start>&mdash;</span>
-            <span data-spark-end>&mdash;</span>
-          </div>
-          <div class="ps-spark-meta">
-            <span>Latest week <strong data-spark-latest>&mdash;</strong></span>
-            <span>Change over 12 weeks <strong data-spark-change>&mdash;</strong></span>
-            <span>12-week range <strong data-spark-range>&mdash;</strong></span>
-          </div>
-        </div>
-
-        <p class="ps-note">
-          <strong>Median value &divide; CV</strong> is the median of per-listing value-to-CV
-          ratios, computed only for standard listings that have a council CV. Sample counts vary
-          by suburb, so it is not median value &divide; median CV. AVM coverage is the share of a
-          suburb&rsquo;s standard listings whose primary range is the Homes.co.nz AVM. Median days
-          on market is across standard listings. &ldquo;Asking below estimate&rdquo; counts
-          listings whose asking price is below the primary value midpoint, where the stored deal
-          gap is reliable (high or medium confidence, non-leasehold). Suburb figures are medians
-          across that suburb&rsquo;s standard listings on the snapshot date.
-        </p>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         7 — BEST-VALUE SHORTLIST
-         ========================================================= -->
-    <section class="ps-section" aria-labelledby="ps-values-title" id="shortlist">
-      <div class="ps-container">
-        <div class="ps-section-head">
-          <div class="ps-eyebrow-row">
-            <span class="ps-eyebrow-line" aria-hidden="true"></span>
-            <span class="scholar-eyebrow">Shortlist</span>
-          </div>
-          <h2 id="ps-values-title" class="ps-section-title">Best-value shortlist</h2>
-          <p class="ps-lede">
-            The six listings where the asking price sits furthest below the model&rsquo;s value
-            estimate: standard listings with high or medium confidence and a reliable deal gap,
-            ranked by gap as a percentage of the estimate. A gap is a prompt for inspection, not
-            a recommendation to buy.
-          </p>
-        </div>
-
-        <div class="ps-values" data-snap-list="top_value" data-template="tpl-value-card"></div>
-        <p class="ps-data-fallback" data-ps-fallback="top_value" hidden>
-          The shortlist is unavailable because the data snapshot has not loaded.
-          <a class="ps-inline-link" href="./app/">Open the live app</a> to browse current listings.
-        </p>
-
-        <p class="ps-note">
-          Each card opens the listing inside the interactive app, where the comparable sales
-          and estimate history are shown. <strong>Deal gap</strong> is the model value midpoint
-          minus the asking price; the percentage is that gap divided by the value midpoint.
-          Photos are hot-linked from the original public listing pages and remain the property
-          of their owners. Value-to-CV ratios and deal gaps are read from the snapshot exactly
-          as exported.
-        </p>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         8 — PROVENANCE / REPRODUCIBILITY
-         ========================================================= -->
-    <section class="ps-section" aria-labelledby="ps-lineage-title" id="lineage">
-      <div class="ps-container">
-        <div class="ps-section-head">
-          <div class="ps-eyebrow-row">
-            <span class="ps-eyebrow-line" aria-hidden="true"></span>
-            <span class="scholar-eyebrow">Provenance</span>
-          </div>
-          <h2 id="ps-lineage-title" class="ps-section-title">How the numbers get here</h2>
-          <p class="ps-lede">
-            A scheduled refresh, a deterministic export and a static publish. The same data
-            file feeds this page, the interactive app and the company-site version, so every
-            surface shows the same snapshot.
-          </p>
-        </div>
-
-        <div class="ps-lineage">
-          <div>
-            <ol class="ps-steps">
-              <li class="ps-step">
-                <span class="ps-step-k">Daily &middot; 03:15 NZ</span>
-                <h3>Scheduled refresh</h3>
-                <p>A launchd job on a Mac mini pulls public listing pages, recovers price signals and recomputes the valuation models.</p>
-              </li>
-              <li class="ps-step">
-                <span class="ps-step-k">Checks</span>
-                <h3>Tests before publish</h3>
-                <p>The exporter, the snapshot contract and the static app build are tested before any file is copied to a site.</p>
-              </li>
-              <li class="ps-step">
-                <span class="ps-step-k">Static export</span>
-                <h3>One small data pack</h3>
-                <p>The app and its data are written as static files. This page reads one compact <code>snapshot.json</code>; listing details load in the app on demand.</p>
-              </li>
-              <li class="ps-step">
-                <span class="ps-step-k">Publish</span>
-                <h3>Bounded blast radius</h3>
-                <p>The publisher replaces only the generated app tree. Authored pages, navigation and styles are not touched by the daily run.</p>
-              </li>
-            </ol>
-
-            <div class="ps-automation" data-when-ready hidden>
-              <div class="ps-automation-row"><span>Last refresh started</span><strong data-snap="automation.last_run_at" data-fmt="datetime">&mdash;</strong></div>
-              <div class="ps-automation-row"><span>Pipeline status</span><strong><span data-snap="automation.status">&mdash;</span> &middot; <span data-snap="automation.steps" data-fmt="int">&mdash;</span> steps</strong></div>
-              <div class="ps-automation-row"><span>Snapshot generated</span><strong data-snap="generated_at" data-fmt="datetime">&mdash;</strong></div>
-            </div>
-
-            <div class="ps-disclaimer">
-              <p><strong style="color:var(--scholar-foreground);font-weight:550;">Personal research, not financial advice.</strong> Auckland Property Scout is an independent research project. Estimates are model outputs, not registered valuations, and they are not a recommendation to buy, sell or hold any property.</p>
-              <p>Listing-level data is not redistributed. This site publishes aggregate snapshot figures and model outputs only; individual listings remain on their original public pages. Photos are hot-linked and remain the property of their owners.</p>
-            </div>
-          </div>
-
-          <div>
-            <h3 class="ps-card-title" style="margin:0 0 12px;">Sources and stewardship</h3>
-            <ul class="ps-source-list">
-              <li class="ps-source-item">
-                <div>
-                  <p class="ps-source-name">Trade Me public listing pages</p>
-                  <p class="ps-source-desc">Asking prices, guides, descriptions, sale methods and auction dates.</p>
-                </div>
-                <span class="ps-source-tag">Public pages</span>
-              </li>
-              <li class="ps-source-item">
-                <div>
-                  <p class="ps-source-name">Homes.co.nz AVM estimates</p>
-                  <p class="ps-source-desc">Coverage and estimates where they are published, recorded with the date read.</p>
-                </div>
-                <span class="ps-source-tag">Third party</span>
-              </li>
-              <li class="ps-source-item">
-                <div>
-                  <p class="ps-source-name">Council capital valuations</p>
-                  <p class="ps-source-desc">Auckland Council CV, used as the normalisation anchor for comparables.</p>
-                </div>
-                <span class="ps-source-tag">Public record</span>
-              </li>
-              <li class="ps-source-item">
-                <div>
-                  <p class="ps-source-name">Stats NZ SA2 geography</p>
-                  <p class="ps-source-desc">Suburb grouping and spatial context for the map.</p>
-                </div>
-                <span class="ps-source-tag">Open data</span>
-              </li>
-              <li class="ps-source-item">
-                <div>
-                  <p class="ps-source-name">OpenStreetMap</p>
-                  <p class="ps-source-desc">Map tiles and place labels. &copy; OpenStreetMap contributors.</p>
-                </div>
-                <span class="ps-source-tag">Open data</span>
-              </li>
-            </ul>
-
-            <p class="ps-note">
-              Documentation and reproducibility links:
-              <a class="ps-inline-link" href="https://zhangyuqian.com/property-scout/app/#/research" target="_blank" rel="noopener">methodology and Research Lab</a>,
-              <a class="ps-inline-link" href="./app/data/snapshot.json" target="_blank" rel="noopener">the snapshot this page reads</a>,
-              and the accompanying <a class="ps-inline-link" href="/auckland-property-without-mortgage/">research brief on Auckland property</a>.
-              Corrections and removal requests: <a class="ps-inline-link" href="mailto:yuqian.zhang@aut.ac.nz">yuqian.zhang@aut.ac.nz</a>.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         9 — LIMITATIONS AND FAIR USE
-         ========================================================= -->
-    <section class="ps-section" aria-labelledby="ps-limits-title" id="limitations">
+    <!-- Limits -->
+    <section class="ps-section" aria-labelledby="ps-limits-title">
       <div class="ps-container">
         <div class="ps-section-head">
           <div class="ps-eyebrow-row">
             <span class="ps-eyebrow-line" aria-hidden="true"></span>
             <span class="scholar-eyebrow">Limits</span>
           </div>
-          <h2 id="ps-limits-title" class="ps-section-title">Limitations and fair use</h2>
-          <p class="ps-lede">
-            Every method has edges. These are published here so that a reader can judge how
-            far an estimate should be trusted.
-          </p>
+          <h2 id="ps-limits-title" class="ps-section-title">What it does not do</h2>
         </div>
-
         <div class="ps-limits">
           <div class="ps-limit-card">
-            <h3 class="ps-limit-title">Known limitations</h3>
             <ul class="ps-limit-list">
-              <li><span><strong>Active listings only.</strong> The snapshot observes asking prices and sale methods on public listing pages; it does not observe every settled sale price.</span></li>
-              <li><span><strong>Partial AVM coverage.</strong> <span data-snap="coverage.homes_avm_pct" data-fmt="pct1">&mdash;</span> of standard listings carry a Homes.co.nz AVM; the remainder use a comparable-sales or calibrated-fallback route.</span></li>
-              <li><span><strong>Calibration, not truth.</strong> The 5-fold cross-validated MAPE is <span data-snap="model.mape_with_cv" data-fmt="ratio-pct1">&mdash;</span>, and an 80% interval leaves roughly one estimate in five outside its range.</span></li>
-              <li><span><strong>Calendar artefacts.</strong> Listing dates, auctions and holiday periods create timing patterns that are flagged but not always correctable.</span></li>
-              <li><span><strong>Title and tenure complexity.</strong> Leasehold, cross-lease and unit-title properties need information a listing page does not always carry.</span></li>
-              <li><span><strong>Not a registered valuation.</strong> An automated estimate is not a valuation, a builder&rsquo;s report or a title search, and it cannot replace professional advice.</span></li>
-            </ul>
-          </div>
-
-          <div class="ps-limit-card">
-            <h3 class="ps-limit-title">Fair use and data</h3>
-            <ul class="ps-limit-list">
-              <li><span><strong>Public pages only.</strong> The refresh reads listing pages that are already public and keeps request rates low.</span></li>
-              <li><span><strong>No listing data redistributed.</strong> The site publishes aggregate figures and model outputs; individual listings remain on their original pages.</span></li>
-              <li><span><strong>Attribution everywhere.</strong> Sources are named on this page and in the app, and corrections are welcome by email.</span></li>
-              <li><span><strong>Photos remain with their owners.</strong> Listing photographs are hot-linked from the original pages, not copied into this site.</span></li>
-              <li><span><strong>No warranty.</strong> The figures are provided for research and illustration; no liability is accepted for decisions taken from them.</span></li>
+              <li><span><strong>Not a valuation.</strong> These are estimates for research, not a registered valuation, title search or financial advice.</span></li>
+              <li><span><strong>Not Auckland-wide.</strong> 17 North Shore and Eastern Bays suburbs, active listings only.</span></li>
+              <li><span><strong>Not sale prices.</strong> Model error is measured against the Homes.co.nz estimate, not settled prices. Where the AVM stops, a comparable-sales or calibrated-fallback route takes over and is labelled.</span></li>
+              <li><span><strong>Attributed, not owned.</strong> Listing data stays attributed to Trade Me and Homes.co.nz; photographs remain with their owners.</span></li>
             </ul>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         10 — CLOSING CTA
-         ========================================================= -->
-    <section class="ps-section" aria-labelledby="ps-cta-title">
-      <div class="ps-container">
-        <div class="ps-cta-band">
-          <div>
-            <h2 id="ps-cta-title" class="ps-cta-title">Open the map, or read the method</h2>
-            <p class="ps-cta-lede">Every estimate in the app links back to the evidence that produced it. Start with the map, or start with how it works.</p>
-          </div>
-          <div class="ps-cta-actions">
-            <a class="ps-btn ps-btn-contrast" href="./app/">Open the interactive map</a>
-            <a class="ps-btn ps-btn-ghost-light" href="./app/#/research">Research Lab</a>
-          </div>
-        </div>
+        <p class="ps-note">
+          The full method, model card and research results are in the
+          <a class="ps-inline-link" href="./app/#/research">Research Lab</a>. Data snapshot:
+          <a class="ps-inline-link" href="./app/data/snapshot.json" target="_blank" rel="noopener">JSON</a>.
+        </p>
       </div>
     </section>
 
   </main>
 
-  <!-- ============================================================= -->
-  <!-- SHELL:FOOTER (verbatim from partials/project-shell.html) -->
-  <!-- ============================================================= -->
-  <footer class="shell-footer" role="contentinfo">
-    <div class="shell-footer-inner">
+<!-- SHELL:FOOTER -->
+<footer class="shell-footer" role="contentinfo">
+  <div class="shell-footer-inner">
 
-      <!-- Column 1: Brand + positioning -->
-      <div class="shell-footer-brand">
-        <span class="shell-footer-brand-name">Yuqian Zhang</span>
-        <p class="shell-footer-brand-role">Senior Lecturer in Accounting, Auckland University of Technology, New Zealand</p>
-      </div>
-
-      <!-- Column 2: Explore links -->
-      <div class="shell-footer-col">
-        <span class="shell-footer-col-title">Explore</span>
-        <a href="../pages/index.html">Home</a>
-        <a href="../pages/research.html">Research</a>
-        <a href="../pages/property-scout.html">Property Scout</a>
-        <a href="../pages/data-code.html">Data &amp; Code</a>
-        <a href="../pages/insights.html">Insights</a>
-        <a href="../pages/contact.html">Contact</a>
-      </div>
-
-      <!-- Column 3: Connect -->
-      <div class="shell-footer-col">
-        <span class="shell-footer-col-title">Connect</span>
-        <a href="mailto:yuqian.zhang@aut.ac.nz">
-          <i data-lucide="mail" class="w-4 h-4"></i>
-          yuqian.zhang@aut.ac.nz
-        </a>
-        <a href="https://orcid.org/0000-0001-5667-4002" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile: 0000-0001-5667-4002">
-          <i data-lucide="fingerprint" class="w-4 h-4"></i>
-          ORCID
-        </a>
-        <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=5308459" target="_blank" rel="noopener noreferrer" aria-label="SSRN author page">
-          <i data-lucide="file-text" class="w-4 h-4"></i>
-          SSRN
-        </a>
-        <a href="https://scholar.google.com/citations?user=9pnGWz0AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile">
-          <i data-lucide="graduation-cap" class="w-4 h-4"></i>
-          Google Scholar
-        </a>
-        <a href="https://www.linkedin.com/in/yuqian-michael-zhang-744530142/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-          <i data-lucide="linkedin" class="w-4 h-4"></i>
-          LinkedIn
-        </a>
-      </div>
+    <div class="shell-footer-brand">
+      <span class="shell-footer-brand-name">Yuqian Zhang</span>
+      <p class="shell-footer-brand-role">Senior Lecturer in Accounting, Auckland University of Technology, New Zealand</p>
     </div>
 
-    <div class="shell-footer-bottom">
-      <span class="shell-footer-copy">&copy; 2026 Yuqian Zhang. All rights reserved.</span>
-      <span class="shell-footer-locale">New Zealand</span>
+    <div class="shell-footer-col">
+      <span class="shell-footer-col-title">Explore</span>
+      <a href="../pages/index.html">Home</a>
+      <a href="../pages/research.html">Research</a>
+      <a href="../pages/data-code.html">Data &amp; Code</a>
+      <a href="../pages/insights.html">Insights</a>
+      <a href="../pages/contact.html">Contact</a>
     </div>
-  </footer>
-  <!-- /SHELL:FOOTER -->
 
-  <!-- ============================================================= -->
-  <!-- SHELL STYLES (verbatim from partials/project-shell.html) -->
-  <!-- ============================================================= -->
+    <div class="shell-footer-col">
+      <span class="shell-footer-col-title">Connect</span>
+      <a href="mailto:yuqian.zhang@aut.ac.nz">
+        <i data-lucide="mail" class="w-4 h-4"></i>
+        yuqian.zhang@aut.ac.nz
+      </a>
+      <a href="https://orcid.org/0000-0001-5667-4002" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile: 0000-0001-5667-4002">
+        <i data-lucide="fingerprint" class="w-4 h-4"></i>
+        ORCID
+      </a>
+      <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=5308459" target="_blank" rel="noopener noreferrer" aria-label="SSRN author page">
+        <i data-lucide="file-text" class="w-4 h-4"></i>
+        SSRN
+      </a>
+      <a href="https://scholar.google.com/citations?user=9pnGWz0AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile">
+        <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+        Google Scholar
+      </a>
+      <a href="https://www.linkedin.com/in/yuqian-michael-zhang-744530142/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+        <i data-lucide="linkedin" class="w-4 h-4"></i>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+
+  <div class="shell-footer-bottom">
+    <span class="shell-footer-copy">&copy; 2026 Yuqian Zhang. All rights reserved.</span>
+    <span class="shell-footer-locale">New Zealand</span>
+  </div>
+</footer>
+<!-- /SHELL:FOOTER -->
+
   <style id="shell-styles">
 
   /* ---- NAVIGATION BAR ---- */
@@ -2567,663 +2050,82 @@
 
   </style>
 
-  <!-- Six nav links need slightly tighter spacing on tablets; identical block is
-       included on every page so the shell renders consistently. -->
-  <style id="shell-nav-tight">
-@media (min-width: 768px) and (max-width: 1080px) {
-  .shell-nav-inner { padding-left: 20px; padding-right: 20px; }
-  .shell-nav-links { gap: 0; }
-  .shell-nav-link { font-size: 13px; padding: 6px 8px; }
-  .shell-nav-link::after { left: 8px; right: 8px; }
-  .shell-nav-cta { font-size: 13px; padding: 7px 13px; margin-left: 4px; }
-}
-  </style>
-
-  <!-- ============================================================= -->
-  <!-- RENDER TEMPLATES (inert; cloned by the hydration script) -->
-  <!-- ============================================================= -->
-  <template id="tpl-suburb-row">
-    <tr>
-      <td><span class="ps-suburb-name" data-bind="name">&mdash;</span><span class="ps-suburb-group" data-bind="group"></span></td>
-      <td data-bind="listings" data-fmt="int">&mdash;</td>
-      <td data-bind="median_value_mid" data-fmt="money-compact">&mdash;</td>
-      <td data-bind="median_cv_ratio" data-fmt="ratio2">&mdash;</td>
-      <td data-bind="median_days_on_market" data-fmt="int">&mdash;</td>
-      <td data-bind="avm_pct" data-fmt="pct1">&mdash;</td>
-    </tr>
-  </template>
-
-  <template id="tpl-sale-method">
-    <li class="ps-mix-item">
-      <div class="ps-mix-head">
-        <span class="ps-mix-name" data-bind="method">&mdash;</span>
-        <span class="ps-mix-value"><span data-bind="count" data-fmt="int">&mdash;</span> &middot; <span data-bind="share_pct" data-fmt="pct1">&mdash;</span></span>
-      </div>
-      <div class="ps-mix-bar" aria-hidden="true"><span data-bind="bar"></span></div>
-    </li>
-  </template>
-
-  <template id="tpl-value-card">
-    <a class="ps-value-card" href="./app/">
-      <div class="ps-value-photo">
-        <img alt="" decoding="async">
-        <span class="ps-value-photo-fallback" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" focusable="false" role="presentation">
-            <path d="M3 10.6 12 3.4l9 7.2"></path>
-            <path d="M5.4 9.4V20.6h13.2V9.4"></path>
-            <path d="M9.6 20.6v-5.9h4.8v5.9"></path>
-          </svg>
-        </span>
-      </div>
-      <div class="ps-value-body">
-        <p class="ps-value-address" data-bind="address">&mdash;</p>
-        <p class="ps-value-suburb" data-bind="suburb">&mdash;</p>
-        <div class="ps-value-figures">
-          <div class="ps-value-figure">
-            <span class="ps-value-figure-k" data-bind="estimate-k">Estimate</span>
-            <span class="ps-value-figure-v" data-bind="estimate">&mdash;</span>
-          </div>
-          <div class="ps-value-figure">
-            <span class="ps-value-figure-k">Value &divide; CV</span>
-            <span class="ps-value-figure-v" data-bind="cv_ratio">&mdash;</span>
-          </div>
-          <div class="ps-value-figure">
-            <span class="ps-value-figure-k">Deal gap</span>
-            <span class="ps-value-figure-v" data-bind="deal_gap">&mdash;</span>
-          </div>
-          <div class="ps-value-figure">
-            <span class="ps-value-figure-k">Days on market</span>
-            <span class="ps-value-figure-v" data-bind="dom">&mdash;</span>
-          </div>
-        </div>
-        <div class="ps-value-meta">
-          <span class="ps-badge" data-bind="method">&mdash;</span>
-          <span class="ps-badge" data-bind="confidence">&mdash;</span>
-          <span class="ps-value-open">Open in map &rarr;</span>
-        </div>
-      </div>
-    </a>
-  </template>
-
-  <!-- ============================================================= -->
-  <!-- HYDRATION (CONTRACT §5) — vanilla JS only -->
-  <!-- ============================================================= -->
+  <!-- Hydration: fill the live figures from the published snapshot -->
   <script>
   (function () {
     'use strict';
-
-    var SNAPSHOT_PATH = './app/data/snapshot.json';
-    var states = { loading: 'loading', ready: 'ready', unavailable: 'unavailable' };
-    var currentState = states.loading;
-
-    function bySelector(selector) {
-      return Array.prototype.slice.call(document.querySelectorAll(selector));
-    }
-
+    var formatters = {
+      int: function (value) { return Number(value).toLocaleString('en-NZ'); },
+      pct1: function (value) { return Number(value).toFixed(1) + '%'; },
+      'ratio-pct1': function (value) { return (Number(value) * 100).toFixed(1) + '%'; },
+      text: function (value) { return String(value); }
+    };
     function getPath(object, path) {
-      return path.split('.').reduce(function (accumulator, key) {
-        if (accumulator === null || accumulator === undefined) return undefined;
-        return accumulator[key];
+      return path.split('.').reduce(function (value, key) {
+        return (value === null || value === undefined) ? undefined : value[key];
       }, object);
     }
-
-    function toNumber(value) {
-      if (value === null || value === undefined || value === '') return null;
-      var number = typeof value === 'number' ? value : Number(value);
-      return isFinite(number) ? number : null;
+    function setStatus(state, text) {
+      var node = document.querySelector('[data-snapshot-status]');
+      if (!node) return;
+      node.setAttribute('data-state', state);
+      node.textContent = text;
     }
-
-    function fmtInt(value) {
-      var number = toNumber(value);
-      if (number === null) return null;
-      return Math.round(number).toLocaleString('en-NZ');
-    }
-
-    function fmtMoney(value) {
-      var number = toNumber(value);
-      if (number === null) return null;
-      return '$' + Math.round(number).toLocaleString('en-NZ');
-    }
-
-    function fmtMoneyCompact(value) {
-      var number = toNumber(value);
-      if (number === null) return null;
-      var sign = number < 0 ? '-' : '';
-      var absolute = Math.abs(number);
-      if (absolute >= 1000000) {
-        return sign + '$' + (absolute / 1000000).toFixed(2).replace(/\.?0+$/, '') + 'm';
-      }
-      if (absolute >= 1000) {
-        return sign + '$' + Math.round(absolute / 1000) + 'k';
-      }
-      return sign + '$' + Math.round(absolute);
-    }
-
-    function fmtSignedMoneyCompact(value) {
-      var number = toNumber(value);
-      if (number === null) return null;
-      return (number >= 0 ? '+' : '-') + fmtMoneyCompact(Math.abs(number));
-    }
-
-    function fmtPercent(value, decimals) {
-      var number = toNumber(value);
-      if (number === null) return null;
-      return number.toFixed(decimals) + '%';
-    }
-
-    function fmtRatioPercent(value, decimals) {
-      var number = toNumber(value);
-      if (number === null) return null;
-      return (number * 100).toFixed(decimals) + '%';
-    }
-
-    function fmtRatio(value) {
-      var number = toNumber(value);
-      if (number === null) return null;
-      return number.toFixed(2);
-    }
-
-    function fmtDateLong(isoString) {
-      if (!isoString) return null;
-      var date = new Date(isoString);
-      if (isNaN(date.getTime())) return null;
-      try {
-        return new Intl.DateTimeFormat('en-NZ', {
-          day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Pacific/Auckland'
-        }).format(date);
-      } catch (error) {
-        return null;
-      }
-    }
-
-    function fmtDateTime(isoString) {
-      if (!isoString) return null;
-      var date = new Date(isoString);
-      if (isNaN(date.getTime())) return null;
-      try {
-        return new Intl.DateTimeFormat('en-NZ', {
-          day: 'numeric', month: 'long', year: 'numeric',
-          hour: '2-digit', minute: '2-digit', hour12: false,
-          timeZone: 'Pacific/Auckland', timeZoneName: 'short'
-        }).format(date);
-      } catch (error) {
-        return null;
-      }
-    }
-
-    function fmtWeekLabel(weekString) {
-      if (!weekString) return null;
-      var date = new Date(weekString + 'T00:00:00Z');
-      if (isNaN(date.getTime())) return null;
-      try {
-        return new Intl.DateTimeFormat('en-NZ', {
-          day: 'numeric', month: 'short', timeZone: 'UTC'
-        }).format(date);
-      } catch (error) {
-        return weekString;
-      }
-    }
-
-    function formatValue(value, format) {
-      if (value === null || value === undefined || value === '') return null;
-      switch (format) {
-        case 'int': return fmtInt(value);
-        case 'money': return fmtMoney(value);
-        case 'money-compact': return fmtMoneyCompact(value);
-        case 'signed-money-compact': return fmtSignedMoneyCompact(value);
-        case 'pct1': return fmtPercent(value, 1);
-        case 'pct2': return fmtPercent(value, 2);
-        case 'ratio-pct0': return fmtRatioPercent(value, 0);
-        case 'ratio-pct1': return fmtRatioPercent(value, 1);
-        case 'ratio-pct2': return fmtRatioPercent(value, 2);
-        case 'ratio2': return fmtRatio(value);
-        case 'date': return fmtDateLong(value);
-        case 'datetime': return fmtDateTime(value);
-        default: return String(value);
-      }
-    }
-
-    function setState(state) {
-      currentState = state;
-      document.body.setAttribute('data-snapshot-state', state);
-      bySelector('[data-when-unavailable]').forEach(function (element) {
-        element.hidden = state !== states.unavailable;
+    fetch('./app/data/snapshot.json', { cache: 'no-store' })
+      .then(function (response) {
+        if (!response.ok) throw new Error('snapshot ' + response.status);
+        return response.json();
+      })
+      .then(function (snapshot) {
+        Array.prototype.forEach.call(document.querySelectorAll('[data-snap]'), function (node) {
+          var value = getPath(snapshot, node.getAttribute('data-snap'));
+          if (value === null || value === undefined) return;
+          var formatter = formatters[node.getAttribute('data-fmt')] || formatters.text;
+          node.textContent = formatter(value);
+        });
+        document.documentElement.setAttribute('data-snapshot-version', snapshot.generated_at || '');
+        setStatus('ready', 'Data snapshot ' + snapshot.snapshot_date);
+      })
+      .catch(function () {
+        setStatus('unavailable', 'Data snapshot unavailable');
+        var banner = document.querySelector('[data-when-unavailable]');
+        if (banner) banner.hidden = false;
       });
-      bySelector('[data-when-ready]').forEach(function (element) {
-        element.hidden = state !== states.ready;
-      });
-      var status = document.querySelector('[data-snapshot-status]');
-      if (status) {
-        status.setAttribute('data-state', state);
-        if (state === states.ready) {
-          status.textContent = 'Data snapshot loaded';
-        } else if (state === states.unavailable) {
-          status.textContent = 'Snapshot unavailable — open the live app';
-        } else {
-          status.textContent = 'Reading data snapshot…';
-        }
-      }
-    }
-
-    function showListFallback(name, show) {
-      bySelector('[data-ps-fallback="' + name + '"]').forEach(function (element) {
-        element.hidden = !show;
-      });
-      var container = document.querySelector('[data-snap-list="' + name + '"]');
-      if (container) container.hidden = !!show;
-    }
-
-    function setBoundText(root, key, value, format) {
-      var element = root.querySelector('[data-bind="' + key + '"]');
-      if (!element) return;
-      var output = formatValue(value, format || element.getAttribute('data-fmt'));
-      element.textContent = output === null ? '—' : output;
-    }
-
-    function renderStamps(snapshot) {
-      bySelector('[data-snap]').forEach(function (element) {
-        var path = element.getAttribute('data-snap');
-        if (!path) return;
-        var output = formatValue(getPath(snapshot, path), element.getAttribute('data-fmt'));
-        if (output === null || output === undefined) {
-          element.textContent = '—';
-          element.setAttribute('data-snap-missing', 'true');
-        } else {
-          element.textContent = output;
-          element.removeAttribute('data-snap-missing');
-        }
-      });
-    }
-
-    function renderSuburbs(snapshot) {
-      var container = document.querySelector('[data-snap-list="suburbs"]');
-      var template = document.getElementById('tpl-suburb-row');
-      var rows = Array.isArray(snapshot.suburbs) ? snapshot.suburbs : [];
-      if (!container || !template) return;
-      if (!rows.length) { showListFallback('suburbs', true); return; }
-      container.textContent = '';
-      rows.forEach(function (suburb) {
-        var fragment = template.content.cloneNode(true);
-        var row = fragment.querySelector('tr');
-        setBoundText(row, 'name', suburb.name, 'text');
-        setBoundText(row, 'group', suburb.group, 'text');
-        setBoundText(row, 'listings', suburb.listings, 'int');
-        setBoundText(row, 'median_value_mid', suburb.median_value_mid, 'money-compact');
-        setBoundText(row, 'median_cv_ratio', suburb.median_cv_ratio, 'ratio2');
-        setBoundText(row, 'median_days_on_market', suburb.median_days_on_market, 'int');
-        setBoundText(row, 'avm_pct', suburb.avm_pct, 'pct1');
-        container.appendChild(fragment);
-      });
-      showListFallback('suburbs', false);
-    }
-
-    function renderSaleMethods(snapshot) {
-      var container = document.querySelector('[data-snap-list="sale_methods"]');
-      var template = document.getElementById('tpl-sale-method');
-      var rows = Array.isArray(snapshot.sale_methods) ? snapshot.sale_methods : [];
-      if (!container || !template) return;
-      if (!rows.length) { showListFallback('sale_methods', true); return; }
-      var maximum = rows.reduce(function (highest, row) {
-        return Math.max(highest, toNumber(row.share_pct) || 0);
-      }, 0);
-      container.textContent = '';
-      rows.forEach(function (row) {
-        var fragment = template.content.cloneNode(true);
-        setBoundText(fragment, 'method', row.method, 'text');
-        setBoundText(fragment, 'count', row.count, 'int');
-        setBoundText(fragment, 'share_pct', row.share_pct, 'pct1');
-        var bar = fragment.querySelector('[data-bind="bar"]');
-        if (bar) {
-          var share = toNumber(row.share_pct) || 0;
-          bar.style.width = (maximum > 0 ? Math.max(4, (share / maximum) * 100) : 0) + '%';
-        }
-        container.appendChild(fragment);
-      });
-      showListFallback('sale_methods', false);
-    }
-
-    function renderTopValue(snapshot) {
-      var container = document.querySelector('[data-snap-list="top_value"]');
-      var template = document.getElementById('tpl-value-card');
-      var items = Array.isArray(snapshot.top_value) ? snapshot.top_value : [];
-      if (!container || !template) return;
-      if (!items.length) { showListFallback('top_value', true); return; }
-      container.textContent = '';
-      items.forEach(function (item) {
-        var fragment = template.content.cloneNode(true);
-        var card = fragment.querySelector('.ps-value-card');
-        if (card && item.id !== null && item.id !== undefined) {
-          card.setAttribute('href', './app/#/property/' + encodeURIComponent(String(item.id)));
-        }
-        var address = item.address || null;
-        setBoundText(fragment, 'address', address, 'text');
-        setBoundText(fragment, 'suburb', item.suburb || null, 'text');
-
-        var photoWrap = fragment.querySelector('.ps-value-photo');
-        var photo = fragment.querySelector('img');
-        if (photoWrap && photo) {
-          if (item.photo_url) {
-            photo.src = item.photo_url;
-            photo.alt = [address, item.suburb].filter(Boolean).join(', ');
-            photo.addEventListener('error', function () { photoWrap.classList.add('is-fallback'); });
-          } else {
-            photoWrap.classList.add('is-fallback');
-          }
-        }
-
-        var low = toNumber(item.value_low);
-        var high = toNumber(item.value_high);
-        var mid = toNumber(item.value_mid);
-        var estimateKey = fragment.querySelector('[data-bind="estimate-k"]');
-        if (low !== null && high !== null) {
-          if (estimateKey) estimateKey.textContent = '80% range';
-          var estimateRange = fragment.querySelector('[data-bind="estimate"]');
-          if (estimateRange) estimateRange.textContent = fmtMoneyCompact(low) + '–' + fmtMoneyCompact(high);
-        } else if (mid !== null) {
-          if (estimateKey) estimateKey.textContent = 'Model estimate';
-          var estimatePoint = fragment.querySelector('[data-bind="estimate"]');
-          if (estimatePoint) estimatePoint.textContent = fmtMoneyCompact(mid);
-        }
-
-        var cvRatio = toNumber(item.cv_ratio);
-        setBoundText(fragment, 'cv_ratio', cvRatio !== null ? fmtRatio(cvRatio) : null, 'text');
-
-        var dealGap = toNumber(item.deal_gap);
-        var dealGapPct = toNumber(item.deal_gap_pct);
-        var dealGapElement = fragment.querySelector('[data-bind="deal_gap"]');
-        if (dealGapElement) {
-          if (dealGap !== null) {
-            var gapText = fmtSignedMoneyCompact(dealGap);
-            if (dealGapPct !== null) gapText += ' (' + fmtPercent(Math.abs(dealGapPct), 1) + ')';
-            dealGapElement.textContent = gapText;
-          } else {
-            dealGapElement.textContent = '—';
-          }
-        }
-
-        var days = toNumber(item.days_on_market);
-        setBoundText(fragment, 'dom', days !== null ? fmtInt(days) : null, 'text');
-
-        var methodBadge = fragment.querySelector('[data-bind="method"]');
-        if (methodBadge) methodBadge.textContent = item.sale_method || '—';
-
-        var confidenceBadge = fragment.querySelector('[data-bind="confidence"]');
-        if (confidenceBadge) {
-          var confidence = (item.confidence || '').toLowerCase();
-          confidenceBadge.textContent = confidence ? confidence + ' confidence' : '—';
-          if (confidence) confidenceBadge.classList.add('ps-badge--' + confidence);
-        }
-
-        container.appendChild(fragment);
-      });
-      showListFallback('top_value', false);
-    }
-
-    function renderTrend(snapshot) {
-      var host = document.querySelector('[data-spark="trend"]');
-      var trend = snapshot.trend || {};
-      var series = Array.isArray(trend.series) ? trend.series : [];
-      if (!host) return;
-      var points = series
-        .map(function (row) {
-          return { week: row.week || null, value: toNumber(row.median_estimate) };
-        })
-        .filter(function (point) { return point.value !== null; });
-      if (points.length < 2) { showListFallback('trend', true); return; }
-      showListFallback('trend', false);
-
-      var width = 720;
-      var height = 180;
-      var paddingX = 12;
-      var paddingY = 18;
-      var values = points.map(function (point) { return point.value; });
-      var minimum = Math.min.apply(null, values);
-      var maximum = Math.max.apply(null, values);
-      var span = maximum - minimum || 1;
-      var coordinates = values.map(function (value, index) {
-        var x = paddingX + ((width - paddingX * 2) * index) / (values.length - 1);
-        var y = height - paddingY - ((height - paddingY * 2) * (value - minimum)) / span;
-        return [Math.round(x * 10) / 10, Math.round(y * 10) / 10];
-      });
-      var line = coordinates.map(function (point, index) {
-        return (index === 0 ? 'M' : 'L') + point[0] + ',' + point[1];
-      }).join(' ');
-      var area = line + ' L' + coordinates[coordinates.length - 1][0] + ',' + (height - paddingY) +
-        ' L' + coordinates[0][0] + ',' + (height - paddingY) + ' Z';
-      var lastPoint = coordinates[coordinates.length - 1];
-
-      host.innerHTML =
-        '<svg viewBox="0 0 ' + width + ' ' + height + '" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg">' +
-        '<defs><linearGradient id="ps-spark-fill" x1="0" y1="0" x2="0" y2="1">' +
-        '<stop offset="0" stop-color="#1f4d3f" stop-opacity="0.16"></stop>' +
-        '<stop offset="1" stop-color="#1f4d3f" stop-opacity="0"></stop>' +
-        '</linearGradient></defs>' +
-        [0.25, 0.5, 0.75].map(function (fraction) {
-          var y = Math.round((paddingY + (height - paddingY * 2) * fraction) * 10) / 10;
-          return '<line x1="' + paddingX + '" y1="' + y + '" x2="' + (width - paddingX) + '" y2="' + y +
-            '" stroke="#ded8ca" stroke-width="1" stroke-dasharray="2 6" opacity="0.8"></line>';
-        }).join('') +
-        '<path d="' + area + '" fill="url(#ps-spark-fill)"></path>' +
-        '<path d="' + line + '" fill="none" stroke="#1f4d3f" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>' +
-        '<circle cx="' + lastPoint[0] + '" cy="' + lastPoint[1] + '" r="4" fill="#1f4d3f"></circle>' +
-        '</svg>';
-
-      host.setAttribute('aria-label',
-        'Median model estimate across ' + points.length + ' weeks, from ' +
-        fmtMoneyCompact(values[0]) + ' to ' + fmtMoneyCompact(values[values.length - 1]) + '.');
-
-      var start = document.querySelector('[data-spark-start]');
-      var end = document.querySelector('[data-spark-end]');
-      if (start) start.textContent = fmtWeekLabel(points[0].week) || '—';
-      if (end) end.textContent = fmtWeekLabel(points[points.length - 1].week) || '—';
-
-      var latest = document.querySelector('[data-spark-latest]');
-      var change = document.querySelector('[data-spark-change]');
-      var range = document.querySelector('[data-spark-range]');
-      if (latest) latest.textContent = fmtMoneyCompact(values[values.length - 1]);
-      if (change) {
-        var changePercent = values[0] !== 0 ? ((values[values.length - 1] - values[0]) / values[0]) * 100 : null;
-        change.textContent = changePercent === null
-          ? '—'
-          : (changePercent >= 0 ? '+' : '') + changePercent.toFixed(1) + '%';
-      }
-      if (range) range.textContent = fmtMoneyCompact(minimum) + '–' + fmtMoneyCompact(maximum);
-    }
-
-    function hydrate(snapshot) {
-      renderStamps(snapshot);
-      renderSuburbs(snapshot);
-      renderSaleMethods(snapshot);
-      renderTopValue(snapshot);
-      renderTrend(snapshot);
-      setState(states.ready);
-    }
-
-    function fail() {
-      setState(states.unavailable);
-      ['suburbs', 'sale_methods', 'top_value', 'trend'].forEach(function (name) {
-        showListFallback(name, true);
-      });
-    }
-
-    var snapshotVersion = null;
-
-    // CONTRACT §5: fetch the snapshot same-origin with cache: 'no-store' and a
-    // ?v=<generated_at> cache-buster. The version is only known after the first
-    // response, so the buster is applied to every revalidation request (for
-    // example when the page is restored from the back/forward cache).
-    function snapshotUrl(appliedVersion) {
-      return appliedVersion
-        ? SNAPSHOT_PATH + '?v=' + encodeURIComponent(appliedVersion)
-        : SNAPSHOT_PATH;
-    }
-
-    function loadSnapshot(revalidate) {
-      if (!window.fetch) { fail(); return; }
-      var url = snapshotUrl(revalidate ? snapshotVersion : null);
-      fetch(url, { cache: 'no-store', credentials: 'same-origin' })
-        .then(function (response) {
-          if (!response.ok) throw new Error('snapshot HTTP ' + response.status);
-          return response.json();
-        })
-        .then(function (snapshot) {
-          if (!snapshot || typeof snapshot !== 'object') throw new Error('snapshot payload invalid');
-          window.__propertyScoutSnapshot = snapshot;
-          if (typeof snapshot.generated_at === 'string') {
-            snapshotVersion = snapshot.generated_at;
-            document.documentElement.setAttribute('data-snapshot-version', snapshotVersion);
-          }
-          hydrate(snapshot);
-        })
-        .catch(function () { fail(); });
-    }
-
-    window.__propertyScoutRefresh = function () { loadSnapshot(true); };
-
-    window.addEventListener('pageshow', function (event) {
-      // A restored page is showing a snapshot from an earlier visit; revalidate
-      // with the generated_at cache-buster instead of trusting the cached DOM.
-      if (event.persisted) loadSnapshot(true);
-    });
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', loadSnapshot);
-    } else {
-      loadSnapshot();
-    }
   })();
   </script>
 
-  <!-- ============================================================= -->
-  <!-- MAP EMBED (CONTRACT §6) — desktop iframe, mobile poster + link -->
-  <!-- ============================================================= -->
+  <!-- Embedded map: desktop iframe, mobile poster + link -->
   <script>
   (function () {
     'use strict';
-
     var shell = document.getElementById('ps-live-map');
     if (!shell) return;
     var slot = shell.querySelector('[data-iframe-slot]');
     if (!slot) return;
-    var desktop = window.matchMedia('(min-width: 900px)');
+    var wide = window.matchMedia('(min-width: 900px)');
     var mounted = false;
-
-    function onMessage(event) {
-      if (event.origin !== window.location.origin) return;
-      if (!event.data || event.data.type !== 'apr:ready') return;
-      appReady = true;
-      revealIfReady();
-    }
-
-    var appLoaded = false;
-    var appReady = false;
-
-    function loadingNote(message) {
-      var note = shell.querySelector('[data-map-status]');
-      if (note) note.textContent = message;
-    }
-
-    function revealIfReady() {
-      // The iframe is only shown once it has actually loaded AND the app has
-      // signalled apr:ready. Until then the poster stays visible, so a missing
-      // or slow build degrades to the poster plus the "Open full screen" link.
-      if (appLoaded && appReady) shell.classList.add('is-ready');
-    }
-
-    function looksLikeApp(frame) {
-      // The app's index.html defines #root and loads hashed assets. A 404 page,
-      // a directory listing or a redirect to the site home page matches neither,
-      // so it is rejected instead of being revealed in the frame.
-      try {
-        var doc = frame.contentDocument;
-        if (!doc) return false;
-        if (!doc.getElementById('root')) return false;
-        return !!doc.querySelector('script[src*="assets/"], link[href*="assets/"]');
-      } catch (error) {
-        return false;
-      }
-    }
-
-    function syncUnavailablePanel() {
-      var panel = shell.querySelector('[data-map-unavailable]');
-      if (!panel) return;
-      var show = shell.classList.contains('is-unavailable') && shell.classList.contains('is-poster-missing');
-      panel.hidden = !show;
-      var note = shell.querySelector('[data-map-status]');
-      if (note) note.hidden = show;
-    }
-
-    function abandonEmbed(message) {
-      shell.classList.add('is-unavailable');
-      loadingNote(message);
-      if (iframe && iframe.parentNode) iframe.parentNode.removeChild(iframe);
-      mounted = false;
-      syncUnavailablePanel();
-    }
-
-    var iframe = null;
-
-    function mountIframe() {
-      if (mounted || !desktop.matches) return;
+    function mount() {
+      if (!wide.matches || mounted) return;
       mounted = true;
-      iframe = document.createElement('iframe');
-      iframe.className = 'ps-map-iframe';
-      iframe.title = 'Auckland Property Scout interactive map';
-      iframe.src = './app/?embed=1&theme=scholar';
-      iframe.loading = 'lazy';
-      iframe.setAttribute('allowfullscreen', '');
-      iframe.addEventListener('load', function () {
-        if (!looksLikeApp(iframe)) {
-          abandonEmbed('Map preview unavailable — open the full app');
-          return;
-        }
-        appLoaded = true;
-        revealIfReady();
-        // If the app has loaded but has not signalled readiness, keep the poster
-        // and say so rather than showing a blank frame.
-        window.setTimeout(function () {
-          if (!appReady) {
-            loadingNote('Map is taking longer than expected — open the full app');
-          }
-        }, 20000);
+      var frame = document.createElement('iframe');
+      frame.className = 'ps-map-iframe';
+      frame.title = 'Auckland Property Scout — interactive map';
+      frame.src = './app/?embed=1&theme=scholar';
+      frame.loading = 'lazy';
+      frame.addEventListener('load', function () {
+        var note = shell.querySelector('[data-map-status]');
+        if (note) note.textContent = '';
+        window.setTimeout(function () { shell.classList.add('is-ready'); }, 300);
       });
-      slot.appendChild(iframe);
-      window.addEventListener('message', onMessage);
+      slot.appendChild(frame);
     }
-
-    mountIframe();
-    if (desktop.addEventListener) {
-      desktop.addEventListener('change', mountIframe);
-    } else if (desktop.addListener) {
-      desktop.addListener(mountIframe);
-    }
-
-    // Poster fallback: if a preview image is missing, try the alternative poster
-    // once, then hide it and let the gradient placeholder show through.
-    Array.prototype.slice.call(document.querySelectorAll('.ps-map-poster[data-poster-fallback]'))
-      .forEach(function (poster) {
-        poster.addEventListener('error', function () {
-          var fallback = poster.getAttribute('data-poster-fallback');
-          var alreadyTried = poster.getAttribute('data-poster-fallback-used') === '1';
-          if (fallback && !alreadyTried && fallback !== poster.getAttribute('src')) {
-            poster.setAttribute('data-poster-fallback-used', '1');
-            poster.src = fallback;
-            return;
-          }
-          poster.hidden = true;
-          var mobileMedia = poster.closest('.ps-map-mobile-media');
-          if (mobileMedia) mobileMedia.classList.add('is-fallback');
-          if (poster.closest('.ps-map-desktop')) {
-            shell.classList.add('is-poster-missing');
-            var shellNote = shell.querySelector('[data-map-status]');
-            if (shellNote) shellNote.textContent = 'Map preview unavailable — open the full app';
-            syncUnavailablePanel();
-          }
-        });
-      });
+    mount();
+    if (wide.addEventListener) wide.addEventListener('change', mount);
+    else if (wide.addListener) wide.addListener(mount);
   })();
   </script>
 
   <script>lucide.createIcons();</script>
+
 </body>
 </html>

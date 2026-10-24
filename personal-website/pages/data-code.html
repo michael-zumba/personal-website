@@ -171,7 +171,6 @@
     <nav class="shell-nav-links" aria-label="Main navigation">
       <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-home" class="shell-nav-link">Home</a>
       <a href="../pages/research.html" data-nav-key="research" data-dom-id="nav-research" class="shell-nav-link">Research</a>
-      <a href="../pages/property-scout.html" data-nav-key="property-scout" data-dom-id="nav-property-scout" class="shell-nav-link">Property Scout</a>
       <a href="../pages/data-code.html" data-nav-key="data-code" data-dom-id="nav-data-code" class="shell-nav-link" data-active="true">Data &amp; Code</a>
       <a href="../pages/insights.html" data-nav-key="insights" data-dom-id="nav-insights" class="shell-nav-link">Insights</a>
       <a href="../pages/contact.html" data-nav-key="contact" data-dom-id="nav-contact" class="shell-nav-cta">Contact</a>
@@ -195,7 +194,6 @@
   <div class="shell-mobile-menu" id="mobile-menu" role="menu" aria-label="Mobile navigation">
     <a href="../pages/index.html" data-nav-key="home" data-dom-id="nav-mobile-home" class="shell-mobile-link" role="menuitem">Home</a>
     <a href="../pages/research.html" data-nav-key="research" data-dom-id="nav-mobile-research" class="shell-mobile-link" role="menuitem">Research</a>
-    <a href="../pages/property-scout.html" data-nav-key="property-scout" data-dom-id="nav-mobile-property-scout" class="shell-mobile-link" role="menuitem">Property Scout</a>
     <a href="../pages/data-code.html" data-nav-key="data-code" data-dom-id="nav-mobile-data-code" class="shell-mobile-link" role="menuitem" data-active="true">Data &amp; Code</a>
     <a href="../pages/insights.html" data-nav-key="insights" data-dom-id="nav-mobile-insights" class="shell-mobile-link" role="menuitem">Insights</a>
     <a href="../pages/contact.html" data-nav-key="contact" data-dom-id="nav-mobile-contact" class="shell-mobile-cta" role="menuitem">Contact</a>
@@ -397,34 +395,30 @@
           <div>
             <h3 class="scholar-h3 font-serif" style="color:var(--scholar-foreground);">Auckland Property Scout</h3>
             <p class="font-sans text-sm mt-2 max-w-[680px]" style="color:var(--scholar-muted-foreground);line-height:1.6;">
-              Live research tool and compiled dataset for the Auckland housing market: every active listing with its recovered price signal, tenure-aware valuation route, CV-normalised comparable sales, independent AVM coverage and a calibrated 80% valuation interval. Runs entirely in the browser from a static data pack, refreshed daily. Listing-level data is not redistributed; the aggregate snapshot, methodology and research lab are public.
+              A compiled snapshot and live tool for the Auckland housing market: public listing data, council valuations and sold comparables, with a documented method, stated model error and a daily refresh. Aggregates are published; individual listing records are not redistributed.
             </p>
           </div>
-          <a href="/property-scout/" class="inline-flex items-center gap-1.5 rounded-md px-4 py-2.5 text-sm font-semibold whitespace-nowrap shrink-0" style="background-color:var(--scholar-primary);color:var(--scholar-primary-foreground);text-decoration:none;transition:background-color 200ms ease;" onmouseover="this.style.backgroundColor='var(--scholar-primary-800)'" onmouseout="this.style.backgroundColor='var(--scholar-primary)'">
+          <a href="/research/property-scout/" class="inline-flex items-center gap-1.5 rounded-md px-4 py-2.5 text-sm font-semibold whitespace-nowrap shrink-0" style="background-color:var(--scholar-primary);color:var(--scholar-primary-foreground);text-decoration:none;transition:background-color 200ms ease;" onmouseover="this.style.backgroundColor='var(--scholar-primary-800)'" onmouseout="this.style.backgroundColor='var(--scholar-primary)'">
             <i data-lucide="map" style="width:14px;height:14px;"></i>
             Open the app
           </a>
         </div>
         <p class="font-sans text-xs font-semibold uppercase tracking-wider mb-3" style="color:var(--scholar-muted-foreground);">Project links</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-2">
-          <a href="/property-scout/" class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-primary);background-color:var(--scholar-primary-100);color:var(--scholar-primary);" onmouseover="this.style.borderColor='var(--scholar-primary-800)';this.style.backgroundColor='var(--scholar-primary-200)';" onmouseout="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';">
+          <a href="/research/property-scout/" class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-primary);background-color:var(--scholar-primary-100);color:var(--scholar-primary);" onmouseover="this.style.borderColor='var(--scholar-primary-800)';this.style.backgroundColor='var(--scholar-primary-200)';" onmouseout="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';">
             <i data-lucide="map" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
-            <span class="truncate">Interactive map (live app)</span>
+            <span class="truncate">Project page</span>
           </a>
-          <a href="/property-scout/#market" class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
-            <i data-lucide="line-chart" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
-            <span class="truncate">Live market snapshot</span>
-          </a>
-          <a href="/property-scout/app/#/research" class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+          <a href="/research/property-scout/app/#/research" class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
             <i data-lucide="flask-conical" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
             <span class="truncate">Research lab and methodology</span>
           </a>
-          <a href="/property-scout/app/data/snapshot.json" class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
+          <a href="/research/property-scout/app/data/snapshot.json" class="flex items-center gap-2 p-3 rounded-md border text-sm font-medium no-underline transition-colors" style="border-color:var(--scholar-border);color:var(--scholar-foreground);" onmouseover="this.style.borderColor='var(--scholar-primary)';this.style.backgroundColor='var(--scholar-primary-100)';" onmouseout="this.style.borderColor='var(--scholar-border)';this.style.backgroundColor='transparent';">
             <i data-lucide="braces" style="width:16px;height:16px;color:var(--scholar-primary);flex-shrink:0;"></i>
             <span class="truncate">Data snapshot (JSON)</span>
           </a>
         </div>
-        <p class="font-sans text-xs mt-3" style="color:var(--scholar-muted-foreground);line-height:1.6;">Replication: the static export and snapshot are generated by the research pipeline; the daily data pack and app build are produced from public listing pages and council valuations. Aggregates are published here; individual listing records are not redistributed.</p>
+        <p class="font-sans text-xs mt-3" style="color:var(--scholar-muted-foreground);line-height:1.6;">Replication: the static export and snapshot are generated by the research pipeline from public listing pages and council valuations. Aggregates are published here; individual listing records are not redistributed.</p>
       </div>
 
       <!-- Project: What Is Accounting and Finance Research For in the AI Era? -->
@@ -1271,7 +1265,6 @@
       <span class="shell-footer-col-title">Explore</span>
       <a href="../pages/index.html">Home</a>
       <a href="../pages/research.html">Research</a>
-      <a href="../pages/property-scout.html">Property Scout</a>
       <a href="../pages/data-code.html">Data &amp; Code</a>
       <a href="../pages/insights.html">Insights</a>
       <a href="../pages/contact.html">Contact</a>
@@ -1705,17 +1698,6 @@
       transform: none;
     }
   }
-</style>
-
-<style id="shell-nav-tight">
-/* Six nav links need slightly tighter spacing on tablets; identical block on every page. */
-@media (min-width: 768px) and (max-width: 1080px) {
-  .shell-nav-inner { padding-left: 20px; padding-right: 20px; }
-  .shell-nav-links { gap: 0; }
-  .shell-nav-link { font-size: 13px; padding: 6px 8px; }
-  .shell-nav-link::after { left: 8px; right: 8px; }
-  .shell-nav-cta { font-size: 13px; padding: 7px 13px; margin-left: 4px; }
-}
 </style>
 
 <style>
