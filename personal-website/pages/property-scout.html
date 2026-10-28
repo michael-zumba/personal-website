@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auckland Property Scout — research project | Yuqian Zhang</title>
-    <meta name="description" content="A live research project on the Auckland property market: checkable value ranges, the comparable sales behind them, and the method published alongside the numbers. Personal research, not financial advice.">
+    <meta name="description" content="A research project on the Auckland property market: value ranges, comparable sales, and the method published alongside the numbers. Personal research, not financial advice.">
     <link rel="canonical" href="https://zhangyuqian.com/research/property-scout/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Auckland Property Scout — Yuqian Zhang">
-    <meta property="og:description" content="A live research project on the Auckland property market: checkable value ranges, the sales behind them, and the method published alongside the numbers.">
+    <meta property="og:description" content="A research project on the Auckland property market: value ranges, comparable sales, and the method published alongside the numbers.">
     <meta property="og:url" content="https://zhangyuqian.com/research/property-scout/">
     <meta property="og:image" content="https://zhangyuqian.com/research/property-scout/app/data/preview/og-property-scout.png">
     <meta property="og:site_name" content="Yuqian Zhang">
@@ -1364,9 +1364,8 @@
         </div>
         <h1 id="ps-title" class="ps-title">Auckland Property Scout</h1>
         <p class="ps-standfirst">
-          A research project that turns public Auckland listing data into checkable value
-          ranges. I built it to see the evidence behind a property estimate, and to publish
-          the working.
+          A research project that turns public Auckland listing data into value ranges you can
+          check. I built it to show the evidence behind an estimate and make the method public.
         </p>
         <div class="ps-hero-actions">
           <a href="./app/" class="ps-btn ps-btn-primary" data-dom-id="ps-cta-map">
@@ -1422,8 +1421,8 @@
         </div>
         <div class="ps-story">
           <p>I teach and research in accounting and finance. This began with a personal question: what are the houses in my part of Auckland worth, and how would I know?</p>
-          <p>The tools I could buy gave me a number, not the reasoning. So I collected the data myself: active listings, council valuations, nearby sales and the price guidance hidden in listing pages. Then I treated it like a research sample. Build the model, test it on data it has not seen, correct for the number of tests, and report what failed.</p>
-          <p>Some of it worked. The calibrated model is about 7% away from Homes' own estimate on held-out cases, and the 80% interval covered about 80% of them. The text analysis was more mixed: listing language helped when the council valuation was missing, but no topic survived correction. It stays a research signal, not a valuation input.</p>
+          <p>The tools I could buy gave me a number, not the reasoning. So I collected the data myself: active listings, council valuations, nearby sales and the price guidance on listing pages. I treated it as a research sample: build a model, test it on data it has not seen, correct for multiple tests, and report what failed.</p>
+          <p>Some of it worked. The calibrated model is about 7% away from Homes' own estimate on held-out cases, and the 80% interval covered about 80% of them. Text analysis was mixed: listing language helped when the council valuation was missing, but no topic survived correction. It remains a research signal, not a valuation input.</p>
         </div>
       </div>
     </section>
@@ -1495,7 +1494,7 @@
               <span class="ps-method-icon"><i data-lucide="layers" aria-hidden="true"></i></span>
             </div>
             <h3>Value the tenure</h3>
-            <p>Leasehold, cross-lease and unit title are valued differently before any number is produced.</p>
+            <p>Tenure is checked before a value is produced, because leasehold and cross-lease homes are not directly comparable with freehold.</p>
           </article>
           <article class="ps-method">
             <div class="ps-method-top">
@@ -1503,7 +1502,7 @@
               <span class="ps-method-icon"><i data-lucide="scale" aria-hidden="true"></i></span>
             </div>
             <h3>Compare nearby sales</h3>
-            <p>Sold prices weighted by distance and recency, normalised by council capital value where one is available.</p>
+            <p>Sold prices weighted by distance and recency, scaled by council capital value where one is available.</p>
           </article>
           <article class="ps-method">
             <div class="ps-method-top">
@@ -1511,14 +1510,13 @@
               <span class="ps-method-icon"><i data-lucide="gauge" aria-hidden="true"></i></span>
             </div>
             <h3>Calibrate a fallback</h3>
-            <p>A hedonic model for listings with no AVM or usable comparables, with an 80% interval and its error stated.</p>
+            <p>A calibrated fallback model for listings with no AVM or usable comparables, with an 80% interval and published error.</p>
           </article>
         </div>
         <p class="ps-note">
           The <a class="ps-inline-link" href="./app/#/research">Research Lab</a> shows the model card, coverage and the full results, including the parts that did not work.
-          Each listing also carries its source-backed tenure (freehold, cross-lease, leasehold or
-          unit title), approximate build year and previous sale history where Homes.co.nz has a
-          property match. For a plain-language account of the data, equations, validation and limitations, read the
+          Each listing also shows tenure with a source, approximate build year and previous sales
+          when Homes.co.nz has a match. For a simple explanation of the data, equations and limits, read the
           <a class="ps-inline-link" href="./app/methodology/">methodology</a> or download the
           <a class="ps-inline-link" href="./app/methodology/auckland-property-methodology.pdf" download>PDF</a>.
         </p>
